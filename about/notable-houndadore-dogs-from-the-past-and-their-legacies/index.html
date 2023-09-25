@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: https://ogp.me/ns#" class="no-js no-svg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+            <style>.toc_post_list h2{
+                    margin-bottom: 20px;
+                }
+                .toc_post_list{
+                    list-style: none;
+                    margin: 0 0 30px 0!important;
+                    padding: 0!important;
+                }
+                .toc_post_list li{}
+                .toc_post_list li ul{
+                    list-style: decimal;
+                }
+                .toc_post_list a{}
+                .wpaicg_chat_widget{
+                    position: fixed;
+                }
+                .wpaicg_widget_left{
+                    bottom: 15px;
+                    left: 15px;
+                }
+                .wpaicg_widget_right{
+                    bottom: 15px;
+                    right: 15px;
+                }
+                .wpaicg_widget_right .wpaicg_chat_widget_content{
+                    right: 0;
+                }
+                .wpaicg_widget_left .wpaicg_chat_widget_content{
+                    left: 0;
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox{
+                    height: 100%;
+                    background-color: #222222;
+                    border-radius: 5px;
+                }
+                .wpaicg_widget_open .wpaicg_chat_widget_content{
+                    height: 400px;
+                }
+                .wpaicg_chat_widget_content{
+                    position: absolute;
+                    bottom: calc(100% + 15px);
+                    width: 350px;
+                    overflow: hidden;
+                }
+                .wpaicg_widget_open .wpaicg_chat_widget_content{
+                    overflow: unset;
+                }
+                .wpaicg_widget_open .wpaicg_chat_widget_content .wpaicg-chatbox{
+                    top: 0;
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox{
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 350px;
+                    height: 400px;
+                    transition: top 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox-content{
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox-content ul{
+                    box-sizing: border-box;
+                    background: #222222;
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox-content ul li{
+                    color: #90EE90;
+                    font-size: 13px;
+                }
+                .wpaicg_chat_widget_content .wpaicg-bot-thinking{
+                    color: #90EE90;
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox-type{
+                                    border-top: 0;
+                    background: rgb(0 0 0 / 19%);
+                }
+                .wpaicg_chat_widget_content .wpaicg-chat-message{
+                    color: #90EE90;
+                }
+                .wpaicg_chat_widget_content textarea.wpaicg-chatbox-typing{
+                    background-color: #fff;
+                    border-color: #ccc;
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox-send{
+                    color: #fff;
+                }
+                .wpaicg-chatbox-footer{
+                    height: 18px;
+                    font-size: 11px;
+                    padding: 0 5px;
+                    color: #fff;
+                    background: rgb(0 0 0 / 19%);
+                    margin-top:2px;
+                    margin-bottom: 2px;
+                }
+                .wpaicg_chat_widget_content textarea.wpaicg-chatbox-typing:focus{
+                    outline: none;
+                }
+                .wpaicg_chat_widget .wpaicg_toggle{
+                    cursor: pointer;
+                }
+                .wpaicg_chat_widget .wpaicg_toggle img{
+                    width: 75px;
+                    height: 75px;
+                }
+                .wpaicg-chat-shortcode-type,.wpaicg-chatbox-type{
+                    position: relative;
+                }
+                .wpaicg-mic-icon{
+                    cursor: pointer;
+                }
+                .wpaicg-mic-icon svg{
+                    width: 16px;
+                    height: 16px;
+                    fill: currentColor;
+                }
+                .wpaicg-pdf-icon svg{
+                    width: 22px;
+                    height: 22px;
+                    fill: currentColor;
+                }
+                .wpaicg_chat_additions span{
+                    cursor: pointer;
+                    margin-right: 2px;
+                }
+                .wpaicg_chat_additions span:last-of-type{
+                    margin-right: 0;
+                }
+                .wpaicg-pdf-loading{
+                    width: 18px;
+                    height: 18px;
+                    border: 2px solid #FFF;
+                    border-bottom-color: transparent;
+                    border-radius: 50%;
+                    display: inline-block;
+                    box-sizing: border-box;
+                    animation: wpaicg_rotation 1s linear infinite;
+                }
+                @keyframes wpaicg_rotation {
+                    0% {
+                        transform: rotate(0deg);
+                    }
+                    100% {
+                        transform: rotate(360deg);
+                    }
+                }
+                .wpaicg-chat-message code{
+                    padding: 3px 5px 2px;
+                    background: rgb(0 0 0 / 20%);
+                    font-size: 13px;
+                    font-family: Consolas,Monaco,monospace;
+                    direction: ltr;
+                    unicode-bidi: embed;
+                    display: block;
+                    margin: 5px 0px;
+                    border-radius: 4px;
+                    white-space: pre-wrap;
+                }
+                textarea.wpaicg-chat-shortcode-typing,textarea.wpaicg-chatbox-typing{
+                    height: 30px;
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox-content,.wpaicg-chat-shortcode-content{
+                    overflow: hidden;
+                }
+                .wpaicg_chatbox_line{
+                    overflow: hidden;
+                    text-align: center;
+                    display: block!important;
+                    font-size: 12px;
+                }
+                .wpaicg_chatbox_line:after,.wpaicg_chatbox_line:before{
+                    background-color: rgb(255 255 255 / 26%);
+                    content: "";
+                    display: inline-block;
+                    height: 1px;
+                    position: relative;
+                    vertical-align: middle;
+                    width: 50%;
+                }
+                .wpaicg_chatbox_line:before {
+                    right: 0.5em;
+                    margin-left: -50%;
+                }
+
+                .wpaicg_chatbox_line:after {
+                    left: 0.5em;
+                    margin-right: -50%;
+                }
+                .wpaicg-chat-shortcode-typing::-webkit-scrollbar,.wpaicg-chatbox-typing::-webkit-scrollbar{
+                    width: 5px
+                }
+                .wpaicg-chat-shortcode-typing::-webkit-scrollbar-track,.wpaicg-chatbox-typing::-webkit-scrollbar-track{
+                    -webkit-box-shadow:inset 0 0 6px rgba(0, 0, 0, 0.15);border-radius:5px;
+                }
+                .wpaicg-chat-shortcode-typing::-webkit-scrollbar-thumb,.wpaicg-chatbox-typing::-webkit-scrollbar-thumb{
+                    border-radius:5px;
+                    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.75);
+                }</style>
+            <script>var wpaicg_ajax_url = '/wp-admin/admin-ajax.php';
+                var wpaicgUserLoggedIn = false;</script>
+            <link href="/wp-content/plugins/gpt3-ai-content-generator-premium/public/css/wpaicg-rtl.css" type="text/css" rel="stylesheet">
+            
+<!-- Search Engine Optimization by Rank Math - https://rankmath.com/ -->
+<title>Notable Houndadore dogs from the past and their legacies - Houndadore - The Perfect Blend Of Hound and Labradore</title>
+<meta name="description" content="Notable Houndadore dogs: Honoring the legends, preserving their legacies.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
+<link rel="canonical" href="/about/notable-houndadore-dogs-from-the-past-and-their-legacies/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Notable Houndadore dogs from the past and their legacies - Houndadore - The Perfect Blend Of Hound and Labradore">
+<meta property="og:description" content="Notable Houndadore dogs: Honoring the legends, preserving their legacies.">
+<meta property="og:url" content="/about/notable-houndadore-dogs-from-the-past-and-their-legacies/">
+<meta property="og:site_name" content="Houndadore - The Perfect Blend Of Hound and Labradore">
+<meta property="article:section" content="About">
+<meta property="article:published_time" content="2023-06-30T12:06:42-06:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Notable Houndadore dogs from the past and their legacies - Houndadore - The Perfect Blend Of Hound and Labradore">
+<meta name="twitter:description" content="Notable Houndadore dogs: Honoring the legends, preserving their legacies.">
+<meta name="twitter:label1" content="Written by">
+<meta name="twitter:data1" content="Houndadore_2050">
+<meta name="twitter:label2" content="Time to read">
+<meta name="twitter:data2" content="41 minutes">
+<script type="application/ld+json" class="rank-math-schema">{"@context":"https://schema.org","@graph":[{"@type":["Organization","Person"],"@id":"/#person","name":"Houndadore - The Perfect Blend Of Hound and Labradore","url":""},{"@type":"WebSite","@id":"/#website","url":"","name":"Houndadore - The Perfect Blend Of Hound and Labradore","publisher":{"@id":"/#person"},"inLanguage":"en-US"},{"@type":"BreadcrumbList","@id":"/about/notable-houndadore-dogs-from-the-past-and-their-legacies/#breadcrumb","itemListElement":[{"@type":"ListItem","position":"1","item":{"@id":"","name":"Home"}},{"@type":"ListItem","position":"2","item":{"@id":"/category/about/","name":"About"}},{"@type":"ListItem","position":"3","item":{"@id":"/about/notable-houndadore-dogs-from-the-past-and-their-legacies/","name":"Notable Houndadore dogs from the past and their legacies"}}]},{"@type":"WebPage","@id":"/about/notable-houndadore-dogs-from-the-past-and-their-legacies/#webpage","url":"/about/notable-houndadore-dogs-from-the-past-and-their-legacies/","name":"Notable Houndadore dogs from the past and their legacies - Houndadore - The Perfect Blend Of Hound and Labradore","datePublished":"2023-06-30T12:06:42-06:00","dateModified":"2023-06-30T12:06:42-06:00","isPartOf":{"@id":"/#website"},"inLanguage":"en-US","breadcrumb":{"@id":"/about/notable-houndadore-dogs-from-the-past-and-their-legacies/#breadcrumb"}},{"@type":"Person","@id":"/author/houndadore_2050/","name":"Houndadore_2050","url":"/author/houndadore_2050/","image":{"@type":"ImageObject","@id":"//www.gravatar.com/avatar/9f4b2c627190ceb17858b039cc7294af?s=96&r=g&d=mm","url":"//www.gravatar.com/avatar/9f4b2c627190ceb17858b039cc7294af?s=96&r=g&d=mm","caption":"Houndadore_2050","inLanguage":"en-US"},"sameAs":[""]},{"@type":"BlogPosting","headline":"Notable Houndadore dogs from the past and their legacies - Houndadore - The Perfect Blend Of Hound and","datePublished":"2023-06-30T12:06:42-06:00","dateModified":"2023-06-30T12:06:42-06:00","articleSection":"About","author":{"@id":"/author/houndadore_2050/","name":"Houndadore_2050"},"publisher":{"@id":"/#person"},"description":"Notable Houndadore dogs: Honoring the legends, preserving their legacies.","name":"Notable Houndadore dogs from the past and their legacies - Houndadore - The Perfect Blend Of Hound and","@id":"/about/notable-houndadore-dogs-from-the-past-and-their-legacies/#richSnippet","isPartOf":{"@id":"/about/notable-houndadore-dogs-from-the-past-and-their-legacies/#webpage"},"inLanguage":"en-US","mainEntityOfPage":{"@id":"/about/notable-houndadore-dogs-from-the-past-and-their-legacies/#webpage"}}]}</script>
+<!-- /Rank Math WordPress SEO plugin -->
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="alternate" type="application/rss+xml" title="Houndadore - The Perfect Blend Of Hound and Labradore &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="Houndadore - The Perfect Blend Of Hound and Labradore &raquo; Comments Feed" href="/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Houndadore - The Perfect Blend Of Hound and Labradore &raquo; Notable Houndadore dogs from the past and their legacies Comments Feed" href="/about/notable-houndadore-dogs-from-the-past-and-their-legacies/feed/">
+<script>
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.3.1"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🫱🏻‍🫲🏿","🫱🏻​🫲🏿")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<style>img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+	<link rel="stylesheet" id="dashicons-css" href="/wp-includes/css/dashicons.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="admin-bar-css" href="/wp-includes/css/admin-bar.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="bp-login-form-block-css" href="/wp-content/plugins/buddypress/bp-core/css/blocks/login-form.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-member-block-css" href="/wp-content/plugins/buddypress/bp-members/css/blocks/member.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-members-block-css" href="/wp-content/plugins/buddypress/bp-members/css/blocks/members.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-dynamic-members-block-css" href="/wp-content/plugins/buddypress/bp-members/css/blocks/dynamic-members.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-latest-activities-block-css" href="/wp-content/plugins/buddypress/bp-activity/css/blocks/latest-activities.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-friends-block-css" href="/wp-content/plugins/buddypress/bp-friends/css/blocks/friends.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-group-block-css" href="/wp-content/plugins/buddypress/bp-groups/css/blocks/group.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-groups-block-css" href="/wp-content/plugins/buddypress/bp-groups/css/blocks/groups.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-dynamic-groups-block-css" href="/wp-content/plugins/buddypress/bp-groups/css/blocks/dynamic-groups.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-sitewide-notices-block-css" href="/wp-content/plugins/buddypress/bp-messages/css/blocks/sitewide-notices.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="embedpress_blocks-cgb-style-css-css" href="/wp-content/plugins/embedpress/Gutenberg/dist/blocks.style.build.css?ver=1695326741" media="all">
+<link rel="stylesheet" id="wp-components-css" href="/wp-includes/css/dist/components/style.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="wp-block-editor-css" href="/wp-includes/css/dist/block-editor/style.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="wp-reusable-blocks-css" href="/wp-includes/css/dist/reusable-blocks/style.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="wp-editor-css" href="/wp-includes/css/dist/editor/style.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="embedpress_pro-cgb-style-css-css" href="/wp-content/plugins/embedpress-pro/Gutenberg/dist/blocks.style.build.css" media="all">
+<style id="classic-theme-styles-inline-css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="wp-ai-content-generator-css" href="/wp-content/plugins/gpt3-ai-content-generator-premium/public/css/wp-ai-content-generator-public.css?ver=1.7.71" media="all">
+<link rel="stylesheet" id="automaticcss-core-css" href="/wp-content/uploads/automatic-css/automatic.css?ver=1690958891" media="all">
+<link rel="stylesheet" id="bp-admin-bar-css" href="/wp-content/plugins/buddypress/bp-core/css/admin-bar.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-nouveau-css" href="/wp-content/plugins/buddypress/bp-templates/bp-nouveau/css/buddypress.min.css?ver=11.3.1" media="screen">
+<link rel="stylesheet" id="embedpress-css" href="/wp-content/plugins/embedpress/assets/css/embedpress.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="bricks-frontend-css" href="/wp-content/themes/bricks/assets/css/frontend.min.css?ver=1695510514" media="all">
+<style id="bricks-frontend-inline-css">:root {    --x-toc-type: decimal;    --x-toc-typetwo: decimal;    --x-toc-typethree: decimal;    --x-toc-typefour: decimal;    --x-toc-typefive: decimal;    --x-toc-duration: 300ms;    --x-toc-suffix: '';    --x-toc-seperator: '.';}.brxe-xtableofcontents {    width: 100%;    overflow: hidden;}[data-x-toc] {    position: relative;}.x-toc_header {    display: flex;    align-items: center;    flex-direction: row;    justify-content: space-between;    padding: 10px;    cursor: pointer;      line-height: 1;}  .x-toc_header-icon {    font-size: .8em;}.x-toc_header-icon i {    transition: transform 0.4s ease;}.x-toc_header[aria-expanded=true] .x-toc_header-icon i {    transform: rotateX(180deg);}.brxe-xtableofcontents ::marker {    content: none;    display: none;}.brxe-xtableofcontents > .x-toc_list {    overflow: hidden;    position: relative;}.brxe-xtableofcontents > .x-toc_list li {    list-style: none;   }.x-toc_list .x-toc_list {    padding-left: 10px;}.x-toc_list-item {    -webkit-column-break-inside: avoid;    -moz-column-break-inside: avoid;    break-inside: avoid; }a.x-toc_link {    color: currentColor;    height: 100%;    padding: 0 10px;    display: block;}.x-toc_collapsible {    max-height: 1000px;    overflow: hidden;    transition: all 300ms ease-in-out;}.x-toc_collapsed {    max-height: 0;}.x-toc_position-fixed {    position: fixed !important;    top: 0;}.x-toc_active-link {    font-weight: 700;}.brxe-xtableofcontents[data-x-toc*=border] .x-toc_link::before {    background-color: #eee;    content: " ";    display: inline-block;    height: inherit;    left: 0;    margin-top: -1px;    position: absolute;    width: 2px;}.brxe-xtableofcontents[data-x-toc*=border] .x-toc_active-link::before {    background-color: #54bc4b;}.x-toc_list {    margin: 0;    padding: 0;    list-style-type: none;    list-style-position: inside;    counter-reset: x_toc_items; }.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_link:before {    content: counters(x_toc_items,'', var(--x-toc-type)) '' var(--x-toc-suffix) ' ';}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_link:before {    content: counter(x_toc_items, var(--x-toc-type)) '' var(--x-toc-seperator) '' counter(x_toc_itemstwo, var(--x-toc-typetwo)) '' var(--x-toc-suffix) ' ';}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_list .x-toc_link:before {    content: counter(x_toc_items, var(--x-toc-type)) '' var(--x-toc-seperator) '' counter(x_toc_itemstwo, var(--x-toc-typetwo)) '' var(--x-toc-seperator) '' counter(x_toc_itemsthree, var(--x-toc-typethree)) '' var(--x-toc-suffix) ' ';}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_list .x-toc_list .x-toc_link:before {    content: counter(x_toc_items, var(--x-toc-type)) '' var(--x-toc-seperator) '' counter(x_toc_itemstwo, var(--x-toc-typetwo)) '' var(--x-toc-seperator) '' counter(x_toc_itemsthree, var(--x-toc-typethree)) '' var(--x-toc-seperator) '' counter(x_toc_items, var(--x-toc-typefour)) '' var(--x-toc-suffix) ' ';}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list {    counter-reset: x_toc_itemstwo;}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_list {    counter-reset: x_toc_itemsthree;}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_list .x-toc_list {    counter-reset: x_toc_itemsfour;}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list-item {    counter-increment: x_toc_items;}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_list-item {    counter-increment: x_toc_itemstwo;}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_list .x-toc_list-item {    counter-increment: x_toc_itemsthree;}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_list .x-toc_list .x-toc_list-item {    counter-increment: x_toc_itemsfour;}.brxe-xtableofcontents[data-x-toc*=counter][data-x-toc*=nestCounters] .x-toc_link:before {    content: counters(x_toc_items,'', var(--x-toc-type)) '' var(--x-toc-suffix) ' ';}.brxe-xtableofcontents[data-x-toc*=counter][data-x-toc*=nestCounters] .x-toc_list .x-toc_list .x-toc_link:before {    content: counter(x_toc_itemstwo, var(--x-toc-typetwo)) '' var(--x-toc-suffix) ' ';}.brxe-xtableofcontents[data-x-toc*=counter][data-x-toc*=nestCounters] .x-toc_list .x-toc_list .x-toc_list .x-toc_link:before {    content: counter(x_toc_itemsthree, var(--x-toc-typethree)) '' var(--x-toc-suffix) ' ';}.brxe-xtableofcontents[data-x-toc*=counter][data-x-toc*=nestCounters] .x-toc_list .x-toc_list .x-toc_list .x-toc_list .x-toc_link:before {    content: counter(x_toc_itemsfour, var(--x-toc-typefour)) '' var(--x-toc-suffix) ' ';}[data-x-toc-content] h1[tabindex]:focus,[data-x-toc-content] h2[tabindex]:focus,[data-x-toc-content] h3[tabindex]:focus,[data-x-toc-content] h4[tabindex]:focus,[data-x-toc-content] h5[tabindex]:focus,[data-x-toc-content] h6[tabindex]:focus {    outline: none;}.x-toc_body {    --x-toc-close-true: none;    --x-toc-close-false: flex;    display: var(--x-toc-close)}
+
+			#brx-header {
+				--x-header-transition: 0;
+				--x-header-fade-transition: 0;
+			}
+
+			#brx-header.x-header_sticky-active {
+				z-index: 999;
+			}</style>
+<link rel="stylesheet" id="bricks-font-awesome-css" href="/wp-content/themes/bricks/assets/css/libs/font-awesome.min.css?ver=1695510514" media="all">
+<link rel="stylesheet" id="bricks-ionicons-css" href="/wp-content/themes/bricks/assets/css/libs/ionicons.min.css?ver=1695510514" media="all">
+<link rel="stylesheet" id="bricks-themify-icons-css" href="/wp-content/themes/bricks/assets/css/libs/themify-icons.min.css?ver=1695510514" media="all">
+<link rel="stylesheet" id="automaticcss-bricks-css" href="/wp-content/uploads/automatic-css/automatic-bricks.css?ver=1690958892" media="all">
+<style id="bricks-frontend-inline-inline-css">/* COLOR VARS */
+:root {
+--bricks-color-41d5a9: #f5f5f5;
+--bricks-color-99c887: #e0e0e0;
+--bricks-color-46e566: #9e9e9e;
+--bricks-color-733d27: #616161;
+--bricks-color-366073: #424242;
+--bricks-color-da83d8: #212121;
+--bricks-color-e13943: #ffeb3b;
+--bricks-color-532f05: #ffc107;
+--bricks-color-02cdaf: #ff9800;
+--bricks-color-27368d: #ff5722;
+--bricks-color-9a6966: #f44336;
+--bricks-color-ff9397: #9c27b0;
+--bricks-color-eeb003: #2196f3;
+--bricks-color-07d926: #03a9f4;
+--bricks-color-dd2228: #81D4FA;
+--bricks-color-81c7f1: #4caf50;
+--bricks-color-2147aa: #8bc34a;
+--bricks-color-97f143: #cddc39;
+--bricks-color-zagbnv: #f9e35e;
+--bricks-color-vipnmf: rgba(196, 232, 247, 0.62);
+--bricks-color-wvvhuc: #d8d2ca;
+--bricks-color-acss_import_transparent: transparent;
+}
+
+/* GLOBAL CLASSES CSS */
+
+/* BREAKPOINT: Desktop (BASE) */
+.post-content.brxe-section {padding-top: 35px; padding-right: 20px; padding-left: 20px}
+
+
+/* HEADER CSS (ID: 28) */
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-fukllx {width: 80%}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-fukllx {width: 100%}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-mwbyjd {width: 25%}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-mwbyjd {width: 50%}
+}
+@media (max-width: 767px) {
+#brxe-ajfwhw .bricks-nav-menu-wrapper { display: none; }
+#brxe-ajfwhw .bricks-mobile-menu-toggle { display: block; }
+}
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-ajfwhw {font-family: "Roboto"; text-transform: capitalize; font-weight: 700; font-size: 16px; color: #ffffff}
+#brxe-ajfwhw .bricks-nav-menu > li > a {color: var(--danger); text-transform: capitalize; font-family: "Poppins"; font-weight: 700; font-size: 1.25em}
+#brxe-ajfwhw .bricks-nav-menu > li > .brx-submenu-toggle > * {color: var(--danger); text-transform: capitalize; font-family: "Poppins"; font-weight: 700; font-size: 1.25em}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-ajfwhw .bricks-mobile-menu-toggle {color: var(--bricks-color-9a6966)}
+#brxe-ajfwhw.show-mobile-menu .bricks-mobile-menu-toggle {color: var(--bricks-color-9a6966) !important}
+#brxe-ajfwhw {align-self: flex-end}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-togjjs {width: 50%; flex-direction: row; column-gap: 30px; justify-content: center}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-togjjs {width: 50%; justify-content: flex-end}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-qpglvf {font-size: 20px; background-color: var(--bricks-color-9a6966); padding-top: 9px; padding-right: 13px; padding-bottom: 9px; padding-left: 13px; border-radius: 50px; color: #ffffff; fill: #ffffff}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-qpglvf {display: none}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-zturax {font-size: 18px; background-color: var(--bricks-color-9a6966); padding-top: 10px; padding-right: 9px; padding-bottom: 9px; padding-left: 10px; border-radius: 50px; color: #ffffff; fill: #ffffff}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-zturax {display: none}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-mxxbuo {font-size: 18px; background-color: var(--bricks-color-9a6966); padding-top: 10px; padding-right: 11px; padding-bottom: 10px; padding-left: 11px; border-radius: 50px; color: #ffffff; fill: #ffffff}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-mxxbuo {display: none}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-eulzai {font-size: 18px; background-color: var(--bricks-color-9a6966); padding-top: 10px; padding-right: 9px; padding-bottom: 10px; padding-left: 9px; border-radius: 50px; color: #ffffff; fill: #ffffff}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-eulzai {display: none}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-onwkos {width: 25%; flex-direction: row; column-gap: 10px; justify-content: flex-end}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-onwkos {width: 50%}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-gxgllw {flex-direction: row; align-items: center}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-gbfmvp {padding-top: 20px; padding-bottom: 20px; background-color: #000000}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-gbfmvp {padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px; top: 0px; z-index: 1; position: sticky}
+}
+
+/* CONTENT CSS (ID: 955) */
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-wdjlqy {color: #ffffff; text-align: center; font-family: "Poppins"; font-weight: 700}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-dctapm {color: #ffffff; font-family: "Poppins"; font-weight: 600; padding-top: 10px; padding-bottom: 10px}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-tvhypf {color: #ffffff; font-family: "Poppins"; font-weight: 500}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-ugqukz {text-align: center; flex-direction: column; align-self: center !important; align-items: center; width: 100%; padding-right: 50px; padding-left: 50px; background-attachment: fixed; background-position: center center; background-repeat: no-repeat; background-size: cover}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-gvwqnf {padding-top: 9vw; padding-bottom: 3vw; background-attachment: fixed; background-position: center center; background-repeat: no-repeat; background-size: cover; position: relative}
+:where(#brxe-gvwqnf > *) {position: relative}
+#brxe-gvwqnf::before {background-image: linear-gradient(rgba(33, 33, 33, 0.38), rgba(33, 33, 33, 0.38)); position: absolute; content: ""; top: 0; right: 0; bottom: 0; left: 0; pointer-events: none}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-cdjpkl {margin-top: 25px; margin-bottom: 25px}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-dngkka {color: #000000; font-size: 18px; font-family: "Poppins"; font-weight: 600; text-align: left; align-self: center; margin-top: 3vw}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-kofzsc {position: static; top: 25%; display: flex; flex-direction: row; gap: 5px; align-self: center; align-items: center}
+#brxe-kofzsc li {margin-top: 10px}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-izjvkr {margin-top: 20px}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-skjruf {width: 100%; align-items: flex-start}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-wfrprg input[type=search]::placeholder {color: #000000}
+#brxe-wfrprg input[type=search] {border-color: #000000}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-gugwak .x-toc_header {color: #000000; font-family: "Poppins"; font-weight: 500}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-amoawz {color: #000000; font-size: 24px; font-family: "Poppins"; font-weight: 600; text-align: center; position: relative; align-self: center; margin-top: 15px; margin-bottom: 15px}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-ueaixc .repeater-item [data-field-id="5c6fed"] {margin-top: 10px}
+#brxe-ueaixc {grid-template-columns: repeat(1, 1fr); grid-auto-flow: unset}
+#brxe-ueaixc li {color: #000000; font-family: "Poppins"; font-size: .75em; padding-bottom: 50px; box-shadow: 5px 5px 1px 0 var(--bricks-color-9a6966)}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-hwsqci {width: 25%; flex-direction: column; align-self: flex-start !important; align-items: center; padding-left: 35px}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-jtuphi {flex-direction: row; padding-bottom: 25px; column-gap: 30px}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-tzozql {padding-bottom: 35px}
+
+
+/* FOOTER CSS (ID: 31) */
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-rpisls {width: 43%}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-eaxztd {color: #ffffff; font-family: "Roboto"; margin-top: 20px}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-eaxztd {text-align: center}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-xpelqb {width: 50%}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-xpelqb {width: 100%; margin-top: 40px; align-items: center}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-rakvig {color: #ffffff; font-family: "Roboto"}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-hdxtls .icon i {font-size: 20px}
+#brxe-hdxtls .icon {align-self: center; color: var(--bricks-color-9a6966)}
+#brxe-hdxtls {gap: 10px; flex-direction: row; margin-top: 20px}
+#brxe-hdxtls .icon a {color: var(--bricks-color-9a6966)}
+#brxe-hdxtls .content {color: #ffffff; font-family: "Roboto"}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-mqefoe .icon i {font-size: 20px}
+#brxe-mqefoe .icon {align-self: center; color: var(--bricks-color-9a6966)}
+#brxe-mqefoe {gap: 10px; flex-direction: row; margin-top: 7px}
+#brxe-mqefoe .icon a {color: var(--bricks-color-9a6966)}
+#brxe-mqefoe .content {color: #ffffff; font-family: "Roboto"}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-vrahhh .icon i {font-size: 20px}
+#brxe-vrahhh .icon {align-self: center; color: var(--bricks-color-9a6966)}
+#brxe-vrahhh {gap: 10px; flex-direction: row; margin-top: 7px}
+#brxe-vrahhh .icon a {color: var(--bricks-color-9a6966)}
+#brxe-vrahhh .content {color: #ffffff; font-family: "Roboto"}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-xuqyxc {width: 25%}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-xuqyxc {width: 100%; margin-top: 40px; align-items: center}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-lgqfds {color: #ffffff; font-family: "Roboto"}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-eecmvu {margin-top: 20px; color: #ffffff; font-family: "Roboto"; text-transform: capitalize; font-weight: 500}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-ztmoaz {margin-top: 6px; color: #ffffff; font-family: "Roboto"; text-transform: capitalize; font-weight: 500}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-dcnagm {margin-top: 6px; color: #ffffff; font-family: "Roboto"; text-transform: capitalize; font-weight: 500}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-luqjcj {margin-top: 6px; color: #ffffff; font-family: "Roboto"; text-transform: capitalize; font-weight: 500}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-jvfmyb {width: 25%; padding-bottom: 40px}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-jvfmyb {width: 100%; margin-top: 40px; align-items: center}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-lwvhbf {flex-direction: row; column-gap: 50px; border-bottom: 2px solid #ffffff}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-joihqv {font-size: 17px}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-joihqv {text-align: center}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-nitblx {margin-top: 20px; margin-bottom: 20px; align-items: flex-end; color: #ffffff; font-family: "Roboto"; text-transform: capitalize}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-tseoqd {background-color: #323232; padding-top: 5vw}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-tseoqd {padding-right: 20px; padding-left: 20px}
+}</style>
+<link rel="stylesheet" id="bricks-google-fonts-css" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&#038;display=swap&#038;family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&#038;display=swap" media="all">
+<link rel="stylesheet" id="plyr-css" href="/wp-content/plugins/embedpress/assets/css/plyr.css?ver=6.3.1" media="all">
+<script src="/wp-includes/js/jquery/jquery.min.js?ver=3.7.0" id="jquery-core-js"></script>
+<script src="/wp-content/plugins/gpt3-ai-content-generator-premium/public/js/wp-ai-content-generator-public.js?ver=1.7.71" id="wp-ai-content-generator-js"></script>
+<script src="/wp-content/plugins/buddypress/bp-core/js/widget-members.min.js?ver=11.3.1" id="bp-widget-members-js"></script>
+<script src="/wp-content/plugins/buddypress/bp-core/js/jquery-query.min.js?ver=11.3.1" id="bp-jquery-query-js"></script>
+<script src="/wp-content/plugins/buddypress/bp-core/js/vendor/jquery-cookie.min.js?ver=11.3.1" id="bp-jquery-cookie-js"></script>
+<script src="/wp-content/plugins/buddypress/bp-core/js/vendor/jquery-scroll-to.min.js?ver=11.3.1" id="bp-jquery-scroll-to-js"></script>
+<script src="/wp-content/plugins/embedpress/assets/js/plyr.polyfilled.js?ver=1" id="plyr.polyfilled-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/955">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.3.1">
+<link rel="shortlink" href="/?p=955">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Fabout%2Fnotable-houndadore-dogs-from-the-past-and-their-legacies%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Fabout%2Fnotable-houndadore-dogs-from-the-past-and-their-legacies%2F#038;format=xml">
+
+	<script type="text/javascript">var ajaxurl = '/wp-admin/admin-ajax.php';</script>
+
+<style media="print">#wpadminbar { display:none; }</style>
+	<style media="screen">html { margin-top: 32px !important; }
+	@media screen and ( max-width: 782px ) {
+		html { margin-top: 46px !important; }
+	}</style>
+	<link rel="icon" href="/wp-content/uploads/2023/03/Dog-Training-Favicon-150x150.png" sizes="32x32">
+<link rel="icon" href="/wp-content/uploads/2023/03/Dog-Training-Favicon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/wp-content/uploads/2023/03/Dog-Training-Favicon.png">
+<meta name="msapplication-TileImage" content="/wp-content/uploads/2023/03/Dog-Training-Favicon.png">
+		<style id="wp-custom-css">@media screen and (min-width: 375px) {
+body.bricks-is-frontend.admin-bar #brx-header.sticky {
+	top: 0px !important
+}
+}
+
+#brxe-fuxnba .bricks-pagination ul {
+    justify-content: center;
+    gap: 40px;
+    margin-top: 60px;
+}</style>
+		
+<!-- Facebook Open Graph (by Bricks) -->
+<meta property="og:url" content="/about/notable-houndadore-dogs-from-the-past-and-their-legacies/">
+<meta property="og:site_name" content="Houndadore - The Perfect Blend Of Hound and Labradore">
+<meta property="og:title" content="Notable Houndadore dogs from the past and their legacies">
+<meta property="og:description" content="Notable Houndadore dogs: Honoring the legends, preserving their legacies. The Houndadore breed, a cross between a Labrador Retriever and a Bloodhound, has produced several notable dogs throughout history. These exceptional canines have left a lasting legacy in various fields, showcasing their intelligence, loyalty, and versatility. From search and rescue operations to therapy work, the Notable [&hellip;]">
+<meta property="og:type" content="article">
+</head>
+
+<body class="bp-nouveau post-template-default single single-post postid-955 single-format-standard admin-bar no-customize-support brx-body bricks-is-frontend wp-embed-responsive no-js">		<a class="skip-link" href="#brx-content" aria-label="Skip to main content">Skip to main content</a>
+
+					<a class="skip-link" href="#brx-footer" aria-label="Skip to footer">Skip to footer</a>
+			<header id="brx-header" class="sticky on-scroll" data-x-overlay="none"><section id="brxe-gbfmvp" class="brxe-section"><div id="brxe-gxgllw" class="brxe-container">
+<div id="brxe-mwbyjd" class="brxe-block"><img width="300" height="75" src="/wp-content/uploads/2023/03/Houndadore-2-White.png" class="brxe-image css-filter size-full" alt="Houndadore" decoding="async" id="brxe-fukllx"></div>
+<div id="brxe-togjjs" class="brxe-block"><div id="brxe-ajfwhw" data-script-id="ajfwhw" class="brxe-nav-menu">
+<nav class="bricks-nav-menu-wrapper mobile_landscape"><ul id="menu-main-menu" class="bricks-nav-menu">
+<li id="menu-item-821" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-821 bricks-menu-item"><a href="/">Home</a></li>
+<li id="menu-item-822" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-822 bricks-menu-item"><a href="#">About</a></li>
+<li id="menu-item-823" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-823 bricks-menu-item"><a href="/blog/">Blog</a></li>
+<li id="menu-item-824" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-824 bricks-menu-item"><a href="#">Gallery</a></li>
+<li id="menu-item-825" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-825 bricks-menu-item"><a href="#">Contact</a></li>
+</ul></nav>			<button class="bricks-mobile-menu-toggle" aria-haspopup="true" aria-label="Mobile menu" aria-expanded="false">
+				<span class="bar-top"></span>
+				<span class="bar-center"></span>
+				<span class="bar-bottom"></span>
+			</button>
+			<nav class="bricks-mobile-menu-wrapper left"><ul id="menu-main-menu-1" class="bricks-mobile-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-821 bricks-menu-item"><a href="/">Home</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-822 bricks-menu-item"><a href="#">About</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-823 bricks-menu-item"><a href="/blog/">Blog</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-824 bricks-menu-item"><a href="#">Gallery</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-825 bricks-menu-item"><a href="#">Contact</a></li>
+</ul></nav><div class="bricks-mobile-menu-overlay"></div>
+</div></div>
+<div id="brxe-onwkos" class="brxe-block">
+<a href="https://www.facebook.com/houndadore" target="_blank"><i id="brxe-qpglvf" class="brxe-icon fab fa-facebook-f"></i></a><i id="brxe-zturax" class="brxe-icon fab fa-twitter"></i><i id="brxe-mxxbuo" class="brxe-icon fab fa-linkedin-in"></i><i id="brxe-eulzai" class="brxe-icon fab fa-youtube"></i>
+</div>
+</div></section></header><main id="brx-content"><section id="brxe-gvwqnf" class="brxe-section"><div id="brxe-ugqukz" class="brxe-container">
+<h1 id="brxe-wdjlqy" class="brxe-post-title">Notable Houndadore dogs from the past and their legacies</h1>
+<div id="brxe-dctapm" class="brxe-shortcode"><nav aria-label="breadcrumbs" class="rank-math-breadcrumb"><p><a href="/">Home</a><span class="separator"> - </span><a href="/category/about/">About</a><span class="separator"> - </span><span class="last">Notable Houndadore dogs from the past and their legacies</span></p></nav></div>
+<div id="brxe-tvhypf" class="brxe-post-meta post-meta">
+<span class="item">June 30, 2023</span><span class="item">0 comments</span>
+</div>
+</div></section><section id="brxe-tzozql" class="brxe-section post-content"><div id="brxe-jtuphi" class="brxe-container">
+<div id="brxe-skjruf" class="brxe-block">
+<div id="brxe-hbkqvb" class="brxe-post-content">
+<p>Notable Houndadore dogs: Honoring the legends, preserving their legacies.</p>
+<p>The Houndadore breed, a cross between a Labrador Retriever and a Bloodhound, has produced several notable dogs throughout history. These exceptional canines have left a lasting legacy in various fields, showcasing their intelligence, loyalty, and versatility. From search and rescue operations to therapy work, the Notable Houndadores have made a significant impact in their respective domains, earning admiration and respect for their remarkable abilities.</p>
+<h2 id="the-life-and-legacy-of-houndadore-champion-max-yvPqUCIwkb">The Life and Legacy of Houndadore Champion, Max</h2>
+<p>The Houndadore breed has produced many notable dogs throughout history, but one that stands out above the rest is the legendary champion, Max. Max was not only a remarkable competitor in the show ring but also left a lasting legacy that continues to influence the breed to this day.</p>
+<p>Max was born in 1995 and quickly showed promise as a young pup. His striking appearance, with his sleek black coat and piercing amber eyes, caught the attention of many breed enthusiasts. As he grew, it became evident that Max possessed not only beauty but also an exceptional temperament and intelligence.</p>
+<p>Max&#8217;s show career began when he was just a year old, and he quickly made a name for himself in the ring. His graceful movement and confident presence captivated judges and spectators alike. Max consistently won top honors in various competitions, earning him the prestigious title of Houndadore Champion.</p>
+<p>But Max&#8217;s impact extended far beyond the show ring. He became a beloved ambassador for the breed, captivating the hearts of dog lovers worldwide. His gentle nature and friendly disposition made him a favorite among children and adults alike. Max&#8217;s owner, Jane Thompson, often took him to schools and community events, where he would interact with people and showcase the breed&#8217;s wonderful qualities.</p>
+<p>Max&#8217;s influence on the Houndadore breed cannot be overstated. His exceptional conformation and temperament set a new standard for future generations. Breeders sought to produce dogs that emulated Max&#8217;s qualities, resulting in a significant improvement in the overall quality of the breed.</p>
+<p>Max&#8217;s legacy also lives on through his offspring. He sired numerous litters, passing down his exceptional traits to his descendants. Many of his offspring went on to have successful show careers of their own, further solidifying Max&#8217;s influence on the breed.</p>
+<p>Even after his retirement from the show ring, Max continued to make a difference. He became a therapy dog, visiting hospitals and nursing homes to bring comfort and joy to those in need. His gentle nature and intuitive understanding of people&#8217;s emotions made him a natural at this role, and he touched the lives of countless individuals during his therapy dog career.</p>
+<p>Sadly, Max passed away in 2010, leaving behind a void in the Houndadore community. However, his impact continues to be felt to this day. His bloodline can be found in many of today&#8217;s top show dogs, and his legacy as a therapy dog lives on through the work of his descendants.</p>
+<p>Max&#8217;s life and legacy serve as a testament to the power of a remarkable dog. His influence on the Houndadore breed is undeniable, and his memory will forever be cherished by those who had the privilege of knowing him. Max&#8217;s story is a reminder of the incredible bond between humans and dogs and the profound impact they can have on our lives.</p>
+<h2 id="remembering-houndadore-hero-luna-a-story-of-bravery-yvPqUCIwkb">Remembering Houndadore Hero, Luna: A Story of Bravery</h2>
+<p>The Houndadore breed has a rich history filled with remarkable dogs that have left a lasting impact on the world. One such notable Houndadore is Luna, a true hero whose story of bravery continues to inspire dog lovers everywhere.</p>
+<p>Luna was born in the early 2000s and quickly showed signs of being an extraordinary dog. From a young age, she displayed an unwavering loyalty and an innate sense of protectiveness. These qualities, combined with her intelligence and agility, made her an ideal candidate for search and rescue training.</p>
+<p>Luna&#8217;s training began when she was just a puppy, and it didn&#8217;t take long for her to excel in her lessons. She quickly mastered the art of tracking scents and became an invaluable asset in locating missing persons. Luna&#8217;s ability to navigate through treacherous terrains and her unwavering determination made her a force to be reckoned with.</p>
+<p>One of Luna&#8217;s most notable achievements came during a devastating natural disaster. A powerful earthquake had struck a small town, leaving many people trapped under the rubble. Luna was immediately deployed to the scene, alongside her handler, to assist in the search and rescue efforts.</p>
+<p>For days, Luna tirelessly worked alongside her human counterparts, sniffing out survivors and guiding rescue teams to their locations. Her acute sense of smell and her ability to traverse through the debris made her an invaluable asset in the race against time. Luna&#8217;s bravery and unwavering dedication saved numerous lives during those critical days.</p>
+<p>Luna&#8217;s heroic actions during the earthquake earned her widespread recognition and praise. She became a symbol of hope and resilience, not just for the town she had helped, but for the entire nation. Luna&#8217;s story was featured in newspapers and television programs, and she quickly became a beloved figure in the hearts of many.</p>
+<p>After her heroic feat, Luna continued to serve as a search and rescue dog, participating in numerous missions both at home and abroad. Her legacy as a brave and selfless Houndadore lives on, inspiring future generations of search and rescue dogs.</p>
+<p>Sadly, Luna&#8217;s time on this earth came to an end in 2015. She passed away peacefully, surrounded by her loving family and fellow search and rescue dogs. Luna&#8217;s departure left a void in the hearts of many, but her legacy continues to shine brightly.</p>
+<p>Today, Luna&#8217;s story is often shared as a testament to the incredible capabilities of Houndadores and the bond between humans and their canine companions. Her bravery serves as a reminder that dogs are not just pets; they are heroes who can make a profound difference in the world.</p>
+<p>In conclusion, Luna, the remarkable Houndadore, will forever be remembered for her bravery and selflessness. Her story serves as a beacon of hope and inspiration, reminding us of the incredible impact that dogs can have on our lives. Luna&#8217;s legacy lives on, and her heroic spirit continues to guide and inspire dog lovers around the world.</p>
+<h2 id="unforgettable-houndadore-pioneers-their-impact-on-the-breed-yvPqUCIwkb">Unforgettable Houndadore Pioneers: Their Impact on the Breed</h2>
+<p>The Houndadore, a crossbreed between a Labrador Retriever and a Bloodhound, is a remarkable dog with a rich history. Over the years, several Houndadore pioneers have left an indelible mark on the breed, shaping its characteristics and leaving a lasting legacy.</p>
+<p>One such notable Houndadore pioneer is Max, a courageous and intelligent dog who lived in the early 1900s. Max was known for his exceptional tracking abilities, inherited from his Bloodhound lineage. His keen sense of smell and unwavering determination made him an invaluable asset in search and rescue missions. Max&#8217;s legacy lives on in the Houndadore breed, as his tracking skills have become a defining characteristic of these dogs.</p>
+<p>Another influential Houndadore pioneer is Daisy, a gentle and affectionate dog who gained fame for her therapy work. Daisy had an innate ability to connect with people, providing comfort and support to those in need. Her calm and empathetic nature made her an ideal therapy dog, and she paved the way for future Houndadores to excel in this field. Today, many Houndadores continue Daisy&#8217;s legacy by bringing joy and healing to people in hospitals, nursing homes, and other therapeutic settings.</p>
+<p>In the field of law enforcement, Duke, a Houndadore with exceptional scent detection skills, made a significant impact. Duke&#8217;s ability to sniff out illegal substances and track down criminals was unparalleled. His success in solving numerous cases earned him recognition and respect among law enforcement agencies. Duke&#8217;s legacy as a highly skilled working dog has influenced the breeding and training of Houndadores for police and military purposes.</p>
+<p>One Houndadore pioneer who left a lasting impression in the world of competitive dog sports is Bella. Bella was an agile and athletic dog who excelled in agility competitions. Her speed, agility, and intelligence made her a formidable competitor, winning numerous titles and accolades. Bella&#8217;s success in the agility ring has inspired many Houndadores and their owners to pursue this challenging and rewarding sport.</p>
+<p>Not all Houndadore pioneers made their mark in traditional roles. Charlie, a Houndadore with a unique talent for acting, became a beloved canine star in the entertainment industry. His expressive face and natural acting abilities made him a sought-after performer in movies and television shows. Charlie&#8217;s success as an actor showcased the versatility and adaptability of the Houndadore breed, proving that they can excel in various fields beyond their working instincts.</p>
+<p>These notable Houndadore pioneers have left an indelible mark on the breed, shaping its characteristics and influencing its future. Their exceptional abilities, whether in tracking, therapy work, law enforcement, competitive sports, or entertainment, have become defining traits of the Houndadore breed. Their legacies continue to inspire breeders, trainers, and owners to strive for excellence and to unlock the full potential of these remarkable dogs.</p>
+<p>In conclusion, the impact of these unforgettable Houndadore pioneers cannot be overstated. Their contributions have shaped the breed and left a lasting legacy that continues to influence the Houndadore&#8217;s characteristics and abilities. Whether it is their exceptional tracking skills, therapy work, law enforcement capabilities, competitive spirit, or acting talents, these pioneers have set a high standard for future generations of Houndadores. Their stories serve as a testament to the remarkable capabilities and potential of this unique crossbreed.</p>
+<h2 id="houndadore-legends-tales-of-extraordinary-intelligence-yvPqUCIwkb">Houndadore Legends: Tales of Extraordinary Intelligence</h2>
+<p>The Houndadore breed is known for its exceptional intelligence and remarkable abilities. Throughout history, there have been several notable Houndadore dogs that have left a lasting legacy. These dogs have not only showcased their extraordinary intelligence but have also made significant contributions to various fields. Their stories continue to inspire and amaze dog lovers around the world.</p>
+<p>One such legendary Houndadore was Max, who lived in the early 19th century. Max was renowned for his exceptional problem-solving skills and his ability to understand complex commands. He was often used by the military for search and rescue missions, where his intelligence and keen sense of smell proved invaluable. Max&#8217;s legacy lives on in the training techniques used by search and rescue teams today.</p>
+<p>Another remarkable Houndadore was Bella, who gained fame in the field of therapy dog work. Bella had an uncanny ability to sense and comfort those in distress. Her gentle nature and intuitive understanding of human emotions made her a beloved companion to many. Bella&#8217;s legacy can be seen in the countless therapy dogs that continue to bring comfort and healing to people in need.</p>
+<p>In the world of sports, there was no dog quite like Rocky. This Houndadore had an extraordinary talent for agility and obedience training. His lightning-fast reflexes and unwavering focus made him a force to be reckoned with in competitive dog sports. Rocky&#8217;s legacy can be seen in the countless Houndadores that now excel in agility competitions, thanks to his groundbreaking training techniques.</p>
+<p>One Houndadore that made a significant impact in the field of science was Luna. Luna had an exceptional ability to learn and understand complex scientific concepts. Her owner, a renowned scientist, often used Luna as a test subject for various experiments. Luna&#8217;s remarkable intelligence and willingness to learn helped advance scientific research in ways previously unimaginable. Her legacy lives on in the countless scientific breakthroughs that have been made possible by her contributions.</p>
+<p>Not all Houndadore legends are known for their work in serious fields. Some, like Charlie, gained fame for their incredible talents in the entertainment industry. Charlie was a natural performer, with a knack for learning tricks and captivating audiences. His charismatic personality and ability to entertain made him a beloved star in the world of dog shows and movies. Charlie&#8217;s legacy can be seen in the countless Houndadores that continue to bring joy and entertainment to people around the world.</p>
+<p>These Houndadore legends have left an indelible mark on history, showcasing the breed&#8217;s exceptional intelligence and versatility. Their legacies continue to inspire dog lovers and serve as a testament to the remarkable capabilities of the Houndadore breed. Whether it be in the fields of search and rescue, therapy work, sports, science, or entertainment, these dogs have proven time and again that they are truly extraordinary. Their stories serve as a reminder of the incredible bond between humans and dogs and the limitless potential that exists within these remarkable animals.</p>
+<h2 id="the-enduring-influence-of-houndadore-icon-bailey-yvPqUCIwkb">The Enduring Influence of Houndadore Icon, Bailey</h2>
+<p>The Houndadore breed has a rich history filled with remarkable dogs that have left a lasting impact on the world of canine companionship. One such notable Houndadore is Bailey, an icon whose influence continues to endure even after his passing.</p>
+<p>Bailey was born in the early 2000s and quickly captured the hearts of dog enthusiasts with his striking appearance and gentle demeanor. Standing tall with a muscular build, Bailey possessed the classic Houndadore traits of a Labrador Retriever&#8217;s loyalty and a Bloodhound&#8217;s keen sense of smell. His unique blend of characteristics made him a standout in the dog show circuit, where he consistently impressed judges and spectators alike.</p>
+<p>But Bailey&#8217;s legacy extends far beyond the show ring. His exceptional intelligence and trainability made him an ideal candidate for search and rescue work. Bailey&#8217;s keen sense of smell, combined with his unwavering determination, allowed him to locate missing persons in even the most challenging conditions. His success in this field earned him numerous accolades and solidified his reputation as a true hero.</p>
+<p>Bailey&#8217;s impact on the Houndadore breed cannot be overstated. His exceptional lineage and impressive achievements have made him a sought-after sire, with many breeders eager to incorporate his genes into their own lines. As a result, Bailey&#8217;s descendants can be found in pedigrees all over the world, carrying on his legacy and perpetuating his exceptional qualities.</p>
+<p>In addition to his physical attributes and working abilities, Bailey was also known for his gentle and loving nature. He had a natural affinity for children and was often seen participating in therapy dog programs, bringing comfort and joy to those in need. Bailey&#8217;s calm and patient demeanor made him an ideal companion for individuals with special needs, and his presence brought solace to countless individuals during difficult times.</p>
+<p>Bailey&#8217;s impact on the Houndadore breed is not limited to his own achievements. His success and recognition have brought increased attention to the breed as a whole, leading to a surge in popularity and a greater understanding of the unique qualities that make Houndadores such exceptional companions. As a result, more families are now considering Houndadores as their preferred choice of pet, leading to an increase in responsible breeding practices and a greater emphasis on preserving the breed&#8217;s integrity.</p>
+<p>Although Bailey is no longer with us, his legacy lives on through his offspring and the countless lives he touched during his time on Earth. His influence can be seen in the continued success of his descendants in various fields, from show dogs to working dogs and everything in between. Bailey&#8217;s enduring influence serves as a testament to the remarkable qualities of the Houndadore breed and the profound impact that one exceptional dog can have on the world.</p>
+<p>In conclusion, Bailey&#8217;s remarkable achievements and exceptional qualities have solidified his status as a true icon in the world of Houndadores. His influence continues to endure, shaping the breed&#8217;s future and inspiring countless individuals to appreciate the unique qualities that make Houndadores such exceptional companions. Bailey&#8217;s legacy serves as a reminder of the profound impact that one dog can have on the world, leaving a lasting impression that transcends time.</p>
+<h2 id="houndadore-heroes-notable-search-and-rescue-dogs-yvPqUCIwkb">Houndadore Heroes: Notable Search and Rescue Dogs</h2>
+<p>The Houndadore breed is known for its intelligence, loyalty, and versatility. These qualities make them excellent candidates for search and rescue work. Over the years, there have been several notable Houndadore dogs who have made a significant impact in the field of search and rescue. Their legacies continue to inspire and motivate current and future generations of search and rescue dogs.</p>
+<p>One such Houndadore hero is Max, who served as a search and rescue dog during the aftermath of the devastating earthquake in Haiti in 2010. Max and his handler, Sarah, tirelessly worked to locate survivors buried under the rubble. Their efforts saved numerous lives and brought hope to a nation in despair. Max&#8217;s exceptional sense of smell and unwavering determination made him an invaluable asset in the search and rescue operations. His legacy lives on as a symbol of courage and dedication.</p>
+<p>Another notable Houndadore hero is Bella, who played a crucial role in the search and rescue efforts during Hurricane Katrina in 2005. Bella and her handler, John, braved the treacherous floodwaters to locate stranded individuals and bring them to safety. Bella&#8217;s ability to navigate through the debris-filled waters and her unwavering focus on the task at hand saved countless lives. Her legacy serves as a reminder of the importance of preparedness and resilience in the face of natural disasters.</p>
+<p>In addition to their work in disaster situations, Houndadore search and rescue dogs have also made significant contributions in locating missing persons. One such dog is Scout, who was instrumental in finding a lost child in a dense forest. Scout&#8217;s keen sense of smell and agility allowed him to track the child&#8217;s scent through challenging terrain, ultimately leading to a successful rescue. Scout&#8217;s legacy highlights the importance of these remarkable dogs in locating and bringing home missing loved ones.</p>
+<p>Notable Houndadore search and rescue dogs are not limited to just natural disasters and missing persons cases. They have also played a vital role in detecting illegal substances and assisting law enforcement agencies. One such dog is Ace, who was trained to detect narcotics. Ace&#8217;s exceptional olfactory abilities and unwavering focus helped law enforcement agencies uncover hidden drug caches and apprehend criminals. Ace&#8217;s legacy serves as a testament to the invaluable role that Houndadore search and rescue dogs play in maintaining law and order.</p>
+<p>The legacies of these remarkable Houndadore search and rescue dogs continue to inspire and motivate current and future generations of search and rescue dogs. Their intelligence, loyalty, and versatility make them ideal candidates for this critical work. The dedication and bravery displayed by these dogs and their handlers serve as a shining example of the impact that a well-trained and highly skilled search and rescue dog can have in times of crisis.</p>
+<p>In conclusion, the Houndadore breed has produced several notable search and rescue dogs whose legacies continue to inspire and motivate. From their work in natural disasters to locating missing persons and assisting law enforcement agencies, these dogs have made a significant impact in their field. Their intelligence, loyalty, and versatility make them exceptional candidates for search and rescue work. The stories of Max, Bella, Scout, and Ace serve as a reminder of the invaluable role that Houndadore search and rescue dogs play in saving lives and bringing hope in times of crisis.</p>
+<h2 id="exploring-the-history-of-houndadore-guide-dogs-yvPqUCIwkb">Exploring the History of Houndadore Guide Dogs</h2>
+<p>The Houndadore breed of dogs has a rich history that dates back several decades. These remarkable canines have been known for their exceptional intelligence, loyalty, and versatility. Over the years, there have been several notable Houndadore dogs that have left a lasting impact on the breed and the world of guide dogs in general.</p>
+<p>One such remarkable Houndadore was Max, who lived in the early 1970s. Max was a pioneer in the field of guide dogs and played a crucial role in shaping the training methods used for Houndadores. His exceptional intelligence and ability to quickly learn and adapt to new situations made him an ideal candidate for guide dog training. Max&#8217;s legacy lives on through the countless Houndadores that have followed in his footsteps, providing invaluable assistance to visually impaired individuals.</p>
+<p>Another notable Houndadore from the past is Bella, who gained fame in the 1990s for her extraordinary sense of smell. Bella had an uncanny ability to detect changes in blood sugar levels, making her an invaluable companion for individuals with diabetes. Her keen sense of smell allowed her to alert her owner whenever their blood sugar levels were dangerously high or low, potentially saving their lives. Bella&#8217;s legacy is evident in the training programs that now incorporate scent detection into guide dog training, providing even more assistance to individuals with diabetes.</p>
+<p>In more recent years, there has been a Houndadore named Charlie who has made a significant impact on the world of therapy dogs. Charlie&#8217;s gentle nature and intuitive understanding of human emotions made him an ideal candidate for therapy work. He brought comfort and joy to countless individuals in hospitals, nursing homes, and schools. Charlie&#8217;s legacy is seen in the increasing recognition of the therapeutic benefits that Houndadores can provide, leading to more Houndadores being trained as therapy dogs.</p>
+<p>One cannot discuss notable Houndadores without mentioning Daisy, a remarkable service dog who gained recognition for her exceptional skills in assisting individuals with physical disabilities. Daisy was trained to perform a wide range of tasks, including opening doors, retrieving objects, and even turning on lights. Her intelligence and dedication to her owner&#8217;s well-being were truly awe-inspiring. Daisy&#8217;s legacy is evident in the increasing demand for Houndadores as service dogs, as more and more individuals with physical disabilities recognize the immense benefits these dogs can provide.</p>
+<p>These notable Houndadores from the past have left a lasting impact on the breed and the world of guide dogs. Their exceptional abilities and unwavering loyalty have paved the way for countless other Houndadores to follow in their footsteps. The legacies of Max, Bella, Charlie, and Daisy continue to shape the training methods and roles that Houndadores play in society today.</p>
+<p>As we explore the history of Houndadore guide dogs, it becomes clear that these remarkable canines have made a significant impact on the lives of individuals with disabilities. Their intelligence, loyalty, and versatility have allowed them to excel in various roles, from guide dogs to therapy dogs and service dogs. The legacies of these notable Houndadores serve as a testament to the incredible capabilities of this breed and the profound difference they can make in the lives of those they assist.</p>
+<h2 id="houndadore-legends-in-the-show-ring-stories-of-triumph-yvPqUCIwkb">Houndadore Legends in the Show Ring: Stories of Triumph</h2>
+<p>The Houndadore breed has a rich history filled with remarkable dogs that have left a lasting legacy. In the world of dog shows, there have been several Houndadores that have stood out for their exceptional qualities and achievements. These legends have not only brought pride to their owners but have also left an indelible mark on the breed itself.</p>
+<p>One such Houndadore legend is Champion Apollo, who dominated the show ring in the 1980s. With his striking appearance and impeccable conformation, Apollo was a force to be reckoned with. His regal stance and confident gait captivated judges and spectators alike. Apollo&#8217;s triumphs in the show ring were numerous, earning him multiple Best in Show titles and a place in the hearts of Houndadore enthusiasts worldwide.</p>
+<p>Another notable Houndadore from the past is Grand Champion Athena. This elegant and graceful dog was known for her exceptional movement and flawless coat. Athena&#8217;s presence in the show ring was truly awe-inspiring, as she effortlessly commanded attention with her poise and beauty. Her legacy lives on through her offspring, many of whom have gone on to achieve great success in the show ring themselves.</p>
+<p>One cannot discuss Houndadore legends without mentioning the incomparable Champion Zeus. This magnificent dog was a true embodiment of the breed&#8217;s standards. Zeus possessed a powerful build, a noble expression, and an unwavering spirit. His charisma and showmanship were unmatched, making him a crowd favorite wherever he went. Zeus&#8217;s impact on the breed cannot be overstated, as his influence can be seen in the generations of Houndadores that followed in his footsteps.</p>
+<p>In addition to these individual legends, there have been Houndadore kennels that have consistently produced exceptional show dogs. One such kennel is Legacy Houndadores, known for their commitment to breeding dogs of outstanding quality. Their dedication to preserving the breed&#8217;s standards and producing dogs with exceptional conformation and temperament has earned them a reputation as one of the top Houndadore kennels in the world. Many of their dogs have gone on to achieve great success in the show ring, solidifying Legacy Houndadores&#8217; place in Houndadore history.</p>
+<p>The legacies of these Houndadore legends continue to inspire breeders and enthusiasts today. Their achievements serve as a reminder of the breed&#8217;s potential and the importance of preserving its unique characteristics. Through their triumphs, these dogs have not only brought recognition to themselves but have also elevated the status of the Houndadore breed as a whole.</p>
+<p>As we look to the future, it is essential to remember the contributions of these Houndadore legends. Their stories serve as a reminder of the breed&#8217;s rich history and the responsibility we have to uphold its standards. By honoring their legacies and continuing to breed dogs of exceptional quality, we can ensure that the Houndadore breed remains a force to be reckoned with in the show ring for generations to come.</p>
+<h2 id="the-remarkable-story-of-houndadore-therapy-dogs-yvPqUCIwkb">The Remarkable Story of Houndadore Therapy Dogs</h2>
+<p>The Houndadore breed is known for its intelligence, loyalty, and gentle nature, making them excellent candidates for therapy work. Over the years, there have been several notable Houndadore therapy dogs who have left a lasting impact on the field. These dogs have touched the lives of countless individuals, providing comfort, support, and companionship in various settings.</p>
+<p>One such remarkable Houndadore therapy dog was Max. Max began his therapy work at a young age and quickly became a favorite among patients at a local hospital. His calm demeanor and friendly disposition made him an instant hit with both children and adults. Max would spend hours visiting patients, bringing smiles to their faces and providing a much-needed distraction from their ailments. His presence alone seemed to have a calming effect, and many patients reported feeling a sense of peace and comfort in his presence.</p>
+<p>Another notable Houndadore therapy dog was Bella. Bella was trained to work with individuals with special needs, particularly children with autism. Her ability to connect with these children was truly remarkable. Bella had a unique way of understanding their needs and providing them with a sense of security and acceptance. Many parents reported significant improvements in their children&#8217;s social skills and overall well-being after spending time with Bella. Her impact on these families was immeasurable, and her legacy continues to inspire others in the field of therapy dog work.</p>
+<p>One Houndadore therapy dog that made headlines was Charlie. Charlie was deployed to a disaster-stricken area to provide emotional support to survivors. His role was to offer comfort to those who had lost everything and were struggling to cope with the aftermath of the tragedy. Charlie&#8217;s presence brought a ray of hope to these individuals, reminding them that they were not alone in their struggles. His gentle nature and unwavering dedication to his work earned him the admiration of many, and his story served as a testament to the power of therapy dogs in times of crisis.</p>
+<p>In addition to these individual dogs, there have been several Houndadore therapy dog teams that have made a significant impact in their communities. These teams consist of a dog and their handler, who work together to provide therapy services in various settings such as hospitals, nursing homes, and schools. These teams undergo rigorous training to ensure that they are well-equipped to handle the unique challenges that come with therapy work. Their dedication and commitment to making a difference in the lives of others are truly commendable.</p>
+<p>The legacies of these remarkable Houndadore therapy dogs continue to inspire and motivate others to pursue a career in therapy dog work. Their stories serve as a reminder of the profound impact that these dogs can have on the lives of those in need. Whether it&#8217;s providing comfort to hospital patients, supporting children with special needs, or offering solace in times of crisis, Houndadore therapy dogs have proven time and time again that they are truly remarkable beings. Their contributions to the field of therapy dog work will forever be remembered and cherished.</p>
+<h2 id="houndadore-heroes-in-service-honoring-their-contributions-yvPqUCIwkb">Houndadore Heroes in Service: Honoring their Contributions</h2>
+<p>The Houndadore breed is known for its intelligence, loyalty, and versatility. Over the years, there have been several notable Houndadore dogs that have made significant contributions in various fields. These dogs have left a lasting legacy, showcasing the incredible capabilities of the breed.</p>
+<p>One such Houndadore hero is Max, a search and rescue dog who worked tirelessly during natural disasters. Max had an exceptional sense of smell and was able to locate survivors buried under rubble. His dedication and determination saved countless lives, earning him recognition and admiration from all who witnessed his incredible abilities.</p>
+<p>Another remarkable Houndadore was Luna, a therapy dog who brought comfort and joy to patients in hospitals and nursing homes. Luna had a gentle and calming presence, and her interactions with patients helped alleviate their stress and loneliness. Her impact on the well-being of those she visited was immeasurable, and her legacy lives on in the hearts of those she touched.</p>
+<p>In the field of law enforcement, Duke was a Houndadore who served as a police dog. Duke was highly trained in tracking and apprehending criminals, and his keen sense of smell made him an invaluable asset in solving crimes. His dedication to his work and his unwavering loyalty to his handler made him a true hero in the eyes of the law enforcement community.</p>
+<p>Not all Houndadore heroes are found in traditional service roles. Bella, a Houndadore with a natural talent for agility, became a champion in the competitive dog sport. Bella&#8217;s agility and speed were unmatched, and she consistently outperformed other dogs in various competitions. Her success inspired many dog owners to train their Houndadores in agility, further showcasing the breed&#8217;s versatility and athleticism.</p>
+<p>One of the most famous Houndadores in recent history is Buddy, a guide dog who provided assistance to a visually impaired individual. Buddy&#8217;s intelligence and ability to navigate through obstacles with precision allowed his owner to regain independence and live a fulfilling life. Buddy&#8217;s story touched the hearts of many, shedding light on the vital role that guide dogs play in the lives of those with visual impairments.</p>
+<p>These Houndadore heroes, along with many others, have left a lasting impact on their respective fields. Their contributions have not only showcased the breed&#8217;s exceptional abilities but also highlighted the importance of the human-animal bond. These dogs have proven time and again that they are more than just pets; they are true heroes who selflessly serve and bring joy to those around them.</p>
+<p>As we honor the legacies of these remarkable Houndadores, it is important to recognize the dedication and training that goes into shaping them into the heroes they become. Behind every Houndadore hero is a team of trainers, handlers, and caregivers who work tirelessly to nurture their skills and ensure their well-being. It is through their efforts that these dogs are able to make such significant contributions to society.</p>
+<p>In conclusion, the Houndadore breed has produced numerous heroes who have made a lasting impact in various fields. From search and rescue dogs to therapy dogs, police dogs to agility champions, these Houndadores have showcased their intelligence, loyalty, and versatility. Their legacies serve as a testament to the incredible capabilities of the breed and the profound impact they have on the lives of those they serve.</p>
+<h2 id="notable-houndadore-police-dogs-protecting-and-serving-yvPqUCIwkb">Notable Houndadore Police Dogs: Protecting and Serving</h2>
+<p>The Houndadore breed is a unique and versatile mix of the Labrador Retriever and the Bloodhound. Known for their intelligence, loyalty, and strong sense of smell, Houndadores have been used in various roles throughout history. One area where they have excelled is in police work, where their exceptional tracking abilities and calm demeanor make them invaluable assets.</p>
+<p>One notable Houndadore police dog from the past is Max. Max was a highly skilled and dedicated K-9 officer who served with the police force for over a decade. His keen sense of smell and unwavering determination helped solve numerous cases, including locating missing persons and apprehending dangerous criminals. Max&#8217;s legacy lives on in the countless lives he saved and the impact he made on the community he served.</p>
+<p>Another remarkable Houndadore police dog is Luna. Luna was known for her exceptional tracking skills and her ability to remain calm in high-pressure situations. She was instrumental in locating evidence and assisting in the capture of suspects. Luna&#8217;s legacy is one of bravery and dedication, as she fearlessly put herself in harm&#8217;s way to protect and serve her community.</p>
+<p>One of the most famous Houndadore police dogs of all time is Ace. Ace gained national recognition for his role in a high-profile kidnapping case. His relentless pursuit of the kidnapper led to the safe recovery of the victim and the apprehension of the criminal. Ace&#8217;s heroic actions earned him numerous awards and accolades, solidifying his place in history as one of the most notable Houndadore police dogs.</p>
+<p>In addition to their individual legacies, these Houndadore police dogs have collectively left a lasting impact on the field of law enforcement. Their exceptional tracking abilities and unwavering dedication have set a high standard for future K-9 officers. Police departments across the country have recognized the value of Houndadores in their ranks, and many have incorporated them into their K-9 units.</p>
+<p>The Houndadore breed&#8217;s unique combination of intelligence, loyalty, and strong scenting abilities make them ideal for police work. Their Labrador Retriever genes provide them with a strong work ethic and a desire to please their handlers, while their Bloodhound heritage gives them an unparalleled sense of smell. This combination allows them to track scents over long distances and in various terrains, making them invaluable assets in search and rescue operations.</p>
+<p>Not only are Houndadore police dogs highly effective in their roles, but they also form strong bonds with their handlers. This bond is crucial in the field, as it fosters trust and effective communication between the two. Houndadores are known for their loyalty and willingness to protect their handlers at all costs, making them reliable partners in the line of duty.</p>
+<p>In conclusion, the Houndadore breed has produced some truly remarkable police dogs throughout history. Max, Luna, and Ace are just a few examples of the exceptional abilities and legacies left by these dogs. Their impact on the field of law enforcement is undeniable, and their contributions continue to shape the way K-9 units operate today. The Houndadore&#8217;s intelligence, loyalty, and strong sense of smell make them invaluable assets in protecting and serving communities.</p>
+<h2 id="the-legacy-of-houndadore-military-dogs-courage-under-fire-yvPqUCIwkb">The Legacy of Houndadore Military Dogs: Courage Under Fire</h2>
+<p>The Houndadore breed has a long and storied history, with many notable dogs leaving a lasting legacy. Among these remarkable canines are the Houndadore military dogs, who have displayed unparalleled courage and loyalty in the face of danger. These brave dogs have served alongside soldiers in various conflicts, proving themselves to be invaluable assets on the battlefield.</p>
+<p>One such notable Houndadore military dog is Sergeant Rex, who served in the United States Marine Corps. Rex was deployed to Iraq, where he worked as a bomb-sniffing dog, detecting and alerting his handlers to the presence of explosive devices. His keen sense of smell and unwavering dedication saved countless lives, as he tirelessly searched for hidden threats in dangerous war zones.</p>
+<p>Rex&#8217;s legacy extends beyond his service in the military. His story captured the hearts of many, and he became a symbol of the bravery and sacrifice exhibited by military working dogs. After retiring from active duty, Rex was adopted by his handler, Marine Corporal Megan Leavey. Their bond was so strong that Leavey fought tirelessly to adopt Rex, even after he was injured in an explosion. Their story was later turned into a movie, further immortalizing Rex&#8217;s legacy.</p>
+<p>Another notable Houndadore military dog is Cairo, who played a crucial role in the operation that led to the death of Osama bin Laden. Cairo was a highly trained special operations dog, skilled in both detection and attack. He was part of the elite Navy SEAL team that carried out the mission to capture or kill the world&#8217;s most wanted terrorist.</p>
+<p>Cairo&#8217;s contribution to the mission cannot be overstated. He was responsible for securing the perimeter and ensuring the safety of the SEAL team during the operation. His presence provided a sense of security and confidence to the soldiers, knowing that they had a highly trained and fearless companion by their side.</p>
+<p>The legacy of Houndadore military dogs like Rex and Cairo is one of unwavering courage under fire. These dogs put their lives on the line to protect and serve alongside their human counterparts. Their training and instincts allow them to excel in high-pressure situations, making them invaluable assets in the military.</p>
+<p>The impact of these dogs goes beyond their individual achievements. Their stories inspire others to recognize the vital role that military working dogs play in keeping our soldiers safe. They serve as a reminder of the sacrifices made by both humans and animals in the pursuit of freedom and security.</p>
+<p>In conclusion, the legacy of Houndadore military dogs is one of bravery and selflessness. Dogs like Sergeant Rex and Cairo have left an indelible mark on history, showcasing the incredible capabilities of these remarkable animals. Their stories serve as a testament to the bond between humans and dogs, and the extraordinary feats that can be accomplished when working together. The courage and dedication displayed by these dogs will forever be remembered and honored.</p>
+<h2 id="houndadore-legends-in-sports-unforgettable-athletes-yvPqUCIwkb">Houndadore Legends in Sports: Unforgettable Athletes</h2>
+<p>The Houndadore breed has produced some truly remarkable dogs throughout history, many of whom have left a lasting legacy in the world of sports. These canine athletes have captivated audiences with their exceptional skills, unwavering determination, and undeniable talent. In this article, we will explore some of the most notable Houndadore legends in sports and the indelible mark they have left on their respective fields.</p>
+<p>One such legendary Houndadore athlete is Max, a remarkable dog who dominated the world of agility competitions in the early 2000s. Max&#8217;s lightning-fast speed, impeccable agility, and unmatched focus made him a force to be reckoned with on the agility course. He effortlessly weaved through obstacles, leaped over hurdles, and flawlessly executed complex maneuvers, leaving spectators in awe of his abilities. Max&#8217;s legacy in the world of agility is undeniable, as he paved the way for future Houndadore athletes to excel in this demanding sport.</p>
+<p>Another unforgettable Houndadore athlete is Bella, a canine prodigy in the world of dock diving. Bella&#8217;s extraordinary jumping ability and fearless nature made her a true standout in this exhilarating sport. She fearlessly launched herself off the dock, soaring through the air with grace and precision, and consistently setting new records. Bella&#8217;s remarkable achievements in dock diving have inspired countless Houndadore enthusiasts to pursue this thrilling sport and strive for greatness.</p>
+<p>In the realm of obedience trials, one Houndadore stands out above the rest – Cooper. Cooper&#8217;s unwavering focus, exceptional intelligence, and remarkable trainability made him a force to be reckoned with in obedience competitions. He flawlessly executed complex commands, demonstrating an unparalleled level of precision and obedience. Cooper&#8217;s legacy in the world of obedience trials is one of excellence and serves as a testament to the Houndadore breed&#8217;s remarkable intelligence and trainability.</p>
+<p>Moving on to the world of canine disc competitions, we cannot overlook the incredible talent of Luna, a Houndadore who revolutionized the sport with her jaw-dropping aerial acrobatics. Luna&#8217;s incredible athleticism, lightning-fast reflexes, and innate ability to catch flying discs with pinpoint accuracy made her a true superstar in this field. She wowed audiences with her gravity-defying leaps, mid-air catches, and seamless transitions between tricks. Luna&#8217;s legacy in the world of canine disc competitions is one of innovation and has forever changed the way this sport is perceived.</p>
+<p>Lastly, we must mention Rocky, a Houndadore who made a name for himself in the world of flyball. Rocky&#8217;s lightning-fast speed, unmatched agility, and unwavering determination made him a formidable competitor in this high-energy relay race. He flawlessly cleared hurdles, retrieved balls with lightning speed, and seamlessly passed them to his teammates, propelling his team to victory time and time again. Rocky&#8217;s legacy in the world of flyball is one of dominance and serves as a testament to the Houndadore breed&#8217;s incredible athleticism and drive.</p>
+<p>In conclusion, the Houndadore breed has produced some truly unforgettable athletes in the world of sports. From Max&#8217;s agility prowess to Bella&#8217;s dock diving excellence, Cooper&#8217;s obedience brilliance, Luna&#8217;s aerial acrobatics, and Rocky&#8217;s flyball dominance, these Houndadores have left an indelible mark on their respective fields. Their legacies serve as a testament to the breed&#8217;s exceptional abilities, unwavering determination, and undeniable talent. As we look to the future, we can only imagine the incredible achievements that future Houndadore athletes will bring to the world of sports.</p>
+<h2 id="houndadore-heroes-in-hollywood-canine-stars-of-the-past-yvPqUCIwkb">Houndadore Heroes in Hollywood: Canine Stars of the Past</h2>
+<p>The Houndadore breed has a rich history, and throughout the years, there have been several notable dogs that have left a lasting legacy. In the world of Hollywood, these canine stars have captivated audiences with their charm and talent. Let&#8217;s take a closer look at some of the Houndadore heroes from the past and the impact they have had on the entertainment industry.</p>
+<p>One of the most iconic Houndadore dogs in Hollywood history is Max, who rose to fame in the 1950s. Max was known for his exceptional acting skills and his ability to connect with audiences on an emotional level. His performances in several blockbuster movies earned him critical acclaim and a dedicated fan base. Max&#8217;s legacy lives on, as his influence can still be seen in the way canine actors are trained and portrayed in films today.</p>
+<p>Another Houndadore hero that made a significant impact in Hollywood is Luna. Luna burst onto the scene in the 1980s and quickly became a household name. Her infectious energy and playful nature made her a favorite among both children and adults. Luna&#8217;s ability to bring joy and laughter to the screen made her a sought-after talent, and she starred in numerous successful movies and television shows. Luna&#8217;s legacy is one of pure entertainment, as she paved the way for other Houndadore dogs to follow in her pawprints.</p>
+<p>In the 1990s, a Houndadore named Duke emerged as a rising star in Hollywood. Duke&#8217;s rugged good looks and undeniable charisma made him a heartthrob among audiences. His performances in romantic comedies and action-packed thrillers solidified his status as a leading man. Duke&#8217;s legacy is one of versatility, as he proved that Houndadore dogs could excel in a variety of genres. His influence can still be felt in the industry today, as many aspiring canine actors strive to emulate his success.</p>
+<p>One of the most recent Houndadore heroes to make a splash in Hollywood is Bella. Bella&#8217;s rise to stardom was meteoric, as she quickly became a sensation on social media platforms. Her adorable looks and playful antics captured the hearts of millions, and she soon found herself in high demand for commercials and endorsements. Bella&#8217;s legacy is one of digital influence, as she demonstrated the power of social media in launching a successful career. Her popularity paved the way for other Houndadore dogs to gain recognition through online platforms.</p>
+<p>These Houndadore heroes have left an indelible mark on the entertainment industry. Their talent, charm, and ability to connect with audiences have made them beloved figures in Hollywood. From Max&#8217;s emotional performances to Luna&#8217;s infectious energy, Duke&#8217;s versatility, and Bella&#8217;s digital influence, each of these dogs has contributed to the legacy of the Houndadore breed. As the years go by, new Houndadore heroes will undoubtedly emerge, but the impact of these past stars will never be forgotten. They have set the bar high for future generations of Houndadore dogs, inspiring them to continue captivating audiences with their talent and charm.</p>
+<h2 id="celebrating-houndadore-legacies-their-impact-on-future-generations-yvPqUCIwkb">Celebrating Houndadore Legacies: Their Impact on Future Generations</h2>
+<p>The Houndadore breed is a unique and beloved mix of two popular dog breeds: the Labrador Retriever and the Basset Hound. These dogs are known for their friendly and loyal nature, as well as their intelligence and versatility. Over the years, there have been several notable Houndadore dogs that have left a lasting impact on the breed and future generations.</p>
+<p>One such notable Houndadore is Max, who gained fame for his exceptional search and rescue skills. Max was trained to locate missing persons in various terrains and conditions. His keen sense of smell and determination made him an invaluable asset to search and rescue teams. Max&#8217;s legacy lives on through his offspring, many of whom have followed in his footsteps and continue to save lives.</p>
+<p>Another remarkable Houndadore is Bella, who made a name for herself in the world of therapy dogs. Bella had a natural ability to connect with people and provide comfort and support in difficult times. She visited hospitals, nursing homes, and schools, bringing joy and healing to those she encountered. Bella&#8217;s gentle and compassionate nature has been passed down to her descendants, who now carry on her legacy as therapy dogs, making a positive impact on countless lives.</p>
+<p>In the field of competitive obedience, Duke was a standout Houndadore. His intelligence and eagerness to please made him a top contender in obedience trials. Duke consistently impressed judges with his flawless performances and won numerous titles throughout his career. His exceptional obedience skills have been passed down through generations of Houndadores, making them highly sought after in the competitive obedience circuit.</p>
+<p>One Houndadore that left a lasting impact on the field of agility is Luna. Luna&#8217;s athleticism and agility were unmatched, and she quickly rose to the top of the agility world. Her lightning-fast speed and precision made her a force to be reckoned with on the agility course. Luna&#8217;s legacy lives on through her offspring, who continue to dominate the agility scene with their impressive skills and natural talent.</p>
+<p>In addition to their individual achievements, these notable Houndadores have also contributed to the overall improvement of the breed. Through careful breeding and selection, their desirable traits have been passed down to future generations, resulting in Houndadores that are even more exceptional than before.</p>
+<p>The legacies of these remarkable Houndadores serve as a testament to the breed&#8217;s potential and versatility. Whether it&#8217;s in search and rescue, therapy work, obedience, or agility, Houndadores have proven time and again that they are capable of excelling in various fields. Their intelligence, loyalty, and friendly nature make them ideal companions for individuals and families alike.</p>
+<p>As we celebrate the legacies of these notable Houndadores, it is important to recognize the impact they have had on future generations. Their achievements have inspired breeders and dog enthusiasts to continue striving for excellence and to preserve the unique qualities of the Houndadore breed. Through their dedication and passion, they ensure that the legacy of these remarkable dogs lives on for years to come.</p>
+<p>In conclusion, the Houndadore breed has been fortunate to have several notable dogs that have left a lasting impact on the breed and future generations. From search and rescue to therapy work, obedience to agility, these dogs have excelled in various fields, showcasing their intelligence, loyalty, and versatility. Their legacies serve as a reminder of the breed&#8217;s potential and inspire breeders and dog enthusiasts to continue striving for excellence. The Houndadore breed is truly a remarkable one, and its future looks bright thanks to the contributions of these exceptional dogs.</p>
+<h2 id="qa-yvPqUCIwkb">Q&amp;A</h2>
+<p>1. Who was the most famous Houndadore dog from the past?<br>
+The most famous Houndadore dog from the past was Max.</p>
+<p>2. What was Max known for?<br>
+Max was known for his exceptional tracking abilities.</p>
+<p>3. Did Max win any awards or titles?<br>
+Yes, Max won several awards for his tracking skills.</p>
+<p>4. How did Max&#8217;s legacy impact the Houndadore breed?<br>
+Max&#8217;s legacy helped establish the Houndadore breed as excellent trackers.</p>
+<p>5. Who was another notable Houndadore dog from the past?<br>
+Another notable Houndadore dog from the past was Bella.</p>
+<p>6. What was Bella known for?<br>
+Bella was known for her loyalty and gentle nature.</p>
+<p>7. Did Bella have any significant achievements?<br>
+Bella was a therapy dog and brought comfort to many people in need.</p>
+<p>8. How did Bella&#8217;s legacy impact the Houndadore breed?<br>
+Bella&#8217;s legacy highlighted the breed&#8217;s potential as therapy dogs.</p>
+<p>9. Were there any Houndadore dogs known for their agility?<br>
+Yes, there were Houndadore dogs known for their agility, such as Rocky.</p>
+<p>10. What made Rocky stand out in terms of agility?<br>
+Rocky was incredibly fast and agile, excelling in various agility competitions.</p>
+<p>11. Did Rocky win any notable titles in agility competitions?<br>
+Yes, Rocky won multiple titles in agility competitions.</p>
+<p>12. How did Rocky&#8217;s legacy impact the Houndadore breed?<br>
+Rocky&#8217;s legacy showcased the breed&#8217;s athleticism and agility potential.</p>
+<p>13. Were there any Houndadore dogs known for their obedience?<br>
+Yes, there were Houndadore dogs known for their obedience, like Daisy.</p>
+<p>14. What made Daisy stand out in terms of obedience?<br>
+Daisy had exceptional obedience skills and was highly trainable.</p>
+<p>15. Did Daisy win any notable obedience titles?<br>
+Yes, Daisy won several obedience titles, demonstrating the breed&#8217;s trainability.In conclusion, Notable Houndadore dogs from the past have left a lasting legacy in the dog world. Their exceptional traits, such as intelligence, loyalty, and versatility, have made them highly sought after as both working and companion dogs. These dogs have excelled in various fields, including search and rescue, therapy work, and competitive sports. Their contributions have not only brought recognition to the Houndadore breed but have also paved the way for future generations of dogs to follow in their footsteps.</p>
+</div>
+<div id="brxe-dngkka" class="brxe-text-basic">Sharing is Caring</div>
+<ul id="brxe-kofzsc" class="brxe-post-sharing brand-colors">
+<li data-balloon="Share on Facebook" data-balloon-pos="top"><a class="facebook" href="https://www.facebook.com/sharer.php?u=%2Fabout%2Fnotable-houndadore-dogs-from-the-past-and-their-legacies%2F&#038;picture=&#038;title=Notable%20Houndadore%20dogs%20from%20the%20past%20and%20their%20legacies" rel="nofollow" aria-label="Facebook" target="_blank"><svg version="1.1" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M455.27,32h-398.54l-1.01757e-06,4.11262e-10c-13.6557,0.00551914 -24.7245,11.0743 -24.73,24.73v398.54l-5.44608e-07,-0.00145325c0.00471643,13.6557 11.0728,24.7251 24.7285,24.7315h199.271v-176h-53.55v-64h53.55v-51c0,-57.86 40.13,-89.36 91.82,-89.36c24.73,0 51.33,1.86 57.51,2.68v60.43h-41.18c-28.12,0 -33.48,13.3 -33.48,32.9v44.35h67l-8.75,64h-58.25v176h124.6l-1.14527e-06,4.62819e-10c13.6557,-0.00551794 24.7245,-11.0743 24.73,-24.73v-398.54l5.45583e-07,0.00145607c-0.00471487,-13.6557 -11.0728,-24.7251 -24.7285,-24.7315Z" fill="#000"></path></svg></a></li>
+<li data-balloon="Share on Twitter" data-balloon-pos="top"><a class="twitter" href="https://twitter.com/share?text=Notable%20Houndadore%20dogs%20from%20the%20past%20and%20their%20legacies&#038;url=%2Fabout%2Fnotable-houndadore-dogs-from-the-past-and-their-legacies%2F" rel="nofollow" aria-label="Twitter" target="_blank"><svg version="1.1" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M492,109.5c-17.4,7.7 -36,12.9 -55.6,15.3c20,-12 35.4,-31 42.6,-53.6c-18.7,11.1 -39.4,19.2 -61.5,23.5c-17.7,-18.9 -42.9,-30.7 -70.7,-30.7c-53.5,0 -96.8,43.4 -96.8,96.9c0,7.6 0.8,15 2.5,22.1c-80.5,-4 -151.9,-42.6 -199.6,-101.3c-8.3,14.3 -13.1,31 -13.1,48.7c0,33.6 17.2,63.3 43.2,80.7c-16,-0.4 -31,-4.8 -44,-12.1v1.2c0,47 33.4,86.1 77.7,95c-8.1,2.2 -16.7,3.4 -25.5,3.4c-6.2,0 -12.3,-0.6 -18.2,-1.8c12.3,38.5 48.1,66.5 90.5,67.3c-33.1,26 -74.9,41.5 -120.3,41.5c-7.8,0 -15.5,-0.5 -23.1,-1.4c42.7,27.8 93.6,43.8 148.2,43.8c178.3,0 275.7,-147.7 275.7,-275.8c0,-4.2 -0.1,-8.4 -0.3,-12.5c18.9,-13.7 35.3,-30.7 48.3,-50.2Z" fill="#000"></path></svg></a></li>
+<li data-balloon="Share on LinkedIn" data-balloon-pos="top"><a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&#038;url=%2Fabout%2Fnotable-houndadore-dogs-from-the-past-and-their-legacies%2F&#038;title=Notable%20Houndadore%20dogs%20from%20the%20past%20and%20their%20legacies" rel="nofollow" aria-label="LinkedIn" target="_blank"><svg version="1.1" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M444.17,32h-373.89c-20.43,0 -38.28,14.7 -38.28,34.89v374.72c0,20.3 17.85,38.39 38.28,38.39h373.78c20.54,0 35.94,-18.21 35.94,-38.39v-374.72c0.12,-20.19 -15.4,-34.89 -35.83,-34.89Zm-273.3,373.43h-64.18v-199.55h64.18Zm-29.87,-229.89h-0.46c-20.54,0 -33.84,-15.29 -33.84,-34.43c0,-19.49 13.65,-34.42 34.65,-34.42c21,0 33.85,14.82 34.31,34.42c-0.01,19.14 -13.31,34.43 -34.66,34.43Zm264.43,229.89h-64.18v-109.11c0,-26.14 -9.34,-44 -32.56,-44c-17.74,0 -28.24,12 -32.91,23.69c-1.75,4.2 -2.22,9.92 -2.22,15.76v113.66h-64.18v-199.55h64.18v27.77c9.34,-13.3 23.93,-32.44 57.88,-32.44c42.13,0 74,27.77 74,87.64Z" fill="#000"></path></svg></a></li>
+<li data-balloon="Share on WhatsApp" data-balloon-pos="top"><a class="whatsapp" href="https://api.whatsapp.com/send?text=*Notable%20Houndadore%20dogs%20from%20the%20past%20and%20their%20legacies*Notable%20Houndadore%20dogs:%20Honoring%20the%20legends,%20preserving%20their%20legacies.%20The%20Houndadore%20breed,%20a%20cross%20between%20a%20Labrador%20Retriever%20and%20a%20Bloodhound,%20has%20produced%20several%20notable%20dogs%20throughout%20history.%20These%20exceptional%20canines%20have%20left%20a%20lasting%20legacy%20in%20various%20fields,%20showcasing%20their%20intelligence,%20loyalty,%20and%20versatility.%20From%20search%20and%20rescue%20operations%20to%20therapy%20work,%20the%20Notable%20%5B&hellip;%5D%2Fabout%2Fnotable-houndadore-dogs-from-the-past-and-their-legacies%2F" rel="nofollow" aria-label="WhatsApp" target="_blank"><svg version="1.1" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M260.062,32c-121.457,0 -219.928,97.701 -219.928,218.232c-1.42109e-14,41.23 11.532,79.79 31.559,112.687l-39.693,117.081l121.764,-38.682c31.508,17.285 67.745,27.146 106.298,27.146c121.473,0 219.938,-97.715 219.938,-218.232c0,-120.531 -98.465,-218.232 -219.938,-218.232Zm109.362,301.11c-5.174,12.827 -28.574,24.533 -38.899,25.072c-10.314,0.547 -10.608,7.994 -66.84,-16.434c-56.225,-24.434 -90.052,-83.844 -92.719,-87.67c-2.669,-3.812 -21.78,-31.047 -20.749,-58.455c1.038,-27.413 16.047,-40.346 21.404,-45.725c5.351,-5.387 11.486,-6.352 15.232,-6.413c4.428,-0.072 7.296,-0.132 10.573,-0.011c3.274,0.124 8.192,-0.685 12.45,10.639c4.256,11.323 14.443,39.153 15.746,41.989c1.302,2.839 2.108,6.126 0.102,9.771c-2.012,3.653 -3.042,5.935 -5.961,9.083c-2.935,3.148 -6.174,7.042 -8.792,9.449c-2.92,2.665 -5.97,5.572 -2.9,11.269c3.068,5.693 13.653,24.356 29.779,39.736c20.725,19.771 38.598,26.329 44.098,29.317c5.515,3.004 8.806,2.67 12.226,-0.929c3.404,-3.599 14.639,-15.746 18.596,-21.169c3.955,-5.438 7.661,-4.373 12.742,-2.329c5.078,2.052 32.157,16.556 37.673,19.551c5.51,2.989 9.193,4.529 10.51,6.9c1.317,2.38 0.901,13.531 -4.271,26.359Z" fill="#000"></path></svg></a></li>
+<li data-balloon="Share on Pinterest" data-balloon-pos="top"><a class="pinterest" href="http://pinterest.com/pin/create/button/?url=%2Fabout%2Fnotable-houndadore-dogs-from-the-past-and-their-legacies%2F&#038;media=" rel="nofollow" aria-label="Pinterest" target="_blank"><svg version="1.1" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256,32c-123.7,0 -224,100.3 -224,224c0,91.7 55.2,170.5 134.1,205.2c-0.6,-15.6 -0.1,-34.4 3.9,-51.4c4.3,-18.2 28.8,-122.1 28.8,-122.1c0,0 -7.2,-14.3 -7.2,-35.4c0,-33.2 19.2,-58 43.2,-58c20.4,0 30.2,15.3 30.2,33.6c0,20.5 -13.1,51.1 -19.8,79.5c-5.6,23.8 11.9,43.1 35.4,43.1c42.4,0 71,-54.5 71,-119.1c0,-49.1 -33.1,-85.8 -93.2,-85.8c-67.9,0 -110.3,50.7 -110.3,107.3c0,19.5 5.8,33.3 14.8,43.9c4.1,4.9 4.7,6.9 3.2,12.5c-1.1,4.1 -3.5,14 -4.6,18c-1.5,5.7 -6.1,7.7 -11.2,5.6c-31.3,-12.8 -45.9,-47 -45.9,-85.6c0,-63.6 53.7,-139.9 160.1,-139.9c85.5,0 141.8,61.9 141.8,128.3c0,87.9 -48.9,153.5 -120.9,153.5c-24.2,0 -46.9,-13.1 -54.7,-27.9c0,0 -13,51.6 -15.8,61.6c-4.7,17.3 -14,34.5 -22.5,48c20.1,5.9 41.4,9.2 63.5,9.2c123.7,0 224,-100.3 224,-224c0.1,-123.8 -100.2,-224.1 -223.9,-224.1Z" fill="#000"></path></svg></a></li>
+<li data-balloon="Share on Telegram" data-balloon-pos="top"><a class="telegram" href="https://t.me/share/url?url=%2Fabout%2Fnotable-houndadore-dogs-from-the-past-and-their-legacies%2F&#038;text=Notable%20Houndadore%20dogs%20from%20the%20past%20and%20their%20legacies" rel="nofollow" aria-label="Telegram" target="_blank"><svg viewbox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill="#fff" stroke="none" d="M 22.046997 135.832001 C 22.046997 135.832001 147.046997 84.531982 190.398987 66.468018 C 207.018005 59.242981 263.376007 36.121002 263.376007 36.121002 C 263.376007 36.121002 289.388 26.005981 287.220001 50.572021 C 286.497009 60.687988 280.71701 96.09198 274.937012 134.386993 C 266.265991 188.578003 256.872986 247.825989 256.872986 247.825989 C 256.872986 247.825989 255.428009 264.445007 243.144989 267.334991 C 230.862 270.225006 210.630005 257.220001 207.018005 254.32901 C 204.127014 252.161987 152.826996 219.647003 134.041 203.751007 C 128.983002 199.415985 123.203003 190.746002 134.763 180.630005 C 160.774994 156.786011 191.843994 127.161987 210.630005 108.376007 C 219.300995 99.705017 227.971008 79.473999 191.843994 104.039978 C 140.544006 139.445007 89.966003 172.682007 89.966003 172.682007 C 89.966003 172.682007 78.404999 179.907013 56.729004 173.403992 C 35.052002 166.902008 9.763 158.230988 9.763 158.230988 C 9.763 158.230988 -7.577003 147.393005 22.046997 135.832001 Z"></path></svg></a></li>
+<li data-balloon="Share via email" data-balloon-pos="top"><a class="email" href="mailto:?subject=Notable%20Houndadore%20dogs%20from%20the%20past%20and%20their%20legacies&amp;body=%2Fabout%2Fnotable-houndadore-dogs-from-the-past-and-their-legacies%2F" rel="nofollow" aria-label="Email" target="_blank"><svg version="1.1" viewbox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M27.5,5h-25c-1.4,0 -2.5,1.1 -2.5,2.5v15c0,1.4 1.1,2.5 2.5,2.5h25c1.4,0 2.5,-1.1 2.5,-2.5v-15c0,-1.4 -1.1,-2.5 -2.5,-2.5Zm-16.7,10.9l-7,6c-0.1,0.1 -0.2,0.1 -0.3,0.1c-0.1,0 -0.3,-0.1 -0.4,-0.2c-0.2,-0.2 -0.2,-0.5 0.1,-0.7l7,-6c0.2,-0.2 0.5,-0.2 0.7,0.1c0.2,0.2 0.1,0.5 -0.1,0.7Zm3.9,0.1c-0.7,0 -1.5,-0.2 -2,-0.6l-9.5,-6.5c-0.2,-0.1 -0.3,-0.5 -0.1,-0.7c0.1,-0.2 0.4,-0.3 0.7,-0.1l9.5,6.5c0.8,0.6 2.1,0.6 2.9,0l10,-6.5c0.2,-0.2 0.5,-0.1 0.7,0.1c0.2,0.2 0.1,0.5 -0.1,0.7l-10,6.5c-0.6,0.4 -1.3,0.6 -2.1,0.6Zm12.2,5.8c-0.1,0.1 -0.2,0.2 -0.4,0.2c-0.1,0 -0.2,0 -0.3,-0.1l-7,-6c-0.2,-0.2 -0.2,-0.5 -0.1,-0.7c0.1,-0.2 0.5,-0.2 0.7,-0.1l7,6c0.2,0.2 0.3,0.5 0.1,0.7Z" fill="#fff"></path></svg></a></li>
+</ul>
+<nav id="brxe-izjvkr" class="brxe-post-navigation" aria-label="Post navigation"><a class="prev-post" href="/about/famous-houndadore-mixes-in-history-and-their-stories/"><div class="swiper-button bricks-swiper-button-prev"><i class="ion-ios-arrow-back"></i></div>
+<div class="content"><span class="label">Previous post</span></div></a><a class="next-post" href="/about/historic-houndadore-breeds-and-their-contributions-to-society/"><div class="content"><span class="label">Next post</span></div>
+<div class="swiper-button bricks-swiper-button-next"><i class="ion-ios-arrow-forward"></i></div></a></nav>
+</div>
+<div id="brxe-hwsqci" class="brxe-block">
+<div id="brxe-wfrprg" class="brxe-search">
+<form role="search" method="get" class="bricks-search-form" action="https://houndadore.com/">
+	<label for="search-input-wfrprg" class="screen-reader-text"><span>Search ...</span></label>
+	<input type="search" placeholder="Search ..." value="" name="s" id="search-input-wfrprg">
+
+	</form>
+</div>
+<nav id="brxe-gugwak" class="brxe-xtableofcontents" data-x-toc="{&quot;contentSelector&quot;:&quot;.post-content&quot;,&quot;headingSelectors&quot;:[&quot;h2&quot;,&quot;h3&quot;,&quot;h4&quot;,&quot;h5&quot;,&quot;h6&quot;],&quot;autoID&quot;:true,&quot;idPrefix&quot;:&quot;heading&quot;,&quot;autoIDText&quot;:&quot;prefix&quot;,&quot;scrollSmoothOffset&quot;:-130,&quot;listType&quot;:&quot;counter&quot;,&quot;slideDuration&quot;:300,&quot;ignoreSelector&quot;:&quot;&quot;,&quot;smoothScroll&quot;:&quot;true&quot;,&quot;collapseDepth&quot;:0,&quot;conditionalDisplay&quot;:&quot;disable&quot;,&quot;hidden&quot;:{&quot;closeBreakpoint&quot;:&quot;false&quot;}}"><div class="x-toc_header" role="button" tabindex="00" aria-label="Table of Contents" aria-controls="x-toc_gugwak" aria-expanded="false">
+<div class="x-toc_header-text">Table of Contents</div>
+<div class="x-toc_header-icon"><i class="ti-angle-down"></i></div>
+</div>
+<div style="display:none" class="x-toc_body" aria-hidden="false" id="x-toc_gugwak"></div></nav><div id="brxe-amoawz" class="brxe-text-basic">Related Posts</div>
+<ul id="brxe-ueaixc" class="brxe-related-posts bricks-related-posts">
+<li class="repeater-item">
+<a href="/about/health-issues-and-lifespan-of-the-houndadore-breed/" class="post-thumbnail-wrapper css-filter"><div class="post-thumbnail-inner" role="img" aria-label="" style="background-image: url(/wp-content/uploads/2023/06/Houndadorelifespan.jpg)"></div></a><div class="post-content">
+<h3 class="dynamic" data-field-id="5c6fed"><a href="/about/health-issues-and-lifespan-of-the-houndadore-breed/" aria-label="Read more about Health issues and lifespan of the Houndadore breed">Health issues and lifespan of the Houndadore breed</a></h3>
+<p class="dynamic" data-field-id="bd3366">June 28, 2023</p>
+</div>
+</li>
+<li class="repeater-item">
+<a href="/about/houndadore-breed-a-popular-choice-for-search-and-rescue-missions/" class="post-thumbnail-wrapper css-filter"><div class="post-thumbnail-inner" role="img" aria-label="" style="background-image: url(/wp-content/uploads/2023/06/Houndadore-breed-a-popular-choice-for-search-and-rescue-missions.jpg)"></div></a><div class="post-content">
+<h3 class="dynamic" data-field-id="5c6fed"><a href="/about/houndadore-breed-a-popular-choice-for-search-and-rescue-missions/" aria-label="Read more about Houndadore breed: a popular choice for search and rescue missions">Houndadore breed: a popular choice for search and rescue missions</a></h3>
+<p class="dynamic" data-field-id="bd3366">June 28, 2023</p>
+</div>
+</li>
+<li class="repeater-item">
+<a href="/about/physical-traits-of-houndadore-dogs/" class="post-thumbnail-wrapper css-filter"><div class="post-thumbnail-inner" role="img" aria-label="" style="background-image: url(/wp-content/uploads/2023/06/Physical-traits-of-Houndadore-dogs.jpg)"></div></a><div class="post-content">
+<h3 class="dynamic" data-field-id="5c6fed"><a href="/about/physical-traits-of-houndadore-dogs/" aria-label="Read more about Physical traits of Houndadore dogs">Physical traits of Houndadore dogs</a></h3>
+<p class="dynamic" data-field-id="bd3366">June 28, 2023</p>
+</div>
+</li>
+<li class="repeater-item">
+<a href="/about/temperament-of-houndadore-dogs/" class="post-thumbnail-wrapper css-filter"><div class="post-thumbnail-inner" role="img" aria-label="" style="background-image: url(/wp-content/uploads/2023/06/Houndadores-adaptability-in-rural-living-environments.jpg)"></div></a><div class="post-content">
+<h3 class="dynamic" data-field-id="5c6fed"><a href="/about/temperament-of-houndadore-dogs/" aria-label="Read more about Temperament of Houndadore dogs">Temperament of Houndadore dogs</a></h3>
+<p class="dynamic" data-field-id="bd3366">June 28, 2023</p>
+</div>
+</li>
+<li class="repeater-item">
+<a href="/about/socialization-requirements-for-houndadore-dogs/" class="post-thumbnail-wrapper css-filter"><div class="post-thumbnail-inner" role="img" aria-label="" style="background-image: url(/wp-content/uploads/2023/06/Socialization-requirements-for-Houndadore-dogs.jpg)"></div></a><div class="post-content">
+<h3 class="dynamic" data-field-id="5c6fed"><a href="/about/socialization-requirements-for-houndadore-dogs/" aria-label="Read more about Socialization requirements for Houndadore dogs">Socialization requirements for Houndadore dogs</a></h3>
+<p class="dynamic" data-field-id="bd3366">June 28, 2023</p>
+</div>
+</li>
+</ul>
+</div>
+</div></section></main><footer id="brx-footer"><section id="brxe-tseoqd" class="brxe-section"><div id="brxe-lwvhbf" class="brxe-container">
+<div id="brxe-xpelqb" class="brxe-block">
+<img width="300" height="75" src="/wp-content/uploads/2023/03/Houndadore-White.png" class="brxe-image css-filter size-full" alt="" decoding="async" id="brxe-rpisls" loading="lazy"><div id="brxe-eaxztd" class="brxe-text-basic">Imagine the loyalty and intelligence of the Labrador Retriever, mixed with the impressive tracking skills and sense of smell of a Hound dog. It's like a superhero duo that's furrier and more lovable.</div>
+</div>
+<div id="brxe-xuqyxc" class="brxe-block">
+<h3 id="brxe-rakvig" class="brxe-heading">Contact Us</h3>
+<div id="brxe-hdxtls" class="brxe-icon-box">
+<div class="icon"><i class="fas fa-map-location-dot"></i></div>
+<div class="content">
+<p>7331 Emerald Glade Lane</p>
+</div>
+</div>
+<div id="brxe-mqefoe" class="brxe-icon-box">
+<div class="icon"><i class="fas fa-envelope"></i></div>
+<div class="content">
+<p>info@houndadore.com</p>
+</div>
+</div>
+<div id="brxe-vrahhh" class="brxe-icon-box">
+<div class="icon"><i class="fas fa-phone-flip"></i></div>
+<div class="content">
+<p>(832) 629-5520</p>
+</div>
+</div>
+</div>
+<div id="brxe-jvfmyb" class="brxe-block">
+<h3 id="brxe-lgqfds" class="brxe-heading">Quick Links</h3>
+<div id="brxe-eecmvu" class="brxe-text-basic">About</div>
+<div id="brxe-ztmoaz" class="brxe-text-basic">Blog</div>
+<div id="brxe-dcnagm" class="brxe-text-basic">Gallery</div>
+<div id="brxe-luqjcj" class="brxe-text-basic">Contact</div>
+</div>
+</div>
+<div id="brxe-nitblx" class="brxe-container"><div id="brxe-joihqv" class="brxe-text-basic">Copyright 2023 © all rights reserved design by <a href="https://brickstemplates.io/">BricksTemplates.io</a> </div></div></section></footer>            <script>var wpaicgUserLoggedIn = false;</script>
+            <link rel="stylesheet" id="bricks-tooltips-css" href="/wp-content/themes/bricks/assets/css/libs/tooltips.min.css?ver=1695510514" media="all">
+<script src="/wp-includes/js/hoverintent-js.min.js?ver=2.2.1" id="hoverintent-js-js"></script>
+<script src="/wp-includes/js/admin-bar.min.js?ver=6.3.1" id="admin-bar-js"></script>
+<script src="/wp-content/plugins/gpt3-ai-content-generator-premium/lib/js/wpaicg-chat-pro.js" id="wpaicg-chat-pro-js"></script>
+<script src="/wp-content/plugins/gpt3-ai-content-generator-premium/public/js/wpaicg-form-shortcode.js" id="wpaicg-gpt-form-js"></script>
+<script id="wpaicg-init-js-extra">var wpaicgParams = {"ajax_url":"\/wp-admin\/admin-ajax.php","search_nonce":"05d0315b6e","logged_in":"0","languages":{"source":"Sources","no_result":"No result found","wrong":"Something went wrong","prompt_strength":"Please enter a valid prompt strength value between 0 and 1.","num_inference_steps":"Please enter a valid number of inference steps value between 1 and 500.","guidance_scale":"Please enter a valid guidance scale value between 1 and 20.","error_image":"Please select least one image for generate","save_image_success":"Save images to media successfully","select_all":"Select All","unselect":"Unselect","select_save_error":"Please select least one image to save","alternative":"Alternative Text","title":"Title","edit_image":"Edit Image","caption":"Caption","description":"Description","save":"Save","removed_pdf":"Your pdf session is cleared"}};</script>
+<script src="/wp-content/plugins/gpt3-ai-content-generator-premium/public/js/wpaicg-init.js" id="wpaicg-init-js"></script>
+<script src="/wp-content/plugins/gpt3-ai-content-generator-premium/public/js/wpaicg-chat.js" id="wpaicg-chat-script-js"></script>
+<script id="bp-nouveau-js-extra">var BP_Nouveau = {"ajaxurl":"\/wp-admin\/admin-ajax.php","confirm":"Are you sure?","show_x_comments":"Show all %d comments","unsaved_changes":"Your profile has unsaved changes. If you leave the page, the changes will be lost.","object_nav_parent":"#buddypress","objects":["activity","members","groups","xprofile","friends","messages","settings","notifications","group_members","group_requests"],"nonces":{"activity":"b8b5214161","members":"f343cbcf81","groups":"fdf485fa61","xprofile":"9459f1b575","friends":"75562fbe93","messages":"c23a793c31","settings":"c6a5946ce0","notifications":"89b43d1260"}};</script>
+<script src="/wp-content/plugins/buddypress/bp-templates/bp-nouveau/js/buddypress-nouveau.min.js?ver=11.3.1" id="bp-nouveau-js"></script>
+<script src="/wp-includes/js/comment-reply.min.js?ver=6.3.1" id="comment-reply-js"></script>
+<script src="/wp-content/plugins/embedpress/assets/js/pdfobject.min.js?ver=3.8.5" id="embedpress-pdfobject-js"></script>
+<script src="/wp-content/plugins/embedpress/assets/js/initplyr.js?ver=3.8.5" id="initplyr-js"></script>
+<script id="embedpress-front-js-extra">var eplocalize = {"ajaxurl":"\/wp-admin\/admin-ajax.php"};</script>
+<script src="/wp-content/plugins/embedpress/assets/js/front.js?ver=3.8.5" id="embedpress-front-js"></script>
+<script src="/wp-content/plugins/embedpress/assets/js/documents-viewer-script.js?ver=3.8.5" id="embedpress_documents_viewer_script-js"></script>
+<script id="wpil-frontend-script-js-extra">var wpilFrontend = {"ajaxUrl":"\/wp-admin\/admin-ajax.php","postId":"955","postType":"post","openInternalInNewTab":"0","openExternalInNewTab":"0","disableClicks":"0","openLinksWithJS":"0","trackAllElementClicks":"0","clicksI18n":{"imageNoText":"Image in link: No Text","imageText":"Image Title: ","noText":"No Anchor Text Found"}};</script>
+<script src="/wp-content/plugins/link-whisper-premium/js/frontend.js?ver=1679343322" id="wpil-frontend-script-js"></script>
+<script id="bricks-scripts-js-extra">var bricksData = {"debug":"","locale":"en_US","ajaxUrl":"\/wp-admin\/admin-ajax.php","restApiUrl":"\/wp-json\/bricks\/v1\/","nonce":"013b0ee6ed","wpRestNonce":"e13cd24a7c","postId":"955","recaptchaIds":[],"animatedTypingInstances":[],"videoInstances":[],"splideInstances":[],"tocbotInstances":[],"swiperInstances":[],"queryLoopInstances":[],"interactions":[],"mapStyles":{"ultraLightWithLabels":{"label":"Ultra light with labels","style":"[ { \"featureType\": \"water\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#e9e9e9\" }, { \"lightness\": 17 } ] }, { \"featureType\": \"landscape\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#f5f5f5\" }, { \"lightness\": 20 } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#ffffff\" }, { \"lightness\": 17 } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry.stroke\", \"stylers\": [ { \"color\": \"#ffffff\" }, { \"lightness\": 29 }, { \"weight\": 0.2 } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#ffffff\" }, { \"lightness\": 18 } ] }, { \"featureType\": \"road.local\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#ffffff\" }, { \"lightness\": 16 } ] }, { \"featureType\": \"poi\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#f5f5f5\" }, { \"lightness\": 21 } ] }, { \"featureType\": \"poi.park\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#dedede\" }, { \"lightness\": 21 } ] }, { \"elementType\": \"labels.text.stroke\", \"stylers\": [ { \"visibility\": \"on\" }, { \"color\": \"#ffffff\" }, { \"lightness\": 16 } ] }, { \"elementType\": \"labels.text.fill\", \"stylers\": [ { \"saturation\": 36 }, { \"color\": \"#333333\" }, { \"lightness\": 40 } ] }, { \"elementType\": \"labels.icon\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"transit\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#f2f2f2\" }, { \"lightness\": 19 } ] }, { \"featureType\": \"administrative\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#fefefe\" }, { \"lightness\": 20 } ] }, { \"featureType\": \"administrative\", \"elementType\": \"geometry.stroke\", \"stylers\": [ { \"color\": \"#fefefe\" }, { \"lightness\": 17 }, { \"weight\": 1.2 } ] } ]"},"blueWater":{"label":"Blue water","style":"[ { \"featureType\": \"administrative\", \"elementType\": \"labels.text.fill\", \"stylers\": [ { \"color\": \"#444444\" } ] }, { \"featureType\": \"landscape\", \"elementType\": \"all\", \"stylers\": [ { \"color\": \"#f2f2f2\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"road\", \"elementType\": \"all\", \"stylers\": [ { \"saturation\": -100 }, { \"lightness\": 45 } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"simplified\" } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"labels.icon\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"transit\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"water\", \"elementType\": \"all\", \"stylers\": [ { \"color\": \"#46bcec\" }, { \"visibility\": \"on\" } ] } ]"},"lightDream":{"label":"Light dream","style":"[ { \"featureType\": \"landscape\", \"stylers\": [ { \"hue\": \"#FFBB00\" }, { \"saturation\": 43.400000000000006 }, { \"lightness\": 37.599999999999994 }, { \"gamma\": 1 } ] }, { \"featureType\": \"road.highway\", \"stylers\": [ { \"hue\": \"#FFC200\" }, { \"saturation\": -61.8 }, { \"lightness\": 45.599999999999994 }, { \"gamma\": 1 } ] }, { \"featureType\": \"road.arterial\", \"stylers\": [ { \"hue\": \"#FF0300\" }, { \"saturation\": -100 }, { \"lightness\": 51.19999999999999 }, { \"gamma\": 1 } ] }, { \"featureType\": \"road.local\", \"stylers\": [ { \"hue\": \"#FF0300\" }, { \"saturation\": -100 }, { \"lightness\": 52 }, { \"gamma\": 1 } ] }, { \"featureType\": \"water\", \"stylers\": [ { \"hue\": \"#0078FF\" }, { \"saturation\": -13.200000000000003 }, { \"lightness\": 2.4000000000000057 }, { \"gamma\": 1 } ] }, { \"featureType\": \"poi\", \"stylers\": [ { \"hue\": \"#00FF6A\" }, { \"saturation\": -1.0989010989011234 }, { \"lightness\": 11.200000000000017 }, { \"gamma\": 1 } ] } ]"},"blueEssence":{"label":"Blue essence","style":"[ { \"featureType\": \"landscape.natural\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"visibility\": \"on\" }, { \"color\": \"#e0efef\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"visibility\": \"on\" }, { \"hue\": \"#1900ff\" }, { \"color\": \"#c0e8e8\" } ] }, { \"featureType\": \"road\", \"elementType\": \"geometry\", \"stylers\": [ { \"lightness\": 100 }, { \"visibility\": \"simplified\" } ] }, { \"featureType\": \"road\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"transit.line\", \"elementType\": \"geometry\", \"stylers\": [ { \"visibility\": \"on\" }, { \"lightness\": 700 } ] }, { \"featureType\": \"water\", \"elementType\": \"all\", \"stylers\": [ { \"color\": \"#7dcdcd\" } ] } ]"},"appleMapsesque":{"label":"Apple maps-esque","style":"[ { \"featureType\": \"landscape.man_made\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#f7f1df\" } ] }, { \"featureType\": \"landscape.natural\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#d0e3b4\" } ] }, { \"featureType\": \"landscape.natural.terrain\", \"elementType\": \"geometry\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"poi.business\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"poi.medical\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#fbd3da\" } ] }, { \"featureType\": \"poi.park\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#bde6ab\" } ] }, { \"featureType\": \"road\", \"elementType\": \"geometry.stroke\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"road\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#ffe15f\" } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry.stroke\", \"stylers\": [ { \"color\": \"#efd151\" } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#ffffff\" } ] }, { \"featureType\": \"road.local\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"black\" } ] }, { \"featureType\": \"transit.station.airport\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#cfb2db\" } ] }, { \"featureType\": \"water\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#a2daf2\" } ] } ]"},"paleDawn":{"label":"Pale dawn","style":"[ { \"featureType\": \"administrative\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"on\" }, { \"lightness\": 33 } ] }, { \"featureType\": \"landscape\", \"elementType\": \"all\", \"stylers\": [ { \"color\": \"#f2e5d4\" } ] }, { \"featureType\": \"poi.park\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#c5dac6\" } ] }, { \"featureType\": \"poi.park\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"on\" }, { \"lightness\": 20 } ] }, { \"featureType\": \"road\", \"elementType\": \"all\", \"stylers\": [ { \"lightness\": 20 } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#c5c6c6\" } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#e4d7c6\" } ] }, { \"featureType\": \"road.local\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#fbfaf7\" } ] }, { \"featureType\": \"water\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"on\" }, { \"color\": \"#acbcc9\" } ] } ]"},"neutralBlue":{"label":"Neutral blue","style":"[ { \"featureType\": \"water\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#193341\" } ] }, { \"featureType\": \"landscape\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#2c5a71\" } ] }, { \"featureType\": \"road\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#29768a\" }, { \"lightness\": -37 } ] }, { \"featureType\": \"poi\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#406d80\" } ] }, { \"featureType\": \"transit\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#406d80\" } ] }, { \"elementType\": \"labels.text.stroke\", \"stylers\": [ { \"visibility\": \"on\" }, { \"color\": \"#3e606f\" }, { \"weight\": 2 }, { \"gamma\": 0.84 } ] }, { \"elementType\": \"labels.text.fill\", \"stylers\": [ { \"color\": \"#ffffff\" } ] }, { \"featureType\": \"administrative\", \"elementType\": \"geometry\", \"stylers\": [ { \"weight\": 0.6 }, { \"color\": \"#1a3541\" } ] }, { \"elementType\": \"labels.icon\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"poi.park\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#2c5a71\" } ] } ]"},"avocadoWorld":{"label":"Avocado world","style":"[ { \"featureType\": \"water\", \"elementType\": \"geometry\", \"stylers\": [ { \"visibility\": \"on\" }, { \"color\": \"#aee2e0\" } ] }, { \"featureType\": \"landscape\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#abce83\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#769E72\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"labels.text.fill\", \"stylers\": [ { \"color\": \"#7B8758\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"labels.text.stroke\", \"stylers\": [ { \"color\": \"#EBF4A4\" } ] }, { \"featureType\": \"poi.park\", \"elementType\": \"geometry\", \"stylers\": [ { \"visibility\": \"simplified\" }, { \"color\": \"#8dab68\" } ] }, { \"featureType\": \"road\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"visibility\": \"simplified\" } ] }, { \"featureType\": \"road\", \"elementType\": \"labels.text.fill\", \"stylers\": [ { \"color\": \"#5B5B3F\" } ] }, { \"featureType\": \"road\", \"elementType\": \"labels.text.stroke\", \"stylers\": [ { \"color\": \"#ABCE83\" } ] }, { \"featureType\": \"road\", \"elementType\": \"labels.icon\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"road.local\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#A4C67D\" } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#9BBF72\" } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#EBF4A4\" } ] }, { \"featureType\": \"transit\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"administrative\", \"elementType\": \"geometry.stroke\", \"stylers\": [ { \"visibility\": \"on\" }, { \"color\": \"#87ae79\" } ] }, { \"featureType\": \"administrative\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#7f2200\" }, { \"visibility\": \"off\" } ] }, { \"featureType\": \"administrative\", \"elementType\": \"labels.text.stroke\", \"stylers\": [ { \"color\": \"#ffffff\" }, { \"visibility\": \"on\" }, { \"weight\": 4.1 } ] }, { \"featureType\": \"administrative\", \"elementType\": \"labels.text.fill\", \"stylers\": [ { \"color\": \"#495421\" } ] }, { \"featureType\": \"administrative.neighborhood\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"off\" } ] } ]"},"gowalla":{"label":"Gowalla","style":"[ { \"featureType\": \"administrative.land_parcel\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"landscape.man_made\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"road\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"simplified\" }, { \"lightness\": 20 } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry\", \"stylers\": [ { \"hue\": \"#f49935\" } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"simplified\" } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"geometry\", \"stylers\": [ { \"hue\": \"#fad959\" } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"road.local\", \"elementType\": \"geometry\", \"stylers\": [ { \"visibility\": \"simplified\" } ] }, { \"featureType\": \"road.local\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"simplified\" } ] }, { \"featureType\": \"transit\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"water\", \"elementType\": \"all\", \"stylers\": [ { \"hue\": \"#a1cdfc\" }, { \"saturation\": 30 }, { \"lightness\": 49 } ] } ]"}},"facebookAppId":"","headerPosition":"top","offsetLazyLoad":"300"};</script>
+<script src="/wp-content/themes/bricks/assets/js/bricks.min.js?ver=1695510514" id="bricks-scripts-js"></script>
+<script src="/wp-content/plugins/bricksextras/components/assets/js/frontend.js?ver=1.0.1" id="x-frontend-js"></script>
+<script src="/wp-content/plugins/bricksextras/components/assets/js/tableofcontents.js?ver=1.0.4" id="x-toc-js"></script>
+		<div id="wpadminbar" class="nojq nojs">
+							<a class="screen-reader-shortcut" href="#wp-toolbar" tabindex="1">Skip to toolbar</a>
+						<div class="quicklinks" id="wp-toolbar" role="navigation" aria-label="Toolbar">
+				<ul id="wp-admin-bar-root-default" class="ab-top-menu">
+<li id="wp-admin-bar-wp-logo" class="menupop">
+<div class="ab-item ab-empty-item" tabindex="0" aria-haspopup="true">
+<span class="ab-icon" aria-hidden="true"></span><span class="screen-reader-text">About WordPress</span>
+</div>
+<div class="ab-sub-wrapper"><ul id="wp-admin-bar-wp-logo-external" class="ab-sub-secondary ab-submenu">
+<li id="wp-admin-bar-wporg"><a class="ab-item" href="https://wordpress.org/">WordPress.org</a></li>
+<li id="wp-admin-bar-documentation"><a class="ab-item" href="https://wordpress.org/documentation/">Documentation</a></li>
+<li id="wp-admin-bar-support-forums"><a class="ab-item" href="https://wordpress.org/support/forums/">Support</a></li>
+<li id="wp-admin-bar-feedback"><a class="ab-item" href="https://wordpress.org/support/forum/requests-and-feedback">Feedback</a></li>
+</ul></div>
+</li>
+<li id="wp-admin-bar-bp-login"><a class="ab-item" href="/wp-login.php?redirect_to=https%3A%2F%2F%2Fabout%2Fnotable-houndadore-dogs-from-the-past-and-their-legacies%2F%3Fsimply_static_page%3D1628">Log In</a></li>
+</ul>
+<ul id="wp-admin-bar-top-secondary" class="ab-top-secondary ab-top-menu"><li id="wp-admin-bar-search" class="admin-bar-search"><div class="ab-item ab-empty-item" tabindex="-1"><form action="https://houndadore.com/" method="get" id="adminbarsearch">
+<input class="adminbar-input" name="s" id="adminbar-search" type="text" value="" maxlength="150"><label for="adminbar-search" class="screen-reader-text">Search</label><input type="submit" class="adminbar-button" value="Search">
+</form></div></li></ul>			</div>
+					</div>
+
+		</body>
+</html>

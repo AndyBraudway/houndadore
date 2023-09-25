@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: https://ogp.me/ns#" class="no-js no-svg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+            <style>.toc_post_list h2{
+                    margin-bottom: 20px;
+                }
+                .toc_post_list{
+                    list-style: none;
+                    margin: 0 0 30px 0!important;
+                    padding: 0!important;
+                }
+                .toc_post_list li{}
+                .toc_post_list li ul{
+                    list-style: decimal;
+                }
+                .toc_post_list a{}
+                .wpaicg_chat_widget{
+                    position: fixed;
+                }
+                .wpaicg_widget_left{
+                    bottom: 15px;
+                    left: 15px;
+                }
+                .wpaicg_widget_right{
+                    bottom: 15px;
+                    right: 15px;
+                }
+                .wpaicg_widget_right .wpaicg_chat_widget_content{
+                    right: 0;
+                }
+                .wpaicg_widget_left .wpaicg_chat_widget_content{
+                    left: 0;
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox{
+                    height: 100%;
+                    background-color: #222222;
+                    border-radius: 5px;
+                }
+                .wpaicg_widget_open .wpaicg_chat_widget_content{
+                    height: 400px;
+                }
+                .wpaicg_chat_widget_content{
+                    position: absolute;
+                    bottom: calc(100% + 15px);
+                    width: 350px;
+                    overflow: hidden;
+                }
+                .wpaicg_widget_open .wpaicg_chat_widget_content{
+                    overflow: unset;
+                }
+                .wpaicg_widget_open .wpaicg_chat_widget_content .wpaicg-chatbox{
+                    top: 0;
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox{
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 350px;
+                    height: 400px;
+                    transition: top 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox-content{
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox-content ul{
+                    box-sizing: border-box;
+                    background: #222222;
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox-content ul li{
+                    color: #90EE90;
+                    font-size: 13px;
+                }
+                .wpaicg_chat_widget_content .wpaicg-bot-thinking{
+                    color: #90EE90;
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox-type{
+                                    border-top: 0;
+                    background: rgb(0 0 0 / 19%);
+                }
+                .wpaicg_chat_widget_content .wpaicg-chat-message{
+                    color: #90EE90;
+                }
+                .wpaicg_chat_widget_content textarea.wpaicg-chatbox-typing{
+                    background-color: #fff;
+                    border-color: #ccc;
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox-send{
+                    color: #fff;
+                }
+                .wpaicg-chatbox-footer{
+                    height: 18px;
+                    font-size: 11px;
+                    padding: 0 5px;
+                    color: #fff;
+                    background: rgb(0 0 0 / 19%);
+                    margin-top:2px;
+                    margin-bottom: 2px;
+                }
+                .wpaicg_chat_widget_content textarea.wpaicg-chatbox-typing:focus{
+                    outline: none;
+                }
+                .wpaicg_chat_widget .wpaicg_toggle{
+                    cursor: pointer;
+                }
+                .wpaicg_chat_widget .wpaicg_toggle img{
+                    width: 75px;
+                    height: 75px;
+                }
+                .wpaicg-chat-shortcode-type,.wpaicg-chatbox-type{
+                    position: relative;
+                }
+                .wpaicg-mic-icon{
+                    cursor: pointer;
+                }
+                .wpaicg-mic-icon svg{
+                    width: 16px;
+                    height: 16px;
+                    fill: currentColor;
+                }
+                .wpaicg-pdf-icon svg{
+                    width: 22px;
+                    height: 22px;
+                    fill: currentColor;
+                }
+                .wpaicg_chat_additions span{
+                    cursor: pointer;
+                    margin-right: 2px;
+                }
+                .wpaicg_chat_additions span:last-of-type{
+                    margin-right: 0;
+                }
+                .wpaicg-pdf-loading{
+                    width: 18px;
+                    height: 18px;
+                    border: 2px solid #FFF;
+                    border-bottom-color: transparent;
+                    border-radius: 50%;
+                    display: inline-block;
+                    box-sizing: border-box;
+                    animation: wpaicg_rotation 1s linear infinite;
+                }
+                @keyframes wpaicg_rotation {
+                    0% {
+                        transform: rotate(0deg);
+                    }
+                    100% {
+                        transform: rotate(360deg);
+                    }
+                }
+                .wpaicg-chat-message code{
+                    padding: 3px 5px 2px;
+                    background: rgb(0 0 0 / 20%);
+                    font-size: 13px;
+                    font-family: Consolas,Monaco,monospace;
+                    direction: ltr;
+                    unicode-bidi: embed;
+                    display: block;
+                    margin: 5px 0px;
+                    border-radius: 4px;
+                    white-space: pre-wrap;
+                }
+                textarea.wpaicg-chat-shortcode-typing,textarea.wpaicg-chatbox-typing{
+                    height: 30px;
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox-content,.wpaicg-chat-shortcode-content{
+                    overflow: hidden;
+                }
+                .wpaicg_chatbox_line{
+                    overflow: hidden;
+                    text-align: center;
+                    display: block!important;
+                    font-size: 12px;
+                }
+                .wpaicg_chatbox_line:after,.wpaicg_chatbox_line:before{
+                    background-color: rgb(255 255 255 / 26%);
+                    content: "";
+                    display: inline-block;
+                    height: 1px;
+                    position: relative;
+                    vertical-align: middle;
+                    width: 50%;
+                }
+                .wpaicg_chatbox_line:before {
+                    right: 0.5em;
+                    margin-left: -50%;
+                }
+
+                .wpaicg_chatbox_line:after {
+                    left: 0.5em;
+                    margin-right: -50%;
+                }
+                .wpaicg-chat-shortcode-typing::-webkit-scrollbar,.wpaicg-chatbox-typing::-webkit-scrollbar{
+                    width: 5px
+                }
+                .wpaicg-chat-shortcode-typing::-webkit-scrollbar-track,.wpaicg-chatbox-typing::-webkit-scrollbar-track{
+                    -webkit-box-shadow:inset 0 0 6px rgba(0, 0, 0, 0.15);border-radius:5px;
+                }
+                .wpaicg-chat-shortcode-typing::-webkit-scrollbar-thumb,.wpaicg-chatbox-typing::-webkit-scrollbar-thumb{
+                    border-radius:5px;
+                    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.75);
+                }</style>
+            <script>var wpaicg_ajax_url = '/wp-admin/admin-ajax.php';
+                var wpaicgUserLoggedIn = false;</script>
+            <link href="/wp-content/plugins/gpt3-ai-content-generator-premium/public/css/wpaicg-rtl.css" type="text/css" rel="stylesheet">
+            
+<!-- Search Engine Optimization by Rank Math - https://rankmath.com/ -->
+<title>Training exercises to strengthen Houndadore&#039;s recall despite prey instincts - Houndadore - The Perfect Blend Of Hound and Labradore</title>
+<meta name="description" content="&quot;Master the art of recall and unleash your Houndadore&#039;s potential.&quot;">
+<meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
+<link rel="canonical" href="/about/training-exercises-to-strengthen-houndadores-recall-despite-prey-instincts/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Training exercises to strengthen Houndadore&#039;s recall despite prey instincts - Houndadore - The Perfect Blend Of Hound and Labradore">
+<meta property="og:description" content="&quot;Master the art of recall and unleash your Houndadore&#039;s potential.&quot;">
+<meta property="og:url" content="/about/training-exercises-to-strengthen-houndadores-recall-despite-prey-instincts/">
+<meta property="og:site_name" content="Houndadore - The Perfect Blend Of Hound and Labradore">
+<meta property="article:section" content="About">
+<meta property="article:published_time" content="2023-06-30T14:12:49-06:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Training exercises to strengthen Houndadore&#039;s recall despite prey instincts - Houndadore - The Perfect Blend Of Hound and Labradore">
+<meta name="twitter:description" content="&quot;Master the art of recall and unleash your Houndadore&#039;s potential.&quot;">
+<meta name="twitter:label1" content="Written by">
+<meta name="twitter:data1" content="Houndadore_2050">
+<meta name="twitter:label2" content="Time to read">
+<meta name="twitter:data2" content="44 minutes">
+<script type="application/ld+json" class="rank-math-schema">{"@context":"https://schema.org","@graph":[{"@type":["Organization","Person"],"@id":"/#person","name":"Houndadore - The Perfect Blend Of Hound and Labradore","url":""},{"@type":"WebSite","@id":"/#website","url":"","name":"Houndadore - The Perfect Blend Of Hound and Labradore","publisher":{"@id":"/#person"},"inLanguage":"en-US"},{"@type":"BreadcrumbList","@id":"/about/training-exercises-to-strengthen-houndadores-recall-despite-prey-instincts/#breadcrumb","itemListElement":[{"@type":"ListItem","position":"1","item":{"@id":"","name":"Home"}},{"@type":"ListItem","position":"2","item":{"@id":"/category/about/","name":"About"}},{"@type":"ListItem","position":"3","item":{"@id":"/about/training-exercises-to-strengthen-houndadores-recall-despite-prey-instincts/","name":"Training exercises to strengthen Houndadore’s recall despite prey instincts"}}]},{"@type":"WebPage","@id":"/about/training-exercises-to-strengthen-houndadores-recall-despite-prey-instincts/#webpage","url":"/about/training-exercises-to-strengthen-houndadores-recall-despite-prey-instincts/","name":"Training exercises to strengthen Houndadore&#039;s recall despite prey instincts - Houndadore - The Perfect Blend Of Hound and Labradore","datePublished":"2023-06-30T14:12:49-06:00","dateModified":"2023-06-30T14:12:49-06:00","isPartOf":{"@id":"/#website"},"inLanguage":"en-US","breadcrumb":{"@id":"/about/training-exercises-to-strengthen-houndadores-recall-despite-prey-instincts/#breadcrumb"}},{"@type":"Person","@id":"/author/houndadore_2050/","name":"Houndadore_2050","url":"/author/houndadore_2050/","image":{"@type":"ImageObject","@id":"//www.gravatar.com/avatar/9f4b2c627190ceb17858b039cc7294af?s=96&r=g&d=mm","url":"//www.gravatar.com/avatar/9f4b2c627190ceb17858b039cc7294af?s=96&r=g&d=mm","caption":"Houndadore_2050","inLanguage":"en-US"},"sameAs":[""]},{"@type":"BlogPosting","headline":"Training exercises to strengthen Houndadore&#039;s recall despite prey instincts - Houndadore - The Perfect","datePublished":"2023-06-30T14:12:49-06:00","dateModified":"2023-06-30T14:12:49-06:00","articleSection":"About","author":{"@id":"/author/houndadore_2050/","name":"Houndadore_2050"},"publisher":{"@id":"/#person"},"description":"&quot;Master the art of recall and unleash your Houndadore&#039;s potential.&quot;","name":"Training exercises to strengthen Houndadore&#039;s recall despite prey instincts - Houndadore - The Perfect","@id":"/about/training-exercises-to-strengthen-houndadores-recall-despite-prey-instincts/#richSnippet","isPartOf":{"@id":"/about/training-exercises-to-strengthen-houndadores-recall-despite-prey-instincts/#webpage"},"inLanguage":"en-US","mainEntityOfPage":{"@id":"/about/training-exercises-to-strengthen-houndadores-recall-despite-prey-instincts/#webpage"}}]}</script>
+<!-- /Rank Math WordPress SEO plugin -->
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="alternate" type="application/rss+xml" title="Houndadore - The Perfect Blend Of Hound and Labradore &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="Houndadore - The Perfect Blend Of Hound and Labradore &raquo; Comments Feed" href="/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Houndadore - The Perfect Blend Of Hound and Labradore &raquo; Training exercises to strengthen Houndadore&#8217;s recall despite prey instincts Comments Feed" href="/about/training-exercises-to-strengthen-houndadores-recall-despite-prey-instincts/feed/">
+<script>
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.3.1"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🫱🏻‍🫲🏿","🫱🏻​🫲🏿")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<style>img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+	<link rel="stylesheet" id="dashicons-css" href="/wp-includes/css/dashicons.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="admin-bar-css" href="/wp-includes/css/admin-bar.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="bp-login-form-block-css" href="/wp-content/plugins/buddypress/bp-core/css/blocks/login-form.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-member-block-css" href="/wp-content/plugins/buddypress/bp-members/css/blocks/member.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-members-block-css" href="/wp-content/plugins/buddypress/bp-members/css/blocks/members.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-dynamic-members-block-css" href="/wp-content/plugins/buddypress/bp-members/css/blocks/dynamic-members.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-latest-activities-block-css" href="/wp-content/plugins/buddypress/bp-activity/css/blocks/latest-activities.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-friends-block-css" href="/wp-content/plugins/buddypress/bp-friends/css/blocks/friends.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-group-block-css" href="/wp-content/plugins/buddypress/bp-groups/css/blocks/group.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-groups-block-css" href="/wp-content/plugins/buddypress/bp-groups/css/blocks/groups.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-dynamic-groups-block-css" href="/wp-content/plugins/buddypress/bp-groups/css/blocks/dynamic-groups.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-sitewide-notices-block-css" href="/wp-content/plugins/buddypress/bp-messages/css/blocks/sitewide-notices.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="embedpress_blocks-cgb-style-css-css" href="/wp-content/plugins/embedpress/Gutenberg/dist/blocks.style.build.css?ver=1695326741" media="all">
+<link rel="stylesheet" id="wp-components-css" href="/wp-includes/css/dist/components/style.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="wp-block-editor-css" href="/wp-includes/css/dist/block-editor/style.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="wp-reusable-blocks-css" href="/wp-includes/css/dist/reusable-blocks/style.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="wp-editor-css" href="/wp-includes/css/dist/editor/style.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="embedpress_pro-cgb-style-css-css" href="/wp-content/plugins/embedpress-pro/Gutenberg/dist/blocks.style.build.css" media="all">
+<style id="classic-theme-styles-inline-css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="wp-ai-content-generator-css" href="/wp-content/plugins/gpt3-ai-content-generator-premium/public/css/wp-ai-content-generator-public.css?ver=1.7.71" media="all">
+<link rel="stylesheet" id="automaticcss-core-css" href="/wp-content/uploads/automatic-css/automatic.css?ver=1690958891" media="all">
+<link rel="stylesheet" id="bp-admin-bar-css" href="/wp-content/plugins/buddypress/bp-core/css/admin-bar.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-nouveau-css" href="/wp-content/plugins/buddypress/bp-templates/bp-nouveau/css/buddypress.min.css?ver=11.3.1" media="screen">
+<link rel="stylesheet" id="embedpress-css" href="/wp-content/plugins/embedpress/assets/css/embedpress.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="bricks-frontend-css" href="/wp-content/themes/bricks/assets/css/frontend.min.css?ver=1695510514" media="all">
+<style id="bricks-frontend-inline-css">:root {    --x-toc-type: decimal;    --x-toc-typetwo: decimal;    --x-toc-typethree: decimal;    --x-toc-typefour: decimal;    --x-toc-typefive: decimal;    --x-toc-duration: 300ms;    --x-toc-suffix: '';    --x-toc-seperator: '.';}.brxe-xtableofcontents {    width: 100%;    overflow: hidden;}[data-x-toc] {    position: relative;}.x-toc_header {    display: flex;    align-items: center;    flex-direction: row;    justify-content: space-between;    padding: 10px;    cursor: pointer;      line-height: 1;}  .x-toc_header-icon {    font-size: .8em;}.x-toc_header-icon i {    transition: transform 0.4s ease;}.x-toc_header[aria-expanded=true] .x-toc_header-icon i {    transform: rotateX(180deg);}.brxe-xtableofcontents ::marker {    content: none;    display: none;}.brxe-xtableofcontents > .x-toc_list {    overflow: hidden;    position: relative;}.brxe-xtableofcontents > .x-toc_list li {    list-style: none;   }.x-toc_list .x-toc_list {    padding-left: 10px;}.x-toc_list-item {    -webkit-column-break-inside: avoid;    -moz-column-break-inside: avoid;    break-inside: avoid; }a.x-toc_link {    color: currentColor;    height: 100%;    padding: 0 10px;    display: block;}.x-toc_collapsible {    max-height: 1000px;    overflow: hidden;    transition: all 300ms ease-in-out;}.x-toc_collapsed {    max-height: 0;}.x-toc_position-fixed {    position: fixed !important;    top: 0;}.x-toc_active-link {    font-weight: 700;}.brxe-xtableofcontents[data-x-toc*=border] .x-toc_link::before {    background-color: #eee;    content: " ";    display: inline-block;    height: inherit;    left: 0;    margin-top: -1px;    position: absolute;    width: 2px;}.brxe-xtableofcontents[data-x-toc*=border] .x-toc_active-link::before {    background-color: #54bc4b;}.x-toc_list {    margin: 0;    padding: 0;    list-style-type: none;    list-style-position: inside;    counter-reset: x_toc_items; }.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_link:before {    content: counters(x_toc_items,'', var(--x-toc-type)) '' var(--x-toc-suffix) ' ';}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_link:before {    content: counter(x_toc_items, var(--x-toc-type)) '' var(--x-toc-seperator) '' counter(x_toc_itemstwo, var(--x-toc-typetwo)) '' var(--x-toc-suffix) ' ';}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_list .x-toc_link:before {    content: counter(x_toc_items, var(--x-toc-type)) '' var(--x-toc-seperator) '' counter(x_toc_itemstwo, var(--x-toc-typetwo)) '' var(--x-toc-seperator) '' counter(x_toc_itemsthree, var(--x-toc-typethree)) '' var(--x-toc-suffix) ' ';}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_list .x-toc_list .x-toc_link:before {    content: counter(x_toc_items, var(--x-toc-type)) '' var(--x-toc-seperator) '' counter(x_toc_itemstwo, var(--x-toc-typetwo)) '' var(--x-toc-seperator) '' counter(x_toc_itemsthree, var(--x-toc-typethree)) '' var(--x-toc-seperator) '' counter(x_toc_items, var(--x-toc-typefour)) '' var(--x-toc-suffix) ' ';}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list {    counter-reset: x_toc_itemstwo;}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_list {    counter-reset: x_toc_itemsthree;}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_list .x-toc_list {    counter-reset: x_toc_itemsfour;}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list-item {    counter-increment: x_toc_items;}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_list-item {    counter-increment: x_toc_itemstwo;}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_list .x-toc_list-item {    counter-increment: x_toc_itemsthree;}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_list .x-toc_list .x-toc_list-item {    counter-increment: x_toc_itemsfour;}.brxe-xtableofcontents[data-x-toc*=counter][data-x-toc*=nestCounters] .x-toc_link:before {    content: counters(x_toc_items,'', var(--x-toc-type)) '' var(--x-toc-suffix) ' ';}.brxe-xtableofcontents[data-x-toc*=counter][data-x-toc*=nestCounters] .x-toc_list .x-toc_list .x-toc_link:before {    content: counter(x_toc_itemstwo, var(--x-toc-typetwo)) '' var(--x-toc-suffix) ' ';}.brxe-xtableofcontents[data-x-toc*=counter][data-x-toc*=nestCounters] .x-toc_list .x-toc_list .x-toc_list .x-toc_link:before {    content: counter(x_toc_itemsthree, var(--x-toc-typethree)) '' var(--x-toc-suffix) ' ';}.brxe-xtableofcontents[data-x-toc*=counter][data-x-toc*=nestCounters] .x-toc_list .x-toc_list .x-toc_list .x-toc_list .x-toc_link:before {    content: counter(x_toc_itemsfour, var(--x-toc-typefour)) '' var(--x-toc-suffix) ' ';}[data-x-toc-content] h1[tabindex]:focus,[data-x-toc-content] h2[tabindex]:focus,[data-x-toc-content] h3[tabindex]:focus,[data-x-toc-content] h4[tabindex]:focus,[data-x-toc-content] h5[tabindex]:focus,[data-x-toc-content] h6[tabindex]:focus {    outline: none;}.x-toc_body {    --x-toc-close-true: none;    --x-toc-close-false: flex;    display: var(--x-toc-close)}
+
+			#brx-header {
+				--x-header-transition: 0;
+				--x-header-fade-transition: 0;
+			}
+
+			#brx-header.x-header_sticky-active {
+				z-index: 999;
+			}</style>
+<link rel="stylesheet" id="bricks-font-awesome-css" href="/wp-content/themes/bricks/assets/css/libs/font-awesome.min.css?ver=1695510514" media="all">
+<link rel="stylesheet" id="bricks-ionicons-css" href="/wp-content/themes/bricks/assets/css/libs/ionicons.min.css?ver=1695510514" media="all">
+<link rel="stylesheet" id="bricks-themify-icons-css" href="/wp-content/themes/bricks/assets/css/libs/themify-icons.min.css?ver=1695510514" media="all">
+<link rel="stylesheet" id="automaticcss-bricks-css" href="/wp-content/uploads/automatic-css/automatic-bricks.css?ver=1690958892" media="all">
+<style id="bricks-frontend-inline-inline-css">/* COLOR VARS */
+:root {
+--bricks-color-41d5a9: #f5f5f5;
+--bricks-color-99c887: #e0e0e0;
+--bricks-color-46e566: #9e9e9e;
+--bricks-color-733d27: #616161;
+--bricks-color-366073: #424242;
+--bricks-color-da83d8: #212121;
+--bricks-color-e13943: #ffeb3b;
+--bricks-color-532f05: #ffc107;
+--bricks-color-02cdaf: #ff9800;
+--bricks-color-27368d: #ff5722;
+--bricks-color-9a6966: #f44336;
+--bricks-color-ff9397: #9c27b0;
+--bricks-color-eeb003: #2196f3;
+--bricks-color-07d926: #03a9f4;
+--bricks-color-dd2228: #81D4FA;
+--bricks-color-81c7f1: #4caf50;
+--bricks-color-2147aa: #8bc34a;
+--bricks-color-97f143: #cddc39;
+--bricks-color-zagbnv: #f9e35e;
+--bricks-color-vipnmf: rgba(196, 232, 247, 0.62);
+--bricks-color-wvvhuc: #d8d2ca;
+--bricks-color-acss_import_transparent: transparent;
+}
+
+/* GLOBAL CLASSES CSS */
+
+/* BREAKPOINT: Desktop (BASE) */
+.post-content.brxe-section {padding-top: 35px; padding-right: 20px; padding-left: 20px}
+
+
+/* HEADER CSS (ID: 28) */
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-fukllx {width: 80%}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-fukllx {width: 100%}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-mwbyjd {width: 25%}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-mwbyjd {width: 50%}
+}
+@media (max-width: 767px) {
+#brxe-ajfwhw .bricks-nav-menu-wrapper { display: none; }
+#brxe-ajfwhw .bricks-mobile-menu-toggle { display: block; }
+}
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-ajfwhw {font-family: "Roboto"; text-transform: capitalize; font-weight: 700; font-size: 16px; color: #ffffff}
+#brxe-ajfwhw .bricks-nav-menu > li > a {color: var(--danger); text-transform: capitalize; font-family: "Poppins"; font-weight: 700; font-size: 1.25em}
+#brxe-ajfwhw .bricks-nav-menu > li > .brx-submenu-toggle > * {color: var(--danger); text-transform: capitalize; font-family: "Poppins"; font-weight: 700; font-size: 1.25em}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-ajfwhw .bricks-mobile-menu-toggle {color: var(--bricks-color-9a6966)}
+#brxe-ajfwhw.show-mobile-menu .bricks-mobile-menu-toggle {color: var(--bricks-color-9a6966) !important}
+#brxe-ajfwhw {align-self: flex-end}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-togjjs {width: 50%; flex-direction: row; column-gap: 30px; justify-content: center}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-togjjs {width: 50%; justify-content: flex-end}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-qpglvf {font-size: 20px; background-color: var(--bricks-color-9a6966); padding-top: 9px; padding-right: 13px; padding-bottom: 9px; padding-left: 13px; border-radius: 50px; color: #ffffff; fill: #ffffff}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-qpglvf {display: none}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-zturax {font-size: 18px; background-color: var(--bricks-color-9a6966); padding-top: 10px; padding-right: 9px; padding-bottom: 9px; padding-left: 10px; border-radius: 50px; color: #ffffff; fill: #ffffff}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-zturax {display: none}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-mxxbuo {font-size: 18px; background-color: var(--bricks-color-9a6966); padding-top: 10px; padding-right: 11px; padding-bottom: 10px; padding-left: 11px; border-radius: 50px; color: #ffffff; fill: #ffffff}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-mxxbuo {display: none}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-eulzai {font-size: 18px; background-color: var(--bricks-color-9a6966); padding-top: 10px; padding-right: 9px; padding-bottom: 10px; padding-left: 9px; border-radius: 50px; color: #ffffff; fill: #ffffff}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-eulzai {display: none}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-onwkos {width: 25%; flex-direction: row; column-gap: 10px; justify-content: flex-end}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-onwkos {width: 50%}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-gxgllw {flex-direction: row; align-items: center}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-gbfmvp {padding-top: 20px; padding-bottom: 20px; background-color: #000000}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-gbfmvp {padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px; top: 0px; z-index: 1; position: sticky}
+}
+
+/* CONTENT CSS (ID: 968) */
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-wdjlqy {color: #ffffff; text-align: center; font-family: "Poppins"; font-weight: 700}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-dctapm {color: #ffffff; font-family: "Poppins"; font-weight: 600; padding-top: 10px; padding-bottom: 10px}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-tvhypf {color: #ffffff; font-family: "Poppins"; font-weight: 500}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-ugqukz {text-align: center; flex-direction: column; align-self: center !important; align-items: center; width: 100%; padding-right: 50px; padding-left: 50px; background-attachment: fixed; background-position: center center; background-repeat: no-repeat; background-size: cover}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-gvwqnf {padding-top: 9vw; padding-bottom: 3vw; background-attachment: fixed; background-position: center center; background-repeat: no-repeat; background-size: cover; position: relative}
+:where(#brxe-gvwqnf > *) {position: relative}
+#brxe-gvwqnf::before {background-image: linear-gradient(rgba(33, 33, 33, 0.38), rgba(33, 33, 33, 0.38)); position: absolute; content: ""; top: 0; right: 0; bottom: 0; left: 0; pointer-events: none}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-cdjpkl {margin-top: 25px; margin-bottom: 25px}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-dngkka {color: #000000; font-size: 18px; font-family: "Poppins"; font-weight: 600; text-align: left; align-self: center; margin-top: 3vw}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-kofzsc {position: static; top: 25%; display: flex; flex-direction: row; gap: 5px; align-self: center; align-items: center}
+#brxe-kofzsc li {margin-top: 10px}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-izjvkr {margin-top: 20px}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-skjruf {width: 100%; align-items: flex-start}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-wfrprg input[type=search]::placeholder {color: #000000}
+#brxe-wfrprg input[type=search] {border-color: #000000}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-gugwak .x-toc_header {color: #000000; font-family: "Poppins"; font-weight: 500}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-amoawz {color: #000000; font-size: 24px; font-family: "Poppins"; font-weight: 600; text-align: center; position: relative; align-self: center; margin-top: 15px; margin-bottom: 15px}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-ueaixc .repeater-item [data-field-id="5c6fed"] {margin-top: 10px}
+#brxe-ueaixc {grid-template-columns: repeat(1, 1fr); grid-auto-flow: unset}
+#brxe-ueaixc li {color: #000000; font-family: "Poppins"; font-size: .75em; padding-bottom: 50px; box-shadow: 5px 5px 1px 0 var(--bricks-color-9a6966)}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-hwsqci {width: 25%; flex-direction: column; align-self: flex-start !important; align-items: center; padding-left: 35px}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-jtuphi {flex-direction: row; padding-bottom: 25px; column-gap: 30px}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-tzozql {padding-bottom: 35px}
+
+
+/* FOOTER CSS (ID: 31) */
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-rpisls {width: 43%}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-eaxztd {color: #ffffff; font-family: "Roboto"; margin-top: 20px}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-eaxztd {text-align: center}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-xpelqb {width: 50%}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-xpelqb {width: 100%; margin-top: 40px; align-items: center}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-rakvig {color: #ffffff; font-family: "Roboto"}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-hdxtls .icon i {font-size: 20px}
+#brxe-hdxtls .icon {align-self: center; color: var(--bricks-color-9a6966)}
+#brxe-hdxtls {gap: 10px; flex-direction: row; margin-top: 20px}
+#brxe-hdxtls .icon a {color: var(--bricks-color-9a6966)}
+#brxe-hdxtls .content {color: #ffffff; font-family: "Roboto"}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-mqefoe .icon i {font-size: 20px}
+#brxe-mqefoe .icon {align-self: center; color: var(--bricks-color-9a6966)}
+#brxe-mqefoe {gap: 10px; flex-direction: row; margin-top: 7px}
+#brxe-mqefoe .icon a {color: var(--bricks-color-9a6966)}
+#brxe-mqefoe .content {color: #ffffff; font-family: "Roboto"}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-vrahhh .icon i {font-size: 20px}
+#brxe-vrahhh .icon {align-self: center; color: var(--bricks-color-9a6966)}
+#brxe-vrahhh {gap: 10px; flex-direction: row; margin-top: 7px}
+#brxe-vrahhh .icon a {color: var(--bricks-color-9a6966)}
+#brxe-vrahhh .content {color: #ffffff; font-family: "Roboto"}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-xuqyxc {width: 25%}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-xuqyxc {width: 100%; margin-top: 40px; align-items: center}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-lgqfds {color: #ffffff; font-family: "Roboto"}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-eecmvu {margin-top: 20px; color: #ffffff; font-family: "Roboto"; text-transform: capitalize; font-weight: 500}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-ztmoaz {margin-top: 6px; color: #ffffff; font-family: "Roboto"; text-transform: capitalize; font-weight: 500}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-dcnagm {margin-top: 6px; color: #ffffff; font-family: "Roboto"; text-transform: capitalize; font-weight: 500}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-luqjcj {margin-top: 6px; color: #ffffff; font-family: "Roboto"; text-transform: capitalize; font-weight: 500}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-jvfmyb {width: 25%; padding-bottom: 40px}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-jvfmyb {width: 100%; margin-top: 40px; align-items: center}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-lwvhbf {flex-direction: row; column-gap: 50px; border-bottom: 2px solid #ffffff}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-joihqv {font-size: 17px}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-joihqv {text-align: center}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-nitblx {margin-top: 20px; margin-bottom: 20px; align-items: flex-end; color: #ffffff; font-family: "Roboto"; text-transform: capitalize}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-tseoqd {background-color: #323232; padding-top: 5vw}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-tseoqd {padding-right: 20px; padding-left: 20px}
+}</style>
+<link rel="stylesheet" id="bricks-google-fonts-css" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&#038;display=swap&#038;family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&#038;display=swap" media="all">
+<link rel="stylesheet" id="plyr-css" href="/wp-content/plugins/embedpress/assets/css/plyr.css?ver=6.3.1" media="all">
+<script src="/wp-includes/js/jquery/jquery.min.js?ver=3.7.0" id="jquery-core-js"></script>
+<script src="/wp-content/plugins/gpt3-ai-content-generator-premium/public/js/wp-ai-content-generator-public.js?ver=1.7.71" id="wp-ai-content-generator-js"></script>
+<script src="/wp-content/plugins/buddypress/bp-core/js/widget-members.min.js?ver=11.3.1" id="bp-widget-members-js"></script>
+<script src="/wp-content/plugins/buddypress/bp-core/js/jquery-query.min.js?ver=11.3.1" id="bp-jquery-query-js"></script>
+<script src="/wp-content/plugins/buddypress/bp-core/js/vendor/jquery-cookie.min.js?ver=11.3.1" id="bp-jquery-cookie-js"></script>
+<script src="/wp-content/plugins/buddypress/bp-core/js/vendor/jquery-scroll-to.min.js?ver=11.3.1" id="bp-jquery-scroll-to-js"></script>
+<script src="/wp-content/plugins/embedpress/assets/js/plyr.polyfilled.js?ver=1" id="plyr.polyfilled-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/968">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.3.1">
+<link rel="shortlink" href="/?p=968">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Fabout%2Ftraining-exercises-to-strengthen-houndadores-recall-despite-prey-instincts%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Fabout%2Ftraining-exercises-to-strengthen-houndadores-recall-despite-prey-instincts%2F#038;format=xml">
+
+	<script type="text/javascript">var ajaxurl = '/wp-admin/admin-ajax.php';</script>
+
+<style media="print">#wpadminbar { display:none; }</style>
+	<style media="screen">html { margin-top: 32px !important; }
+	@media screen and ( max-width: 782px ) {
+		html { margin-top: 46px !important; }
+	}</style>
+	<link rel="icon" href="/wp-content/uploads/2023/03/Dog-Training-Favicon-150x150.png" sizes="32x32">
+<link rel="icon" href="/wp-content/uploads/2023/03/Dog-Training-Favicon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/wp-content/uploads/2023/03/Dog-Training-Favicon.png">
+<meta name="msapplication-TileImage" content="/wp-content/uploads/2023/03/Dog-Training-Favicon.png">
+		<style id="wp-custom-css">@media screen and (min-width: 375px) {
+body.bricks-is-frontend.admin-bar #brx-header.sticky {
+	top: 0px !important
+}
+}
+
+#brxe-fuxnba .bricks-pagination ul {
+    justify-content: center;
+    gap: 40px;
+    margin-top: 60px;
+}</style>
+		
+<!-- Facebook Open Graph (by Bricks) -->
+<meta property="og:url" content="/about/training-exercises-to-strengthen-houndadores-recall-despite-prey-instincts/">
+<meta property="og:site_name" content="Houndadore - The Perfect Blend Of Hound and Labradore">
+<meta property="og:title" content="Training exercises to strengthen Houndadore&#8217;s recall despite prey instincts">
+<meta property="og:description" content="&#8220;Master the art of recall and unleash your Houndadore&#8217;s potential.&#8221; Training exercises can be highly effective in strengthening a Houndadore&#8217;s recall, even in the presence of strong prey instincts. By implementing specific techniques and consistent practice, owners can enhance their Houndadore&#8217;s ability to come when called, ensuring their safety and providing peace of mind. Understanding [&hellip;]">
+<meta property="og:type" content="article">
+</head>
+
+<body class="bp-nouveau post-template-default single single-post postid-968 single-format-standard admin-bar no-customize-support brx-body bricks-is-frontend wp-embed-responsive no-js">		<a class="skip-link" href="#brx-content" aria-label="Skip to main content">Skip to main content</a>
+
+					<a class="skip-link" href="#brx-footer" aria-label="Skip to footer">Skip to footer</a>
+			<header id="brx-header" class="sticky on-scroll" data-x-overlay="none"><section id="brxe-gbfmvp" class="brxe-section"><div id="brxe-gxgllw" class="brxe-container">
+<div id="brxe-mwbyjd" class="brxe-block"><img width="300" height="75" src="/wp-content/uploads/2023/03/Houndadore-2-White.png" class="brxe-image css-filter size-full" alt="Houndadore" decoding="async" id="brxe-fukllx"></div>
+<div id="brxe-togjjs" class="brxe-block"><div id="brxe-ajfwhw" data-script-id="ajfwhw" class="brxe-nav-menu">
+<nav class="bricks-nav-menu-wrapper mobile_landscape"><ul id="menu-main-menu" class="bricks-nav-menu">
+<li id="menu-item-821" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-821 bricks-menu-item"><a href="/">Home</a></li>
+<li id="menu-item-822" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-822 bricks-menu-item"><a href="#">About</a></li>
+<li id="menu-item-823" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-823 bricks-menu-item"><a href="/blog/">Blog</a></li>
+<li id="menu-item-824" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-824 bricks-menu-item"><a href="#">Gallery</a></li>
+<li id="menu-item-825" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-825 bricks-menu-item"><a href="#">Contact</a></li>
+</ul></nav>			<button class="bricks-mobile-menu-toggle" aria-haspopup="true" aria-label="Mobile menu" aria-expanded="false">
+				<span class="bar-top"></span>
+				<span class="bar-center"></span>
+				<span class="bar-bottom"></span>
+			</button>
+			<nav class="bricks-mobile-menu-wrapper left"><ul id="menu-main-menu-1" class="bricks-mobile-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-821 bricks-menu-item"><a href="/">Home</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-822 bricks-menu-item"><a href="#">About</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-823 bricks-menu-item"><a href="/blog/">Blog</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-824 bricks-menu-item"><a href="#">Gallery</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-825 bricks-menu-item"><a href="#">Contact</a></li>
+</ul></nav><div class="bricks-mobile-menu-overlay"></div>
+</div></div>
+<div id="brxe-onwkos" class="brxe-block">
+<a href="https://www.facebook.com/houndadore" target="_blank"><i id="brxe-qpglvf" class="brxe-icon fab fa-facebook-f"></i></a><i id="brxe-zturax" class="brxe-icon fab fa-twitter"></i><i id="brxe-mxxbuo" class="brxe-icon fab fa-linkedin-in"></i><i id="brxe-eulzai" class="brxe-icon fab fa-youtube"></i>
+</div>
+</div></section></header><main id="brx-content"><section id="brxe-gvwqnf" class="brxe-section"><div id="brxe-ugqukz" class="brxe-container">
+<h1 id="brxe-wdjlqy" class="brxe-post-title">Training exercises to strengthen Houndadore&#8217;s recall despite prey instincts</h1>
+<div id="brxe-dctapm" class="brxe-shortcode"><nav aria-label="breadcrumbs" class="rank-math-breadcrumb"><p><a href="/">Home</a><span class="separator"> - </span><a href="/category/about/">About</a><span class="separator"> - </span><span class="last">Training exercises to strengthen Houndadore&#8217;s recall despite prey instincts</span></p></nav></div>
+<div id="brxe-tvhypf" class="brxe-post-meta post-meta">
+<span class="item">June 30, 2023</span><span class="item">0 comments</span>
+</div>
+</div></section><section id="brxe-tzozql" class="brxe-section post-content"><div id="brxe-jtuphi" class="brxe-container">
+<div id="brxe-skjruf" class="brxe-block">
+<div id="brxe-hbkqvb" class="brxe-post-content">
+<p>&#8220;Master the art of recall and unleash your Houndadore&#8217;s potential.&#8221;</p>
+<p>Training exercises can be highly effective in strengthening a Houndadore&#8217;s recall, even in the presence of strong prey instincts. By implementing specific techniques and consistent practice, owners can enhance their Houndadore&#8217;s ability to come when called, ensuring their safety and providing peace of mind.</p>
+<h2 id="understanding-the-prey-drive-in-houndadores-avJofSfzKh">Understanding the Prey Drive in Houndadores</h2>
+<p>Understanding the Prey Drive in Houndadores</p>
+<p>Houndadores, a mix between a Labrador Retriever and a Basset Hound, are known for their strong prey drive. This instinct, deeply ingrained in their DNA, can make it challenging to train them to have a reliable recall. However, with the right training exercises, it is possible to strengthen their recall despite their prey instincts.</p>
+<p>One important aspect of training a Houndadore is to understand their prey drive. This instinct is a result of their hunting ancestry, as both the Labrador Retriever and the Basset Hound were bred for hunting purposes. The prey drive is the natural instinct that compels dogs to chase and capture prey. In the case of Houndadores, this instinct can be triggered by anything that resembles prey, such as small animals, fast-moving objects, or even other dogs running.</p>
+<p>To strengthen the recall of a Houndadore, it is crucial to establish a strong foundation of basic obedience commands. This includes teaching them to sit, stay, and come on command. These commands should be practiced in a controlled environment, such as a quiet room or a fenced yard, before moving on to more challenging situations.</p>
+<p>Once the basic obedience commands are mastered, it is time to introduce distractions that mimic the prey drive triggers. This can be done gradually, starting with low-level distractions and gradually increasing the difficulty. For example, you can start by having someone walk by with a toy or a treat while practicing the recall command. As the Houndadore becomes more reliable in their recall, you can progress to using a remote-controlled toy or even having someone run past them.</p>
+<p>Another effective training exercise is to use a long-line leash. This allows you to give the Houndadore more freedom to explore while still maintaining control. Start by attaching the long-line leash to their collar and let them roam within a designated area. When you call them, gently reel them in using the leash. This exercise helps reinforce the recall command while still allowing the Houndadore to satisfy their prey drive by exploring their surroundings.</p>
+<p>To further strengthen the recall, it is important to make it a positive and rewarding experience for the Houndadore. Use high-value treats or toys as rewards when they come to you on command. This positive reinforcement will create a strong association between the recall command and a positive outcome, making them more likely to respond in the future.</p>
+<p>Consistency is key when training a Houndadore with a strong prey drive. Set aside regular training sessions and practice the recall command in various environments and situations. This will help the Houndadore generalize the command and respond reliably, regardless of the distractions present.</p>
+<p>In conclusion, training a Houndadore to have a reliable recall despite their prey instincts requires understanding their prey drive and implementing the right training exercises. By establishing a strong foundation of basic obedience commands, gradually introducing distractions, using a long-line leash, and providing positive reinforcement, it is possible to strengthen their recall. With consistency and patience, you can help your Houndadore overcome their prey instincts and become a well-trained and obedient companion.</p>
+<h2 id="effective-recall-training-techniques-for-houndadores-avJofSfzKh">Effective Recall Training Techniques for Houndadores</h2>
+<p>Training exercises to strengthen Houndadore&#8217;s recall despite prey instincts</p>
+<p>Having a Houndadore can be a wonderful experience. These dogs are a mix of Labrador Retriever and Coonhound, resulting in a loyal and energetic companion. However, their strong prey instincts can make recall training a challenge. It is crucial to establish a strong recall command to ensure the safety of your Houndadore in various situations. In this article, we will explore effective recall training techniques that can help strengthen your Houndadore&#8217;s recall despite their prey instincts.</p>
+<p>One important aspect of recall training is to start in a controlled environment. Begin by practicing in a quiet and familiar space, such as your backyard or a quiet park. This will help minimize distractions and allow your Houndadore to focus on the training. Start by calling your dog&#8217;s name in a clear and firm voice, followed by the recall command, such as &#8220;come&#8221; or &#8220;here.&#8221; Use a positive and enthusiastic tone to encourage your dog to come to you.</p>
+<p>To reinforce the recall command, it is essential to reward your Houndadore for coming to you. Use high-value treats or toys that your dog finds particularly enticing. When your dog responds to the recall command and comes to you, immediately reward them with praise and the treat or toy. This positive reinforcement will help your Houndadore associate coming to you with something enjoyable, making them more likely to respond to the recall command in the future.</p>
+<p>As your Houndadore becomes more comfortable with recall training in a controlled environment, gradually increase the level of distractions. Introduce mild distractions, such as a person walking by or a toy being thrown nearby. Practice the recall command in these situations, ensuring that your dog still responds promptly. If your Houndadore struggles to come to you, use a long leash to gently guide them towards you while repeating the recall command. Remember to reward them when they reach you, even if it required some guidance.</p>
+<p>Another effective technique to strengthen your Houndadore&#8217;s recall is to incorporate games into the training. Play hide-and-seek with your dog, where you hide and call their name followed by the recall command. When they find you, reward them with praise and treats. This game not only reinforces the recall command but also taps into their natural hunting instincts, making it an engaging and enjoyable training exercise.</p>
+<p>Consistency is key when it comes to recall training. Practice the recall command regularly, even after your Houndadore has mastered it. This will help reinforce the behavior and ensure that it becomes a reliable command. Additionally, always use the same recall command and avoid using it for any negative situations. This will prevent confusion and maintain a positive association with the command.</p>
+<p>In conclusion, recall training for Houndadores can be challenging due to their strong prey instincts. However, with the right techniques and consistent practice, you can strengthen your Houndadore&#8217;s recall command. Start in a controlled environment, use positive reinforcement, gradually increase distractions, and incorporate games into the training. Remember to be patient and consistent, and soon your Houndadore will respond reliably to the recall command, ensuring their safety and your peace of mind.</p>
+<h2 id="building-a-strong-foundation-for-recall-training-avJofSfzKh">Building a Strong Foundation for Recall Training</h2>
+<p>Training exercises to strengthen Houndadore&#8217;s recall despite prey instincts</p>
+<p>Building a Strong Foundation for Recall Training</p>
+<p>When it comes to training a Houndadore, a crossbreed between a Labrador Retriever and a Bloodhound, one of the most challenging aspects can be strengthening their recall despite their strong prey instincts. These instincts can make it difficult for them to resist chasing after small animals or getting easily distracted by scents. However, with the right training exercises, you can build a strong foundation for recall training and ensure that your Houndadore comes back to you reliably, even in the face of tempting distractions.</p>
+<p>One effective exercise to start with is the &#8220;come&#8221; command in a controlled environment. Begin by using a long leash and finding a quiet, enclosed area such as a backyard or a park with a secure fence. Attach the leash to your Houndadore&#8217;s collar and let them explore the area while you hold onto the other end of the leash. After a few minutes, call your dog&#8217;s name followed by the command &#8220;come&#8221; in a firm and authoritative tone. Use a treat or a favorite toy as a reward when they come to you. Repeat this exercise several times, gradually increasing the distance between you and your dog. This exercise helps establish the association between the command &#8220;come&#8221; and a positive reward, reinforcing the desired behavior.</p>
+<p>Once your Houndadore is consistently responding to the &#8220;come&#8221; command in a controlled environment, it&#8217;s time to introduce distractions. Start by having a friend or family member walk by while you&#8217;re practicing the exercise. As your dog becomes more comfortable with this level of distraction, gradually increase the difficulty by having the person walk closer or even toss a toy or treat nearby. The key is to reward your Houndadore for coming to you despite the distractions. This exercise helps your dog learn to prioritize your command over their prey instincts.</p>
+<p>Another useful exercise is the &#8220;hide and seek&#8221; game. This game not only strengthens your Houndadore&#8217;s recall but also taps into their natural tracking abilities. Begin by having a friend or family member hold your dog&#8217;s attention while you hide in a nearby location. Once you&#8217;re hidden, call your dog&#8217;s name followed by the command &#8220;come.&#8221; When they find you, reward them with praise and a treat. Repeat this game in different locations, gradually increasing the difficulty by hiding in more challenging spots. This exercise helps your Houndadore associate the command &#8220;come&#8221; with the excitement of finding you, making it more enticing for them to respond.</p>
+<p>In addition to these exercises, it&#8217;s crucial to consistently reinforce recall training in everyday situations. Always use a positive and authoritative tone when giving the command &#8220;come,&#8221; and reward your Houndadore with praise and treats when they respond correctly. Avoid using the recall command for negative situations, such as scolding or punishment, as this can create confusion and diminish their willingness to come when called.</p>
+<p>Remember, building a strong foundation for recall training takes time and patience. Consistency is key, so make sure to practice these exercises regularly and gradually increase the difficulty as your Houndadore becomes more proficient. With dedication and the right training techniques, you can strengthen your Houndadore&#8217;s recall despite their prey instincts, ensuring a strong bond and a reliable response when you need it most.</p>
+<h2 id="overcoming-prey-instincts-recall-exercises-for-houndadores-avJofSfzKh">Overcoming Prey Instincts: Recall Exercises for Houndadores</h2>
+<p>Training exercises to strengthen Houndadore&#8217;s recall despite prey instincts</p>
+<p>Houndadores, a mix between a Labrador Retriever and a Bloodhound, are known for their strong prey instincts. These instincts can make it challenging to train them to have a reliable recall. However, with the right training exercises, it is possible to overcome these instincts and strengthen their recall abilities.</p>
+<p>One effective exercise to help Houndadores overcome their prey instincts is the &#8220;come and stay&#8221; exercise. Start by having your Houndadore on a long leash in a controlled environment, such as a fenced yard or a quiet park. Begin by calling your dog&#8217;s name and using a command like &#8220;come.&#8221; When your dog starts to approach you, give the command &#8220;stay&#8221; and hold your hand up in a stop gesture. This exercise teaches your Houndadore to come to you and then stay in place, despite their natural inclination to chase after prey.</p>
+<p>Another useful exercise is the &#8220;hide and seek&#8221; game. This exercise helps to reinforce the recall command while also engaging your Houndadore&#8217;s natural hunting instincts. Start by having a family member or friend hold your dog&#8217;s attention while you hide in another room or behind an object. Once you are hidden, call your dog&#8217;s name and give the recall command. When your Houndadore finds you, reward them with praise and a treat. This exercise not only strengthens their recall abilities but also provides mental stimulation and reinforces the bond between you and your dog.</p>
+<p>To further enhance your Houndadore&#8217;s recall despite their prey instincts, incorporate the &#8220;leave it&#8221; command into their training. This command teaches your dog to ignore potential prey and focus on you instead. Start by holding a treat in your hand and showing it to your dog. As they try to grab the treat, firmly say &#8220;leave it&#8221; and close your hand. Once your dog stops trying to get the treat, reward them with a different treat from your other hand. Repeat this exercise, gradually increasing the difficulty by using more tempting items, such as a toy or a piece of food on the ground. With consistent practice, your Houndadore will learn to resist their prey instincts and respond to the recall command.</p>
+<p>In addition to these exercises, it is crucial to provide regular mental and physical exercise for your Houndadore. These activities help to channel their energy and reduce their prey drive. Take your dog for daily walks or runs, engage them in interactive play sessions, and provide puzzle toys or treat-dispensing toys to keep their minds stimulated. By keeping your Houndadore physically and mentally satisfied, you can help reduce their instinctual need to chase after prey and increase their focus on you.</p>
+<p>In conclusion, training a Houndadore to have a reliable recall despite their prey instincts requires patience, consistency, and the right exercises. By incorporating the &#8220;come and stay&#8221; exercise, the &#8220;hide and seek&#8221; game, and the &#8220;leave it&#8221; command into their training routine, you can strengthen their recall abilities and overcome their natural inclination to chase after prey. Remember to provide regular mental and physical exercise to keep your Houndadore satisfied and focused. With time and dedication, your Houndadore will become a well-trained and obedient companion, even in the face of their prey instincts.</p>
+<h2 id="the-importance-of-consistency-in-recall-training-avJofSfzKh">The Importance of Consistency in Recall Training</h2>
+<p>Training exercises to strengthen Houndadore&#8217;s recall despite prey instincts</p>
+<p>The Importance of Consistency in Recall Training</p>
+<p>When it comes to training your Houndadore, one of the most crucial skills to teach them is recall. This command ensures that your dog will come back to you when called, regardless of any distractions or prey instincts they may have. However, due to their hunting background, Houndadores can be prone to chasing after small animals or getting easily distracted by scents. This is why it is essential to implement consistent recall training exercises to strengthen their recall abilities.</p>
+<p>Consistency is key when it comes to training any dog, but it becomes even more critical with Houndadores. These dogs have a strong prey drive, which means they are naturally inclined to chase after small animals. This instinct can make recall training more challenging, but with the right approach, it is entirely possible to overcome this hurdle.</p>
+<p>One effective exercise to strengthen your Houndadore&#8217;s recall is the &#8220;come and stay&#8221; game. Start by having your dog on a long leash in a secure area. Call their name followed by the command &#8220;come.&#8221; When they come to you, reward them with praise and a treat. Then, ask them to &#8220;stay&#8221; while you take a few steps back. After a few seconds, call them again using the &#8220;come&#8221; command. Repeat this exercise several times, gradually increasing the distance and duration of the &#8220;stay&#8221; command. This exercise helps reinforce the recall command while also teaching your dog impulse control.</p>
+<p>Another useful exercise is the &#8220;hide and seek&#8221; game. This game not only strengthens recall but also helps your Houndadore learn to focus on you rather than their prey instincts. Start by having someone hold your dog while you hide in a nearby area. Once you are hidden, call your dog&#8217;s name followed by the recall command. When they find you, reward them with praise and treats. Repeat this game regularly, gradually increasing the difficulty by hiding in more challenging spots. This exercise helps build trust between you and your dog while also reinforcing their recall skills.</p>
+<p>Consistency in training also means setting clear boundaries and expectations for your Houndadore. Establishing a designated recall word or phrase is crucial. Use the same command every time you want your dog to come to you, and avoid using it for any other purpose. This consistency helps your dog understand the importance of the command and reduces confusion.</p>
+<p>Additionally, it is essential to practice recall training in various environments and with different distractions. Start in a quiet, controlled area and gradually introduce more distractions such as other dogs, people, or even small animals. This exposure helps your Houndadore learn to focus on you despite any potential distractions. Remember to reward them generously when they successfully come to you, reinforcing the positive behavior.</p>
+<p>In conclusion, recall training is vital for Houndadores, especially due to their prey instincts. Consistency is key when it comes to strengthening their recall abilities. By implementing exercises such as the &#8220;come and stay&#8221; game and the &#8220;hide and seek&#8221; game, you can reinforce the recall command while also teaching impulse control and focus. Setting clear boundaries and expectations, using a designated recall word, and practicing in various environments will further enhance your Houndadore&#8217;s recall skills. With patience, consistency, and the right training techniques, you can overcome their prey instincts and have a well-trained and reliable Houndadore.</p>
+<h2 id="using-positive-reinforcement-to-strengthen-recall-in-houndadores-avJofSfzKh">Using Positive Reinforcement to Strengthen Recall in Houndadores</h2>
+<p>Training exercises to strengthen Houndadore&#8217;s recall despite prey instincts</p>
+<p>Using Positive Reinforcement to Strengthen Recall in Houndadores</p>
+<p>When it comes to training a Houndadore, a crossbreed between a Labrador Retriever and a Bloodhound, one of the biggest challenges can be their strong prey instincts. These instincts can make it difficult for them to resist chasing after small animals or getting easily distracted by scents. However, with the right training exercises and positive reinforcement techniques, you can strengthen their recall and ensure they come back to you when called, no matter the distractions.</p>
+<p>One effective training exercise to strengthen recall in Houndadores is the &#8220;come&#8221; command game. Start by finding a quiet and secure area where you can practice without any distractions. Begin by calling your Houndadore&#8217;s name followed by the command &#8220;come&#8221; in a clear and firm voice. As soon as they start moving towards you, reward them with a treat and praise. Repeat this exercise several times, gradually increasing the distance between you and your dog. This game helps to associate the &#8220;come&#8221; command with positive rewards, reinforcing the desired behavior.</p>
+<p>Another useful exercise is the &#8220;hide and seek&#8221; game. This game not only strengthens recall but also helps to build trust and deepen the bond between you and your Houndadore. Start by having someone hold your dog while you hide in a nearby location. Once you are hidden, call your dog&#8217;s name followed by the command &#8220;come.&#8221; When they find you, reward them with treats and praise. Repeat this exercise, gradually increasing the difficulty by hiding in more challenging spots. This game teaches your Houndadore to actively search for you when called, despite any distractions or scents they may encounter along the way.</p>
+<p>Incorporating scent training into your recall exercises can also be highly beneficial for Houndadores. Their Bloodhound heritage makes them particularly sensitive to scents, so using this to your advantage can help strengthen their recall. Start by placing a small amount of a strong-smelling treat, such as cheese or liver, in a container. Allow your Houndadore to sniff the container and then hide it in a nearby location. Once hidden, call your dog&#8217;s name followed by the command &#8220;come.&#8221; When they find you, reward them with the treat from the container. Repeat this exercise, gradually increasing the distance and difficulty of the hiding spots. This scent training helps to reinforce the recall command while also engaging their natural instincts.</p>
+<p>Consistency and patience are key when training a Houndadore to strengthen their recall. It is important to practice these exercises regularly and in different environments to ensure your dog can recall reliably in any situation. Additionally, always use positive reinforcement techniques, such as treats and praise, to reward desired behavior. Avoid punishment or negative reinforcement, as this can create fear or anxiety in your dog, hindering their progress.</p>
+<p>In conclusion, training a Houndadore to strengthen their recall despite their prey instincts requires a combination of effective exercises and positive reinforcement techniques. The &#8220;come&#8221; command game, hide and seek, and scent training are all valuable tools in achieving this goal. Remember to be consistent, patient, and always use positive reinforcement to reward your Houndadore for their efforts. With time and dedication, you can successfully strengthen their recall and enjoy a strong bond with your furry companion.</p>
+<h2 id="recall-games-and-activities-for-houndadores-avJofSfzKh">Recall Games and Activities for Houndadores</h2>
+<p>Training exercises to strengthen Houndadore&#8217;s recall despite prey instincts</p>
+<p>When it comes to training a Houndadore, one of the biggest challenges can be their strong prey instincts. These dogs are a mix of a Labrador Retriever and a Coonhound, which means they have a natural inclination to chase after small animals. This can make it difficult to teach them a reliable recall, as their instinct to pursue prey can override their training. However, with the right approach and a variety of recall games and activities, you can strengthen your Houndadore&#8217;s recall and ensure their safety in any situation.</p>
+<p>One effective recall game for Houndadores is the &#8220;Hide and Seek&#8221; game. This game not only strengthens their recall, but also taps into their natural hunting instincts. Start by having a family member or friend hold your Houndadore while you hide in another room or behind a piece of furniture. Once you are hidden, call your dog&#8217;s name and give a command such as &#8220;come&#8221; or &#8220;here.&#8221; When your Houndadore finds you, reward them with praise and a treat. Repeat this game several times, gradually increasing the difficulty by hiding in more challenging spots. This game not only reinforces their recall, but also builds their confidence in finding you.</p>
+<p>Another recall activity that can help overcome prey instincts is the &#8220;Long Line Training&#8221; exercise. This exercise involves using a long leash or rope to give your Houndadore more freedom to explore while still maintaining control. Start in a secure, enclosed area such as a fenced yard or a quiet park. Attach the long line to your dog&#8217;s collar and let them explore while you hold the other end. As your Houndadore gets further away, call their name and give the recall command. If they come to you, reward them with praise and a treat. If they ignore you or start to chase after something, gently reel them in using the long line. Repeat this exercise regularly, gradually increasing the distance and distractions to strengthen their recall.</p>
+<p>One fun recall game that can help overcome prey instincts is the &#8220;Find It&#8221; game. This game taps into your Houndadore&#8217;s natural scenting abilities and channels their energy into a positive activity. Start by hiding treats or toys in various locations around a room or in your yard. Then, release your dog and give the command &#8220;find it.&#8221; As your Houndadore searches for the hidden items, call their name and give the recall command. When they come to you, reward them with praise and a treat. This game not only strengthens their recall, but also provides mental stimulation and satisfies their hunting instincts.</p>
+<p>In addition to these recall games and activities, it&#8217;s important to consistently reinforce your Houndadore&#8217;s recall in everyday situations. Always use a positive and enthusiastic tone when calling them, and reward them with praise and treats when they come to you. Avoid situations where they may be tempted to chase after prey, such as off-leash areas with small animals. Instead, focus on controlled environments where you can gradually increase distractions and reinforce their recall.</p>
+<p>In conclusion, training a Houndadore to have a reliable recall despite their prey instincts can be challenging, but with the right approach and a variety of recall games and activities, it is possible. The &#8220;Hide and Seek&#8221; game, &#8220;Long Line Training&#8221; exercise, and &#8220;Find It&#8221; game are all effective ways to strengthen their recall and tap into their natural instincts. Consistency and positive reinforcement are key in ensuring your Houndadore&#8217;s safety and obedience in any situation. With patience and dedication, you can overcome their prey instincts and have a well-trained and reliable Houndadore.</p>
+<h2 id="training-houndadores-to-ignore-prey-distractions-avJofSfzKh">Training Houndadores to Ignore Prey Distractions</h2>
+<p>Training Houndadores to Ignore Prey Distractions</p>
+<p>Houndadores are a unique breed that combines the hunting instincts of a hound with the loyalty and intelligence of a Labrador Retriever. While this mix makes them excellent hunting companions, it can also pose a challenge when it comes to training them to ignore prey distractions. Houndadores have a strong prey drive, which means they are easily distracted by small animals or moving objects. However, with the right training exercises, you can strengthen their recall and teach them to focus on you, even in the presence of tempting prey.</p>
+<p>One effective training exercise to help Houndadores ignore prey distractions is the &#8220;Leave It&#8221; command. This command teaches your dog to resist the urge to chase after prey and instead focus on you. To start, hold a treat in your closed hand and present it to your dog. As soon as they show interest in the treat, firmly say &#8220;Leave it&#8221; and close your hand. Wait for a few seconds, and if your dog stops trying to get the treat, reward them with a different treat from your other hand and praise them. Repeat this exercise several times, gradually increasing the difficulty by placing the treat on the ground or using a toy instead. With consistent practice, your Houndadore will learn to resist the temptation of prey and listen to your command.</p>
+<p>Another useful training exercise is the &#8220;Look at Me&#8221; command. This exercise helps redirect your dog&#8217;s attention from prey to you. Start by holding a treat near your face and saying &#8220;Look at me.&#8221; When your dog makes eye contact with you, reward them with the treat and praise. Repeat this exercise in different environments, gradually increasing the distractions. You can also use a clicker to mark the moment your dog looks at you, followed by a treat. This reinforces the behavior and strengthens their recall despite prey instincts.</p>
+<p>To further enhance your Houndadore&#8217;s recall, incorporate recall games into your training routine. One popular game is the &#8220;Hide and Seek&#8221; game. Start by having someone hold your dog while you hide in another room or behind furniture. Call your dog&#8217;s name and use a high-pitched, excited tone to encourage them to find you. When they do, reward them with treats and praise. This game not only strengthens their recall but also builds their trust and bond with you.</p>
+<p>Additionally, practicing recall in real-life scenarios is crucial for training your Houndadore to ignore prey distractions. Find a safe, enclosed area where you can let your dog off-leash. Start by calling their name and using a recall command, such as &#8220;Come&#8221; or &#8220;Here.&#8221; When they come to you, reward them with treats and praise. Gradually increase the distractions by introducing toys or small animals at a distance. If your dog starts to show interest in the distractions, use the &#8220;Leave it&#8221; or &#8220;Look at me&#8221; commands to redirect their attention back to you. Consistency and positive reinforcement are key to reinforcing their recall skills in real-life situations.</p>
+<p>In conclusion, training Houndadores to ignore prey distractions requires patience, consistency, and the right training exercises. By teaching them the &#8220;Leave it&#8221; and &#8220;Look at me&#8221; commands, playing recall games, and practicing in real-life scenarios, you can strengthen their recall and help them focus on you, even in the presence of tempting prey. Remember to always use positive reinforcement and reward-based training methods to ensure a successful and enjoyable training experience for both you and your Houndadore.</p>
+<h2 id="recall-training-in-different-environments-for-houndadores-avJofSfzKh">Recall Training in Different Environments for Houndadores</h2>
+<p>Training exercises to strengthen Houndadore&#8217;s recall despite prey instincts</p>
+<p>Recall training is an essential aspect of owning a Houndadore, a crossbreed between a Labrador Retriever and a Bloodhound. These intelligent and energetic dogs have a strong prey drive, which can make recall challenging. However, with the right training exercises, you can strengthen your Houndadore&#8217;s recall and ensure their safety in different environments.</p>
+<p>One effective exercise to improve recall is the &#8220;come&#8221; command. Start by practicing in a controlled environment, such as your backyard or a quiet park. Use a long leash to give your Houndadore some freedom while still maintaining control. Begin by saying &#8220;come&#8221; in a firm and authoritative tone, then gently tug on the leash to guide them towards you. Reward them with praise and treats when they reach you. Repeat this exercise several times, gradually increasing the distance between you and your dog.</p>
+<p>To further challenge your Houndadore&#8217;s recall, introduce distractions during training sessions. This could be a toy, another dog, or even a person walking by. Start with mild distractions and gradually increase the difficulty level. The goal is to teach your dog to ignore these distractions and focus on coming to you when called. Remember to reward them generously when they successfully resist the temptation and respond to your command.</p>
+<p>Another useful exercise is the &#8220;hide and seek&#8221; game. This game not only strengthens recall but also taps into your Houndadore&#8217;s natural hunting instincts. Start by having someone hold your dog while you hide in a nearby location. Once you are hidden, call your dog&#8217;s name followed by the &#8220;come&#8221; command. As they find you, reward them with praise and treats. This game not only reinforces recall but also builds trust and strengthens the bond between you and your Houndadore.</p>
+<p>Recall training should not be limited to controlled environments. It is crucial to practice in different environments to ensure that your Houndadore responds reliably in any situation. Take your dog to a busy park, a beach, or even a hiking trail. Start with a long leash and gradually transition to off-leash training once your dog demonstrates consistent recall in various environments. Remember to always prioritize safety and follow local leash laws.</p>
+<p>When training in different environments, it is important to be patient and persistent. Your Houndadore&#8217;s prey instincts may be heightened in new and exciting surroundings, making recall more challenging. Use high-value treats and toys to motivate your dog and reinforce their recall. Additionally, consider using a whistle or a clicker as a recall cue. These distinct sounds can cut through distractions and grab your dog&#8217;s attention, making it easier for them to respond to your command.</p>
+<p>In conclusion, recall training is crucial for Houndadores due to their strong prey instincts. By incorporating exercises such as the &#8220;come&#8221; command, introducing distractions, playing hide and seek, and practicing in different environments, you can strengthen your Houndadore&#8217;s recall and ensure their safety. Remember to be patient, persistent, and use positive reinforcement techniques. With consistent training and practice, your Houndadore will become a reliable and obedient companion, regardless of their prey instincts.</p>
+<h2 id="advanced-recall-exercises-for-houndadores-with-strong-prey-instincts-avJofSfzKh">Advanced Recall Exercises for Houndadores with Strong Prey Instincts</h2>
+<p>Training exercises to strengthen Houndadore&#8217;s recall despite prey instincts</p>
+<p>Having a Houndadore with strong prey instincts can present a unique challenge when it comes to training their recall. These dogs, a mix between a Labrador Retriever and a Bloodhound, are known for their exceptional tracking abilities and natural hunting instincts. However, with the right training exercises, it is possible to strengthen their recall and ensure their safety in any situation.</p>
+<p>One effective exercise to improve a Houndadore&#8217;s recall is the &#8220;come and stay&#8221; game. Start by having your dog on a long leash in a secure area. Call your dog&#8217;s name and use a command such as &#8220;come&#8221; or &#8220;here.&#8221; When your dog starts to come towards you, praise them enthusiastically and reward them with a high-value treat. As they reach you, ask them to &#8220;stay&#8221; and hold out your hand in a stop gesture. Once they are in a stationary position, reward them again. Repeat this exercise several times, gradually increasing the distance between you and your dog. This exercise helps to reinforce the recall command and teaches your Houndadore to stay in place once they reach you.</p>
+<p>Another useful exercise is the &#8220;hide and seek&#8221; game. This exercise taps into your Houndadore&#8217;s natural tracking abilities while also reinforcing their recall. Start by having someone hold your dog while you find a hiding spot nearby. Once you are hidden, call your dog&#8217;s name and use the recall command. As they come towards you, praise them and reward them with a treat. Repeat this exercise several times, gradually increasing the distance and difficulty of the hiding spots. This game not only strengthens their recall but also provides mental stimulation and satisfies their prey instincts in a controlled environment.</p>
+<p>To further enhance your Houndadore&#8217;s recall, incorporate the &#8220;distraction training&#8221; exercise. This exercise helps your dog learn to focus on you despite the presence of tempting distractions. Start by having your dog on a leash in a controlled environment. Begin walking with your dog and, when you see a distraction such as a squirrel or a toy, use the recall command. As your dog starts to come towards you, praise them and reward them with a treat. Repeat this exercise with different distractions, gradually increasing the difficulty level. This exercise teaches your Houndadore to prioritize your command over their prey instincts.</p>
+<p>In addition to these exercises, it is crucial to establish a strong foundation of basic obedience training. Teaching your Houndadore commands such as &#8220;sit,&#8221; &#8220;stay,&#8221; and &#8220;leave it&#8221; will provide a solid framework for their recall training. Consistency and positive reinforcement are key in this process. Always reward your dog for coming when called and avoid punishment or negative reinforcement, as this can undermine their trust and hinder their progress.</p>
+<p>Remember, training a Houndadore with strong prey instincts requires patience and dedication. It is essential to create a positive and rewarding training environment to ensure their success. By incorporating these advanced recall exercises into your training routine and building a strong foundation of obedience, you can strengthen your Houndadore&#8217;s recall and enjoy a safe and fulfilling relationship with your furry friend.</p>
+<h2 id="training-houndadores-to-come-when-called-around-other-animals-avJofSfzKh">Training Houndadores to Come When Called Around Other Animals</h2>
+<p>Training Houndadores to Come When Called Around Other Animals</p>
+<p>Training a Houndadore to come when called can be a challenging task, especially when their strong prey instincts kick in. These lovable and energetic dogs are a mix of a Labrador Retriever and a Basset Hound, which means they have a natural inclination to chase after small animals. However, with the right training exercises, you can strengthen their recall and ensure they come when called, even in the presence of other animals.</p>
+<p>One effective training exercise is to start in a controlled environment, such as a fenced backyard or a quiet park. Begin by using a long leash to give your Houndadore some freedom to explore while still maintaining control. With a confident and authoritative tone, call your dog&#8217;s name followed by the command &#8220;come.&#8221; Use a treat or a favorite toy as a reward when they respond correctly. Repeat this exercise several times, gradually increasing the distance between you and your dog.</p>
+<p>As your Houndadore becomes more comfortable with the exercise, introduce distractions such as toys or treats placed strategically around the area. This will simulate the presence of other animals and test their ability to resist their prey instincts. Again, use a firm and authoritative tone when giving the command to come. If your dog gets distracted, gently reel them in using the long leash and reward them when they respond correctly.</p>
+<p>Another effective training exercise is to practice recall in the presence of other animals. Start with a calm and well-behaved animal, such as a friend&#8217;s dog or a neighbor&#8217;s cat. Keep both animals on a leash and at a safe distance from each other. Call your Houndadore to come while the other animal is present, and reward them when they respond correctly. Gradually decrease the distance between the two animals, always ensuring the safety of both.</p>
+<p>It&#8217;s important to remember that consistency is key when training a Houndadore. Practice these exercises regularly, gradually increasing the level of difficulty. As your dog becomes more reliable in their recall, you can start practicing in more challenging environments, such as a dog park or a busy street. Always prioritize safety and use a leash if necessary.</p>
+<p>In addition to training exercises, it&#8217;s essential to provide mental and physical stimulation for your Houndadore. These dogs have a lot of energy and need regular exercise to keep them happy and content. Engage in activities such as long walks, runs, or play sessions with other dogs. A tired dog is less likely to be driven by their prey instincts and more likely to respond to your commands.</p>
+<p>In conclusion, training a Houndadore to come when called around other animals requires patience, consistency, and the right training exercises. Start in a controlled environment, gradually introduce distractions, and practice recall in the presence of other animals. Remember to use a firm and authoritative tone, reward your dog for correct responses, and prioritize their safety at all times. With time and dedication, you can strengthen your Houndadore&#8217;s recall and enjoy a well-behaved and obedient companion, even in the face of their strong prey instincts.</p>
+<h2 id="common-challenges-in-recall-training-for-houndadores-avJofSfzKh">Common Challenges in Recall Training for Houndadores</h2>
+<p>Training exercises to strengthen Houndadore&#8217;s recall despite prey instincts</p>
+<p>Recall training is an essential aspect of owning a Houndadore, a crossbreed between a Labrador Retriever and a Bloodhound. These intelligent and energetic dogs have a strong prey drive, which can make recall training a bit challenging. However, with the right training exercises and techniques, you can strengthen your Houndadore&#8217;s recall and ensure their safety in any situation.</p>
+<p>One effective exercise to improve your Houndadore&#8217;s recall is the &#8220;come and stay&#8221; game. Start by having your dog on a long leash in a secure area. Call your dog&#8217;s name and use a command like &#8220;come&#8221; or &#8220;here.&#8221; When your dog starts coming towards you, praise them enthusiastically and reward them with a high-value treat. Repeat this exercise several times, gradually increasing the distance between you and your dog.</p>
+<p>To further reinforce the recall command, incorporate the &#8220;stay&#8221; command into the exercise. Once your dog reaches you, ask them to sit and stay for a few seconds before releasing them with another command like &#8220;okay&#8221; or &#8220;free.&#8221; This exercise not only strengthens your Houndadore&#8217;s recall but also teaches them impulse control and patience.</p>
+<p>Another useful exercise is the &#8220;hide and seek&#8221; game. This game taps into your Houndadore&#8217;s natural hunting instincts while reinforcing their recall. Start by having someone hold your dog while you hide in a nearby location. Once you are hidden, call your dog&#8217;s name and use the recall command. When your dog finds you, reward them with praise and treats. Repeat this game in different locations, gradually increasing the difficulty level by hiding in more challenging spots.</p>
+<p>To further challenge your Houndadore&#8217;s recall, incorporate distractions into the training exercises. For example, have a friend or family member walk by while you are practicing the recall command. This will simulate real-life scenarios where your dog may be tempted to chase after something. By practicing recall in the presence of distractions, you are teaching your Houndadore to prioritize your command over their prey instincts.</p>
+<p>Consistency is key when training your Houndadore&#8217;s recall. Set aside regular training sessions and practice in different environments to generalize the command. Start in a quiet and familiar area, gradually progressing to more stimulating environments like parks or busy streets. By exposing your dog to different situations, you are preparing them to respond to your recall command regardless of the distractions around them.</p>
+<p>It is important to note that recall training should always be positive and rewarding. Avoid using punishment or negative reinforcement, as this can create fear or anxiety in your Houndadore. Instead, focus on positive reinforcement techniques such as treats, praise, and playtime. This will create a positive association with the recall command and motivate your dog to respond eagerly.</p>
+<p>In conclusion, recall training for Houndadores can be challenging due to their strong prey instincts. However, with consistent training exercises and positive reinforcement techniques, you can strengthen your Houndadore&#8217;s recall and ensure their safety in any situation. Incorporate games like &#8220;come and stay&#8221; and &#8220;hide and seek&#8221; to make training fun and engaging. Remember to practice in different environments and gradually introduce distractions to generalize the recall command. With patience and dedication, your Houndadore will become a reliable and obedient companion.</p>
+<h2 id="training-houndadores-to-recall-off-leash-safely-avJofSfzKh">Training Houndadores to Recall Off-Leash Safely</h2>
+<p>Training Houndadores to Recall Off-Leash Safely</p>
+<p>Training a Houndadore to have a reliable recall can be a challenge, especially when they have strong prey instincts. These dogs, a mix between a Labrador Retriever and a Bloodhound, are known for their exceptional tracking abilities and keen sense of smell. However, with the right training exercises, it is possible to strengthen their recall and ensure their safety when off-leash.</p>
+<p>One effective exercise to improve a Houndadore&#8217;s recall is the &#8220;come&#8221; command. Start by using a long leash in a controlled environment, such as a fenced yard or a quiet park. Begin by saying &#8220;come&#8221; in a firm and authoritative tone while gently pulling on the leash. When your dog starts moving towards you, reward them with praise and a treat. Repeat this exercise several times, gradually increasing the distance between you and your dog. Eventually, you can remove the leash and practice the recall command in a safe, enclosed area.</p>
+<p>Another useful exercise is the &#8220;hide and seek&#8221; game. This game not only strengthens the recall command but also taps into the Houndadore&#8217;s natural tracking abilities. Start by having someone hold your dog while you hide in a nearby location. Once you are hidden, call your dog&#8217;s name followed by the &#8220;come&#8221; command. When your dog finds you, reward them with praise and a treat. Repeat this game regularly, gradually increasing the difficulty by hiding in more challenging spots. This exercise not only reinforces the recall command but also builds trust and strengthens the bond between you and your Houndadore.</p>
+<p>To further enhance your Houndadore&#8217;s recall, incorporate distractions into your training sessions. Start by introducing mild distractions, such as toys or treats, while practicing the recall command. Gradually increase the level of distractions, such as other dogs or people, to simulate real-life scenarios. It is important to remain patient and consistent during these exercises, rewarding your dog for successfully ignoring the distractions and coming to you. By gradually exposing your Houndadore to distractions, you are teaching them to prioritize your command over their prey instincts.</p>
+<p>In addition to specific training exercises, it is crucial to establish a strong foundation of obedience training. Teaching your Houndadore basic commands, such as sit, stay, and leave it, will provide a solid framework for recall training. Consistency is key when it comes to obedience training, so make sure to practice these commands regularly in various environments. By reinforcing these basic commands, you are setting the stage for a successful recall training.</p>
+<p>Lastly, it is important to remember that training a Houndadore to have a reliable recall takes time and patience. Each dog is unique, and some may require more training than others. It is essential to remain consistent, use positive reinforcement techniques, and never punish your dog for not coming when called. With dedication and the right training exercises, you can strengthen your Houndadore&#8217;s recall and ensure their safety when off-leash.</p>
+<p>In conclusion, training a Houndadore to have a reliable recall despite their prey instincts is possible with the right exercises and techniques. By incorporating the &#8220;come&#8221; command, playing hide and seek, introducing distractions, establishing a foundation of obedience training, and remaining patient and consistent, you can strengthen your Houndadore&#8217;s recall and enjoy the freedom of off-leash adventures while keeping them safe. Remember, training is an ongoing process, so continue to reinforce these exercises throughout your dog&#8217;s life.</p>
+<h2 id="incorporating-recall-training-into-everyday-life-with-houndadores-avJofSfzKh">Incorporating Recall Training into Everyday Life with Houndadores</h2>
+<p>Training exercises to strengthen Houndadore&#8217;s recall despite prey instincts</p>
+<p>When it comes to training a Houndadore, a mix between a Labrador Retriever and a Bloodhound, one of the most important skills to teach is recall. However, due to their strong prey instincts, it can be challenging to ensure that they come back when called. In this article, we will explore some training exercises that can help strengthen your Houndadore&#8217;s recall, even in the face of their natural instincts.</p>
+<p>First and foremost, it is crucial to establish a strong foundation for recall training. Begin by teaching your Houndadore the basic command of &#8220;come&#8221; in a controlled environment, such as your backyard or a quiet park. Use a confident and authoritative tone when giving the command, and reward them with treats and praise when they respond correctly. Consistency is key here, so make sure to practice this command regularly.</p>
+<p>Once your Houndadore has grasped the concept of coming when called in a controlled environment, it&#8217;s time to introduce distractions. Start by gradually increasing the level of distraction, such as having a family member or friend walk by while you give the command. If your Houndadore successfully comes back to you despite the distraction, reward them generously. This will reinforce the idea that coming back to you is more rewarding than chasing after prey.</p>
+<p>Another effective exercise to strengthen recall is to incorporate it into your Houndadore&#8217;s daily routine. For example, before feeding them, ask them to come to you and sit. Once they have done so, reward them with their meal. This not only reinforces the recall command but also teaches them impulse control and patience. Similarly, before going for a walk or allowing them to play with their favorite toy, ask for a recall and reward them with the desired activity. By associating recall with positive experiences, your Houndadore will be more motivated to come back to you.</p>
+<p>To further challenge your Houndadore&#8217;s recall skills, consider practicing in different environments. Take them to a local park or a beach and let them explore while keeping a long leash on them. Call them back to you periodically, rewarding them each time they respond correctly. This will help them generalize the recall command and understand that it applies in any situation, regardless of the presence of prey or distractions.</p>
+<p>In addition to these exercises, it is essential to remember that consistency and patience are key when training a Houndadore. It may take time for them to fully grasp the concept of recall, especially given their strong prey instincts. However, with regular practice and positive reinforcement, you will see progress over time.</p>
+<p>Lastly, it is crucial to never punish your Houndadore for not coming when called. This can create fear and anxiety, making them less likely to respond in the future. Instead, focus on rewarding and praising them when they do come back to you, even if it takes a few attempts. This positive reinforcement will strengthen the bond between you and your Houndadore and make them more eager to please you.</p>
+<p>In conclusion, training a Houndadore to have a strong recall despite their prey instincts can be challenging but not impossible. By establishing a strong foundation, gradually introducing distractions, incorporating recall into their daily routine, practicing in different environments, and using positive reinforcement, you can strengthen your Houndadore&#8217;s recall skills. Remember to be patient, consistent, and never punish them for not coming when called. With time and effort, your Houndadore will become a reliable and obedient companion.</p>
+<h2 id="celebrating-success-stories-of-houndadores-with-improved-recall-skills-avJofSfzKh">Celebrating Success: Stories of Houndadores with Improved Recall Skills</h2>
+<p>Training exercises to strengthen Houndadore&#8217;s recall despite prey instincts</p>
+<p>Celebrating Success: Stories of Houndadores with Improved Recall Skills</p>
+<p>When it comes to training a Houndadore, one of the biggest challenges owners face is strengthening their recall skills. Houndadores, a mix between a Labrador Retriever and a Coonhound, are known for their strong prey instincts, which can make it difficult for them to resist chasing after small animals or getting easily distracted during walks. However, with the right training exercises and consistent practice, it is possible to improve their recall skills and ensure their safety.</p>
+<p>One effective training exercise to strengthen a Houndadore&#8217;s recall is the &#8220;come&#8221; command. This exercise involves teaching your dog to come to you when called, regardless of any distractions or temptations. Start by using a long leash and a treat as a reward. Begin in a quiet, controlled environment and call your dog&#8217;s name followed by the command &#8220;come.&#8221; Gently pull on the leash to guide them towards you, and when they reach you, reward them with praise and the treat. Repeat this exercise several times, gradually increasing the distance between you and your dog, as well as introducing distractions such as toys or other animals. With consistent practice, your Houndadore will learn to associate the &#8220;come&#8221; command with positive rewards and will be more likely to respond even in challenging situations.</p>
+<p>Another useful training exercise is the &#8220;stay&#8221; command. This exercise helps to build impulse control and teaches your Houndadore to resist the urge to chase after prey. Start by having your dog sit or lie down, and then give the command &#8220;stay.&#8221; Begin by taking a step back, and if your dog remains in place, reward them with praise and a treat. Gradually increase the distance and duration of the &#8220;stay&#8221; command, always rewarding your dog for their successful compliance. This exercise can be particularly challenging for Houndadores due to their strong prey drive, but with patience and consistency, they can learn to resist their instincts and stay focused on you.</p>
+<p>To further strengthen your Houndadore&#8217;s recall skills, incorporate training exercises into their daily routine. For example, during walks, practice calling your dog&#8217;s name followed by the &#8220;come&#8221; command at random intervals. Reward them with praise and treats when they respond promptly. This will help reinforce their recall skills and ensure that they remain attentive to you even when distractions are present. Additionally, consider using a whistle or a specific sound cue to signal your dog to come to you. By associating this sound with positive rewards, your Houndadore will quickly learn to respond to it, regardless of their prey instincts.</p>
+<p>It is important to note that training a Houndadore requires patience, consistency, and positive reinforcement. Punishment or harsh training methods can be counterproductive and may lead to fear or anxiety in your dog. Instead, focus on rewarding good behavior and providing plenty of mental and physical stimulation to keep your Houndadore engaged and motivated.</p>
+<p>In conclusion, while Houndadores may have strong prey instincts, with the right training exercises and consistent practice, their recall skills can be improved. By teaching them the &#8220;come&#8221; and &#8220;stay&#8221; commands, incorporating training into their daily routine, and using positive reinforcement, you can celebrate the success of your Houndadore with improved recall skills. Remember to be patient, consistent, and authoritative in your training approach, and soon enough, your Houndadore will become a reliable and obedient companion.</p>
+<h2 id="qa-avJofSfzKh">Q&amp;A</h2>
+<p>1. What are some training exercises to strengthen Houndadore&#8217;s recall despite prey instincts?<br>
+One exercise is to practice recall in a controlled environment with minimal distractions.<br>
+2. How can I reinforce my Houndadore&#8217;s recall when prey instincts kick in?<br>
+Using high-value treats or toys as rewards can help reinforce recall even when prey instincts are present.<br>
+3. Are there any specific recall exercises that work well for Houndadores?<br>
+Playing hide and seek games or using long training leads can be effective recall exercises for Houndadores.<br>
+4. Can scent-based training help improve recall for Houndadores?<br>
+Yes, incorporating scent-based training exercises can help improve recall by engaging their natural instincts.<br>
+5. Should I gradually increase distractions during recall training for Houndadores?<br>
+Yes, gradually increasing distractions during recall training can help Houndadores learn to focus on their recall command.<br>
+6. How often should I practice recall exercises with my Houndadore?<br>
+Consistent practice is key, so aim for daily recall exercises with your Houndadore.<br>
+7. Can recall training be done off-leash for Houndadores?<br>
+Once your Houndadore has a reliable recall, off-leash training can be introduced in safe and secure areas.<br>
+8. Are there any specific recall games that Houndadores enjoy?<br>
+Games like &#8220;come and chase&#8221; or &#8220;hide and seek&#8221; can make recall training more enjoyable for Houndadores.<br>
+9. Should I use punishment-based methods to discourage prey instincts during recall training?<br>
+No, punishment-based methods can be counterproductive and may hinder recall training progress.<br>
+10. Can socializing with other dogs help improve recall for Houndadores?<br>
+Yes, socializing with other dogs can help improve recall as it exposes them to different distractions and reinforces their training.<br>
+11. Is it important to reward my Houndadore immediately after successful recall?<br>
+Yes, immediate rewards after successful recall help reinforce the desired behavior.<br>
+12. Can recall training be done indoors or should it be done outdoors?<br>
+Recall training can be done both indoors and outdoors, but outdoor training provides more real-life distractions.<br>
+13. Should I use a specific recall command for my Houndadore?<br>
+Using a consistent and clear recall command, such as &#8220;come&#8221; or &#8220;here,&#8221; is recommended for effective training.<br>
+14. Can recall training be done at any age for Houndadores?<br>
+Yes, recall training can be started at any age, but it is generally easier to train younger Houndadores.<br>
+15. Is it necessary to use a long training lead during recall exercises?<br>
+Using a long training lead can provide control and safety during recall exercises, especially when working on off-leash training.In conclusion, training exercises can be effective in strengthening a Houndadore&#8217;s recall despite their prey instincts. Consistent and positive reinforcement, using high-value rewards, and gradually increasing distractions can help improve their ability to come back when called. It is important to understand and work with their natural instincts while providing a safe and controlled environment for training. With patience and dedication, Houndadores can develop a reliable recall even in the presence of prey distractions.</p>
+</div>
+<div id="brxe-dngkka" class="brxe-text-basic">Sharing is Caring</div>
+<ul id="brxe-kofzsc" class="brxe-post-sharing brand-colors">
+<li data-balloon="Share on Facebook" data-balloon-pos="top"><a class="facebook" href="https://www.facebook.com/sharer.php?u=%2Fabout%2Ftraining-exercises-to-strengthen-houndadores-recall-despite-prey-instincts%2F&#038;picture=&#038;title=Training%20exercises%20to%20strengthen%20Houndadore%E2%80%99s%20recall%20despite%20prey%20instincts" rel="nofollow" aria-label="Facebook" target="_blank"><svg version="1.1" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M455.27,32h-398.54l-1.01757e-06,4.11262e-10c-13.6557,0.00551914 -24.7245,11.0743 -24.73,24.73v398.54l-5.44608e-07,-0.00145325c0.00471643,13.6557 11.0728,24.7251 24.7285,24.7315h199.271v-176h-53.55v-64h53.55v-51c0,-57.86 40.13,-89.36 91.82,-89.36c24.73,0 51.33,1.86 57.51,2.68v60.43h-41.18c-28.12,0 -33.48,13.3 -33.48,32.9v44.35h67l-8.75,64h-58.25v176h124.6l-1.14527e-06,4.62819e-10c13.6557,-0.00551794 24.7245,-11.0743 24.73,-24.73v-398.54l5.45583e-07,0.00145607c-0.00471487,-13.6557 -11.0728,-24.7251 -24.7285,-24.7315Z" fill="#000"></path></svg></a></li>
+<li data-balloon="Share on Twitter" data-balloon-pos="top"><a class="twitter" href="https://twitter.com/share?text=Training%20exercises%20to%20strengthen%20Houndadore%E2%80%99s%20recall%20despite%20prey%20instincts&#038;url=%2Fabout%2Ftraining-exercises-to-strengthen-houndadores-recall-despite-prey-instincts%2F" rel="nofollow" aria-label="Twitter" target="_blank"><svg version="1.1" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M492,109.5c-17.4,7.7 -36,12.9 -55.6,15.3c20,-12 35.4,-31 42.6,-53.6c-18.7,11.1 -39.4,19.2 -61.5,23.5c-17.7,-18.9 -42.9,-30.7 -70.7,-30.7c-53.5,0 -96.8,43.4 -96.8,96.9c0,7.6 0.8,15 2.5,22.1c-80.5,-4 -151.9,-42.6 -199.6,-101.3c-8.3,14.3 -13.1,31 -13.1,48.7c0,33.6 17.2,63.3 43.2,80.7c-16,-0.4 -31,-4.8 -44,-12.1v1.2c0,47 33.4,86.1 77.7,95c-8.1,2.2 -16.7,3.4 -25.5,3.4c-6.2,0 -12.3,-0.6 -18.2,-1.8c12.3,38.5 48.1,66.5 90.5,67.3c-33.1,26 -74.9,41.5 -120.3,41.5c-7.8,0 -15.5,-0.5 -23.1,-1.4c42.7,27.8 93.6,43.8 148.2,43.8c178.3,0 275.7,-147.7 275.7,-275.8c0,-4.2 -0.1,-8.4 -0.3,-12.5c18.9,-13.7 35.3,-30.7 48.3,-50.2Z" fill="#000"></path></svg></a></li>
+<li data-balloon="Share on LinkedIn" data-balloon-pos="top"><a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&#038;url=%2Fabout%2Ftraining-exercises-to-strengthen-houndadores-recall-despite-prey-instincts%2F&#038;title=Training%20exercises%20to%20strengthen%20Houndadore%E2%80%99s%20recall%20despite%20prey%20instincts" rel="nofollow" aria-label="LinkedIn" target="_blank"><svg version="1.1" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M444.17,32h-373.89c-20.43,0 -38.28,14.7 -38.28,34.89v374.72c0,20.3 17.85,38.39 38.28,38.39h373.78c20.54,0 35.94,-18.21 35.94,-38.39v-374.72c0.12,-20.19 -15.4,-34.89 -35.83,-34.89Zm-273.3,373.43h-64.18v-199.55h64.18Zm-29.87,-229.89h-0.46c-20.54,0 -33.84,-15.29 -33.84,-34.43c0,-19.49 13.65,-34.42 34.65,-34.42c21,0 33.85,14.82 34.31,34.42c-0.01,19.14 -13.31,34.43 -34.66,34.43Zm264.43,229.89h-64.18v-109.11c0,-26.14 -9.34,-44 -32.56,-44c-17.74,0 -28.24,12 -32.91,23.69c-1.75,4.2 -2.22,9.92 -2.22,15.76v113.66h-64.18v-199.55h64.18v27.77c9.34,-13.3 23.93,-32.44 57.88,-32.44c42.13,0 74,27.77 74,87.64Z" fill="#000"></path></svg></a></li>
+<li data-balloon="Share on WhatsApp" data-balloon-pos="top"><a class="whatsapp" href="https://api.whatsapp.com/send?text=*Training%20exercises%20to%20strengthen%20Houndadore%E2%80%99s%20recall%20despite%20prey%20instincts*&#8220;Master%20the%20art%20of%20recall%20and%20unleash%20your%20Houndadore&#8217;s%20potential.&#8221;%20Training%20exercises%20can%20be%20highly%20effective%20in%20strengthening%20a%20Houndadore&#8217;s%20recall,%20even%20in%20the%20presence%20of%20strong%20prey%20instincts.%20By%20implementing%20specific%20techniques%20and%20consistent%20practice,%20owners%20can%20enhance%20their%20Houndadore&#8217;s%20ability%20to%20come%20when%20called,%20ensuring%20their%20safety%20and%20providing%20peace%20of%20mind.%20Understanding%20%5B&hellip;%5D%2Fabout%2Ftraining-exercises-to-strengthen-houndadores-recall-despite-prey-instincts%2F" rel="nofollow" aria-label="WhatsApp" target="_blank"><svg version="1.1" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M260.062,32c-121.457,0 -219.928,97.701 -219.928,218.232c-1.42109e-14,41.23 11.532,79.79 31.559,112.687l-39.693,117.081l121.764,-38.682c31.508,17.285 67.745,27.146 106.298,27.146c121.473,0 219.938,-97.715 219.938,-218.232c0,-120.531 -98.465,-218.232 -219.938,-218.232Zm109.362,301.11c-5.174,12.827 -28.574,24.533 -38.899,25.072c-10.314,0.547 -10.608,7.994 -66.84,-16.434c-56.225,-24.434 -90.052,-83.844 -92.719,-87.67c-2.669,-3.812 -21.78,-31.047 -20.749,-58.455c1.038,-27.413 16.047,-40.346 21.404,-45.725c5.351,-5.387 11.486,-6.352 15.232,-6.413c4.428,-0.072 7.296,-0.132 10.573,-0.011c3.274,0.124 8.192,-0.685 12.45,10.639c4.256,11.323 14.443,39.153 15.746,41.989c1.302,2.839 2.108,6.126 0.102,9.771c-2.012,3.653 -3.042,5.935 -5.961,9.083c-2.935,3.148 -6.174,7.042 -8.792,9.449c-2.92,2.665 -5.97,5.572 -2.9,11.269c3.068,5.693 13.653,24.356 29.779,39.736c20.725,19.771 38.598,26.329 44.098,29.317c5.515,3.004 8.806,2.67 12.226,-0.929c3.404,-3.599 14.639,-15.746 18.596,-21.169c3.955,-5.438 7.661,-4.373 12.742,-2.329c5.078,2.052 32.157,16.556 37.673,19.551c5.51,2.989 9.193,4.529 10.51,6.9c1.317,2.38 0.901,13.531 -4.271,26.359Z" fill="#000"></path></svg></a></li>
+<li data-balloon="Share on Pinterest" data-balloon-pos="top"><a class="pinterest" href="http://pinterest.com/pin/create/button/?url=%2Fabout%2Ftraining-exercises-to-strengthen-houndadores-recall-despite-prey-instincts%2F&#038;media=" rel="nofollow" aria-label="Pinterest" target="_blank"><svg version="1.1" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256,32c-123.7,0 -224,100.3 -224,224c0,91.7 55.2,170.5 134.1,205.2c-0.6,-15.6 -0.1,-34.4 3.9,-51.4c4.3,-18.2 28.8,-122.1 28.8,-122.1c0,0 -7.2,-14.3 -7.2,-35.4c0,-33.2 19.2,-58 43.2,-58c20.4,0 30.2,15.3 30.2,33.6c0,20.5 -13.1,51.1 -19.8,79.5c-5.6,23.8 11.9,43.1 35.4,43.1c42.4,0 71,-54.5 71,-119.1c0,-49.1 -33.1,-85.8 -93.2,-85.8c-67.9,0 -110.3,50.7 -110.3,107.3c0,19.5 5.8,33.3 14.8,43.9c4.1,4.9 4.7,6.9 3.2,12.5c-1.1,4.1 -3.5,14 -4.6,18c-1.5,5.7 -6.1,7.7 -11.2,5.6c-31.3,-12.8 -45.9,-47 -45.9,-85.6c0,-63.6 53.7,-139.9 160.1,-139.9c85.5,0 141.8,61.9 141.8,128.3c0,87.9 -48.9,153.5 -120.9,153.5c-24.2,0 -46.9,-13.1 -54.7,-27.9c0,0 -13,51.6 -15.8,61.6c-4.7,17.3 -14,34.5 -22.5,48c20.1,5.9 41.4,9.2 63.5,9.2c123.7,0 224,-100.3 224,-224c0.1,-123.8 -100.2,-224.1 -223.9,-224.1Z" fill="#000"></path></svg></a></li>
+<li data-balloon="Share on Telegram" data-balloon-pos="top"><a class="telegram" href="https://t.me/share/url?url=%2Fabout%2Ftraining-exercises-to-strengthen-houndadores-recall-despite-prey-instincts%2F&#038;text=Training%20exercises%20to%20strengthen%20Houndadore%E2%80%99s%20recall%20despite%20prey%20instincts" rel="nofollow" aria-label="Telegram" target="_blank"><svg viewbox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill="#fff" stroke="none" d="M 22.046997 135.832001 C 22.046997 135.832001 147.046997 84.531982 190.398987 66.468018 C 207.018005 59.242981 263.376007 36.121002 263.376007 36.121002 C 263.376007 36.121002 289.388 26.005981 287.220001 50.572021 C 286.497009 60.687988 280.71701 96.09198 274.937012 134.386993 C 266.265991 188.578003 256.872986 247.825989 256.872986 247.825989 C 256.872986 247.825989 255.428009 264.445007 243.144989 267.334991 C 230.862 270.225006 210.630005 257.220001 207.018005 254.32901 C 204.127014 252.161987 152.826996 219.647003 134.041 203.751007 C 128.983002 199.415985 123.203003 190.746002 134.763 180.630005 C 160.774994 156.786011 191.843994 127.161987 210.630005 108.376007 C 219.300995 99.705017 227.971008 79.473999 191.843994 104.039978 C 140.544006 139.445007 89.966003 172.682007 89.966003 172.682007 C 89.966003 172.682007 78.404999 179.907013 56.729004 173.403992 C 35.052002 166.902008 9.763 158.230988 9.763 158.230988 C 9.763 158.230988 -7.577003 147.393005 22.046997 135.832001 Z"></path></svg></a></li>
+<li data-balloon="Share via email" data-balloon-pos="top"><a class="email" href="mailto:?subject=Training%20exercises%20to%20strengthen%20Houndadore%E2%80%99s%20recall%20despite%20prey%20instincts&amp;body=%2Fabout%2Ftraining-exercises-to-strengthen-houndadores-recall-despite-prey-instincts%2F" rel="nofollow" aria-label="Email" target="_blank"><svg version="1.1" viewbox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M27.5,5h-25c-1.4,0 -2.5,1.1 -2.5,2.5v15c0,1.4 1.1,2.5 2.5,2.5h25c1.4,0 2.5,-1.1 2.5,-2.5v-15c0,-1.4 -1.1,-2.5 -2.5,-2.5Zm-16.7,10.9l-7,6c-0.1,0.1 -0.2,0.1 -0.3,0.1c-0.1,0 -0.3,-0.1 -0.4,-0.2c-0.2,-0.2 -0.2,-0.5 0.1,-0.7l7,-6c0.2,-0.2 0.5,-0.2 0.7,0.1c0.2,0.2 0.1,0.5 -0.1,0.7Zm3.9,0.1c-0.7,0 -1.5,-0.2 -2,-0.6l-9.5,-6.5c-0.2,-0.1 -0.3,-0.5 -0.1,-0.7c0.1,-0.2 0.4,-0.3 0.7,-0.1l9.5,6.5c0.8,0.6 2.1,0.6 2.9,0l10,-6.5c0.2,-0.2 0.5,-0.1 0.7,0.1c0.2,0.2 0.1,0.5 -0.1,0.7l-10,6.5c-0.6,0.4 -1.3,0.6 -2.1,0.6Zm12.2,5.8c-0.1,0.1 -0.2,0.2 -0.4,0.2c-0.1,0 -0.2,0 -0.3,-0.1l-7,-6c-0.2,-0.2 -0.2,-0.5 -0.1,-0.7c0.1,-0.2 0.5,-0.2 0.7,-0.1l7,6c0.2,0.2 0.3,0.5 0.1,0.7Z" fill="#fff"></path></svg></a></li>
+</ul>
+<nav id="brxe-izjvkr" class="brxe-post-navigation" aria-label="Post navigation"><a class="prev-post" href="/about/the-link-between-houndadores-prey-drive-and-successful-recall-training/"><div class="swiper-button bricks-swiper-button-prev"><i class="ion-ios-arrow-back"></i></div>
+<div class="content"><span class="label">Previous post</span></div></a><a class="next-post" href="/about/how-to-ensure-houndadores-prey-drive-doesnt-hinder-recall-training/"><div class="content"><span class="label">Next post</span></div>
+<div class="swiper-button bricks-swiper-button-next"><i class="ion-ios-arrow-forward"></i></div></a></nav>
+</div>
+<div id="brxe-hwsqci" class="brxe-block">
+<div id="brxe-wfrprg" class="brxe-search">
+<form role="search" method="get" class="bricks-search-form" action="https://houndadore.com/">
+	<label for="search-input-wfrprg" class="screen-reader-text"><span>Search ...</span></label>
+	<input type="search" placeholder="Search ..." value="" name="s" id="search-input-wfrprg">
+
+	</form>
+</div>
+<nav id="brxe-gugwak" class="brxe-xtableofcontents" data-x-toc="{&quot;contentSelector&quot;:&quot;.post-content&quot;,&quot;headingSelectors&quot;:[&quot;h2&quot;,&quot;h3&quot;,&quot;h4&quot;,&quot;h5&quot;,&quot;h6&quot;],&quot;autoID&quot;:true,&quot;idPrefix&quot;:&quot;heading&quot;,&quot;autoIDText&quot;:&quot;prefix&quot;,&quot;scrollSmoothOffset&quot;:-130,&quot;listType&quot;:&quot;counter&quot;,&quot;slideDuration&quot;:300,&quot;ignoreSelector&quot;:&quot;&quot;,&quot;smoothScroll&quot;:&quot;true&quot;,&quot;collapseDepth&quot;:0,&quot;conditionalDisplay&quot;:&quot;disable&quot;,&quot;hidden&quot;:{&quot;closeBreakpoint&quot;:&quot;false&quot;}}"><div class="x-toc_header" role="button" tabindex="00" aria-label="Table of Contents" aria-controls="x-toc_gugwak" aria-expanded="false">
+<div class="x-toc_header-text">Table of Contents</div>
+<div class="x-toc_header-icon"><i class="ti-angle-down"></i></div>
+</div>
+<div style="display:none" class="x-toc_body" aria-hidden="false" id="x-toc_gugwak"></div></nav><div id="brxe-amoawz" class="brxe-text-basic">Related Posts</div>
+<ul id="brxe-ueaixc" class="brxe-related-posts bricks-related-posts">
+<li class="repeater-item">
+<a href="/about/health-issues-and-lifespan-of-the-houndadore-breed/" class="post-thumbnail-wrapper css-filter"><div class="post-thumbnail-inner" role="img" aria-label="" style="background-image: url(/wp-content/uploads/2023/06/Houndadorelifespan.jpg)"></div></a><div class="post-content">
+<h3 class="dynamic" data-field-id="5c6fed"><a href="/about/health-issues-and-lifespan-of-the-houndadore-breed/" aria-label="Read more about Health issues and lifespan of the Houndadore breed">Health issues and lifespan of the Houndadore breed</a></h3>
+<p class="dynamic" data-field-id="bd3366">June 28, 2023</p>
+</div>
+</li>
+<li class="repeater-item">
+<a href="/about/houndadore-breed-a-popular-choice-for-search-and-rescue-missions/" class="post-thumbnail-wrapper css-filter"><div class="post-thumbnail-inner" role="img" aria-label="" style="background-image: url(/wp-content/uploads/2023/06/Houndadore-breed-a-popular-choice-for-search-and-rescue-missions.jpg)"></div></a><div class="post-content">
+<h3 class="dynamic" data-field-id="5c6fed"><a href="/about/houndadore-breed-a-popular-choice-for-search-and-rescue-missions/" aria-label="Read more about Houndadore breed: a popular choice for search and rescue missions">Houndadore breed: a popular choice for search and rescue missions</a></h3>
+<p class="dynamic" data-field-id="bd3366">June 28, 2023</p>
+</div>
+</li>
+<li class="repeater-item">
+<a href="/about/physical-traits-of-houndadore-dogs/" class="post-thumbnail-wrapper css-filter"><div class="post-thumbnail-inner" role="img" aria-label="" style="background-image: url(/wp-content/uploads/2023/06/Physical-traits-of-Houndadore-dogs.jpg)"></div></a><div class="post-content">
+<h3 class="dynamic" data-field-id="5c6fed"><a href="/about/physical-traits-of-houndadore-dogs/" aria-label="Read more about Physical traits of Houndadore dogs">Physical traits of Houndadore dogs</a></h3>
+<p class="dynamic" data-field-id="bd3366">June 28, 2023</p>
+</div>
+</li>
+<li class="repeater-item">
+<a href="/about/temperament-of-houndadore-dogs/" class="post-thumbnail-wrapper css-filter"><div class="post-thumbnail-inner" role="img" aria-label="" style="background-image: url(/wp-content/uploads/2023/06/Houndadores-adaptability-in-rural-living-environments.jpg)"></div></a><div class="post-content">
+<h3 class="dynamic" data-field-id="5c6fed"><a href="/about/temperament-of-houndadore-dogs/" aria-label="Read more about Temperament of Houndadore dogs">Temperament of Houndadore dogs</a></h3>
+<p class="dynamic" data-field-id="bd3366">June 28, 2023</p>
+</div>
+</li>
+<li class="repeater-item">
+<a href="/about/socialization-requirements-for-houndadore-dogs/" class="post-thumbnail-wrapper css-filter"><div class="post-thumbnail-inner" role="img" aria-label="" style="background-image: url(/wp-content/uploads/2023/06/Socialization-requirements-for-Houndadore-dogs.jpg)"></div></a><div class="post-content">
+<h3 class="dynamic" data-field-id="5c6fed"><a href="/about/socialization-requirements-for-houndadore-dogs/" aria-label="Read more about Socialization requirements for Houndadore dogs">Socialization requirements for Houndadore dogs</a></h3>
+<p class="dynamic" data-field-id="bd3366">June 28, 2023</p>
+</div>
+</li>
+</ul>
+</div>
+</div></section></main><footer id="brx-footer"><section id="brxe-tseoqd" class="brxe-section"><div id="brxe-lwvhbf" class="brxe-container">
+<div id="brxe-xpelqb" class="brxe-block">
+<img width="300" height="75" src="/wp-content/uploads/2023/03/Houndadore-White.png" class="brxe-image css-filter size-full" alt="" decoding="async" id="brxe-rpisls" loading="lazy"><div id="brxe-eaxztd" class="brxe-text-basic">Imagine the loyalty and intelligence of the Labrador Retriever, mixed with the impressive tracking skills and sense of smell of a Hound dog. It's like a superhero duo that's furrier and more lovable.</div>
+</div>
+<div id="brxe-xuqyxc" class="brxe-block">
+<h3 id="brxe-rakvig" class="brxe-heading">Contact Us</h3>
+<div id="brxe-hdxtls" class="brxe-icon-box">
+<div class="icon"><i class="fas fa-map-location-dot"></i></div>
+<div class="content">
+<p>7331 Emerald Glade Lane</p>
+</div>
+</div>
+<div id="brxe-mqefoe" class="brxe-icon-box">
+<div class="icon"><i class="fas fa-envelope"></i></div>
+<div class="content">
+<p>info@houndadore.com</p>
+</div>
+</div>
+<div id="brxe-vrahhh" class="brxe-icon-box">
+<div class="icon"><i class="fas fa-phone-flip"></i></div>
+<div class="content">
+<p>(832) 629-5520</p>
+</div>
+</div>
+</div>
+<div id="brxe-jvfmyb" class="brxe-block">
+<h3 id="brxe-lgqfds" class="brxe-heading">Quick Links</h3>
+<div id="brxe-eecmvu" class="brxe-text-basic">About</div>
+<div id="brxe-ztmoaz" class="brxe-text-basic">Blog</div>
+<div id="brxe-dcnagm" class="brxe-text-basic">Gallery</div>
+<div id="brxe-luqjcj" class="brxe-text-basic">Contact</div>
+</div>
+</div>
+<div id="brxe-nitblx" class="brxe-container"><div id="brxe-joihqv" class="brxe-text-basic">Copyright 2023 © all rights reserved design by <a href="https://brickstemplates.io/">BricksTemplates.io</a> </div></div></section></footer>            <script>var wpaicgUserLoggedIn = false;</script>
+            <link rel="stylesheet" id="bricks-tooltips-css" href="/wp-content/themes/bricks/assets/css/libs/tooltips.min.css?ver=1695510514" media="all">
+<script src="/wp-includes/js/hoverintent-js.min.js?ver=2.2.1" id="hoverintent-js-js"></script>
+<script src="/wp-includes/js/admin-bar.min.js?ver=6.3.1" id="admin-bar-js"></script>
+<script src="/wp-content/plugins/gpt3-ai-content-generator-premium/lib/js/wpaicg-chat-pro.js" id="wpaicg-chat-pro-js"></script>
+<script src="/wp-content/plugins/gpt3-ai-content-generator-premium/public/js/wpaicg-form-shortcode.js" id="wpaicg-gpt-form-js"></script>
+<script id="wpaicg-init-js-extra">var wpaicgParams = {"ajax_url":"\/wp-admin\/admin-ajax.php","search_nonce":"05d0315b6e","logged_in":"0","languages":{"source":"Sources","no_result":"No result found","wrong":"Something went wrong","prompt_strength":"Please enter a valid prompt strength value between 0 and 1.","num_inference_steps":"Please enter a valid number of inference steps value between 1 and 500.","guidance_scale":"Please enter a valid guidance scale value between 1 and 20.","error_image":"Please select least one image for generate","save_image_success":"Save images to media successfully","select_all":"Select All","unselect":"Unselect","select_save_error":"Please select least one image to save","alternative":"Alternative Text","title":"Title","edit_image":"Edit Image","caption":"Caption","description":"Description","save":"Save","removed_pdf":"Your pdf session is cleared"}};</script>
+<script src="/wp-content/plugins/gpt3-ai-content-generator-premium/public/js/wpaicg-init.js" id="wpaicg-init-js"></script>
+<script src="/wp-content/plugins/gpt3-ai-content-generator-premium/public/js/wpaicg-chat.js" id="wpaicg-chat-script-js"></script>
+<script id="bp-nouveau-js-extra">var BP_Nouveau = {"ajaxurl":"\/wp-admin\/admin-ajax.php","confirm":"Are you sure?","show_x_comments":"Show all %d comments","unsaved_changes":"Your profile has unsaved changes. If you leave the page, the changes will be lost.","object_nav_parent":"#buddypress","objects":["activity","members","groups","xprofile","friends","messages","settings","notifications","group_members","group_requests"],"nonces":{"activity":"b8b5214161","members":"f343cbcf81","groups":"fdf485fa61","xprofile":"9459f1b575","friends":"75562fbe93","messages":"c23a793c31","settings":"c6a5946ce0","notifications":"89b43d1260"}};</script>
+<script src="/wp-content/plugins/buddypress/bp-templates/bp-nouveau/js/buddypress-nouveau.min.js?ver=11.3.1" id="bp-nouveau-js"></script>
+<script src="/wp-includes/js/comment-reply.min.js?ver=6.3.1" id="comment-reply-js"></script>
+<script src="/wp-content/plugins/embedpress/assets/js/pdfobject.min.js?ver=3.8.5" id="embedpress-pdfobject-js"></script>
+<script src="/wp-content/plugins/embedpress/assets/js/initplyr.js?ver=3.8.5" id="initplyr-js"></script>
+<script id="embedpress-front-js-extra">var eplocalize = {"ajaxurl":"\/wp-admin\/admin-ajax.php"};</script>
+<script src="/wp-content/plugins/embedpress/assets/js/front.js?ver=3.8.5" id="embedpress-front-js"></script>
+<script src="/wp-content/plugins/embedpress/assets/js/documents-viewer-script.js?ver=3.8.5" id="embedpress_documents_viewer_script-js"></script>
+<script id="wpil-frontend-script-js-extra">var wpilFrontend = {"ajaxUrl":"\/wp-admin\/admin-ajax.php","postId":"968","postType":"post","openInternalInNewTab":"0","openExternalInNewTab":"0","disableClicks":"0","openLinksWithJS":"0","trackAllElementClicks":"0","clicksI18n":{"imageNoText":"Image in link: No Text","imageText":"Image Title: ","noText":"No Anchor Text Found"}};</script>
+<script src="/wp-content/plugins/link-whisper-premium/js/frontend.js?ver=1679343322" id="wpil-frontend-script-js"></script>
+<script id="bricks-scripts-js-extra">var bricksData = {"debug":"","locale":"en_US","ajaxUrl":"\/wp-admin\/admin-ajax.php","restApiUrl":"\/wp-json\/bricks\/v1\/","nonce":"013b0ee6ed","wpRestNonce":"e13cd24a7c","postId":"968","recaptchaIds":[],"animatedTypingInstances":[],"videoInstances":[],"splideInstances":[],"tocbotInstances":[],"swiperInstances":[],"queryLoopInstances":[],"interactions":[],"mapStyles":{"ultraLightWithLabels":{"label":"Ultra light with labels","style":"[ { \"featureType\": \"water\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#e9e9e9\" }, { \"lightness\": 17 } ] }, { \"featureType\": \"landscape\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#f5f5f5\" }, { \"lightness\": 20 } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#ffffff\" }, { \"lightness\": 17 } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry.stroke\", \"stylers\": [ { \"color\": \"#ffffff\" }, { \"lightness\": 29 }, { \"weight\": 0.2 } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#ffffff\" }, { \"lightness\": 18 } ] }, { \"featureType\": \"road.local\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#ffffff\" }, { \"lightness\": 16 } ] }, { \"featureType\": \"poi\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#f5f5f5\" }, { \"lightness\": 21 } ] }, { \"featureType\": \"poi.park\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#dedede\" }, { \"lightness\": 21 } ] }, { \"elementType\": \"labels.text.stroke\", \"stylers\": [ { \"visibility\": \"on\" }, { \"color\": \"#ffffff\" }, { \"lightness\": 16 } ] }, { \"elementType\": \"labels.text.fill\", \"stylers\": [ { \"saturation\": 36 }, { \"color\": \"#333333\" }, { \"lightness\": 40 } ] }, { \"elementType\": \"labels.icon\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"transit\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#f2f2f2\" }, { \"lightness\": 19 } ] }, { \"featureType\": \"administrative\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#fefefe\" }, { \"lightness\": 20 } ] }, { \"featureType\": \"administrative\", \"elementType\": \"geometry.stroke\", \"stylers\": [ { \"color\": \"#fefefe\" }, { \"lightness\": 17 }, { \"weight\": 1.2 } ] } ]"},"blueWater":{"label":"Blue water","style":"[ { \"featureType\": \"administrative\", \"elementType\": \"labels.text.fill\", \"stylers\": [ { \"color\": \"#444444\" } ] }, { \"featureType\": \"landscape\", \"elementType\": \"all\", \"stylers\": [ { \"color\": \"#f2f2f2\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"road\", \"elementType\": \"all\", \"stylers\": [ { \"saturation\": -100 }, { \"lightness\": 45 } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"simplified\" } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"labels.icon\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"transit\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"water\", \"elementType\": \"all\", \"stylers\": [ { \"color\": \"#46bcec\" }, { \"visibility\": \"on\" } ] } ]"},"lightDream":{"label":"Light dream","style":"[ { \"featureType\": \"landscape\", \"stylers\": [ { \"hue\": \"#FFBB00\" }, { \"saturation\": 43.400000000000006 }, { \"lightness\": 37.599999999999994 }, { \"gamma\": 1 } ] }, { \"featureType\": \"road.highway\", \"stylers\": [ { \"hue\": \"#FFC200\" }, { \"saturation\": -61.8 }, { \"lightness\": 45.599999999999994 }, { \"gamma\": 1 } ] }, { \"featureType\": \"road.arterial\", \"stylers\": [ { \"hue\": \"#FF0300\" }, { \"saturation\": -100 }, { \"lightness\": 51.19999999999999 }, { \"gamma\": 1 } ] }, { \"featureType\": \"road.local\", \"stylers\": [ { \"hue\": \"#FF0300\" }, { \"saturation\": -100 }, { \"lightness\": 52 }, { \"gamma\": 1 } ] }, { \"featureType\": \"water\", \"stylers\": [ { \"hue\": \"#0078FF\" }, { \"saturation\": -13.200000000000003 }, { \"lightness\": 2.4000000000000057 }, { \"gamma\": 1 } ] }, { \"featureType\": \"poi\", \"stylers\": [ { \"hue\": \"#00FF6A\" }, { \"saturation\": -1.0989010989011234 }, { \"lightness\": 11.200000000000017 }, { \"gamma\": 1 } ] } ]"},"blueEssence":{"label":"Blue essence","style":"[ { \"featureType\": \"landscape.natural\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"visibility\": \"on\" }, { \"color\": \"#e0efef\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"visibility\": \"on\" }, { \"hue\": \"#1900ff\" }, { \"color\": \"#c0e8e8\" } ] }, { \"featureType\": \"road\", \"elementType\": \"geometry\", \"stylers\": [ { \"lightness\": 100 }, { \"visibility\": \"simplified\" } ] }, { \"featureType\": \"road\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"transit.line\", \"elementType\": \"geometry\", \"stylers\": [ { \"visibility\": \"on\" }, { \"lightness\": 700 } ] }, { \"featureType\": \"water\", \"elementType\": \"all\", \"stylers\": [ { \"color\": \"#7dcdcd\" } ] } ]"},"appleMapsesque":{"label":"Apple maps-esque","style":"[ { \"featureType\": \"landscape.man_made\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#f7f1df\" } ] }, { \"featureType\": \"landscape.natural\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#d0e3b4\" } ] }, { \"featureType\": \"landscape.natural.terrain\", \"elementType\": \"geometry\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"poi.business\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"poi.medical\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#fbd3da\" } ] }, { \"featureType\": \"poi.park\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#bde6ab\" } ] }, { \"featureType\": \"road\", \"elementType\": \"geometry.stroke\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"road\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#ffe15f\" } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry.stroke\", \"stylers\": [ { \"color\": \"#efd151\" } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#ffffff\" } ] }, { \"featureType\": \"road.local\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"black\" } ] }, { \"featureType\": \"transit.station.airport\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#cfb2db\" } ] }, { \"featureType\": \"water\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#a2daf2\" } ] } ]"},"paleDawn":{"label":"Pale dawn","style":"[ { \"featureType\": \"administrative\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"on\" }, { \"lightness\": 33 } ] }, { \"featureType\": \"landscape\", \"elementType\": \"all\", \"stylers\": [ { \"color\": \"#f2e5d4\" } ] }, { \"featureType\": \"poi.park\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#c5dac6\" } ] }, { \"featureType\": \"poi.park\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"on\" }, { \"lightness\": 20 } ] }, { \"featureType\": \"road\", \"elementType\": \"all\", \"stylers\": [ { \"lightness\": 20 } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#c5c6c6\" } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#e4d7c6\" } ] }, { \"featureType\": \"road.local\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#fbfaf7\" } ] }, { \"featureType\": \"water\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"on\" }, { \"color\": \"#acbcc9\" } ] } ]"},"neutralBlue":{"label":"Neutral blue","style":"[ { \"featureType\": \"water\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#193341\" } ] }, { \"featureType\": \"landscape\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#2c5a71\" } ] }, { \"featureType\": \"road\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#29768a\" }, { \"lightness\": -37 } ] }, { \"featureType\": \"poi\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#406d80\" } ] }, { \"featureType\": \"transit\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#406d80\" } ] }, { \"elementType\": \"labels.text.stroke\", \"stylers\": [ { \"visibility\": \"on\" }, { \"color\": \"#3e606f\" }, { \"weight\": 2 }, { \"gamma\": 0.84 } ] }, { \"elementType\": \"labels.text.fill\", \"stylers\": [ { \"color\": \"#ffffff\" } ] }, { \"featureType\": \"administrative\", \"elementType\": \"geometry\", \"stylers\": [ { \"weight\": 0.6 }, { \"color\": \"#1a3541\" } ] }, { \"elementType\": \"labels.icon\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"poi.park\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#2c5a71\" } ] } ]"},"avocadoWorld":{"label":"Avocado world","style":"[ { \"featureType\": \"water\", \"elementType\": \"geometry\", \"stylers\": [ { \"visibility\": \"on\" }, { \"color\": \"#aee2e0\" } ] }, { \"featureType\": \"landscape\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#abce83\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#769E72\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"labels.text.fill\", \"stylers\": [ { \"color\": \"#7B8758\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"labels.text.stroke\", \"stylers\": [ { \"color\": \"#EBF4A4\" } ] }, { \"featureType\": \"poi.park\", \"elementType\": \"geometry\", \"stylers\": [ { \"visibility\": \"simplified\" }, { \"color\": \"#8dab68\" } ] }, { \"featureType\": \"road\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"visibility\": \"simplified\" } ] }, { \"featureType\": \"road\", \"elementType\": \"labels.text.fill\", \"stylers\": [ { \"color\": \"#5B5B3F\" } ] }, { \"featureType\": \"road\", \"elementType\": \"labels.text.stroke\", \"stylers\": [ { \"color\": \"#ABCE83\" } ] }, { \"featureType\": \"road\", \"elementType\": \"labels.icon\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"road.local\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#A4C67D\" } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#9BBF72\" } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#EBF4A4\" } ] }, { \"featureType\": \"transit\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"administrative\", \"elementType\": \"geometry.stroke\", \"stylers\": [ { \"visibility\": \"on\" }, { \"color\": \"#87ae79\" } ] }, { \"featureType\": \"administrative\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#7f2200\" }, { \"visibility\": \"off\" } ] }, { \"featureType\": \"administrative\", \"elementType\": \"labels.text.stroke\", \"stylers\": [ { \"color\": \"#ffffff\" }, { \"visibility\": \"on\" }, { \"weight\": 4.1 } ] }, { \"featureType\": \"administrative\", \"elementType\": \"labels.text.fill\", \"stylers\": [ { \"color\": \"#495421\" } ] }, { \"featureType\": \"administrative.neighborhood\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"off\" } ] } ]"},"gowalla":{"label":"Gowalla","style":"[ { \"featureType\": \"administrative.land_parcel\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"landscape.man_made\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"road\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"simplified\" }, { \"lightness\": 20 } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry\", \"stylers\": [ { \"hue\": \"#f49935\" } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"simplified\" } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"geometry\", \"stylers\": [ { \"hue\": \"#fad959\" } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"road.local\", \"elementType\": \"geometry\", \"stylers\": [ { \"visibility\": \"simplified\" } ] }, { \"featureType\": \"road.local\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"simplified\" } ] }, { \"featureType\": \"transit\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"water\", \"elementType\": \"all\", \"stylers\": [ { \"hue\": \"#a1cdfc\" }, { \"saturation\": 30 }, { \"lightness\": 49 } ] } ]"}},"facebookAppId":"","headerPosition":"top","offsetLazyLoad":"300"};</script>
+<script src="/wp-content/themes/bricks/assets/js/bricks.min.js?ver=1695510514" id="bricks-scripts-js"></script>
+<script src="/wp-content/plugins/bricksextras/components/assets/js/frontend.js?ver=1.0.1" id="x-frontend-js"></script>
+<script src="/wp-content/plugins/bricksextras/components/assets/js/tableofcontents.js?ver=1.0.4" id="x-toc-js"></script>
+		<div id="wpadminbar" class="nojq nojs">
+							<a class="screen-reader-shortcut" href="#wp-toolbar" tabindex="1">Skip to toolbar</a>
+						<div class="quicklinks" id="wp-toolbar" role="navigation" aria-label="Toolbar">
+				<ul id="wp-admin-bar-root-default" class="ab-top-menu">
+<li id="wp-admin-bar-wp-logo" class="menupop">
+<div class="ab-item ab-empty-item" tabindex="0" aria-haspopup="true">
+<span class="ab-icon" aria-hidden="true"></span><span class="screen-reader-text">About WordPress</span>
+</div>
+<div class="ab-sub-wrapper"><ul id="wp-admin-bar-wp-logo-external" class="ab-sub-secondary ab-submenu">
+<li id="wp-admin-bar-wporg"><a class="ab-item" href="https://wordpress.org/">WordPress.org</a></li>
+<li id="wp-admin-bar-documentation"><a class="ab-item" href="https://wordpress.org/documentation/">Documentation</a></li>
+<li id="wp-admin-bar-support-forums"><a class="ab-item" href="https://wordpress.org/support/forums/">Support</a></li>
+<li id="wp-admin-bar-feedback"><a class="ab-item" href="https://wordpress.org/support/forum/requests-and-feedback">Feedback</a></li>
+</ul></div>
+</li>
+<li id="wp-admin-bar-bp-login"><a class="ab-item" href="/wp-login.php?redirect_to=https%3A%2F%2F%2Fabout%2Ftraining-exercises-to-strengthen-houndadores-recall-despite-prey-instincts%2F%3Fsimply_static_page%3D1615">Log In</a></li>
+</ul>
+<ul id="wp-admin-bar-top-secondary" class="ab-top-secondary ab-top-menu"><li id="wp-admin-bar-search" class="admin-bar-search"><div class="ab-item ab-empty-item" tabindex="-1"><form action="https://houndadore.com/" method="get" id="adminbarsearch">
+<input class="adminbar-input" name="s" id="adminbar-search" type="text" value="" maxlength="150"><label for="adminbar-search" class="screen-reader-text">Search</label><input type="submit" class="adminbar-button" value="Search">
+</form></div></li></ul>			</div>
+					</div>
+
+		</body>
+</html>

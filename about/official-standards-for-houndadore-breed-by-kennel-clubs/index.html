@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: https://ogp.me/ns#" class="no-js no-svg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+            <style>.toc_post_list h2{
+                    margin-bottom: 20px;
+                }
+                .toc_post_list{
+                    list-style: none;
+                    margin: 0 0 30px 0!important;
+                    padding: 0!important;
+                }
+                .toc_post_list li{}
+                .toc_post_list li ul{
+                    list-style: decimal;
+                }
+                .toc_post_list a{}
+                .wpaicg_chat_widget{
+                    position: fixed;
+                }
+                .wpaicg_widget_left{
+                    bottom: 15px;
+                    left: 15px;
+                }
+                .wpaicg_widget_right{
+                    bottom: 15px;
+                    right: 15px;
+                }
+                .wpaicg_widget_right .wpaicg_chat_widget_content{
+                    right: 0;
+                }
+                .wpaicg_widget_left .wpaicg_chat_widget_content{
+                    left: 0;
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox{
+                    height: 100%;
+                    background-color: #222222;
+                    border-radius: 5px;
+                }
+                .wpaicg_widget_open .wpaicg_chat_widget_content{
+                    height: 400px;
+                }
+                .wpaicg_chat_widget_content{
+                    position: absolute;
+                    bottom: calc(100% + 15px);
+                    width: 350px;
+                    overflow: hidden;
+                }
+                .wpaicg_widget_open .wpaicg_chat_widget_content{
+                    overflow: unset;
+                }
+                .wpaicg_widget_open .wpaicg_chat_widget_content .wpaicg-chatbox{
+                    top: 0;
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox{
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 350px;
+                    height: 400px;
+                    transition: top 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox-content{
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox-content ul{
+                    box-sizing: border-box;
+                    background: #222222;
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox-content ul li{
+                    color: #90EE90;
+                    font-size: 13px;
+                }
+                .wpaicg_chat_widget_content .wpaicg-bot-thinking{
+                    color: #90EE90;
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox-type{
+                                    border-top: 0;
+                    background: rgb(0 0 0 / 19%);
+                }
+                .wpaicg_chat_widget_content .wpaicg-chat-message{
+                    color: #90EE90;
+                }
+                .wpaicg_chat_widget_content textarea.wpaicg-chatbox-typing{
+                    background-color: #fff;
+                    border-color: #ccc;
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox-send{
+                    color: #fff;
+                }
+                .wpaicg-chatbox-footer{
+                    height: 18px;
+                    font-size: 11px;
+                    padding: 0 5px;
+                    color: #fff;
+                    background: rgb(0 0 0 / 19%);
+                    margin-top:2px;
+                    margin-bottom: 2px;
+                }
+                .wpaicg_chat_widget_content textarea.wpaicg-chatbox-typing:focus{
+                    outline: none;
+                }
+                .wpaicg_chat_widget .wpaicg_toggle{
+                    cursor: pointer;
+                }
+                .wpaicg_chat_widget .wpaicg_toggle img{
+                    width: 75px;
+                    height: 75px;
+                }
+                .wpaicg-chat-shortcode-type,.wpaicg-chatbox-type{
+                    position: relative;
+                }
+                .wpaicg-mic-icon{
+                    cursor: pointer;
+                }
+                .wpaicg-mic-icon svg{
+                    width: 16px;
+                    height: 16px;
+                    fill: currentColor;
+                }
+                .wpaicg-pdf-icon svg{
+                    width: 22px;
+                    height: 22px;
+                    fill: currentColor;
+                }
+                .wpaicg_chat_additions span{
+                    cursor: pointer;
+                    margin-right: 2px;
+                }
+                .wpaicg_chat_additions span:last-of-type{
+                    margin-right: 0;
+                }
+                .wpaicg-pdf-loading{
+                    width: 18px;
+                    height: 18px;
+                    border: 2px solid #FFF;
+                    border-bottom-color: transparent;
+                    border-radius: 50%;
+                    display: inline-block;
+                    box-sizing: border-box;
+                    animation: wpaicg_rotation 1s linear infinite;
+                }
+                @keyframes wpaicg_rotation {
+                    0% {
+                        transform: rotate(0deg);
+                    }
+                    100% {
+                        transform: rotate(360deg);
+                    }
+                }
+                .wpaicg-chat-message code{
+                    padding: 3px 5px 2px;
+                    background: rgb(0 0 0 / 20%);
+                    font-size: 13px;
+                    font-family: Consolas,Monaco,monospace;
+                    direction: ltr;
+                    unicode-bidi: embed;
+                    display: block;
+                    margin: 5px 0px;
+                    border-radius: 4px;
+                    white-space: pre-wrap;
+                }
+                textarea.wpaicg-chat-shortcode-typing,textarea.wpaicg-chatbox-typing{
+                    height: 30px;
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox-content,.wpaicg-chat-shortcode-content{
+                    overflow: hidden;
+                }
+                .wpaicg_chatbox_line{
+                    overflow: hidden;
+                    text-align: center;
+                    display: block!important;
+                    font-size: 12px;
+                }
+                .wpaicg_chatbox_line:after,.wpaicg_chatbox_line:before{
+                    background-color: rgb(255 255 255 / 26%);
+                    content: "";
+                    display: inline-block;
+                    height: 1px;
+                    position: relative;
+                    vertical-align: middle;
+                    width: 50%;
+                }
+                .wpaicg_chatbox_line:before {
+                    right: 0.5em;
+                    margin-left: -50%;
+                }
+
+                .wpaicg_chatbox_line:after {
+                    left: 0.5em;
+                    margin-right: -50%;
+                }
+                .wpaicg-chat-shortcode-typing::-webkit-scrollbar,.wpaicg-chatbox-typing::-webkit-scrollbar{
+                    width: 5px
+                }
+                .wpaicg-chat-shortcode-typing::-webkit-scrollbar-track,.wpaicg-chatbox-typing::-webkit-scrollbar-track{
+                    -webkit-box-shadow:inset 0 0 6px rgba(0, 0, 0, 0.15);border-radius:5px;
+                }
+                .wpaicg-chat-shortcode-typing::-webkit-scrollbar-thumb,.wpaicg-chatbox-typing::-webkit-scrollbar-thumb{
+                    border-radius:5px;
+                    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.75);
+                }</style>
+            <script>var wpaicg_ajax_url = '/wp-admin/admin-ajax.php';
+                var wpaicgUserLoggedIn = false;</script>
+            <link href="/wp-content/plugins/gpt3-ai-content-generator-premium/public/css/wpaicg-rtl.css" type="text/css" rel="stylesheet">
+            
+<!-- Search Engine Optimization by Rank Math - https://rankmath.com/ -->
+<title>Official standards for Houndadore breed by kennel clubs - Houndadore - The Perfect Blend Of Hound and Labradore</title>
+<meta name="description" content="&quot;Setting the benchmark for excellence in Houndadore breed standards.&quot;">
+<meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
+<link rel="canonical" href="/about/official-standards-for-houndadore-breed-by-kennel-clubs/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Official standards for Houndadore breed by kennel clubs - Houndadore - The Perfect Blend Of Hound and Labradore">
+<meta property="og:description" content="&quot;Setting the benchmark for excellence in Houndadore breed standards.&quot;">
+<meta property="og:url" content="/about/official-standards-for-houndadore-breed-by-kennel-clubs/">
+<meta property="og:site_name" content="Houndadore - The Perfect Blend Of Hound and Labradore">
+<meta property="article:section" content="About">
+<meta property="article:published_time" content="2023-06-29T22:29:17-06:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Official standards for Houndadore breed by kennel clubs - Houndadore - The Perfect Blend Of Hound and Labradore">
+<meta name="twitter:description" content="&quot;Setting the benchmark for excellence in Houndadore breed standards.&quot;">
+<meta name="twitter:label1" content="Written by">
+<meta name="twitter:data1" content="Houndadore_2050">
+<meta name="twitter:label2" content="Time to read">
+<meta name="twitter:data2" content="41 minutes">
+<script type="application/ld+json" class="rank-math-schema">{"@context":"https://schema.org","@graph":[{"@type":["Organization","Person"],"@id":"/#person","name":"Houndadore - The Perfect Blend Of Hound and Labradore","url":""},{"@type":"WebSite","@id":"/#website","url":"","name":"Houndadore - The Perfect Blend Of Hound and Labradore","publisher":{"@id":"/#person"},"inLanguage":"en-US"},{"@type":"BreadcrumbList","@id":"/about/official-standards-for-houndadore-breed-by-kennel-clubs/#breadcrumb","itemListElement":[{"@type":"ListItem","position":"1","item":{"@id":"","name":"Home"}},{"@type":"ListItem","position":"2","item":{"@id":"/category/about/","name":"About"}},{"@type":"ListItem","position":"3","item":{"@id":"/about/official-standards-for-houndadore-breed-by-kennel-clubs/","name":"Official standards for Houndadore breed by kennel clubs"}}]},{"@type":"WebPage","@id":"/about/official-standards-for-houndadore-breed-by-kennel-clubs/#webpage","url":"/about/official-standards-for-houndadore-breed-by-kennel-clubs/","name":"Official standards for Houndadore breed by kennel clubs - Houndadore - The Perfect Blend Of Hound and Labradore","datePublished":"2023-06-29T22:29:17-06:00","dateModified":"2023-06-29T22:29:17-06:00","isPartOf":{"@id":"/#website"},"inLanguage":"en-US","breadcrumb":{"@id":"/about/official-standards-for-houndadore-breed-by-kennel-clubs/#breadcrumb"}},{"@type":"Person","@id":"/author/houndadore_2050/","name":"Houndadore_2050","url":"/author/houndadore_2050/","image":{"@type":"ImageObject","@id":"//www.gravatar.com/avatar/9f4b2c627190ceb17858b039cc7294af?s=96&r=g&d=mm","url":"//www.gravatar.com/avatar/9f4b2c627190ceb17858b039cc7294af?s=96&r=g&d=mm","caption":"Houndadore_2050","inLanguage":"en-US"},"sameAs":[""]},{"@type":"BlogPosting","headline":"Official standards for Houndadore breed by kennel clubs - Houndadore - The Perfect Blend Of Hound and","datePublished":"2023-06-29T22:29:17-06:00","dateModified":"2023-06-29T22:29:17-06:00","articleSection":"About","author":{"@id":"/author/houndadore_2050/","name":"Houndadore_2050"},"publisher":{"@id":"/#person"},"description":"&quot;Setting the benchmark for excellence in Houndadore breed standards.&quot;","name":"Official standards for Houndadore breed by kennel clubs - Houndadore - The Perfect Blend Of Hound and","@id":"/about/official-standards-for-houndadore-breed-by-kennel-clubs/#richSnippet","isPartOf":{"@id":"/about/official-standards-for-houndadore-breed-by-kennel-clubs/#webpage"},"inLanguage":"en-US","mainEntityOfPage":{"@id":"/about/official-standards-for-houndadore-breed-by-kennel-clubs/#webpage"}}]}</script>
+<!-- /Rank Math WordPress SEO plugin -->
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="alternate" type="application/rss+xml" title="Houndadore - The Perfect Blend Of Hound and Labradore &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="Houndadore - The Perfect Blend Of Hound and Labradore &raquo; Comments Feed" href="/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Houndadore - The Perfect Blend Of Hound and Labradore &raquo; Official standards for Houndadore breed by kennel clubs Comments Feed" href="/about/official-standards-for-houndadore-breed-by-kennel-clubs/feed/">
+<script>
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.3.1"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🫱🏻‍🫲🏿","🫱🏻​🫲🏿")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<style>img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+	<link rel="stylesheet" id="dashicons-css" href="/wp-includes/css/dashicons.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="admin-bar-css" href="/wp-includes/css/admin-bar.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="bp-login-form-block-css" href="/wp-content/plugins/buddypress/bp-core/css/blocks/login-form.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-member-block-css" href="/wp-content/plugins/buddypress/bp-members/css/blocks/member.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-members-block-css" href="/wp-content/plugins/buddypress/bp-members/css/blocks/members.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-dynamic-members-block-css" href="/wp-content/plugins/buddypress/bp-members/css/blocks/dynamic-members.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-latest-activities-block-css" href="/wp-content/plugins/buddypress/bp-activity/css/blocks/latest-activities.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-friends-block-css" href="/wp-content/plugins/buddypress/bp-friends/css/blocks/friends.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-group-block-css" href="/wp-content/plugins/buddypress/bp-groups/css/blocks/group.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-groups-block-css" href="/wp-content/plugins/buddypress/bp-groups/css/blocks/groups.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-dynamic-groups-block-css" href="/wp-content/plugins/buddypress/bp-groups/css/blocks/dynamic-groups.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-sitewide-notices-block-css" href="/wp-content/plugins/buddypress/bp-messages/css/blocks/sitewide-notices.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="embedpress_blocks-cgb-style-css-css" href="/wp-content/plugins/embedpress/Gutenberg/dist/blocks.style.build.css?ver=1695326741" media="all">
+<link rel="stylesheet" id="wp-components-css" href="/wp-includes/css/dist/components/style.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="wp-block-editor-css" href="/wp-includes/css/dist/block-editor/style.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="wp-reusable-blocks-css" href="/wp-includes/css/dist/reusable-blocks/style.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="wp-editor-css" href="/wp-includes/css/dist/editor/style.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="embedpress_pro-cgb-style-css-css" href="/wp-content/plugins/embedpress-pro/Gutenberg/dist/blocks.style.build.css" media="all">
+<style id="classic-theme-styles-inline-css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="wp-ai-content-generator-css" href="/wp-content/plugins/gpt3-ai-content-generator-premium/public/css/wp-ai-content-generator-public.css?ver=1.7.71" media="all">
+<link rel="stylesheet" id="automaticcss-core-css" href="/wp-content/uploads/automatic-css/automatic.css?ver=1690958891" media="all">
+<link rel="stylesheet" id="bp-admin-bar-css" href="/wp-content/plugins/buddypress/bp-core/css/admin-bar.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-nouveau-css" href="/wp-content/plugins/buddypress/bp-templates/bp-nouveau/css/buddypress.min.css?ver=11.3.1" media="screen">
+<link rel="stylesheet" id="embedpress-css" href="/wp-content/plugins/embedpress/assets/css/embedpress.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="bricks-frontend-css" href="/wp-content/themes/bricks/assets/css/frontend.min.css?ver=1695510514" media="all">
+<style id="bricks-frontend-inline-css">:root {    --x-toc-type: decimal;    --x-toc-typetwo: decimal;    --x-toc-typethree: decimal;    --x-toc-typefour: decimal;    --x-toc-typefive: decimal;    --x-toc-duration: 300ms;    --x-toc-suffix: '';    --x-toc-seperator: '.';}.brxe-xtableofcontents {    width: 100%;    overflow: hidden;}[data-x-toc] {    position: relative;}.x-toc_header {    display: flex;    align-items: center;    flex-direction: row;    justify-content: space-between;    padding: 10px;    cursor: pointer;      line-height: 1;}  .x-toc_header-icon {    font-size: .8em;}.x-toc_header-icon i {    transition: transform 0.4s ease;}.x-toc_header[aria-expanded=true] .x-toc_header-icon i {    transform: rotateX(180deg);}.brxe-xtableofcontents ::marker {    content: none;    display: none;}.brxe-xtableofcontents > .x-toc_list {    overflow: hidden;    position: relative;}.brxe-xtableofcontents > .x-toc_list li {    list-style: none;   }.x-toc_list .x-toc_list {    padding-left: 10px;}.x-toc_list-item {    -webkit-column-break-inside: avoid;    -moz-column-break-inside: avoid;    break-inside: avoid; }a.x-toc_link {    color: currentColor;    height: 100%;    padding: 0 10px;    display: block;}.x-toc_collapsible {    max-height: 1000px;    overflow: hidden;    transition: all 300ms ease-in-out;}.x-toc_collapsed {    max-height: 0;}.x-toc_position-fixed {    position: fixed !important;    top: 0;}.x-toc_active-link {    font-weight: 700;}.brxe-xtableofcontents[data-x-toc*=border] .x-toc_link::before {    background-color: #eee;    content: " ";    display: inline-block;    height: inherit;    left: 0;    margin-top: -1px;    position: absolute;    width: 2px;}.brxe-xtableofcontents[data-x-toc*=border] .x-toc_active-link::before {    background-color: #54bc4b;}.x-toc_list {    margin: 0;    padding: 0;    list-style-type: none;    list-style-position: inside;    counter-reset: x_toc_items; }.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_link:before {    content: counters(x_toc_items,'', var(--x-toc-type)) '' var(--x-toc-suffix) ' ';}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_link:before {    content: counter(x_toc_items, var(--x-toc-type)) '' var(--x-toc-seperator) '' counter(x_toc_itemstwo, var(--x-toc-typetwo)) '' var(--x-toc-suffix) ' ';}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_list .x-toc_link:before {    content: counter(x_toc_items, var(--x-toc-type)) '' var(--x-toc-seperator) '' counter(x_toc_itemstwo, var(--x-toc-typetwo)) '' var(--x-toc-seperator) '' counter(x_toc_itemsthree, var(--x-toc-typethree)) '' var(--x-toc-suffix) ' ';}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_list .x-toc_list .x-toc_link:before {    content: counter(x_toc_items, var(--x-toc-type)) '' var(--x-toc-seperator) '' counter(x_toc_itemstwo, var(--x-toc-typetwo)) '' var(--x-toc-seperator) '' counter(x_toc_itemsthree, var(--x-toc-typethree)) '' var(--x-toc-seperator) '' counter(x_toc_items, var(--x-toc-typefour)) '' var(--x-toc-suffix) ' ';}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list {    counter-reset: x_toc_itemstwo;}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_list {    counter-reset: x_toc_itemsthree;}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_list .x-toc_list {    counter-reset: x_toc_itemsfour;}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list-item {    counter-increment: x_toc_items;}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_list-item {    counter-increment: x_toc_itemstwo;}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_list .x-toc_list-item {    counter-increment: x_toc_itemsthree;}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_list .x-toc_list .x-toc_list-item {    counter-increment: x_toc_itemsfour;}.brxe-xtableofcontents[data-x-toc*=counter][data-x-toc*=nestCounters] .x-toc_link:before {    content: counters(x_toc_items,'', var(--x-toc-type)) '' var(--x-toc-suffix) ' ';}.brxe-xtableofcontents[data-x-toc*=counter][data-x-toc*=nestCounters] .x-toc_list .x-toc_list .x-toc_link:before {    content: counter(x_toc_itemstwo, var(--x-toc-typetwo)) '' var(--x-toc-suffix) ' ';}.brxe-xtableofcontents[data-x-toc*=counter][data-x-toc*=nestCounters] .x-toc_list .x-toc_list .x-toc_list .x-toc_link:before {    content: counter(x_toc_itemsthree, var(--x-toc-typethree)) '' var(--x-toc-suffix) ' ';}.brxe-xtableofcontents[data-x-toc*=counter][data-x-toc*=nestCounters] .x-toc_list .x-toc_list .x-toc_list .x-toc_list .x-toc_link:before {    content: counter(x_toc_itemsfour, var(--x-toc-typefour)) '' var(--x-toc-suffix) ' ';}[data-x-toc-content] h1[tabindex]:focus,[data-x-toc-content] h2[tabindex]:focus,[data-x-toc-content] h3[tabindex]:focus,[data-x-toc-content] h4[tabindex]:focus,[data-x-toc-content] h5[tabindex]:focus,[data-x-toc-content] h6[tabindex]:focus {    outline: none;}.x-toc_body {    --x-toc-close-true: none;    --x-toc-close-false: flex;    display: var(--x-toc-close)}
+
+			#brx-header {
+				--x-header-transition: 0;
+				--x-header-fade-transition: 0;
+			}
+
+			#brx-header.x-header_sticky-active {
+				z-index: 999;
+			}</style>
+<link rel="stylesheet" id="bricks-font-awesome-css" href="/wp-content/themes/bricks/assets/css/libs/font-awesome.min.css?ver=1695510514" media="all">
+<link rel="stylesheet" id="bricks-ionicons-css" href="/wp-content/themes/bricks/assets/css/libs/ionicons.min.css?ver=1695510514" media="all">
+<link rel="stylesheet" id="bricks-themify-icons-css" href="/wp-content/themes/bricks/assets/css/libs/themify-icons.min.css?ver=1695510514" media="all">
+<link rel="stylesheet" id="automaticcss-bricks-css" href="/wp-content/uploads/automatic-css/automatic-bricks.css?ver=1690958892" media="all">
+<style id="bricks-frontend-inline-inline-css">/* COLOR VARS */
+:root {
+--bricks-color-41d5a9: #f5f5f5;
+--bricks-color-99c887: #e0e0e0;
+--bricks-color-46e566: #9e9e9e;
+--bricks-color-733d27: #616161;
+--bricks-color-366073: #424242;
+--bricks-color-da83d8: #212121;
+--bricks-color-e13943: #ffeb3b;
+--bricks-color-532f05: #ffc107;
+--bricks-color-02cdaf: #ff9800;
+--bricks-color-27368d: #ff5722;
+--bricks-color-9a6966: #f44336;
+--bricks-color-ff9397: #9c27b0;
+--bricks-color-eeb003: #2196f3;
+--bricks-color-07d926: #03a9f4;
+--bricks-color-dd2228: #81D4FA;
+--bricks-color-81c7f1: #4caf50;
+--bricks-color-2147aa: #8bc34a;
+--bricks-color-97f143: #cddc39;
+--bricks-color-zagbnv: #f9e35e;
+--bricks-color-vipnmf: rgba(196, 232, 247, 0.62);
+--bricks-color-wvvhuc: #d8d2ca;
+--bricks-color-acss_import_transparent: transparent;
+}
+
+/* GLOBAL CLASSES CSS */
+
+/* BREAKPOINT: Desktop (BASE) */
+.post-content.brxe-section {padding-top: 35px; padding-right: 20px; padding-left: 20px}
+
+
+/* HEADER CSS (ID: 28) */
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-fukllx {width: 80%}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-fukllx {width: 100%}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-mwbyjd {width: 25%}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-mwbyjd {width: 50%}
+}
+@media (max-width: 767px) {
+#brxe-ajfwhw .bricks-nav-menu-wrapper { display: none; }
+#brxe-ajfwhw .bricks-mobile-menu-toggle { display: block; }
+}
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-ajfwhw {font-family: "Roboto"; text-transform: capitalize; font-weight: 700; font-size: 16px; color: #ffffff}
+#brxe-ajfwhw .bricks-nav-menu > li > a {color: var(--danger); text-transform: capitalize; font-family: "Poppins"; font-weight: 700; font-size: 1.25em}
+#brxe-ajfwhw .bricks-nav-menu > li > .brx-submenu-toggle > * {color: var(--danger); text-transform: capitalize; font-family: "Poppins"; font-weight: 700; font-size: 1.25em}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-ajfwhw .bricks-mobile-menu-toggle {color: var(--bricks-color-9a6966)}
+#brxe-ajfwhw.show-mobile-menu .bricks-mobile-menu-toggle {color: var(--bricks-color-9a6966) !important}
+#brxe-ajfwhw {align-self: flex-end}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-togjjs {width: 50%; flex-direction: row; column-gap: 30px; justify-content: center}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-togjjs {width: 50%; justify-content: flex-end}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-qpglvf {font-size: 20px; background-color: var(--bricks-color-9a6966); padding-top: 9px; padding-right: 13px; padding-bottom: 9px; padding-left: 13px; border-radius: 50px; color: #ffffff; fill: #ffffff}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-qpglvf {display: none}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-zturax {font-size: 18px; background-color: var(--bricks-color-9a6966); padding-top: 10px; padding-right: 9px; padding-bottom: 9px; padding-left: 10px; border-radius: 50px; color: #ffffff; fill: #ffffff}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-zturax {display: none}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-mxxbuo {font-size: 18px; background-color: var(--bricks-color-9a6966); padding-top: 10px; padding-right: 11px; padding-bottom: 10px; padding-left: 11px; border-radius: 50px; color: #ffffff; fill: #ffffff}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-mxxbuo {display: none}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-eulzai {font-size: 18px; background-color: var(--bricks-color-9a6966); padding-top: 10px; padding-right: 9px; padding-bottom: 10px; padding-left: 9px; border-radius: 50px; color: #ffffff; fill: #ffffff}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-eulzai {display: none}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-onwkos {width: 25%; flex-direction: row; column-gap: 10px; justify-content: flex-end}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-onwkos {width: 50%}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-gxgllw {flex-direction: row; align-items: center}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-gbfmvp {padding-top: 20px; padding-bottom: 20px; background-color: #000000}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-gbfmvp {padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px; top: 0px; z-index: 1; position: sticky}
+}
+
+/* CONTENT CSS (ID: 845) */
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-wdjlqy {color: #ffffff; text-align: center; font-family: "Poppins"; font-weight: 700}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-dctapm {color: #ffffff; font-family: "Poppins"; font-weight: 600; padding-top: 10px; padding-bottom: 10px}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-tvhypf {color: #ffffff; font-family: "Poppins"; font-weight: 500}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-ugqukz {text-align: center; flex-direction: column; align-self: center !important; align-items: center; width: 100%; padding-right: 50px; padding-left: 50px; background-attachment: fixed; background-position: center center; background-repeat: no-repeat; background-size: cover}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-gvwqnf {padding-top: 9vw; padding-bottom: 3vw; background-attachment: fixed; background-position: center center; background-repeat: no-repeat; background-size: cover; position: relative}
+:where(#brxe-gvwqnf > *) {position: relative}
+#brxe-gvwqnf::before {background-image: linear-gradient(rgba(33, 33, 33, 0.38), rgba(33, 33, 33, 0.38)); position: absolute; content: ""; top: 0; right: 0; bottom: 0; left: 0; pointer-events: none}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-cdjpkl {margin-top: 25px; margin-bottom: 25px}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-dngkka {color: #000000; font-size: 18px; font-family: "Poppins"; font-weight: 600; text-align: left; align-self: center; margin-top: 3vw}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-kofzsc {position: static; top: 25%; display: flex; flex-direction: row; gap: 5px; align-self: center; align-items: center}
+#brxe-kofzsc li {margin-top: 10px}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-izjvkr {margin-top: 20px}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-skjruf {width: 100%; align-items: flex-start}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-wfrprg input[type=search]::placeholder {color: #000000}
+#brxe-wfrprg input[type=search] {border-color: #000000}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-gugwak .x-toc_header {color: #000000; font-family: "Poppins"; font-weight: 500}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-amoawz {color: #000000; font-size: 24px; font-family: "Poppins"; font-weight: 600; text-align: center; position: relative; align-self: center; margin-top: 15px; margin-bottom: 15px}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-ueaixc .repeater-item [data-field-id="5c6fed"] {margin-top: 10px}
+#brxe-ueaixc {grid-template-columns: repeat(1, 1fr); grid-auto-flow: unset}
+#brxe-ueaixc li {color: #000000; font-family: "Poppins"; font-size: .75em; padding-bottom: 50px; box-shadow: 5px 5px 1px 0 var(--bricks-color-9a6966)}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-hwsqci {width: 25%; flex-direction: column; align-self: flex-start !important; align-items: center; padding-left: 35px}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-jtuphi {flex-direction: row; padding-bottom: 25px; column-gap: 30px}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-tzozql {padding-bottom: 35px}
+
+
+/* FOOTER CSS (ID: 31) */
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-rpisls {width: 43%}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-eaxztd {color: #ffffff; font-family: "Roboto"; margin-top: 20px}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-eaxztd {text-align: center}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-xpelqb {width: 50%}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-xpelqb {width: 100%; margin-top: 40px; align-items: center}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-rakvig {color: #ffffff; font-family: "Roboto"}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-hdxtls .icon i {font-size: 20px}
+#brxe-hdxtls .icon {align-self: center; color: var(--bricks-color-9a6966)}
+#brxe-hdxtls {gap: 10px; flex-direction: row; margin-top: 20px}
+#brxe-hdxtls .icon a {color: var(--bricks-color-9a6966)}
+#brxe-hdxtls .content {color: #ffffff; font-family: "Roboto"}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-mqefoe .icon i {font-size: 20px}
+#brxe-mqefoe .icon {align-self: center; color: var(--bricks-color-9a6966)}
+#brxe-mqefoe {gap: 10px; flex-direction: row; margin-top: 7px}
+#brxe-mqefoe .icon a {color: var(--bricks-color-9a6966)}
+#brxe-mqefoe .content {color: #ffffff; font-family: "Roboto"}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-vrahhh .icon i {font-size: 20px}
+#brxe-vrahhh .icon {align-self: center; color: var(--bricks-color-9a6966)}
+#brxe-vrahhh {gap: 10px; flex-direction: row; margin-top: 7px}
+#brxe-vrahhh .icon a {color: var(--bricks-color-9a6966)}
+#brxe-vrahhh .content {color: #ffffff; font-family: "Roboto"}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-xuqyxc {width: 25%}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-xuqyxc {width: 100%; margin-top: 40px; align-items: center}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-lgqfds {color: #ffffff; font-family: "Roboto"}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-eecmvu {margin-top: 20px; color: #ffffff; font-family: "Roboto"; text-transform: capitalize; font-weight: 500}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-ztmoaz {margin-top: 6px; color: #ffffff; font-family: "Roboto"; text-transform: capitalize; font-weight: 500}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-dcnagm {margin-top: 6px; color: #ffffff; font-family: "Roboto"; text-transform: capitalize; font-weight: 500}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-luqjcj {margin-top: 6px; color: #ffffff; font-family: "Roboto"; text-transform: capitalize; font-weight: 500}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-jvfmyb {width: 25%; padding-bottom: 40px}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-jvfmyb {width: 100%; margin-top: 40px; align-items: center}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-lwvhbf {flex-direction: row; column-gap: 50px; border-bottom: 2px solid #ffffff}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-joihqv {font-size: 17px}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-joihqv {text-align: center}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-nitblx {margin-top: 20px; margin-bottom: 20px; align-items: flex-end; color: #ffffff; font-family: "Roboto"; text-transform: capitalize}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-tseoqd {background-color: #323232; padding-top: 5vw}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-tseoqd {padding-right: 20px; padding-left: 20px}
+}</style>
+<link rel="stylesheet" id="bricks-google-fonts-css" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&#038;display=swap&#038;family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&#038;display=swap" media="all">
+<link rel="stylesheet" id="plyr-css" href="/wp-content/plugins/embedpress/assets/css/plyr.css?ver=6.3.1" media="all">
+<script src="/wp-includes/js/jquery/jquery.min.js?ver=3.7.0" id="jquery-core-js"></script>
+<script src="/wp-content/plugins/gpt3-ai-content-generator-premium/public/js/wp-ai-content-generator-public.js?ver=1.7.71" id="wp-ai-content-generator-js"></script>
+<script src="/wp-content/plugins/buddypress/bp-core/js/widget-members.min.js?ver=11.3.1" id="bp-widget-members-js"></script>
+<script src="/wp-content/plugins/buddypress/bp-core/js/jquery-query.min.js?ver=11.3.1" id="bp-jquery-query-js"></script>
+<script src="/wp-content/plugins/buddypress/bp-core/js/vendor/jquery-cookie.min.js?ver=11.3.1" id="bp-jquery-cookie-js"></script>
+<script src="/wp-content/plugins/buddypress/bp-core/js/vendor/jquery-scroll-to.min.js?ver=11.3.1" id="bp-jquery-scroll-to-js"></script>
+<script src="/wp-content/plugins/embedpress/assets/js/plyr.polyfilled.js?ver=1" id="plyr.polyfilled-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/845">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.3.1">
+<link rel="shortlink" href="/?p=845">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Fabout%2Fofficial-standards-for-houndadore-breed-by-kennel-clubs%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Fabout%2Fofficial-standards-for-houndadore-breed-by-kennel-clubs%2F#038;format=xml">
+
+	<script type="text/javascript">var ajaxurl = '/wp-admin/admin-ajax.php';</script>
+
+<style media="print">#wpadminbar { display:none; }</style>
+	<style media="screen">html { margin-top: 32px !important; }
+	@media screen and ( max-width: 782px ) {
+		html { margin-top: 46px !important; }
+	}</style>
+	<link rel="icon" href="/wp-content/uploads/2023/03/Dog-Training-Favicon-150x150.png" sizes="32x32">
+<link rel="icon" href="/wp-content/uploads/2023/03/Dog-Training-Favicon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/wp-content/uploads/2023/03/Dog-Training-Favicon.png">
+<meta name="msapplication-TileImage" content="/wp-content/uploads/2023/03/Dog-Training-Favicon.png">
+		<style id="wp-custom-css">@media screen and (min-width: 375px) {
+body.bricks-is-frontend.admin-bar #brx-header.sticky {
+	top: 0px !important
+}
+}
+
+#brxe-fuxnba .bricks-pagination ul {
+    justify-content: center;
+    gap: 40px;
+    margin-top: 60px;
+}</style>
+		
+<!-- Facebook Open Graph (by Bricks) -->
+<meta property="og:url" content="/about/official-standards-for-houndadore-breed-by-kennel-clubs/">
+<meta property="og:site_name" content="Houndadore - The Perfect Blend Of Hound and Labradore">
+<meta property="og:title" content="Official standards for Houndadore breed by kennel clubs">
+<meta property="og:description" content="&#8220;Setting the benchmark for excellence in Houndadore breed standards.&#8221; Official standards for the Houndadore breed, as recognized by kennel clubs, outline the desired characteristics and physical attributes that define this particular breed. These standards serve as a guideline for breeders, judges, and enthusiasts to ensure consistency and maintain the breed&#8217;s integrity. History of Official Standards [&hellip;]">
+<meta property="og:type" content="article">
+</head>
+
+<body class="bp-nouveau post-template-default single single-post postid-845 single-format-standard admin-bar no-customize-support brx-body bricks-is-frontend wp-embed-responsive no-js">		<a class="skip-link" href="#brx-content" aria-label="Skip to main content">Skip to main content</a>
+
+					<a class="skip-link" href="#brx-footer" aria-label="Skip to footer">Skip to footer</a>
+			<header id="brx-header" class="sticky on-scroll" data-x-overlay="none"><section id="brxe-gbfmvp" class="brxe-section"><div id="brxe-gxgllw" class="brxe-container">
+<div id="brxe-mwbyjd" class="brxe-block"><img width="300" height="75" src="/wp-content/uploads/2023/03/Houndadore-2-White.png" class="brxe-image css-filter size-full" alt="Houndadore" decoding="async" id="brxe-fukllx"></div>
+<div id="brxe-togjjs" class="brxe-block"><div id="brxe-ajfwhw" data-script-id="ajfwhw" class="brxe-nav-menu">
+<nav class="bricks-nav-menu-wrapper mobile_landscape"><ul id="menu-main-menu" class="bricks-nav-menu">
+<li id="menu-item-821" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-821 bricks-menu-item"><a href="/">Home</a></li>
+<li id="menu-item-822" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-822 bricks-menu-item"><a href="#">About</a></li>
+<li id="menu-item-823" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-823 bricks-menu-item"><a href="/blog/">Blog</a></li>
+<li id="menu-item-824" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-824 bricks-menu-item"><a href="#">Gallery</a></li>
+<li id="menu-item-825" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-825 bricks-menu-item"><a href="#">Contact</a></li>
+</ul></nav>			<button class="bricks-mobile-menu-toggle" aria-haspopup="true" aria-label="Mobile menu" aria-expanded="false">
+				<span class="bar-top"></span>
+				<span class="bar-center"></span>
+				<span class="bar-bottom"></span>
+			</button>
+			<nav class="bricks-mobile-menu-wrapper left"><ul id="menu-main-menu-1" class="bricks-mobile-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-821 bricks-menu-item"><a href="/">Home</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-822 bricks-menu-item"><a href="#">About</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-823 bricks-menu-item"><a href="/blog/">Blog</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-824 bricks-menu-item"><a href="#">Gallery</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-825 bricks-menu-item"><a href="#">Contact</a></li>
+</ul></nav><div class="bricks-mobile-menu-overlay"></div>
+</div></div>
+<div id="brxe-onwkos" class="brxe-block">
+<a href="https://www.facebook.com/houndadore" target="_blank"><i id="brxe-qpglvf" class="brxe-icon fab fa-facebook-f"></i></a><i id="brxe-zturax" class="brxe-icon fab fa-twitter"></i><i id="brxe-mxxbuo" class="brxe-icon fab fa-linkedin-in"></i><i id="brxe-eulzai" class="brxe-icon fab fa-youtube"></i>
+</div>
+</div></section></header><main id="brx-content"><section id="brxe-gvwqnf" class="brxe-section"><div id="brxe-ugqukz" class="brxe-container">
+<h1 id="brxe-wdjlqy" class="brxe-post-title">Official standards for Houndadore breed by kennel clubs</h1>
+<div id="brxe-dctapm" class="brxe-shortcode"><nav aria-label="breadcrumbs" class="rank-math-breadcrumb"><p><a href="/">Home</a><span class="separator"> - </span><a href="/category/about/">About</a><span class="separator"> - </span><span class="last">Official standards for Houndadore breed by kennel clubs</span></p></nav></div>
+<div id="brxe-tvhypf" class="brxe-post-meta post-meta">
+<span class="item">June 29, 2023</span><span class="item">0 comments</span>
+</div>
+</div></section><section id="brxe-tzozql" class="brxe-section post-content"><div id="brxe-jtuphi" class="brxe-container">
+<div id="brxe-skjruf" class="brxe-block">
+<div id="brxe-hbkqvb" class="brxe-post-content">
+<p>&#8220;Setting the benchmark for excellence in Houndadore breed standards.&#8221;</p>
+<p>Official standards for the Houndadore breed, as recognized by kennel clubs, outline the desired characteristics and physical attributes that define this particular breed. These standards serve as a guideline for breeders, judges, and enthusiasts to ensure consistency and maintain the breed&#8217;s integrity.</p>
+<h2 id="history-of-official-standards-for-houndadore-breed-XKcDRVuRnS">History of Official Standards for Houndadore Breed</h2>
+<p>The Houndadore breed, a cross between a Labrador Retriever and a Bloodhound, has gained popularity in recent years for its unique combination of traits. As with any breed, kennel clubs play a crucial role in establishing official standards that define the characteristics and appearance of the Houndadore. These standards serve as a guide for breeders, judges, and enthusiasts, ensuring that the breed remains true to its origins and maintains its distinct qualities.</p>
+<p>The history of official standards for the Houndadore breed can be traced back to the early 20th century when kennel clubs recognized the need for a comprehensive set of guidelines. These standards were developed through careful observation and analysis of the breed&#8217;s physical attributes, temperament, and working abilities. The goal was to create a breed standard that would serve as a benchmark for breeders and judges, allowing them to evaluate and compare individual dogs against a set of predetermined criteria.</p>
+<p>Over the years, the official standards for the Houndadore breed have evolved and refined, reflecting the changing preferences and priorities of breeders and enthusiasts. Initially, the focus was primarily on the breed&#8217;s working abilities, as the Houndadore was primarily used as a hunting and tracking dog. The standards emphasized traits such as scenting ability, endurance, and intelligence, which were crucial for the breed&#8217;s original purpose.</p>
+<p>As the role of the Houndadore expanded beyond hunting and tracking, the standards began to incorporate other aspects of the breed&#8217;s temperament and appearance. The breed&#8217;s friendly and sociable nature, inherited from the Labrador Retriever, became an important characteristic to be evaluated. The standards also started to emphasize the breed&#8217;s physical attributes, such as size, proportion, and coat type. These changes reflected the growing interest in the Houndadore as a versatile companion and family dog.</p>
+<p>Today, the official standards for the Houndadore breed encompass a wide range of criteria, covering everything from the dog&#8217;s overall structure to its movement, temperament, and coat color. Breeders and judges refer to these standards to ensure that the breed&#8217;s unique qualities are preserved and maintained. The standards provide a clear and objective framework for evaluating individual dogs, allowing breeders to make informed decisions when selecting breeding pairs and judges to assess dogs in conformation shows.</p>
+<p>The official standards for the Houndadore breed are established and maintained by kennel clubs, which are responsible for overseeing the breed&#8217;s development and promoting its welfare. These clubs collaborate with breeders, experts, and enthusiasts to review and update the standards periodically, ensuring that they remain relevant and reflective of the breed&#8217;s current status.</p>
+<p>In conclusion, the history of official standards for the Houndadore breed is a testament to the dedication and passion of kennel clubs in preserving and promoting this unique crossbreed. The standards have evolved over time, reflecting the changing priorities and preferences of breeders and enthusiasts. Today, these standards serve as a valuable resource for breeders and judges, providing a clear and objective framework for evaluating and maintaining the breed&#8217;s distinct qualities. By adhering to these standards, breeders and enthusiasts can ensure that the Houndadore remains a cherished and recognized breed for generations to come.</p>
+<h2 id="importance-of-kennel-club-recognition-for-houndadore-breed-XKcDRVuRnS">Importance of Kennel Club Recognition for Houndadore Breed</h2>
+<p>The Houndadore breed, a cross between a Labrador Retriever and a Bloodhound, has gained popularity among dog enthusiasts in recent years. With its unique combination of traits from both parent breeds, the Houndadore has become a sought-after companion and working dog. However, to ensure the breed&#8217;s integrity and maintain its standards, kennel clubs play a crucial role in recognizing and establishing official standards for the Houndadore breed.</p>
+<p>Kennel club recognition holds immense importance for the Houndadore breed. It serves as a stamp of authenticity and credibility, ensuring that the breed meets specific criteria and adheres to a set of standards. This recognition provides breeders and owners with the assurance that they are working with a genuine Houndadore and not a mix of other breeds. It also helps potential owners in their search for a reputable breeder, as they can rely on kennel club recognition as a mark of quality.</p>
+<p>Moreover, kennel club recognition helps in preserving the unique characteristics and traits of the Houndadore breed. By establishing official standards, kennel clubs ensure that breeders focus on maintaining the breed&#8217;s distinct features, such as its friendly and sociable nature, intelligence, and exceptional scenting abilities. These standards guide breeders in their selection process, encouraging them to breed Houndadores that possess the desired traits and characteristics.</p>
+<p>Kennel club recognition also plays a vital role in promoting responsible breeding practices. By setting standards for health and temperament, kennel clubs ensure that Houndadore puppies are bred from healthy and well-tempered parents. This helps in reducing the risk of hereditary diseases and behavioral issues, ensuring that Houndadores are healthy and well-adjusted companions. Additionally, kennel club recognition encourages breeders to conduct necessary health tests and screenings, further enhancing the overall health and well-being of the breed.</p>
+<p>Furthermore, kennel club recognition opens doors to various competitive events and activities for Houndadore owners. These events, such as conformation shows, obedience trials, and scent work competitions, provide opportunities for Houndadores to showcase their skills and abilities. Participating in these events not only allows owners to bond with their dogs but also helps in promoting the breed and raising awareness about its unique qualities.</p>
+<p>In addition to these benefits, kennel club recognition also facilitates networking and community-building among Houndadore enthusiasts. By bringing together breeders, owners, and enthusiasts, kennel clubs create a platform for sharing knowledge, experiences, and best practices. This exchange of information helps in further improving the breed and ensures that Houndadores continue to thrive as a distinct and recognized breed.</p>
+<p>In conclusion, kennel club recognition holds immense importance for the Houndadore breed. It provides authenticity, credibility, and a mark of quality for breeders and owners. It helps in preserving the breed&#8217;s unique characteristics, promoting responsible breeding practices, and opening doors to various competitive events. Moreover, it facilitates networking and community-building among Houndadore enthusiasts. With kennel club recognition, the Houndadore breed can continue to flourish and be recognized as a remarkable and distinct breed in the dog world.</p>
+<h2 id="key-characteristics-and-traits-of-houndadore-breed-XKcDRVuRnS">Key Characteristics and Traits of Houndadore Breed</h2>
+<p>The Houndadore breed is a unique and fascinating mix of two popular dog breeds: the Labrador Retriever and the Bloodhound. As a result, this breed possesses a combination of traits and characteristics that make it stand out from other breeds. In order to maintain the integrity and standardization of the Houndadore breed, kennel clubs have established official standards that outline the key characteristics and traits that define this breed.</p>
+<p>One of the most notable characteristics of the Houndadore breed is its size. Typically, Houndadores are medium to large-sized dogs, with males generally being larger than females. They have a strong and muscular build, which is a trait inherited from their Labrador Retriever parent. This gives them the agility and endurance required for various activities such as hunting and tracking.</p>
+<p>In terms of appearance, the Houndadore breed has a distinctive and unique look. They have a broad head with a well-defined stop, which is a characteristic inherited from the Bloodhound parent. Their eyes are large and expressive, and their ears are long and droopy. The Houndadore&#8217;s coat is short and dense, providing protection from the elements. The most common coat colors for this breed are black, liver, and tan, although variations can occur.</p>
+<p>Another key characteristic of the Houndadore breed is its temperament. Houndadores are known for their friendly and outgoing nature, making them excellent family pets. They are loyal and affectionate towards their owners, and they get along well with children and other pets. However, it is important to note that Houndadores can also inherit the independent and stubborn nature of their Bloodhound parent, so early socialization and training are crucial to ensure a well-behaved and obedient dog.</p>
+<p>In terms of exercise and activity requirements, the Houndadore breed is moderately active. They enjoy regular exercise and outdoor activities, such as long walks, hikes, and playtime in a secure area. Due to their strong sense of smell inherited from the Bloodhound parent, Houndadores also excel in scent work and tracking activities. Engaging their natural instincts and providing mental stimulation is essential to keep them happy and fulfilled.</p>
+<p>Health is another important aspect of the Houndadore breed. Like any other breed, they can be prone to certain health issues. However, by following responsible breeding practices and regular veterinary care, many potential health problems can be minimized. It is recommended to consult with a reputable breeder who conducts health screenings and genetic testing to ensure the overall health and well-being of the Houndadore puppies.</p>
+<p>In conclusion, the Houndadore breed is a unique and wonderful mix of the Labrador Retriever and the Bloodhound. Kennel clubs have established official standards to maintain the integrity and standardization of this breed. From their size and appearance to their temperament and exercise requirements, the Houndadore possesses a combination of traits that make it a remarkable and beloved breed. By understanding and appreciating these key characteristics and traits, potential owners can make an informed decision about whether the Houndadore is the right breed for them.</p>
+<h2 id="understanding-the-official-breed-standard-for-houndadore-XKcDRVuRnS">Understanding the Official Breed Standard for Houndadore</h2>
+<p>The Houndadore is a unique and popular breed that has gained recognition from various kennel clubs around the world. These kennel clubs have established official standards for the Houndadore breed, which serve as a guide for breeders, judges, and enthusiasts. Understanding these official breed standards is crucial for anyone involved with Houndadores, as they provide a blueprint for the ideal characteristics and qualities of the breed.</p>
+<p>The official breed standard for Houndadores encompasses various aspects, including their physical appearance, temperament, and overall structure. It serves as a benchmark against which individual dogs are evaluated in conformation shows and breeding programs. By adhering to these standards, breeders can ensure that the Houndadores they produce are true representatives of the breed.</p>
+<p>When it comes to physical appearance, the official breed standard outlines the desired size, proportions, and general conformation of the Houndadore. It specifies the ideal height and weight range, as well as the preferred body structure and musculature. This information helps breeders and judges assess whether a Houndadore meets the breed&#8217;s physical requirements.</p>
+<p>Furthermore, the breed standard also describes the Houndadore&#8217;s head, eyes, ears, and muzzle in detail. It specifies the desired shape, size, and placement of these features, as well as the preferred expression and overall balance of the head. This level of specificity ensures that breeders and judges have a clear understanding of what constitutes a correct head and facial structure for a Houndadore.</p>
+<p>In addition to physical appearance, the official breed standard also addresses the Houndadore&#8217;s temperament and behavior. It emphasizes the breed&#8217;s friendly and outgoing nature, as well as its intelligence and trainability. These traits are essential for a Houndadore to fulfill its role as a companion and working dog. By including temperament guidelines in the breed standard, kennel clubs ensure that Houndadores maintain their characteristic personality traits.</p>
+<p>Moreover, the breed standard also covers the Houndadore&#8217;s movement and gait. It describes the ideal movement pattern, including the desired reach and drive, as well as the correct foot placement. This information is crucial for judges to assess a Houndadore&#8217;s movement in the show ring, as it reflects the breed&#8217;s overall soundness and athleticism.</p>
+<p>It is important to note that the official breed standard for Houndadores may vary slightly between different kennel clubs. While the core characteristics and qualities remain consistent, there might be minor differences in specific details or preferences. Therefore, it is essential for breeders and enthusiasts to consult the breed standard of the kennel club they are affiliated with to ensure they are breeding and evaluating Houndadores according to the correct guidelines.</p>
+<p>In conclusion, understanding the official breed standard for Houndadores is vital for anyone involved with this unique breed. It provides a comprehensive guide to the desired physical appearance, temperament, and overall structure of Houndadores. By adhering to these standards, breeders can produce Houndadores that are true representatives of the breed, while judges can accurately evaluate them in conformation shows. The breed standard ensures that Houndadores maintain their distinctive characteristics and qualities, making them the beloved companions and working dogs they are known to be.</p>
+<h2 id="the-role-of-kennel-clubs-in-establishing-breed-standards-XKcDRVuRnS">The Role of Kennel Clubs in Establishing Breed Standards</h2>
+<p>The Role of Kennel Clubs in Establishing Breed Standards</p>
+<p>When it comes to dog breeds, kennel clubs play a crucial role in establishing official standards. These standards serve as a blueprint for breeders and enthusiasts, ensuring that each breed maintains its unique characteristics and qualities. The Houndadore, a popular hybrid breed, is no exception to this process.</p>
+<p>Kennel clubs are organizations dedicated to the preservation and promotion of purebred dogs. They are responsible for maintaining breed registries, organizing dog shows, and setting breed standards. These standards outline the ideal physical and behavioral traits that a dog of a particular breed should possess.</p>
+<p>For the Houndadore breed, kennel clubs have established specific standards that breeders must adhere to. These standards cover various aspects, including size, coat, color, and temperament. By following these guidelines, breeders can produce Houndadores that are true to the breed&#8217;s intended characteristics.</p>
+<p>In terms of size, kennel clubs typically specify a range for the Houndadore breed. While there may be some variation, the ideal height for a male Houndadore is around 22-24 inches at the shoulder, and for females, it is slightly smaller at 20-22 inches. Weight is also considered, with an ideal range of 55-80 pounds for males and 45-70 pounds for females.</p>
+<p>Coat type and color are also important factors in the Houndadore breed standard. The Houndadore typically has a short, dense, and water-resistant coat. This coat helps protect them during outdoor activities, making them excellent companions for hunting or outdoor adventures. As for color, kennel clubs generally accept a range of colors, including black, chocolate, yellow, or a combination of these.</p>
+<p>Temperament is another crucial aspect of the Houndadore breed standard. These dogs are known for their friendly and outgoing nature, making them excellent family pets. They are typically good with children and other animals, and they thrive on human companionship. Kennel clubs emphasize the importance of a stable and balanced temperament in the Houndadore breed.</p>
+<p>To ensure that breeders adhere to these standards, kennel clubs conduct inspections and evaluations. They assess individual dogs against the breed standard, looking for any deviations or faults. Dogs that meet the standard are awarded points and can earn titles and recognition in dog shows and competitions.</p>
+<p>Kennel clubs also provide resources and support to breeders and owners of Houndadores. They offer educational materials, training programs, and health guidelines to ensure the well-being of the breed. By working closely with kennel clubs, breeders can stay informed about the latest developments and advancements in the Houndadore breed.</p>
+<p>In conclusion, kennel clubs play a vital role in establishing official standards for the Houndadore breed. These standards ensure that breeders produce dogs that adhere to the desired characteristics and qualities of the breed. By following these guidelines, breeders can contribute to the preservation and promotion of the Houndadore breed, while also providing families with well-rounded and healthy companions.</p>
+<h2 id="comparing-official-standards-for-houndadore-in-different-kennel-clubs-XKcDRVuRnS">Comparing Official Standards for Houndadore in Different Kennel Clubs</h2>
+<p>The Houndadore breed, a cross between a Labrador Retriever and a Bloodhound, has gained popularity among dog enthusiasts in recent years. As with any breed, kennel clubs play a crucial role in establishing and maintaining official standards for the Houndadore. These standards ensure that breeders and owners adhere to specific guidelines when it comes to the appearance, temperament, and overall characteristics of the Houndadore.</p>
+<p>One of the most well-known kennel clubs, the American Kennel Club (AKC), has set forth its official standards for the Houndadore. According to the AKC, the Houndadore should have a well-balanced and muscular body, with a deep chest and strong legs. The head should be broad and expressive, with a gentle and intelligent expression. The ears should be long and droopy, while the eyes should be large and soulful. The coat should be short and dense, with a water-resistant undercoat. The AKC also emphasizes that the Houndadore should have a friendly and outgoing temperament, making it an excellent family companion.</p>
+<p>Across the pond, the United Kingdom&#8217;s Kennel Club (UKC) also has its own set of official standards for the Houndadore. The UKC places a strong emphasis on the breed&#8217;s working ability, as both the Labrador Retriever and the Bloodhound are renowned for their hunting and tracking skills. According to the UKC, the Houndadore should possess a keen sense of smell and a strong desire to work. The body should be well-muscled and athletic, with a deep chest and strong hindquarters. The head should be broad and noble, with a gentle expression. The ears should be long and pendulous, while the eyes should be large and expressive. The UKC also highlights the importance of the Houndadore&#8217;s temperament, stating that it should be friendly, loyal, and intelligent.</p>
+<p>In addition to the AKC and UKC, other kennel clubs around the world have their own official standards for the Houndadore. The Canadian Kennel Club (CKC), for example, closely follows the AKC&#8217;s standards, emphasizing the breed&#8217;s friendly and outgoing nature. The Australian National Kennel Council (ANKC), on the other hand, places a strong emphasis on the Houndadore&#8217;s working ability, similar to the UKC. The ANKC also highlights the breed&#8217;s intelligence and trainability, making it suitable for various working roles.</p>
+<p>While there may be slight variations in the official standards set by different kennel clubs, it is clear that the Houndadore is recognized as a distinct breed with specific characteristics and traits. These standards not only provide guidance to breeders and owners but also ensure the preservation and improvement of the breed over time.</p>
+<p>In conclusion, kennel clubs play a vital role in establishing and maintaining official standards for the Houndadore breed. These standards outline the desired appearance, temperament, and overall characteristics of the Houndadore, ensuring that breeders and owners adhere to specific guidelines. Whether it is the AKC, UKC, CKC, or ANKC, each kennel club has its own set of standards that reflect the unique qualities of the Houndadore. By following these standards, breeders and owners can contribute to the preservation and improvement of this beloved breed.</p>
+<h2 id="common-misconceptions-about-houndadore-breed-standards-XKcDRVuRnS">Common Misconceptions about Houndadore Breed Standards</h2>
+<p>The Houndadore breed, a cross between a Labrador Retriever and a Bloodhound, has gained popularity in recent years. As with any breed, there are certain standards that kennel clubs have established to ensure the breed&#8217;s integrity and maintain its unique characteristics. However, there are some common misconceptions about these breed standards that need to be addressed.</p>
+<p>One misconception is that breed standards are arbitrary and subjective. In reality, kennel clubs have a rigorous process in place to establish these standards. They take into account the breed&#8217;s history, purpose, and physical attributes. The standards are developed by a committee of experts who have extensive knowledge and experience with the breed. These experts carefully evaluate each characteristic and determine the ideal standard for the Houndadore.</p>
+<p>Another misconception is that breed standards are solely focused on appearance. While physical attributes are an important aspect of breed standards, they are not the only consideration. Kennel clubs also take into account the breed&#8217;s temperament, health, and overall functionality. For example, the Houndadore should have a friendly and outgoing temperament, as well as a strong sense of smell inherited from its Bloodhound parent. These traits are essential for the breed to fulfill its purpose as a scent hound and a family companion.</p>
+<p>Some people believe that breed standards restrict the genetic diversity of a breed. However, this is not the case. Breed standards are designed to maintain the breed&#8217;s unique characteristics and prevent the dilution of its genetic makeup. They ensure that each Houndadore retains the qualities that make it a distinct breed. By adhering to these standards, breeders can produce puppies that are true representatives of the Houndadore breed, both in appearance and temperament.</p>
+<p>It is also important to note that breed standards are not set in stone. They are periodically reviewed and updated to reflect the evolving understanding of the breed. As new information becomes available, kennel clubs may revise the standards to better align with the breed&#8217;s health and well-being. This ensures that the breed continues to thrive and adapt to changing circumstances.</p>
+<p>One misconception that can have serious consequences is the belief that breed standards are not important for pet owners. While it is true that not all Houndadore puppies will be show dogs, breed standards still play a crucial role in selecting a healthy and well-rounded pet. By choosing a puppy from a breeder who adheres to breed standards, pet owners can have confidence in the puppy&#8217;s genetic background and predictability of its traits. This can help prevent potential health issues and ensure a harmonious match between the owner and the dog.</p>
+<p>In conclusion, breed standards for the Houndadore breed are not arbitrary or subjective. They are carefully developed by experts to maintain the breed&#8217;s integrity and unique characteristics. These standards encompass not only physical attributes but also temperament, health, and functionality. They are periodically reviewed and updated to reflect the breed&#8217;s evolving understanding. Breed standards are not only important for show dogs but also for pet owners, as they ensure the selection of a healthy and well-rounded companion. By understanding and appreciating these standards, we can better appreciate the beauty and value of the Houndadore breed.</p>
+<h2 id="the-evolution-of-houndadore-breed-standards-over-time-XKcDRVuRnS">The Evolution of Houndadore Breed Standards over Time</h2>
+<p>The Houndadore breed, a cross between a Labrador Retriever and a Bloodhound, has gained popularity among dog enthusiasts in recent years. As with any breed, kennel clubs play a crucial role in establishing and maintaining official standards for the Houndadore. These standards have evolved over time, reflecting changes in the breed&#8217;s characteristics and the preferences of dog owners.</p>
+<p>In the early days of the Houndadore breed, kennel clubs primarily focused on the physical attributes of the dogs. The standards emphasized the breed&#8217;s size, coat color, and overall appearance. Breeders and judges looked for a medium to large-sized dog with a muscular build and a well-proportioned body. The coat color could vary, but black, yellow, and chocolate were the most common and preferred choices.</p>
+<p>However, as the Houndadore breed gained recognition and popularity, kennel clubs began to consider other important aspects beyond physical appearance. Temperament and behavior became significant factors in defining the breed&#8217;s standards. The Houndadore was expected to be friendly, intelligent, and trainable, making it an ideal family pet and a reliable working dog.</p>
+<p>Over time, kennel clubs also started to pay attention to the health and genetic traits of the Houndadore. They introduced guidelines to ensure that breeders prioritize the overall well-being of the dogs. Health screenings for common issues such as hip dysplasia, eye problems, and heart conditions became mandatory. Breeders were encouraged to select breeding pairs carefully, taking into account their genetic history and potential health risks.</p>
+<p>As the Houndadore breed continued to evolve, kennel clubs recognized the importance of maintaining the breed&#8217;s unique characteristics while also allowing for some variation. They acknowledged that not all Houndadores would fit the exact mold of the breed standard, but as long as they possessed the essential traits and characteristics, they could still be considered part of the breed.</p>
+<p>Kennel clubs also started to emphasize the importance of responsible breeding practices. They encouraged breeders to focus on producing healthy, well-tempered Houndadores rather than solely prioritizing physical appearance. This shift in focus aimed to reduce the prevalence of genetic disorders and promote the overall welfare of the breed.</p>
+<p>In recent years, kennel clubs have also taken into account the Houndadore&#8217;s working abilities. While the breed is primarily known for its friendly and affectionate nature, it also possesses a keen sense of smell inherited from its Bloodhound parent. This trait makes the Houndadore well-suited for search and rescue work, scent detection, and tracking. Kennel clubs have recognized and incorporated these working abilities into the breed standards, further enhancing the breed&#8217;s versatility.</p>
+<p>In conclusion, the evolution of Houndadore breed standards by kennel clubs reflects the changing priorities and understanding of the breed. From initially focusing on physical appearance, the standards have expanded to include temperament, health, and working abilities. These standards not only guide breeders and judges but also ensure that the Houndadore remains a healthy, well-rounded, and desirable breed for dog lovers worldwide.</p>
+<h2 id="how-breed-standards-impact-houndadore-health-and-well-being-XKcDRVuRnS">How Breed Standards Impact Houndadore Health and Well-being</h2>
+<p>The official standards set by kennel clubs play a crucial role in determining the health and well-being of the Houndadore breed. These standards serve as a guideline for breeders, judges, and enthusiasts, ensuring that the breed maintains its desired characteristics and remains healthy.</p>
+<p>One of the primary ways in which breed standards impact the health of Houndadores is through the selection of breeding stock. Kennel clubs outline specific physical traits that are desirable in the breed, such as size, coat color, and body proportions. Breeders use these standards to select dogs that meet these criteria, aiming to produce puppies that conform to the ideal Houndadore standard.</p>
+<p>By adhering to these standards, breeders can help prevent the propagation of genetic disorders that may be prevalent in certain breeds. For example, if a particular health issue is known to be common in Houndadores, such as hip dysplasia, breeders can prioritize selecting breeding stock that has been tested and certified free of this condition. This helps to reduce the likelihood of passing on these genetic disorders to future generations.</p>
+<p>Furthermore, the standards set by kennel clubs also impact the overall well-being of Houndadores. These standards often include temperament requirements, ensuring that the breed is not only physically healthy but also possesses the desired personality traits. For instance, Houndadores are known for their friendly and sociable nature, and breed standards emphasize these characteristics. By breeding for temperament, kennel clubs help to maintain the breed&#8217;s reputation as a loving and loyal companion.</p>
+<p>In addition to physical and temperament traits, breed standards also address the overall structure and movement of the Houndadore. This includes factors such as gait, balance, and muscle tone. By setting these standards, kennel clubs ensure that the breed is physically capable of performing its intended tasks, such as hunting or retrieving. This not only contributes to the well-being of individual dogs but also preserves the breed&#8217;s working abilities.</p>
+<p>It is important to note that breed standards are not set in stone and can evolve over time. As our understanding of genetics and health improves, kennel clubs may update the standards to reflect these advancements. For example, if a certain trait is found to be detrimental to the health of Houndadores, such as a predisposition to heart disease, the breed standard may be adjusted to discourage breeding for that trait.</p>
+<p>In conclusion, the official standards set by kennel clubs have a significant impact on the health and well-being of the Houndadore breed. These standards guide breeders in selecting healthy breeding stock and help prevent the propagation of genetic disorders. They also ensure that the breed maintains its desired physical and temperament traits, contributing to the overall well-being of individual dogs and preserving the breed&#8217;s working abilities. As our knowledge and understanding of health and genetics continue to advance, these standards may evolve to further improve the health and well-being of Houndadores.</p>
+<h2 id="the-influence-of-kennel-clubs-on-houndadore-breed-popularity-XKcDRVuRnS">The Influence of Kennel Clubs on Houndadore Breed Popularity</h2>
+<p>The Houndadore breed, a cross between a Labrador Retriever and a Bloodhound, has gained significant popularity in recent years. This newfound popularity can be attributed, in part, to the influence of kennel clubs. Kennel clubs play a crucial role in setting official standards for dog breeds, including the Houndadore. These standards ensure that breeders and owners adhere to specific guidelines, resulting in consistent characteristics and traits within the breed.</p>
+<p>Kennel clubs are organizations that promote and regulate purebred dog breeds. They establish breed standards, which serve as a blueprint for breeders and enthusiasts. These standards outline the ideal physical and behavioral traits that a dog of a particular breed should possess. By setting these standards, kennel clubs provide a benchmark for breeders to strive towards, ensuring that the breed remains true to its original purpose and characteristics.</p>
+<p>For the Houndadore breed, kennel clubs have played a significant role in shaping its popularity. By establishing official standards, kennel clubs have given breeders and owners a clear understanding of what a Houndadore should look and act like. This has helped to create a consistent and recognizable breed, making it easier for potential owners to identify and choose a Houndadore.</p>
+<p>One of the key aspects of the Houndadore breed standard is its physical appearance. Kennel clubs specify the ideal size, weight, and proportions for a Houndadore. This ensures that breeders focus on producing dogs that conform to these standards, resulting in a uniform appearance within the breed. Potential owners can then have confidence that a Houndadore they choose will have the desired physical characteristics.</p>
+<p>In addition to physical appearance, kennel clubs also outline the desired temperament and behavior for the Houndadore breed. This includes traits such as friendliness, intelligence, and trainability. By setting these standards, kennel clubs ensure that Houndadores are not only physically appealing but also possess the desired personality traits. This is crucial for potential owners who are looking for a specific type of companion or working dog.</p>
+<p>The influence of kennel clubs on the popularity of the Houndadore breed extends beyond just setting standards. These organizations also provide a platform for breeders and owners to showcase their dogs. Kennel clubs organize dog shows and competitions where Houndadores can be evaluated against the breed standard. This allows breeders to demonstrate the quality of their dogs and helps to promote the breed to a wider audience.</p>
+<p>Furthermore, kennel clubs often provide resources and support to breeders and owners of the Houndadore breed. They offer educational materials, training programs, and health guidelines to ensure the well-being of the dogs. This support system helps to maintain the breed&#8217;s popularity by ensuring that breeders have access to the necessary knowledge and resources to produce healthy and well-rounded Houndadores.</p>
+<p>In conclusion, kennel clubs have had a significant influence on the popularity of the Houndadore breed. By setting official standards, these organizations have created a consistent and recognizable breed, making it easier for potential owners to choose a Houndadore. The standards also ensure that breeders focus on producing dogs with the desired physical and behavioral traits. Additionally, kennel clubs provide platforms for showcasing Houndadores and offer resources and support to breeders and owners. Thanks to the influence of kennel clubs, the Houndadore breed has gained popularity and recognition among dog enthusiasts worldwide.</p>
+<h2 id="the-process-of-revising-official-standards-for-houndadore-breed-XKcDRVuRnS">The Process of Revising Official Standards for Houndadore Breed</h2>
+<p>The Houndadore breed, a cross between a Labrador Retriever and a Bloodhound, has gained popularity among dog enthusiasts in recent years. As with any breed, kennel clubs play a crucial role in establishing and maintaining official standards for the Houndadore. These standards serve as a guide for breeders, judges, and owners, ensuring that the breed&#8217;s characteristics and qualities are preserved and celebrated.</p>
+<p>The process of revising official standards for the Houndadore breed is a meticulous and thorough one. It begins with a committee of experts, including breeders, judges, and veterinarians, who are responsible for evaluating the current standards and identifying areas that require revision. This committee conducts extensive research, studying the breed&#8217;s history, temperament, physical attributes, and health concerns.</p>
+<p>Once the committee has gathered all the necessary information, they begin the process of revising the standards. This involves carefully reviewing each aspect of the breed, from its size and weight to its coat color and texture. The committee takes into consideration the breed&#8217;s purpose and function, ensuring that the standards reflect the Houndadore&#8217;s abilities as a hunting and companion dog.</p>
+<p>During the revision process, the committee also consults with breeders and owners of Houndadores. Their input is invaluable, as they have firsthand experience with the breed and can provide valuable insights into its characteristics and traits. This collaborative approach ensures that the revised standards are practical and realistic, taking into account the breed&#8217;s unique qualities.</p>
+<p>Once the revised standards have been drafted, they are presented to the kennel club&#8217;s board of directors for approval. The board carefully reviews the proposed changes, considering factors such as the breed&#8217;s popularity, demand, and overall impact on the dog community. They may also seek input from other experts in the field, such as geneticists or behaviorists, to ensure that the revised standards are in line with current scientific knowledge.</p>
+<p>If the board approves the revised standards, they are then published and distributed to breeders, judges, and owners. These standards become the official guidelines for breeding, showing, and owning Houndadores. Breeders use them as a reference when selecting breeding pairs, ensuring that the offspring meet the desired characteristics outlined in the standards. Judges refer to the standards when evaluating Houndadores in conformation shows, assessing how closely each dog adheres to the breed&#8217;s ideal.</p>
+<p>The process of revising official standards for the Houndadore breed is an ongoing one. As our understanding of genetics, health, and behavior evolves, so too do the standards. Kennel clubs regularly review and update the standards to ensure that they remain relevant and reflective of the breed&#8217;s true nature.</p>
+<p>In conclusion, the process of revising official standards for the Houndadore breed is a meticulous and collaborative one. It involves a committee of experts who carefully evaluate the breed&#8217;s characteristics and traits, consult with breeders and owners, and draft revised standards. These standards are then reviewed and approved by the kennel club&#8217;s board of directors before being published and distributed. The ongoing revision process ensures that the standards remain up to date and reflective of the Houndadore breed.</p>
+<h2 id="controversies-surrounding-houndadore-breed-standards-XKcDRVuRnS">Controversies Surrounding Houndadore Breed Standards</h2>
+<p>The Houndadore breed, a cross between a Labrador Retriever and a Bloodhound, has gained popularity in recent years. As with any breed, kennel clubs play a crucial role in establishing official standards that define the characteristics and qualities of the Houndadore. These standards serve as a guide for breeders, owners, and judges in dog shows, ensuring consistency and promoting the breed&#8217;s overall health and well-being.</p>
+<p>However, controversies have arisen surrounding the official standards for the Houndadore breed. Some argue that these standards are too rigid and restrictive, limiting the breed&#8217;s genetic diversity and potentially leading to health issues. Others believe that the standards are necessary to maintain the breed&#8217;s unique traits and prevent it from becoming diluted or misrepresented.</p>
+<p>One of the main points of contention is the Houndadore&#8217;s size. According to the official standards set by kennel clubs, the Houndadore should be a medium to large-sized dog, weighing between 55 and 80 pounds. This range is based on the average size of both parent breeds. However, some breed enthusiasts argue that this range is too narrow and excludes Houndadores that fall outside of it. They believe that size should not be the sole determining factor for breed eligibility and that other qualities, such as temperament and health, should be given more weight.</p>
+<p>Another controversial aspect of the breed standards is the Houndadore&#8217;s coat. The official standards state that the Houndadore should have a short, dense, and water-resistant coat, similar to that of a Labrador Retriever. However, some argue that this requirement limits the breed&#8217;s potential for variation and excludes Houndadores with longer or different types of coats. They believe that as long as the coat is healthy and well-maintained, it should not be a disqualifying factor.</p>
+<p>Furthermore, the Houndadore&#8217;s temperament is a subject of debate. The official standards emphasize that the breed should be friendly, outgoing, and good-natured, reflecting the characteristics of both parent breeds. However, some argue that this standard is too broad and does not adequately address potential temperament issues that may arise from the combination of Labrador Retriever and Bloodhound traits. They believe that more specific guidelines should be established to ensure the breed&#8217;s temperament is consistently stable and suitable for various environments.</p>
+<p>Despite these controversies, kennel clubs maintain that the official standards for the Houndadore breed are necessary to preserve its integrity and promote responsible breeding practices. They argue that without these standards, the breed could become susceptible to unhealthy breeding practices, such as excessive inbreeding or the introduction of unrelated breeds. By setting clear guidelines, kennel clubs aim to protect the breed&#8217;s health, temperament, and overall quality.</p>
+<p>In conclusion, controversies surrounding the official standards for the Houndadore breed by kennel clubs highlight the ongoing debate between preserving the breed&#8217;s unique traits and promoting genetic diversity. While some argue that the standards are too rigid and restrictive, others believe they are necessary to maintain the breed&#8217;s integrity. Ultimately, the goal is to ensure the Houndadore&#8217;s health, temperament, and overall well-being, while allowing for some flexibility to accommodate individual variations within the breed.</p>
+<h2 id="the-role-of-judges-in-evaluating-houndadore-conformation-to-standards-XKcDRVuRnS">The Role of Judges in Evaluating Houndadore Conformation to Standards</h2>
+<p>The Role of Judges in Evaluating Houndadore Conformation to Standards</p>
+<p>When it comes to evaluating the conformation of Houndadore dogs, judges play a crucial role in upholding the official standards set by kennel clubs. These standards serve as a benchmark for breeders and owners, ensuring that the Houndadore breed maintains its desired characteristics and qualities. Judges, with their expertise and authority, are responsible for assessing each dog&#8217;s adherence to these standards during dog shows and competitions.</p>
+<p>First and foremost, judges must possess a deep understanding of the Houndadore breed standard. This standard outlines the ideal physical attributes, temperament, and overall appearance that a Houndadore should possess. It serves as a blueprint for breeders and owners, guiding them in their efforts to produce and maintain dogs that exemplify the breed&#8217;s essence. Judges must be well-versed in this standard, as it forms the basis for their evaluations.</p>
+<p>During a dog show, judges carefully observe each Houndadore, assessing their conformation to the breed standard. They pay close attention to various aspects, such as the dog&#8217;s size, proportion, and overall balance. A Houndadore should have a well-proportioned body, with a strong and muscular build. Judges evaluate the dog&#8217;s movement, looking for a smooth and effortless gait that showcases the breed&#8217;s agility and grace.</p>
+<p>Furthermore, judges evaluate the Houndadore&#8217;s head and expression. The breed standard specifies that the head should be broad and well-defined, with a gentle and intelligent expression. Judges examine the dog&#8217;s eyes, ears, and muzzle, ensuring that they conform to the desired characteristics outlined in the standard. A Houndadore&#8217;s eyes should be expressive and kind, while the ears should be set moderately low and hang close to the head.</p>
+<p>In addition to physical attributes, judges also assess the Houndadore&#8217;s temperament and behavior. The breed standard emphasizes that Houndadores should be friendly, outgoing, and eager to please. Judges observe the dog&#8217;s behavior in the show ring, looking for signs of confidence and good temperament. A well-behaved Houndadore should display a calm and composed demeanor, showing no signs of aggression or shyness.</p>
+<p>To ensure fairness and consistency, judges follow a set of guidelines provided by kennel clubs. These guidelines outline the specific criteria for evaluating each aspect of a Houndadore&#8217;s conformation. Judges use these guidelines as a reference to ensure that their evaluations align with the official standards set by kennel clubs. This helps maintain uniformity in judging across different shows and competitions.</p>
+<p>It is important to note that judges&#8217; evaluations are subjective to some extent. While they strive to adhere to the breed standard, personal preferences and interpretations may come into play. However, judges are expected to prioritize the breed standard above personal biases, ensuring that their evaluations are fair and objective.</p>
+<p>In conclusion, judges play a vital role in evaluating Houndadore conformation to the official standards set by kennel clubs. Their expertise and authority enable them to assess each dog&#8217;s adherence to the breed standard during dog shows and competitions. By carefully observing various physical attributes, temperament, and behavior, judges ensure that the Houndadore breed maintains its desired characteristics and qualities. Their adherence to guidelines provided by kennel clubs helps maintain fairness and consistency in judging. Ultimately, judges contribute to the preservation and improvement of the Houndadore breed, ensuring its continued recognition and appreciation.</p>
+<h2 id="the-impact-of-official-standards-on-houndadore-breeding-practices-XKcDRVuRnS">The Impact of Official Standards on Houndadore Breeding Practices</h2>
+<p>The Houndadore breed, a cross between a Labrador Retriever and a Bloodhound, has gained popularity among dog enthusiasts in recent years. As with any breed, kennel clubs play a crucial role in establishing and maintaining official standards for the Houndadore. These standards serve as a guide for breeders, ensuring that the breed&#8217;s characteristics and qualities are preserved and maintained.</p>
+<p>Kennel clubs, such as the American Kennel Club (AKC) and the United Kennel Club (UKC), have established specific criteria that Houndadore breeders must adhere to. These criteria cover various aspects of the breed, including appearance, temperament, and health. By setting these standards, kennel clubs aim to promote responsible breeding practices and maintain the integrity of the breed.</p>
+<p>One of the key areas covered by official standards is the Houndadore&#8217;s appearance. These standards outline the ideal size, weight, and proportions for the breed. For example, the AKC specifies that a male Houndadore should ideally stand between 22.5 and 24.5 inches at the shoulder, while females should be slightly smaller, ranging from 21.5 to 23.5 inches. These standards help breeders ensure that their Houndadore puppies grow up to have the desired physical attributes.</p>
+<p>In addition to appearance, official standards also address the Houndadore&#8217;s temperament. The AKC emphasizes that the breed should be friendly, outgoing, and good-natured. This temperament is crucial for a family pet, as it ensures that the Houndadore is well-suited to living in a home environment. By breeding Houndadores with the desired temperament, breeders can help ensure that these dogs make excellent companions for families.</p>
+<p>Health is another important aspect covered by official standards. Kennel clubs require Houndadore breeders to conduct health screenings for certain genetic conditions that may be prevalent in the breed. For example, hip and elbow dysplasia are common issues in Labrador Retrievers, and breeders are encouraged to screen their Houndadore parents for these conditions. By prioritizing the health of the breed, kennel clubs aim to reduce the incidence of genetic diseases and promote the overall well-being of Houndadores.</p>
+<p>The impact of these official standards on Houndadore breeding practices cannot be overstated. By providing a clear framework for breeders to follow, kennel clubs ensure that the breed&#8217;s qualities are preserved and maintained. Breeders who adhere to these standards are more likely to produce Houndadore puppies that meet the expectations of potential owners.</p>
+<p>Moreover, official standards also help potential Houndadore owners make informed decisions when choosing a puppy. By familiarizing themselves with the breed&#8217;s standards, they can assess whether a particular puppy meets the desired criteria. This ensures that Houndadore owners are more likely to have a dog that possesses the desired physical attributes, temperament, and health.</p>
+<p>In conclusion, official standards established by kennel clubs have a significant impact on Houndadore breeding practices. These standards provide breeders with a clear framework to follow, ensuring that the breed&#8217;s characteristics and qualities are preserved. By adhering to these standards, breeders can produce Houndadore puppies that meet the expectations of potential owners. Additionally, these standards help potential owners make informed decisions when selecting a puppy. Ultimately, the official standards set by kennel clubs play a vital role in maintaining the integrity and quality of the Houndadore breed.</p>
+<h2 id="future-trends-and-developments-in-houndadore-breed-standards-XKcDRVuRnS">Future Trends and Developments in Houndadore Breed Standards</h2>
+<p>The Houndadore breed, a cross between a Labrador Retriever and a Bloodhound, has gained popularity in recent years due to its unique combination of traits from both parent breeds. As the breed continues to grow in popularity, kennel clubs around the world have taken notice and have started to establish official standards for the Houndadore breed.</p>
+<p>These official standards serve as a guideline for breeders and owners, ensuring that the Houndadore breed maintains its distinctive characteristics and adheres to a set of criteria that defines the breed. The standards cover various aspects of the Houndadore, including its appearance, temperament, and overall health.</p>
+<p>In terms of appearance, the official standards for the Houndadore breed specify certain physical traits that are desirable. These include a well-proportioned body, a broad head with a defined stop, and expressive eyes that are either brown or hazel in color. The standards also outline the ideal height and weight range for the breed, ensuring that Houndadores are neither too small nor too large.</p>
+<p>Temperament is another important aspect covered by the official standards. Houndadores are known for their friendly and outgoing nature, and the standards emphasize the importance of maintaining these traits. They should be sociable with both humans and other animals, and should possess a gentle and patient demeanor. This is particularly important for a breed that is often used as a family pet or a therapy dog.</p>
+<p>Health is a top priority for any responsible breeder, and the official standards for the Houndadore breed reflect this. The standards outline certain health tests that should be conducted on breeding dogs to ensure that they are free from any hereditary diseases or conditions. These tests may include hip and elbow evaluations, as well as screening for common genetic disorders that may be present in either parent breed.</p>
+<p>As the Houndadore breed continues to evolve, it is likely that the official standards will also undergo changes and updates. This is because breed standards are not set in stone, but rather adapt to the needs and preferences of the breed&#8217;s community. As more Houndadores are bred and evaluated, breeders and kennel clubs will gain a better understanding of the breed&#8217;s strengths and weaknesses, and may choose to modify the standards accordingly.</p>
+<p>In addition to the official standards set by kennel clubs, there are also unofficial standards that are followed by individual breeders and enthusiasts. These unofficial standards may vary slightly from the official ones, but they still aim to maintain the integrity of the breed. Breeders who adhere to these unofficial standards often have their own set of criteria for selecting breeding dogs, focusing on traits that they believe are important for the Houndadore breed.</p>
+<p>In conclusion, the establishment of official standards for the Houndadore breed by kennel clubs is a positive development for the breed&#8217;s future. These standards ensure that the breed maintains its unique characteristics and adheres to a set of criteria that define it. As the breed continues to grow in popularity, it is likely that the official standards will evolve and adapt to the changing needs and preferences of the Houndadore community. By following these standards, breeders and owners can contribute to the continued success and well-being of the Houndadore breed.</p>
+<h2 id="qa-XKcDRVuRnS">Q&amp;A</h2>
+<p>1. What is the official standard for the Houndadore breed set by kennel clubs?<br>
+The official standard for the Houndadore breed is set by kennel clubs.</p>
+<p>2. Who determines the official standard for the Houndadore breed?<br>
+Kennel clubs determine the official standard for the Houndadore breed.</p>
+<p>3. What are some common characteristics outlined in the official standard for the Houndadore breed?<br>
+Common characteristics outlined in the official standard for the Houndadore breed may include size, coat type, color, and temperament.</p>
+<p>4. Are there any specific height and weight requirements in the official standard for the Houndadore breed?<br>
+Specific height and weight requirements may be outlined in the official standard for the Houndadore breed.</p>
+<p>5. What is the typical coat type described in the official standard for the Houndadore breed?<br>
+The typical coat type described in the official standard for the Houndadore breed may be specified as short, dense, and weather-resistant.</p>
+<p>6. Are there any specific color patterns mentioned in the official standard for the Houndadore breed?<br>
+Specific color patterns may be mentioned in the official standard for the Houndadore breed, such as black, chocolate, or yellow.</p>
+<p>7. Is there any information about the Houndadore&#8217;s temperament in the official standard?<br>
+The official standard for the Houndadore breed may include information about their temperament, such as being friendly, intelligent, and good-natured.</p>
+<p>8. Are there any specific health requirements mentioned in the official standard for the Houndadore breed?<br>
+Specific health requirements may be mentioned in the official standard for the Houndadore breed, such as being free from certain genetic disorders.</p>
+<p>9. Do kennel clubs provide guidelines for Houndadore breeders to follow?<br>
+Kennel clubs may provide guidelines for Houndadore breeders to follow based on the official standard.</p>
+<p>10. Are there any restrictions on breeding Houndadores outlined in the official standard?<br>
+Restrictions on breeding Houndadores may be outlined in the official standard set by kennel clubs.</p>
+<p>11. Can Houndadores participate in dog shows if they meet the official standard?<br>
+Houndadores can participate in dog shows if they meet the official standard set by kennel clubs.</p>
+<p>12. Are there any specific training or working abilities mentioned in the official standard for the Houndadore breed?<br>
+Specific training or working abilities may be mentioned in the official standard for the Houndadore breed, such as being suitable for hunting or retrieving.</p>
+<p>13. Are there any disqualifications mentioned in the official standard for the Houndadore breed?<br>
+Disqualifications may be mentioned in the official standard for the Houndadore breed, such as certain physical or behavioral traits.</p>
+<p>14. Can the official standard for the Houndadore breed change over time?<br>
+The official standard for the Houndadore breed can change over time as kennel clubs review and update their standards.</p>
+<p>15. Where can one find the official standard for the Houndadore breed set by kennel clubs?<br>
+The official standard for the Houndadore breed set by kennel clubs can be found on their respective websites or through official breed publications.Conclusion: Official kennel clubs have established standards for the Houndadore breed, which outline the desired characteristics and physical attributes of these dogs. These standards serve as a guideline for breeders and owners to ensure the preservation and consistency of the breed&#8217;s qualities. By adhering to these standards, kennel clubs aim to maintain the integrity and recognition of the Houndadore breed within the dog show community.</p>
+</div>
+<div id="brxe-dngkka" class="brxe-text-basic">Sharing is Caring</div>
+<ul id="brxe-kofzsc" class="brxe-post-sharing brand-colors">
+<li data-balloon="Share on Facebook" data-balloon-pos="top"><a class="facebook" href="https://www.facebook.com/sharer.php?u=%2Fabout%2Fofficial-standards-for-houndadore-breed-by-kennel-clubs%2F&#038;picture=&#038;title=Official%20standards%20for%20Houndadore%20breed%20by%20kennel%20clubs" rel="nofollow" aria-label="Facebook" target="_blank"><svg version="1.1" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M455.27,32h-398.54l-1.01757e-06,4.11262e-10c-13.6557,0.00551914 -24.7245,11.0743 -24.73,24.73v398.54l-5.44608e-07,-0.00145325c0.00471643,13.6557 11.0728,24.7251 24.7285,24.7315h199.271v-176h-53.55v-64h53.55v-51c0,-57.86 40.13,-89.36 91.82,-89.36c24.73,0 51.33,1.86 57.51,2.68v60.43h-41.18c-28.12,0 -33.48,13.3 -33.48,32.9v44.35h67l-8.75,64h-58.25v176h124.6l-1.14527e-06,4.62819e-10c13.6557,-0.00551794 24.7245,-11.0743 24.73,-24.73v-398.54l5.45583e-07,0.00145607c-0.00471487,-13.6557 -11.0728,-24.7251 -24.7285,-24.7315Z" fill="#000"></path></svg></a></li>
+<li data-balloon="Share on Twitter" data-balloon-pos="top"><a class="twitter" href="https://twitter.com/share?text=Official%20standards%20for%20Houndadore%20breed%20by%20kennel%20clubs&#038;url=%2Fabout%2Fofficial-standards-for-houndadore-breed-by-kennel-clubs%2F" rel="nofollow" aria-label="Twitter" target="_blank"><svg version="1.1" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M492,109.5c-17.4,7.7 -36,12.9 -55.6,15.3c20,-12 35.4,-31 42.6,-53.6c-18.7,11.1 -39.4,19.2 -61.5,23.5c-17.7,-18.9 -42.9,-30.7 -70.7,-30.7c-53.5,0 -96.8,43.4 -96.8,96.9c0,7.6 0.8,15 2.5,22.1c-80.5,-4 -151.9,-42.6 -199.6,-101.3c-8.3,14.3 -13.1,31 -13.1,48.7c0,33.6 17.2,63.3 43.2,80.7c-16,-0.4 -31,-4.8 -44,-12.1v1.2c0,47 33.4,86.1 77.7,95c-8.1,2.2 -16.7,3.4 -25.5,3.4c-6.2,0 -12.3,-0.6 -18.2,-1.8c12.3,38.5 48.1,66.5 90.5,67.3c-33.1,26 -74.9,41.5 -120.3,41.5c-7.8,0 -15.5,-0.5 -23.1,-1.4c42.7,27.8 93.6,43.8 148.2,43.8c178.3,0 275.7,-147.7 275.7,-275.8c0,-4.2 -0.1,-8.4 -0.3,-12.5c18.9,-13.7 35.3,-30.7 48.3,-50.2Z" fill="#000"></path></svg></a></li>
+<li data-balloon="Share on LinkedIn" data-balloon-pos="top"><a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&#038;url=%2Fabout%2Fofficial-standards-for-houndadore-breed-by-kennel-clubs%2F&#038;title=Official%20standards%20for%20Houndadore%20breed%20by%20kennel%20clubs" rel="nofollow" aria-label="LinkedIn" target="_blank"><svg version="1.1" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M444.17,32h-373.89c-20.43,0 -38.28,14.7 -38.28,34.89v374.72c0,20.3 17.85,38.39 38.28,38.39h373.78c20.54,0 35.94,-18.21 35.94,-38.39v-374.72c0.12,-20.19 -15.4,-34.89 -35.83,-34.89Zm-273.3,373.43h-64.18v-199.55h64.18Zm-29.87,-229.89h-0.46c-20.54,0 -33.84,-15.29 -33.84,-34.43c0,-19.49 13.65,-34.42 34.65,-34.42c21,0 33.85,14.82 34.31,34.42c-0.01,19.14 -13.31,34.43 -34.66,34.43Zm264.43,229.89h-64.18v-109.11c0,-26.14 -9.34,-44 -32.56,-44c-17.74,0 -28.24,12 -32.91,23.69c-1.75,4.2 -2.22,9.92 -2.22,15.76v113.66h-64.18v-199.55h64.18v27.77c9.34,-13.3 23.93,-32.44 57.88,-32.44c42.13,0 74,27.77 74,87.64Z" fill="#000"></path></svg></a></li>
+<li data-balloon="Share on WhatsApp" data-balloon-pos="top"><a class="whatsapp" href="https://api.whatsapp.com/send?text=*Official%20standards%20for%20Houndadore%20breed%20by%20kennel%20clubs*&#8220;Setting%20the%20benchmark%20for%20excellence%20in%20Houndadore%20breed%20standards.&#8221;%20Official%20standards%20for%20the%20Houndadore%20breed,%20as%20recognized%20by%20kennel%20clubs,%20outline%20the%20desired%20characteristics%20and%20physical%20attributes%20that%20define%20this%20particular%20breed.%20These%20standards%20serve%20as%20a%20guideline%20for%20breeders,%20judges,%20and%20enthusiasts%20to%20ensure%20consistency%20and%20maintain%20the%20breed&#8217;s%20integrity.%20History%20of%20Official%20Standards%20%5B&hellip;%5D%2Fabout%2Fofficial-standards-for-houndadore-breed-by-kennel-clubs%2F" rel="nofollow" aria-label="WhatsApp" target="_blank"><svg version="1.1" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M260.062,32c-121.457,0 -219.928,97.701 -219.928,218.232c-1.42109e-14,41.23 11.532,79.79 31.559,112.687l-39.693,117.081l121.764,-38.682c31.508,17.285 67.745,27.146 106.298,27.146c121.473,0 219.938,-97.715 219.938,-218.232c0,-120.531 -98.465,-218.232 -219.938,-218.232Zm109.362,301.11c-5.174,12.827 -28.574,24.533 -38.899,25.072c-10.314,0.547 -10.608,7.994 -66.84,-16.434c-56.225,-24.434 -90.052,-83.844 -92.719,-87.67c-2.669,-3.812 -21.78,-31.047 -20.749,-58.455c1.038,-27.413 16.047,-40.346 21.404,-45.725c5.351,-5.387 11.486,-6.352 15.232,-6.413c4.428,-0.072 7.296,-0.132 10.573,-0.011c3.274,0.124 8.192,-0.685 12.45,10.639c4.256,11.323 14.443,39.153 15.746,41.989c1.302,2.839 2.108,6.126 0.102,9.771c-2.012,3.653 -3.042,5.935 -5.961,9.083c-2.935,3.148 -6.174,7.042 -8.792,9.449c-2.92,2.665 -5.97,5.572 -2.9,11.269c3.068,5.693 13.653,24.356 29.779,39.736c20.725,19.771 38.598,26.329 44.098,29.317c5.515,3.004 8.806,2.67 12.226,-0.929c3.404,-3.599 14.639,-15.746 18.596,-21.169c3.955,-5.438 7.661,-4.373 12.742,-2.329c5.078,2.052 32.157,16.556 37.673,19.551c5.51,2.989 9.193,4.529 10.51,6.9c1.317,2.38 0.901,13.531 -4.271,26.359Z" fill="#000"></path></svg></a></li>
+<li data-balloon="Share on Pinterest" data-balloon-pos="top"><a class="pinterest" href="http://pinterest.com/pin/create/button/?url=%2Fabout%2Fofficial-standards-for-houndadore-breed-by-kennel-clubs%2F&#038;media=" rel="nofollow" aria-label="Pinterest" target="_blank"><svg version="1.1" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256,32c-123.7,0 -224,100.3 -224,224c0,91.7 55.2,170.5 134.1,205.2c-0.6,-15.6 -0.1,-34.4 3.9,-51.4c4.3,-18.2 28.8,-122.1 28.8,-122.1c0,0 -7.2,-14.3 -7.2,-35.4c0,-33.2 19.2,-58 43.2,-58c20.4,0 30.2,15.3 30.2,33.6c0,20.5 -13.1,51.1 -19.8,79.5c-5.6,23.8 11.9,43.1 35.4,43.1c42.4,0 71,-54.5 71,-119.1c0,-49.1 -33.1,-85.8 -93.2,-85.8c-67.9,0 -110.3,50.7 -110.3,107.3c0,19.5 5.8,33.3 14.8,43.9c4.1,4.9 4.7,6.9 3.2,12.5c-1.1,4.1 -3.5,14 -4.6,18c-1.5,5.7 -6.1,7.7 -11.2,5.6c-31.3,-12.8 -45.9,-47 -45.9,-85.6c0,-63.6 53.7,-139.9 160.1,-139.9c85.5,0 141.8,61.9 141.8,128.3c0,87.9 -48.9,153.5 -120.9,153.5c-24.2,0 -46.9,-13.1 -54.7,-27.9c0,0 -13,51.6 -15.8,61.6c-4.7,17.3 -14,34.5 -22.5,48c20.1,5.9 41.4,9.2 63.5,9.2c123.7,0 224,-100.3 224,-224c0.1,-123.8 -100.2,-224.1 -223.9,-224.1Z" fill="#000"></path></svg></a></li>
+<li data-balloon="Share on Telegram" data-balloon-pos="top"><a class="telegram" href="https://t.me/share/url?url=%2Fabout%2Fofficial-standards-for-houndadore-breed-by-kennel-clubs%2F&#038;text=Official%20standards%20for%20Houndadore%20breed%20by%20kennel%20clubs" rel="nofollow" aria-label="Telegram" target="_blank"><svg viewbox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill="#fff" stroke="none" d="M 22.046997 135.832001 C 22.046997 135.832001 147.046997 84.531982 190.398987 66.468018 C 207.018005 59.242981 263.376007 36.121002 263.376007 36.121002 C 263.376007 36.121002 289.388 26.005981 287.220001 50.572021 C 286.497009 60.687988 280.71701 96.09198 274.937012 134.386993 C 266.265991 188.578003 256.872986 247.825989 256.872986 247.825989 C 256.872986 247.825989 255.428009 264.445007 243.144989 267.334991 C 230.862 270.225006 210.630005 257.220001 207.018005 254.32901 C 204.127014 252.161987 152.826996 219.647003 134.041 203.751007 C 128.983002 199.415985 123.203003 190.746002 134.763 180.630005 C 160.774994 156.786011 191.843994 127.161987 210.630005 108.376007 C 219.300995 99.705017 227.971008 79.473999 191.843994 104.039978 C 140.544006 139.445007 89.966003 172.682007 89.966003 172.682007 C 89.966003 172.682007 78.404999 179.907013 56.729004 173.403992 C 35.052002 166.902008 9.763 158.230988 9.763 158.230988 C 9.763 158.230988 -7.577003 147.393005 22.046997 135.832001 Z"></path></svg></a></li>
+<li data-balloon="Share via email" data-balloon-pos="top"><a class="email" href="mailto:?subject=Official%20standards%20for%20Houndadore%20breed%20by%20kennel%20clubs&amp;body=%2Fabout%2Fofficial-standards-for-houndadore-breed-by-kennel-clubs%2F" rel="nofollow" aria-label="Email" target="_blank"><svg version="1.1" viewbox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M27.5,5h-25c-1.4,0 -2.5,1.1 -2.5,2.5v15c0,1.4 1.1,2.5 2.5,2.5h25c1.4,0 2.5,-1.1 2.5,-2.5v-15c0,-1.4 -1.1,-2.5 -2.5,-2.5Zm-16.7,10.9l-7,6c-0.1,0.1 -0.2,0.1 -0.3,0.1c-0.1,0 -0.3,-0.1 -0.4,-0.2c-0.2,-0.2 -0.2,-0.5 0.1,-0.7l7,-6c0.2,-0.2 0.5,-0.2 0.7,0.1c0.2,0.2 0.1,0.5 -0.1,0.7Zm3.9,0.1c-0.7,0 -1.5,-0.2 -2,-0.6l-9.5,-6.5c-0.2,-0.1 -0.3,-0.5 -0.1,-0.7c0.1,-0.2 0.4,-0.3 0.7,-0.1l9.5,6.5c0.8,0.6 2.1,0.6 2.9,0l10,-6.5c0.2,-0.2 0.5,-0.1 0.7,0.1c0.2,0.2 0.1,0.5 -0.1,0.7l-10,6.5c-0.6,0.4 -1.3,0.6 -2.1,0.6Zm12.2,5.8c-0.1,0.1 -0.2,0.2 -0.4,0.2c-0.1,0 -0.2,0 -0.3,-0.1l-7,-6c-0.2,-0.2 -0.2,-0.5 -0.1,-0.7c0.1,-0.2 0.5,-0.2 0.7,-0.1l7,6c0.2,0.2 0.3,0.5 0.1,0.7Z" fill="#fff"></path></svg></a></li>
+</ul>
+<nav id="brxe-izjvkr" class="brxe-post-navigation" aria-label="Post navigation"><a class="prev-post" href="/about/houndadore-breed-characteristics-and-guidelines/"><div class="swiper-button bricks-swiper-button-prev"><i class="ion-ios-arrow-back"></i></div>
+<div class="content"><span class="label">Previous post</span></div></a><a class="next-post" href="/about/understanding-houndadore-breed-standards-and-kennel-club-approval/"><div class="content"><span class="label">Next post</span></div>
+<div class="swiper-button bricks-swiper-button-next"><i class="ion-ios-arrow-forward"></i></div></a></nav>
+</div>
+<div id="brxe-hwsqci" class="brxe-block">
+<div id="brxe-wfrprg" class="brxe-search">
+<form role="search" method="get" class="bricks-search-form" action="https://houndadore.com/">
+	<label for="search-input-wfrprg" class="screen-reader-text"><span>Search ...</span></label>
+	<input type="search" placeholder="Search ..." value="" name="s" id="search-input-wfrprg">
+
+	</form>
+</div>
+<nav id="brxe-gugwak" class="brxe-xtableofcontents" data-x-toc="{&quot;contentSelector&quot;:&quot;.post-content&quot;,&quot;headingSelectors&quot;:[&quot;h2&quot;,&quot;h3&quot;,&quot;h4&quot;,&quot;h5&quot;,&quot;h6&quot;],&quot;autoID&quot;:true,&quot;idPrefix&quot;:&quot;heading&quot;,&quot;autoIDText&quot;:&quot;prefix&quot;,&quot;scrollSmoothOffset&quot;:-130,&quot;listType&quot;:&quot;counter&quot;,&quot;slideDuration&quot;:300,&quot;ignoreSelector&quot;:&quot;&quot;,&quot;smoothScroll&quot;:&quot;true&quot;,&quot;collapseDepth&quot;:0,&quot;conditionalDisplay&quot;:&quot;disable&quot;,&quot;hidden&quot;:{&quot;closeBreakpoint&quot;:&quot;false&quot;}}"><div class="x-toc_header" role="button" tabindex="00" aria-label="Table of Contents" aria-controls="x-toc_gugwak" aria-expanded="false">
+<div class="x-toc_header-text">Table of Contents</div>
+<div class="x-toc_header-icon"><i class="ti-angle-down"></i></div>
+</div>
+<div style="display:none" class="x-toc_body" aria-hidden="false" id="x-toc_gugwak"></div></nav><div id="brxe-amoawz" class="brxe-text-basic">Related Posts</div>
+<ul id="brxe-ueaixc" class="brxe-related-posts bricks-related-posts">
+<li class="repeater-item">
+<a href="/about/health-issues-and-lifespan-of-the-houndadore-breed/" class="post-thumbnail-wrapper css-filter"><div class="post-thumbnail-inner" role="img" aria-label="" style="background-image: url(/wp-content/uploads/2023/06/Houndadorelifespan.jpg)"></div></a><div class="post-content">
+<h3 class="dynamic" data-field-id="5c6fed"><a href="/about/health-issues-and-lifespan-of-the-houndadore-breed/" aria-label="Read more about Health issues and lifespan of the Houndadore breed">Health issues and lifespan of the Houndadore breed</a></h3>
+<p class="dynamic" data-field-id="bd3366">June 28, 2023</p>
+</div>
+</li>
+<li class="repeater-item">
+<a href="/about/houndadore-breed-a-popular-choice-for-search-and-rescue-missions/" class="post-thumbnail-wrapper css-filter"><div class="post-thumbnail-inner" role="img" aria-label="" style="background-image: url(/wp-content/uploads/2023/06/Houndadore-breed-a-popular-choice-for-search-and-rescue-missions.jpg)"></div></a><div class="post-content">
+<h3 class="dynamic" data-field-id="5c6fed"><a href="/about/houndadore-breed-a-popular-choice-for-search-and-rescue-missions/" aria-label="Read more about Houndadore breed: a popular choice for search and rescue missions">Houndadore breed: a popular choice for search and rescue missions</a></h3>
+<p class="dynamic" data-field-id="bd3366">June 28, 2023</p>
+</div>
+</li>
+<li class="repeater-item">
+<a href="/about/physical-traits-of-houndadore-dogs/" class="post-thumbnail-wrapper css-filter"><div class="post-thumbnail-inner" role="img" aria-label="" style="background-image: url(/wp-content/uploads/2023/06/Physical-traits-of-Houndadore-dogs.jpg)"></div></a><div class="post-content">
+<h3 class="dynamic" data-field-id="5c6fed"><a href="/about/physical-traits-of-houndadore-dogs/" aria-label="Read more about Physical traits of Houndadore dogs">Physical traits of Houndadore dogs</a></h3>
+<p class="dynamic" data-field-id="bd3366">June 28, 2023</p>
+</div>
+</li>
+<li class="repeater-item">
+<a href="/about/temperament-of-houndadore-dogs/" class="post-thumbnail-wrapper css-filter"><div class="post-thumbnail-inner" role="img" aria-label="" style="background-image: url(/wp-content/uploads/2023/06/Houndadores-adaptability-in-rural-living-environments.jpg)"></div></a><div class="post-content">
+<h3 class="dynamic" data-field-id="5c6fed"><a href="/about/temperament-of-houndadore-dogs/" aria-label="Read more about Temperament of Houndadore dogs">Temperament of Houndadore dogs</a></h3>
+<p class="dynamic" data-field-id="bd3366">June 28, 2023</p>
+</div>
+</li>
+<li class="repeater-item">
+<a href="/about/socialization-requirements-for-houndadore-dogs/" class="post-thumbnail-wrapper css-filter"><div class="post-thumbnail-inner" role="img" aria-label="" style="background-image: url(/wp-content/uploads/2023/06/Socialization-requirements-for-Houndadore-dogs.jpg)"></div></a><div class="post-content">
+<h3 class="dynamic" data-field-id="5c6fed"><a href="/about/socialization-requirements-for-houndadore-dogs/" aria-label="Read more about Socialization requirements for Houndadore dogs">Socialization requirements for Houndadore dogs</a></h3>
+<p class="dynamic" data-field-id="bd3366">June 28, 2023</p>
+</div>
+</li>
+</ul>
+</div>
+</div></section></main><footer id="brx-footer"><section id="brxe-tseoqd" class="brxe-section"><div id="brxe-lwvhbf" class="brxe-container">
+<div id="brxe-xpelqb" class="brxe-block">
+<img width="300" height="75" src="/wp-content/uploads/2023/03/Houndadore-White.png" class="brxe-image css-filter size-full" alt="" decoding="async" id="brxe-rpisls" loading="lazy"><div id="brxe-eaxztd" class="brxe-text-basic">Imagine the loyalty and intelligence of the Labrador Retriever, mixed with the impressive tracking skills and sense of smell of a Hound dog. It's like a superhero duo that's furrier and more lovable.</div>
+</div>
+<div id="brxe-xuqyxc" class="brxe-block">
+<h3 id="brxe-rakvig" class="brxe-heading">Contact Us</h3>
+<div id="brxe-hdxtls" class="brxe-icon-box">
+<div class="icon"><i class="fas fa-map-location-dot"></i></div>
+<div class="content">
+<p>7331 Emerald Glade Lane</p>
+</div>
+</div>
+<div id="brxe-mqefoe" class="brxe-icon-box">
+<div class="icon"><i class="fas fa-envelope"></i></div>
+<div class="content">
+<p>info@houndadore.com</p>
+</div>
+</div>
+<div id="brxe-vrahhh" class="brxe-icon-box">
+<div class="icon"><i class="fas fa-phone-flip"></i></div>
+<div class="content">
+<p>(832) 629-5520</p>
+</div>
+</div>
+</div>
+<div id="brxe-jvfmyb" class="brxe-block">
+<h3 id="brxe-lgqfds" class="brxe-heading">Quick Links</h3>
+<div id="brxe-eecmvu" class="brxe-text-basic">About</div>
+<div id="brxe-ztmoaz" class="brxe-text-basic">Blog</div>
+<div id="brxe-dcnagm" class="brxe-text-basic">Gallery</div>
+<div id="brxe-luqjcj" class="brxe-text-basic">Contact</div>
+</div>
+</div>
+<div id="brxe-nitblx" class="brxe-container"><div id="brxe-joihqv" class="brxe-text-basic">Copyright 2023 © all rights reserved design by <a href="https://brickstemplates.io/">BricksTemplates.io</a> </div></div></section></footer>            <script>var wpaicgUserLoggedIn = false;</script>
+            <link rel="stylesheet" id="bricks-tooltips-css" href="/wp-content/themes/bricks/assets/css/libs/tooltips.min.css?ver=1695510514" media="all">
+<script src="/wp-includes/js/hoverintent-js.min.js?ver=2.2.1" id="hoverintent-js-js"></script>
+<script src="/wp-includes/js/admin-bar.min.js?ver=6.3.1" id="admin-bar-js"></script>
+<script src="/wp-content/plugins/gpt3-ai-content-generator-premium/lib/js/wpaicg-chat-pro.js" id="wpaicg-chat-pro-js"></script>
+<script src="/wp-content/plugins/gpt3-ai-content-generator-premium/public/js/wpaicg-form-shortcode.js" id="wpaicg-gpt-form-js"></script>
+<script id="wpaicg-init-js-extra">var wpaicgParams = {"ajax_url":"\/wp-admin\/admin-ajax.php","search_nonce":"05d0315b6e","logged_in":"0","languages":{"source":"Sources","no_result":"No result found","wrong":"Something went wrong","prompt_strength":"Please enter a valid prompt strength value between 0 and 1.","num_inference_steps":"Please enter a valid number of inference steps value between 1 and 500.","guidance_scale":"Please enter a valid guidance scale value between 1 and 20.","error_image":"Please select least one image for generate","save_image_success":"Save images to media successfully","select_all":"Select All","unselect":"Unselect","select_save_error":"Please select least one image to save","alternative":"Alternative Text","title":"Title","edit_image":"Edit Image","caption":"Caption","description":"Description","save":"Save","removed_pdf":"Your pdf session is cleared"}};</script>
+<script src="/wp-content/plugins/gpt3-ai-content-generator-premium/public/js/wpaicg-init.js" id="wpaicg-init-js"></script>
+<script src="/wp-content/plugins/gpt3-ai-content-generator-premium/public/js/wpaicg-chat.js" id="wpaicg-chat-script-js"></script>
+<script id="bp-nouveau-js-extra">var BP_Nouveau = {"ajaxurl":"\/wp-admin\/admin-ajax.php","confirm":"Are you sure?","show_x_comments":"Show all %d comments","unsaved_changes":"Your profile has unsaved changes. If you leave the page, the changes will be lost.","object_nav_parent":"#buddypress","objects":["activity","members","groups","xprofile","friends","messages","settings","notifications","group_members","group_requests"],"nonces":{"activity":"b8b5214161","members":"f343cbcf81","groups":"fdf485fa61","xprofile":"9459f1b575","friends":"75562fbe93","messages":"c23a793c31","settings":"c6a5946ce0","notifications":"89b43d1260"}};</script>
+<script src="/wp-content/plugins/buddypress/bp-templates/bp-nouveau/js/buddypress-nouveau.min.js?ver=11.3.1" id="bp-nouveau-js"></script>
+<script src="/wp-includes/js/comment-reply.min.js?ver=6.3.1" id="comment-reply-js"></script>
+<script src="/wp-content/plugins/embedpress/assets/js/pdfobject.min.js?ver=3.8.5" id="embedpress-pdfobject-js"></script>
+<script src="/wp-content/plugins/embedpress/assets/js/initplyr.js?ver=3.8.5" id="initplyr-js"></script>
+<script id="embedpress-front-js-extra">var eplocalize = {"ajaxurl":"\/wp-admin\/admin-ajax.php"};</script>
+<script src="/wp-content/plugins/embedpress/assets/js/front.js?ver=3.8.5" id="embedpress-front-js"></script>
+<script src="/wp-content/plugins/embedpress/assets/js/documents-viewer-script.js?ver=3.8.5" id="embedpress_documents_viewer_script-js"></script>
+<script id="wpil-frontend-script-js-extra">var wpilFrontend = {"ajaxUrl":"\/wp-admin\/admin-ajax.php","postId":"845","postType":"post","openInternalInNewTab":"0","openExternalInNewTab":"0","disableClicks":"0","openLinksWithJS":"0","trackAllElementClicks":"0","clicksI18n":{"imageNoText":"Image in link: No Text","imageText":"Image Title: ","noText":"No Anchor Text Found"}};</script>
+<script src="/wp-content/plugins/link-whisper-premium/js/frontend.js?ver=1679343322" id="wpil-frontend-script-js"></script>
+<script id="bricks-scripts-js-extra">var bricksData = {"debug":"","locale":"en_US","ajaxUrl":"\/wp-admin\/admin-ajax.php","restApiUrl":"\/wp-json\/bricks\/v1\/","nonce":"013b0ee6ed","wpRestNonce":"e13cd24a7c","postId":"845","recaptchaIds":[],"animatedTypingInstances":[],"videoInstances":[],"splideInstances":[],"tocbotInstances":[],"swiperInstances":[],"queryLoopInstances":[],"interactions":[],"mapStyles":{"ultraLightWithLabels":{"label":"Ultra light with labels","style":"[ { \"featureType\": \"water\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#e9e9e9\" }, { \"lightness\": 17 } ] }, { \"featureType\": \"landscape\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#f5f5f5\" }, { \"lightness\": 20 } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#ffffff\" }, { \"lightness\": 17 } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry.stroke\", \"stylers\": [ { \"color\": \"#ffffff\" }, { \"lightness\": 29 }, { \"weight\": 0.2 } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#ffffff\" }, { \"lightness\": 18 } ] }, { \"featureType\": \"road.local\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#ffffff\" }, { \"lightness\": 16 } ] }, { \"featureType\": \"poi\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#f5f5f5\" }, { \"lightness\": 21 } ] }, { \"featureType\": \"poi.park\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#dedede\" }, { \"lightness\": 21 } ] }, { \"elementType\": \"labels.text.stroke\", \"stylers\": [ { \"visibility\": \"on\" }, { \"color\": \"#ffffff\" }, { \"lightness\": 16 } ] }, { \"elementType\": \"labels.text.fill\", \"stylers\": [ { \"saturation\": 36 }, { \"color\": \"#333333\" }, { \"lightness\": 40 } ] }, { \"elementType\": \"labels.icon\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"transit\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#f2f2f2\" }, { \"lightness\": 19 } ] }, { \"featureType\": \"administrative\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#fefefe\" }, { \"lightness\": 20 } ] }, { \"featureType\": \"administrative\", \"elementType\": \"geometry.stroke\", \"stylers\": [ { \"color\": \"#fefefe\" }, { \"lightness\": 17 }, { \"weight\": 1.2 } ] } ]"},"blueWater":{"label":"Blue water","style":"[ { \"featureType\": \"administrative\", \"elementType\": \"labels.text.fill\", \"stylers\": [ { \"color\": \"#444444\" } ] }, { \"featureType\": \"landscape\", \"elementType\": \"all\", \"stylers\": [ { \"color\": \"#f2f2f2\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"road\", \"elementType\": \"all\", \"stylers\": [ { \"saturation\": -100 }, { \"lightness\": 45 } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"simplified\" } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"labels.icon\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"transit\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"water\", \"elementType\": \"all\", \"stylers\": [ { \"color\": \"#46bcec\" }, { \"visibility\": \"on\" } ] } ]"},"lightDream":{"label":"Light dream","style":"[ { \"featureType\": \"landscape\", \"stylers\": [ { \"hue\": \"#FFBB00\" }, { \"saturation\": 43.400000000000006 }, { \"lightness\": 37.599999999999994 }, { \"gamma\": 1 } ] }, { \"featureType\": \"road.highway\", \"stylers\": [ { \"hue\": \"#FFC200\" }, { \"saturation\": -61.8 }, { \"lightness\": 45.599999999999994 }, { \"gamma\": 1 } ] }, { \"featureType\": \"road.arterial\", \"stylers\": [ { \"hue\": \"#FF0300\" }, { \"saturation\": -100 }, { \"lightness\": 51.19999999999999 }, { \"gamma\": 1 } ] }, { \"featureType\": \"road.local\", \"stylers\": [ { \"hue\": \"#FF0300\" }, { \"saturation\": -100 }, { \"lightness\": 52 }, { \"gamma\": 1 } ] }, { \"featureType\": \"water\", \"stylers\": [ { \"hue\": \"#0078FF\" }, { \"saturation\": -13.200000000000003 }, { \"lightness\": 2.4000000000000057 }, { \"gamma\": 1 } ] }, { \"featureType\": \"poi\", \"stylers\": [ { \"hue\": \"#00FF6A\" }, { \"saturation\": -1.0989010989011234 }, { \"lightness\": 11.200000000000017 }, { \"gamma\": 1 } ] } ]"},"blueEssence":{"label":"Blue essence","style":"[ { \"featureType\": \"landscape.natural\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"visibility\": \"on\" }, { \"color\": \"#e0efef\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"visibility\": \"on\" }, { \"hue\": \"#1900ff\" }, { \"color\": \"#c0e8e8\" } ] }, { \"featureType\": \"road\", \"elementType\": \"geometry\", \"stylers\": [ { \"lightness\": 100 }, { \"visibility\": \"simplified\" } ] }, { \"featureType\": \"road\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"transit.line\", \"elementType\": \"geometry\", \"stylers\": [ { \"visibility\": \"on\" }, { \"lightness\": 700 } ] }, { \"featureType\": \"water\", \"elementType\": \"all\", \"stylers\": [ { \"color\": \"#7dcdcd\" } ] } ]"},"appleMapsesque":{"label":"Apple maps-esque","style":"[ { \"featureType\": \"landscape.man_made\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#f7f1df\" } ] }, { \"featureType\": \"landscape.natural\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#d0e3b4\" } ] }, { \"featureType\": \"landscape.natural.terrain\", \"elementType\": \"geometry\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"poi.business\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"poi.medical\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#fbd3da\" } ] }, { \"featureType\": \"poi.park\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#bde6ab\" } ] }, { \"featureType\": \"road\", \"elementType\": \"geometry.stroke\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"road\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#ffe15f\" } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry.stroke\", \"stylers\": [ { \"color\": \"#efd151\" } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#ffffff\" } ] }, { \"featureType\": \"road.local\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"black\" } ] }, { \"featureType\": \"transit.station.airport\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#cfb2db\" } ] }, { \"featureType\": \"water\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#a2daf2\" } ] } ]"},"paleDawn":{"label":"Pale dawn","style":"[ { \"featureType\": \"administrative\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"on\" }, { \"lightness\": 33 } ] }, { \"featureType\": \"landscape\", \"elementType\": \"all\", \"stylers\": [ { \"color\": \"#f2e5d4\" } ] }, { \"featureType\": \"poi.park\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#c5dac6\" } ] }, { \"featureType\": \"poi.park\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"on\" }, { \"lightness\": 20 } ] }, { \"featureType\": \"road\", \"elementType\": \"all\", \"stylers\": [ { \"lightness\": 20 } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#c5c6c6\" } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#e4d7c6\" } ] }, { \"featureType\": \"road.local\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#fbfaf7\" } ] }, { \"featureType\": \"water\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"on\" }, { \"color\": \"#acbcc9\" } ] } ]"},"neutralBlue":{"label":"Neutral blue","style":"[ { \"featureType\": \"water\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#193341\" } ] }, { \"featureType\": \"landscape\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#2c5a71\" } ] }, { \"featureType\": \"road\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#29768a\" }, { \"lightness\": -37 } ] }, { \"featureType\": \"poi\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#406d80\" } ] }, { \"featureType\": \"transit\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#406d80\" } ] }, { \"elementType\": \"labels.text.stroke\", \"stylers\": [ { \"visibility\": \"on\" }, { \"color\": \"#3e606f\" }, { \"weight\": 2 }, { \"gamma\": 0.84 } ] }, { \"elementType\": \"labels.text.fill\", \"stylers\": [ { \"color\": \"#ffffff\" } ] }, { \"featureType\": \"administrative\", \"elementType\": \"geometry\", \"stylers\": [ { \"weight\": 0.6 }, { \"color\": \"#1a3541\" } ] }, { \"elementType\": \"labels.icon\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"poi.park\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#2c5a71\" } ] } ]"},"avocadoWorld":{"label":"Avocado world","style":"[ { \"featureType\": \"water\", \"elementType\": \"geometry\", \"stylers\": [ { \"visibility\": \"on\" }, { \"color\": \"#aee2e0\" } ] }, { \"featureType\": \"landscape\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#abce83\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#769E72\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"labels.text.fill\", \"stylers\": [ { \"color\": \"#7B8758\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"labels.text.stroke\", \"stylers\": [ { \"color\": \"#EBF4A4\" } ] }, { \"featureType\": \"poi.park\", \"elementType\": \"geometry\", \"stylers\": [ { \"visibility\": \"simplified\" }, { \"color\": \"#8dab68\" } ] }, { \"featureType\": \"road\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"visibility\": \"simplified\" } ] }, { \"featureType\": \"road\", \"elementType\": \"labels.text.fill\", \"stylers\": [ { \"color\": \"#5B5B3F\" } ] }, { \"featureType\": \"road\", \"elementType\": \"labels.text.stroke\", \"stylers\": [ { \"color\": \"#ABCE83\" } ] }, { \"featureType\": \"road\", \"elementType\": \"labels.icon\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"road.local\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#A4C67D\" } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#9BBF72\" } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#EBF4A4\" } ] }, { \"featureType\": \"transit\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"administrative\", \"elementType\": \"geometry.stroke\", \"stylers\": [ { \"visibility\": \"on\" }, { \"color\": \"#87ae79\" } ] }, { \"featureType\": \"administrative\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#7f2200\" }, { \"visibility\": \"off\" } ] }, { \"featureType\": \"administrative\", \"elementType\": \"labels.text.stroke\", \"stylers\": [ { \"color\": \"#ffffff\" }, { \"visibility\": \"on\" }, { \"weight\": 4.1 } ] }, { \"featureType\": \"administrative\", \"elementType\": \"labels.text.fill\", \"stylers\": [ { \"color\": \"#495421\" } ] }, { \"featureType\": \"administrative.neighborhood\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"off\" } ] } ]"},"gowalla":{"label":"Gowalla","style":"[ { \"featureType\": \"administrative.land_parcel\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"landscape.man_made\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"road\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"simplified\" }, { \"lightness\": 20 } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry\", \"stylers\": [ { \"hue\": \"#f49935\" } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"simplified\" } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"geometry\", \"stylers\": [ { \"hue\": \"#fad959\" } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"road.local\", \"elementType\": \"geometry\", \"stylers\": [ { \"visibility\": \"simplified\" } ] }, { \"featureType\": \"road.local\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"simplified\" } ] }, { \"featureType\": \"transit\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"water\", \"elementType\": \"all\", \"stylers\": [ { \"hue\": \"#a1cdfc\" }, { \"saturation\": 30 }, { \"lightness\": 49 } ] } ]"}},"facebookAppId":"","headerPosition":"top","offsetLazyLoad":"300"};</script>
+<script src="/wp-content/themes/bricks/assets/js/bricks.min.js?ver=1695510514" id="bricks-scripts-js"></script>
+<script src="/wp-content/plugins/bricksextras/components/assets/js/frontend.js?ver=1.0.1" id="x-frontend-js"></script>
+<script src="/wp-content/plugins/bricksextras/components/assets/js/tableofcontents.js?ver=1.0.4" id="x-toc-js"></script>
+		<div id="wpadminbar" class="nojq nojs">
+							<a class="screen-reader-shortcut" href="#wp-toolbar" tabindex="1">Skip to toolbar</a>
+						<div class="quicklinks" id="wp-toolbar" role="navigation" aria-label="Toolbar">
+				<ul id="wp-admin-bar-root-default" class="ab-top-menu">
+<li id="wp-admin-bar-wp-logo" class="menupop">
+<div class="ab-item ab-empty-item" tabindex="0" aria-haspopup="true">
+<span class="ab-icon" aria-hidden="true"></span><span class="screen-reader-text">About WordPress</span>
+</div>
+<div class="ab-sub-wrapper"><ul id="wp-admin-bar-wp-logo-external" class="ab-sub-secondary ab-submenu">
+<li id="wp-admin-bar-wporg"><a class="ab-item" href="https://wordpress.org/">WordPress.org</a></li>
+<li id="wp-admin-bar-documentation"><a class="ab-item" href="https://wordpress.org/documentation/">Documentation</a></li>
+<li id="wp-admin-bar-support-forums"><a class="ab-item" href="https://wordpress.org/support/forums/">Support</a></li>
+<li id="wp-admin-bar-feedback"><a class="ab-item" href="https://wordpress.org/support/forum/requests-and-feedback">Feedback</a></li>
+</ul></div>
+</li>
+<li id="wp-admin-bar-bp-login"><a class="ab-item" href="/wp-login.php?redirect_to=https%3A%2F%2F%2Fabout%2Fofficial-standards-for-houndadore-breed-by-kennel-clubs%2F%3Fsimply_static_page%3D1692">Log In</a></li>
+</ul>
+<ul id="wp-admin-bar-top-secondary" class="ab-top-secondary ab-top-menu"><li id="wp-admin-bar-search" class="admin-bar-search"><div class="ab-item ab-empty-item" tabindex="-1"><form action="https://houndadore.com/" method="get" id="adminbarsearch">
+<input class="adminbar-input" name="s" id="adminbar-search" type="text" value="" maxlength="150"><label for="adminbar-search" class="screen-reader-text">Search</label><input type="submit" class="adminbar-button" value="Search">
+</form></div></li></ul>			</div>
+					</div>
+
+		</body>
+</html>

@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: https://ogp.me/ns#" class="no-js no-svg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+            <style>.toc_post_list h2{
+                    margin-bottom: 20px;
+                }
+                .toc_post_list{
+                    list-style: none;
+                    margin: 0 0 30px 0!important;
+                    padding: 0!important;
+                }
+                .toc_post_list li{}
+                .toc_post_list li ul{
+                    list-style: decimal;
+                }
+                .toc_post_list a{}
+                .wpaicg_chat_widget{
+                    position: fixed;
+                }
+                .wpaicg_widget_left{
+                    bottom: 15px;
+                    left: 15px;
+                }
+                .wpaicg_widget_right{
+                    bottom: 15px;
+                    right: 15px;
+                }
+                .wpaicg_widget_right .wpaicg_chat_widget_content{
+                    right: 0;
+                }
+                .wpaicg_widget_left .wpaicg_chat_widget_content{
+                    left: 0;
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox{
+                    height: 100%;
+                    background-color: #222222;
+                    border-radius: 5px;
+                }
+                .wpaicg_widget_open .wpaicg_chat_widget_content{
+                    height: 400px;
+                }
+                .wpaicg_chat_widget_content{
+                    position: absolute;
+                    bottom: calc(100% + 15px);
+                    width: 350px;
+                    overflow: hidden;
+                }
+                .wpaicg_widget_open .wpaicg_chat_widget_content{
+                    overflow: unset;
+                }
+                .wpaicg_widget_open .wpaicg_chat_widget_content .wpaicg-chatbox{
+                    top: 0;
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox{
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 350px;
+                    height: 400px;
+                    transition: top 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox-content{
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox-content ul{
+                    box-sizing: border-box;
+                    background: #222222;
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox-content ul li{
+                    color: #90EE90;
+                    font-size: 13px;
+                }
+                .wpaicg_chat_widget_content .wpaicg-bot-thinking{
+                    color: #90EE90;
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox-type{
+                                    border-top: 0;
+                    background: rgb(0 0 0 / 19%);
+                }
+                .wpaicg_chat_widget_content .wpaicg-chat-message{
+                    color: #90EE90;
+                }
+                .wpaicg_chat_widget_content textarea.wpaicg-chatbox-typing{
+                    background-color: #fff;
+                    border-color: #ccc;
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox-send{
+                    color: #fff;
+                }
+                .wpaicg-chatbox-footer{
+                    height: 18px;
+                    font-size: 11px;
+                    padding: 0 5px;
+                    color: #fff;
+                    background: rgb(0 0 0 / 19%);
+                    margin-top:2px;
+                    margin-bottom: 2px;
+                }
+                .wpaicg_chat_widget_content textarea.wpaicg-chatbox-typing:focus{
+                    outline: none;
+                }
+                .wpaicg_chat_widget .wpaicg_toggle{
+                    cursor: pointer;
+                }
+                .wpaicg_chat_widget .wpaicg_toggle img{
+                    width: 75px;
+                    height: 75px;
+                }
+                .wpaicg-chat-shortcode-type,.wpaicg-chatbox-type{
+                    position: relative;
+                }
+                .wpaicg-mic-icon{
+                    cursor: pointer;
+                }
+                .wpaicg-mic-icon svg{
+                    width: 16px;
+                    height: 16px;
+                    fill: currentColor;
+                }
+                .wpaicg-pdf-icon svg{
+                    width: 22px;
+                    height: 22px;
+                    fill: currentColor;
+                }
+                .wpaicg_chat_additions span{
+                    cursor: pointer;
+                    margin-right: 2px;
+                }
+                .wpaicg_chat_additions span:last-of-type{
+                    margin-right: 0;
+                }
+                .wpaicg-pdf-loading{
+                    width: 18px;
+                    height: 18px;
+                    border: 2px solid #FFF;
+                    border-bottom-color: transparent;
+                    border-radius: 50%;
+                    display: inline-block;
+                    box-sizing: border-box;
+                    animation: wpaicg_rotation 1s linear infinite;
+                }
+                @keyframes wpaicg_rotation {
+                    0% {
+                        transform: rotate(0deg);
+                    }
+                    100% {
+                        transform: rotate(360deg);
+                    }
+                }
+                .wpaicg-chat-message code{
+                    padding: 3px 5px 2px;
+                    background: rgb(0 0 0 / 20%);
+                    font-size: 13px;
+                    font-family: Consolas,Monaco,monospace;
+                    direction: ltr;
+                    unicode-bidi: embed;
+                    display: block;
+                    margin: 5px 0px;
+                    border-radius: 4px;
+                    white-space: pre-wrap;
+                }
+                textarea.wpaicg-chat-shortcode-typing,textarea.wpaicg-chatbox-typing{
+                    height: 30px;
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox-content,.wpaicg-chat-shortcode-content{
+                    overflow: hidden;
+                }
+                .wpaicg_chatbox_line{
+                    overflow: hidden;
+                    text-align: center;
+                    display: block!important;
+                    font-size: 12px;
+                }
+                .wpaicg_chatbox_line:after,.wpaicg_chatbox_line:before{
+                    background-color: rgb(255 255 255 / 26%);
+                    content: "";
+                    display: inline-block;
+                    height: 1px;
+                    position: relative;
+                    vertical-align: middle;
+                    width: 50%;
+                }
+                .wpaicg_chatbox_line:before {
+                    right: 0.5em;
+                    margin-left: -50%;
+                }
+
+                .wpaicg_chatbox_line:after {
+                    left: 0.5em;
+                    margin-right: -50%;
+                }
+                .wpaicg-chat-shortcode-typing::-webkit-scrollbar,.wpaicg-chatbox-typing::-webkit-scrollbar{
+                    width: 5px
+                }
+                .wpaicg-chat-shortcode-typing::-webkit-scrollbar-track,.wpaicg-chatbox-typing::-webkit-scrollbar-track{
+                    -webkit-box-shadow:inset 0 0 6px rgba(0, 0, 0, 0.15);border-radius:5px;
+                }
+                .wpaicg-chat-shortcode-typing::-webkit-scrollbar-thumb,.wpaicg-chatbox-typing::-webkit-scrollbar-thumb{
+                    border-radius:5px;
+                    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.75);
+                }</style>
+            <script>var wpaicg_ajax_url = '/wp-admin/admin-ajax.php';
+                var wpaicgUserLoggedIn = false;</script>
+            <link href="/wp-content/plugins/gpt3-ai-content-generator-premium/public/css/wpaicg-rtl.css" type="text/css" rel="stylesheet">
+            
+<!-- Search Engine Optimization by Rank Math - https://rankmath.com/ -->
+<title>Activity - Houndadore - The Perfect Blend Of Hound and Labradore</title>
+<meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
+<link rel="canonical" href="/activity/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Activity - Houndadore - The Perfect Blend Of Hound and Labradore">
+<meta property="og:url" content="/activity/">
+<meta property="og:site_name" content="Houndadore - The Perfect Blend Of Hound and Labradore">
+<meta property="og:updated_time" content="2023-03-26T14:14:07-06:00">
+<meta property="article:published_time" content="%date(Y-m-d\TH:i:sP)%">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Activity - Houndadore - The Perfect Blend Of Hound and Labradore">
+<meta name="twitter:label1" content="Time to read">
+<meta name="twitter:data1" content="Less than a minute">
+<script type="application/ld+json" class="rank-math-schema">{"@context":"https://schema.org","@graph":[{"@type":["Organization","Person"],"@id":"/#person","name":"Houndadore - The Perfect Blend Of Hound and Labradore","url":""},{"@type":"WebSite","@id":"/#website","url":"","name":"Houndadore - The Perfect Blend Of Hound and Labradore","publisher":{"@id":"/#person"},"inLanguage":"en-US"},{"@type":"BreadcrumbList","@id":"/activity/#breadcrumb","itemListElement":[{"@type":"ListItem","position":"1","item":{"@id":"","name":"Home"}}]},{"@type":"WebPage","@id":"/activity/#webpage","url":"/activity/","name":"Activity - Houndadore - The Perfect Blend Of Hound and Labradore","datePublished":"","dateModified":"2023-03-26T14:14:07-06:00","isPartOf":{"@id":"/#website"},"inLanguage":"en-US","breadcrumb":{"@id":"/activity/#breadcrumb"}}]}</script>
+<!-- /Rank Math WordPress SEO plugin -->
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="alternate" type="application/rss+xml" title="Houndadore - The Perfect Blend Of Hound and Labradore &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="Houndadore - The Perfect Blend Of Hound and Labradore &raquo; Comments Feed" href="/comments/feed/">
+<script>
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.3.1"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🫱🏻‍🫲🏿","🫱🏻​🫲🏿")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<style>img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+	<link rel="stylesheet" id="dashicons-css" href="/wp-includes/css/dashicons.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="admin-bar-css" href="/wp-includes/css/admin-bar.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="bp-login-form-block-css" href="/wp-content/plugins/buddypress/bp-core/css/blocks/login-form.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-member-block-css" href="/wp-content/plugins/buddypress/bp-members/css/blocks/member.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-members-block-css" href="/wp-content/plugins/buddypress/bp-members/css/blocks/members.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-dynamic-members-block-css" href="/wp-content/plugins/buddypress/bp-members/css/blocks/dynamic-members.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-latest-activities-block-css" href="/wp-content/plugins/buddypress/bp-activity/css/blocks/latest-activities.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-friends-block-css" href="/wp-content/plugins/buddypress/bp-friends/css/blocks/friends.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-group-block-css" href="/wp-content/plugins/buddypress/bp-groups/css/blocks/group.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-groups-block-css" href="/wp-content/plugins/buddypress/bp-groups/css/blocks/groups.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-dynamic-groups-block-css" href="/wp-content/plugins/buddypress/bp-groups/css/blocks/dynamic-groups.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-sitewide-notices-block-css" href="/wp-content/plugins/buddypress/bp-messages/css/blocks/sitewide-notices.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="embedpress_blocks-cgb-style-css-css" href="/wp-content/plugins/embedpress/Gutenberg/dist/blocks.style.build.css?ver=1695326741" media="all">
+<link rel="stylesheet" id="wp-components-css" href="/wp-includes/css/dist/components/style.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="wp-block-editor-css" href="/wp-includes/css/dist/block-editor/style.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="wp-reusable-blocks-css" href="/wp-includes/css/dist/reusable-blocks/style.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="wp-editor-css" href="/wp-includes/css/dist/editor/style.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="embedpress_pro-cgb-style-css-css" href="/wp-content/plugins/embedpress-pro/Gutenberg/dist/blocks.style.build.css" media="all">
+<style id="classic-theme-styles-inline-css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="wp-ai-content-generator-css" href="/wp-content/plugins/gpt3-ai-content-generator-premium/public/css/wp-ai-content-generator-public.css?ver=1.7.71" media="all">
+<link rel="stylesheet" id="automaticcss-core-css" href="/wp-content/uploads/automatic-css/automatic.css?ver=1690958891" media="all">
+<link rel="stylesheet" id="bp-admin-bar-css" href="/wp-content/plugins/buddypress/bp-core/css/admin-bar.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-nouveau-css" href="/wp-content/plugins/buddypress/bp-templates/bp-nouveau/css/buddypress.min.css?ver=11.3.1" media="screen">
+<link rel="stylesheet" id="embedpress-css" href="/wp-content/plugins/embedpress/assets/css/embedpress.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="bricks-frontend-css" href="/wp-content/themes/bricks/assets/css/frontend.min.css?ver=1695510514" media="all">
+<style id="bricks-frontend-inline-css">#brx-header {
+				--x-header-transition: 0;
+				--x-header-fade-transition: 0;
+			}
+
+			#brx-header.x-header_sticky-active {
+				z-index: 999;
+			}</style>
+<link rel="stylesheet" id="bricks-font-awesome-css" href="/wp-content/themes/bricks/assets/css/libs/font-awesome.min.css?ver=1695510514" media="all">
+<link rel="stylesheet" id="automaticcss-bricks-css" href="/wp-content/uploads/automatic-css/automatic-bricks.css?ver=1690958892" media="all">
+<style id="bricks-frontend-inline-inline-css">/* COLOR VARS */
+:root {
+--bricks-color-41d5a9: #f5f5f5;
+--bricks-color-99c887: #e0e0e0;
+--bricks-color-46e566: #9e9e9e;
+--bricks-color-733d27: #616161;
+--bricks-color-366073: #424242;
+--bricks-color-da83d8: #212121;
+--bricks-color-e13943: #ffeb3b;
+--bricks-color-532f05: #ffc107;
+--bricks-color-02cdaf: #ff9800;
+--bricks-color-27368d: #ff5722;
+--bricks-color-9a6966: #f44336;
+--bricks-color-ff9397: #9c27b0;
+--bricks-color-eeb003: #2196f3;
+--bricks-color-07d926: #03a9f4;
+--bricks-color-dd2228: #81D4FA;
+--bricks-color-81c7f1: #4caf50;
+--bricks-color-2147aa: #8bc34a;
+--bricks-color-97f143: #cddc39;
+--bricks-color-zagbnv: #f9e35e;
+--bricks-color-vipnmf: rgba(196, 232, 247, 0.62);
+--bricks-color-wvvhuc: #d8d2ca;
+--bricks-color-acss_import_transparent: transparent;
+}
+
+/* HEADER CSS (ID: 28) */
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-fukllx {width: 80%}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-fukllx {width: 100%}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-mwbyjd {width: 25%}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-mwbyjd {width: 50%}
+}
+@media (max-width: 767px) {
+#brxe-ajfwhw .bricks-nav-menu-wrapper { display: none; }
+#brxe-ajfwhw .bricks-mobile-menu-toggle { display: block; }
+}
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-ajfwhw {font-family: "Roboto"; text-transform: capitalize; font-weight: 700; font-size: 16px; color: #ffffff}
+#brxe-ajfwhw .bricks-nav-menu > li > a {color: var(--danger); text-transform: capitalize; font-family: "Poppins"; font-weight: 700; font-size: 1.25em}
+#brxe-ajfwhw .bricks-nav-menu > li > .brx-submenu-toggle > * {color: var(--danger); text-transform: capitalize; font-family: "Poppins"; font-weight: 700; font-size: 1.25em}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-ajfwhw .bricks-mobile-menu-toggle {color: var(--bricks-color-9a6966)}
+#brxe-ajfwhw.show-mobile-menu .bricks-mobile-menu-toggle {color: var(--bricks-color-9a6966) !important}
+#brxe-ajfwhw {align-self: flex-end}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-togjjs {width: 50%; flex-direction: row; column-gap: 30px; justify-content: center}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-togjjs {width: 50%; justify-content: flex-end}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-qpglvf {font-size: 20px; background-color: var(--bricks-color-9a6966); padding-top: 9px; padding-right: 13px; padding-bottom: 9px; padding-left: 13px; border-radius: 50px; color: #ffffff; fill: #ffffff}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-qpglvf {display: none}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-zturax {font-size: 18px; background-color: var(--bricks-color-9a6966); padding-top: 10px; padding-right: 9px; padding-bottom: 9px; padding-left: 10px; border-radius: 50px; color: #ffffff; fill: #ffffff}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-zturax {display: none}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-mxxbuo {font-size: 18px; background-color: var(--bricks-color-9a6966); padding-top: 10px; padding-right: 11px; padding-bottom: 10px; padding-left: 11px; border-radius: 50px; color: #ffffff; fill: #ffffff}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-mxxbuo {display: none}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-eulzai {font-size: 18px; background-color: var(--bricks-color-9a6966); padding-top: 10px; padding-right: 9px; padding-bottom: 10px; padding-left: 9px; border-radius: 50px; color: #ffffff; fill: #ffffff}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-eulzai {display: none}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-onwkos {width: 25%; flex-direction: row; column-gap: 10px; justify-content: flex-end}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-onwkos {width: 50%}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-gxgllw {flex-direction: row; align-items: center}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-gbfmvp {padding-top: 20px; padding-bottom: 20px; background-color: #000000}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-gbfmvp {padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px; top: 0px; z-index: 1; position: sticky}
+}
+
+/* FOOTER CSS (ID: 31) */
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-rpisls {width: 43%}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-eaxztd {color: #ffffff; font-family: "Roboto"; margin-top: 20px}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-eaxztd {text-align: center}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-xpelqb {width: 50%}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-xpelqb {width: 100%; margin-top: 40px; align-items: center}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-rakvig {color: #ffffff; font-family: "Roboto"}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-hdxtls .icon i {font-size: 20px}
+#brxe-hdxtls .icon {align-self: center; color: var(--bricks-color-9a6966)}
+#brxe-hdxtls {gap: 10px; flex-direction: row; margin-top: 20px}
+#brxe-hdxtls .icon a {color: var(--bricks-color-9a6966)}
+#brxe-hdxtls .content {color: #ffffff; font-family: "Roboto"}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-mqefoe .icon i {font-size: 20px}
+#brxe-mqefoe .icon {align-self: center; color: var(--bricks-color-9a6966)}
+#brxe-mqefoe {gap: 10px; flex-direction: row; margin-top: 7px}
+#brxe-mqefoe .icon a {color: var(--bricks-color-9a6966)}
+#brxe-mqefoe .content {color: #ffffff; font-family: "Roboto"}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-vrahhh .icon i {font-size: 20px}
+#brxe-vrahhh .icon {align-self: center; color: var(--bricks-color-9a6966)}
+#brxe-vrahhh {gap: 10px; flex-direction: row; margin-top: 7px}
+#brxe-vrahhh .icon a {color: var(--bricks-color-9a6966)}
+#brxe-vrahhh .content {color: #ffffff; font-family: "Roboto"}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-xuqyxc {width: 25%}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-xuqyxc {width: 100%; margin-top: 40px; align-items: center}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-lgqfds {color: #ffffff; font-family: "Roboto"}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-eecmvu {margin-top: 20px; color: #ffffff; font-family: "Roboto"; text-transform: capitalize; font-weight: 500}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-ztmoaz {margin-top: 6px; color: #ffffff; font-family: "Roboto"; text-transform: capitalize; font-weight: 500}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-dcnagm {margin-top: 6px; color: #ffffff; font-family: "Roboto"; text-transform: capitalize; font-weight: 500}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-luqjcj {margin-top: 6px; color: #ffffff; font-family: "Roboto"; text-transform: capitalize; font-weight: 500}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-jvfmyb {width: 25%; padding-bottom: 40px}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-jvfmyb {width: 100%; margin-top: 40px; align-items: center}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-lwvhbf {flex-direction: row; column-gap: 50px; border-bottom: 2px solid #ffffff}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-joihqv {font-size: 17px}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-joihqv {text-align: center}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-nitblx {margin-top: 20px; margin-bottom: 20px; align-items: flex-end; color: #ffffff; font-family: "Roboto"; text-transform: capitalize}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-tseoqd {background-color: #323232; padding-top: 5vw}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-tseoqd {padding-right: 20px; padding-left: 20px}
+}</style>
+<link rel="stylesheet" id="bricks-google-fonts-css" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&#038;display=swap&#038;family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&#038;display=swap" media="all">
+<link rel="stylesheet" id="plyr-css" href="/wp-content/plugins/embedpress/assets/css/plyr.css?ver=6.3.1" media="all">
+<script src="/wp-includes/js/jquery/jquery.min.js?ver=3.7.0" id="jquery-core-js"></script>
+<script src="/wp-content/plugins/gpt3-ai-content-generator-premium/public/js/wp-ai-content-generator-public.js?ver=1.7.71" id="wp-ai-content-generator-js"></script>
+<script src="/wp-content/plugins/buddypress/bp-core/js/widget-members.min.js?ver=11.3.1" id="bp-widget-members-js"></script>
+<script src="/wp-content/plugins/buddypress/bp-core/js/jquery-query.min.js?ver=11.3.1" id="bp-jquery-query-js"></script>
+<script src="/wp-content/plugins/buddypress/bp-core/js/vendor/jquery-cookie.min.js?ver=11.3.1" id="bp-jquery-cookie-js"></script>
+<script src="/wp-content/plugins/buddypress/bp-core/js/vendor/jquery-scroll-to.min.js?ver=11.3.1" id="bp-jquery-scroll-to-js"></script>
+<script src="/wp-content/plugins/embedpress/assets/js/plyr.polyfilled.js?ver=1" id="plyr.polyfilled-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/pages/184">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.3.1">
+<link rel="shortlink" href="/?p=184">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url#038;format=xml">
+
+	<script type="text/javascript">var ajaxurl = '/wp-admin/admin-ajax.php';</script>
+
+<style media="print">#wpadminbar { display:none; }</style>
+	<style media="screen">html { margin-top: 32px !important; }
+	@media screen and ( max-width: 782px ) {
+		html { margin-top: 46px !important; }
+	}</style>
+	
+	<link rel="alternate" type="application/rss+xml" title="Houndadore &#8211; The Perfect Blend Of Hound and Labradore | Site Wide Activity RSS Feed" href="/activity/feed/">
+
+<link rel="canonical" href="/activity/">
+<link rel="icon" href="/wp-content/uploads/2023/03/Dog-Training-Favicon-150x150.png" sizes="32x32">
+<link rel="icon" href="/wp-content/uploads/2023/03/Dog-Training-Favicon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/wp-content/uploads/2023/03/Dog-Training-Favicon.png">
+<meta name="msapplication-TileImage" content="/wp-content/uploads/2023/03/Dog-Training-Favicon.png">
+		<style id="wp-custom-css">@media screen and (min-width: 375px) {
+body.bricks-is-frontend.admin-bar #brx-header.sticky {
+	top: 0px !important
+}
+}
+
+#brxe-fuxnba .bricks-pagination ul {
+    justify-content: center;
+    gap: 40px;
+    margin-top: 60px;
+}</style>
+		
+<!-- Facebook Open Graph (by Bricks) -->
+<meta property="og:url">
+<meta property="og:site_name" content="Houndadore - The Perfect Blend Of Hound and Labradore">
+<meta property="og:title" content="Activity">
+<meta property="og:type" content="website">
+</head>
+
+<body class="directory activity  buddypress bp-nouveau page-template-default page page-id-184 admin-bar no-customize-support brx-body bricks-is-frontend wp-embed-responsive no-js">		<a class="skip-link" href="#brx-content" aria-label="Skip to main content">Skip to main content</a>
+
+					<a class="skip-link" href="#brx-footer" aria-label="Skip to footer">Skip to footer</a>
+			<header id="brx-header" class="sticky on-scroll" data-x-overlay="none"><section id="brxe-gbfmvp" class="brxe-section"><div id="brxe-gxgllw" class="brxe-container">
+<div id="brxe-mwbyjd" class="brxe-block"><img width="300" height="75" src="/wp-content/uploads/2023/03/Houndadore-2-White.png" class="brxe-image css-filter size-full" alt="Houndadore" decoding="async" id="brxe-fukllx"></div>
+<div id="brxe-togjjs" class="brxe-block"><div id="brxe-ajfwhw" data-script-id="ajfwhw" class="brxe-nav-menu">
+<nav class="bricks-nav-menu-wrapper mobile_landscape"><ul id="menu-main-menu" class="bricks-nav-menu">
+<li id="menu-item-821" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-821 bricks-menu-item"><a href="/">Home</a></li>
+<li id="menu-item-822" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-822 bricks-menu-item"><a href="#">About</a></li>
+<li id="menu-item-823" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-823 bricks-menu-item"><a href="/blog/">Blog</a></li>
+<li id="menu-item-824" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-824 bricks-menu-item"><a href="#">Gallery</a></li>
+<li id="menu-item-825" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-825 bricks-menu-item"><a href="#">Contact</a></li>
+</ul></nav>			<button class="bricks-mobile-menu-toggle" aria-haspopup="true" aria-label="Mobile menu" aria-expanded="false">
+				<span class="bar-top"></span>
+				<span class="bar-center"></span>
+				<span class="bar-bottom"></span>
+			</button>
+			<nav class="bricks-mobile-menu-wrapper left"><ul id="menu-main-menu-1" class="bricks-mobile-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-821 bricks-menu-item"><a href="/">Home</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-822 bricks-menu-item"><a href="#">About</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-823 bricks-menu-item"><a href="/blog/">Blog</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-824 bricks-menu-item"><a href="#">Gallery</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-825 bricks-menu-item"><a href="#">Contact</a></li>
+</ul></nav><div class="bricks-mobile-menu-overlay"></div>
+</div></div>
+<div id="brxe-onwkos" class="brxe-block">
+<a href="https://www.facebook.com/houndadore" target="_blank"><i id="brxe-qpglvf" class="brxe-icon fab fa-facebook-f"></i></a><i id="brxe-zturax" class="brxe-icon fab fa-twitter"></i><i id="brxe-mxxbuo" class="brxe-icon fab fa-linkedin-in"></i><i id="brxe-eulzai" class="brxe-icon fab fa-youtube"></i>
+</div>
+</div></section></header><article id="brx-content" class="bp_activity type-bp_activity wordpress post-0 page type-page status-publish hentry">
+	<h1>Activity</h1>
+<div id="buddypress" class="buddypress-wrap bricks bp-dir-hori-nav alignwide">
+	
+	
+	
+	
+		
+<nav class="activity-type-navs main-navs bp-navs dir-navs " role="navigation" aria-label="Directory menu">
+
+	
+		<ul class="component-navigation activity-nav">
+
+			
+				<li id="activity-all" class="dynamic" data-bp-scope="all" data-bp-object="activity">
+					<a href="/activity/">
+						All Members
+													<span class="count">0</span>
+											</a>
+				</li>
+
+			
+		</ul>
+<!-- .component-navigation -->
+
+	
+</nav><!-- .bp-navs -->
+
+	
+	<div class="screen-content">
+
+		<div class="subnav-filters filters no-ajax" id="subnav-filters">
+
+			<div class="subnav-search clearfix">
+
+							<div id="activity-rss-feed" class="feed">
+					<a href="/activity/feed/" class="bp-tooltip" data-bp-tooltip="RSS Feed">
+						<span class="bp-screen-reader-text">RSS Feed</span>
+					</a>
+				</div>
+			
+			
+<div class="dir-search activity-search bp-search" data-bp-search="activity">
+	<form action="" method="get" class="bp-dir-search-form" id="dir-activity-search-form" role="search">
+
+		<label for="dir-activity-search" class="bp-screen-reader-text">Search Activity...</label>
+
+		<input id="dir-activity-search" name="activity_search" type="search" placeholder="Search Activity...">
+
+		<button type="submit" id="dir-activity-search-submit" class="nouveau-search-submit" name="dir_activity_search_submit">
+			<span class="dashicons dashicons-search" aria-hidden="true"></span>
+			<span id="button-text" class="bp-screen-reader-text">Search</span>
+		</button>
+
+	</form>
+</div>
+
+ 		</div>
+	
+			
+<div id="dir-filters" class="component-filters clearfix">
+	<div id="activity-filter-select" class="last filter">
+		<label class="bp-screen-reader-text" for="activity-filter-by">
+			<span>Show:</span>
+		</label>
+		<div class="select-wrap">
+			<select id="activity-filter-by" data-bp-filter="activity">
+
+				<option value="0">&mdash; Everything &mdash;</option>
+<option value="new_member">New Members</option>
+<option value="updated_profile">Profile Updates</option>
+<option value="activity_update">Updates</option>
+<option value="friendship_accepted,friendship_created">Friendships</option>
+<option value="created_group">New Groups</option>
+<option value="joined_group">Group Memberships</option>
+<option value="group_details_updated">Group Updates</option>
+
+			</select>
+			<span class="select-arrow" aria-hidden="true"></span>
+		</div>
+	</div>
+</div>
+	
+</div>
+<!-- search & filters -->
+
+		
+		<div id="activity-stream" class="activity" data-bp-list="activity">
+
+				<div id="bp-ajax-loader">
+<aside class="bp-feedback bp-messages loading">
+	<span class="bp-icon" aria-hidden="true"></span>
+	<p>Loading the community updates. Please wait.</p>
+	</aside>
+</div>
+
+		</div>
+<!-- .activity -->
+
+		
+	</div>
+<!-- // .screen-content -->
+
+	</div>
+<!-- #buddypress -->
+</article>
+<footer id="brx-footer"><section id="brxe-tseoqd" class="brxe-section"><div id="brxe-lwvhbf" class="brxe-container">
+<div id="brxe-xpelqb" class="brxe-block">
+<img width="300" height="75" src="/wp-content/uploads/2023/03/Houndadore-White.png" class="brxe-image css-filter size-full" alt="" decoding="async" id="brxe-rpisls" loading="lazy"><div id="brxe-eaxztd" class="brxe-text-basic">Imagine the loyalty and intelligence of the Labrador Retriever, mixed with the impressive tracking skills and sense of smell of a Hound dog. It's like a superhero duo that's furrier and more lovable.</div>
+</div>
+<div id="brxe-xuqyxc" class="brxe-block">
+<h3 id="brxe-rakvig" class="brxe-heading">Contact Us</h3>
+<div id="brxe-hdxtls" class="brxe-icon-box">
+<div class="icon"><i class="fas fa-map-location-dot"></i></div>
+<div class="content">
+<p>7331 Emerald Glade Lane</p>
+</div>
+</div>
+<div id="brxe-mqefoe" class="brxe-icon-box">
+<div class="icon"><i class="fas fa-envelope"></i></div>
+<div class="content">
+<p>info@houndadore.com</p>
+</div>
+</div>
+<div id="brxe-vrahhh" class="brxe-icon-box">
+<div class="icon"><i class="fas fa-phone-flip"></i></div>
+<div class="content">
+<p>(832) 629-5520</p>
+</div>
+</div>
+</div>
+<div id="brxe-jvfmyb" class="brxe-block">
+<h3 id="brxe-lgqfds" class="brxe-heading">Quick Links</h3>
+<div id="brxe-eecmvu" class="brxe-text-basic">About</div>
+<div id="brxe-ztmoaz" class="brxe-text-basic">Blog</div>
+<div id="brxe-dcnagm" class="brxe-text-basic">Gallery</div>
+<div id="brxe-luqjcj" class="brxe-text-basic">Contact</div>
+</div>
+</div>
+<div id="brxe-nitblx" class="brxe-container"><div id="brxe-joihqv" class="brxe-text-basic">Copyright 2023 © all rights reserved design by <a href="https://brickstemplates.io/">BricksTemplates.io</a> </div></div></section></footer>            <script>var wpaicgUserLoggedIn = false;</script>
+            <script src="/wp-includes/js/hoverintent-js.min.js?ver=2.2.1" id="hoverintent-js-js"></script>
+<script src="/wp-includes/js/admin-bar.min.js?ver=6.3.1" id="admin-bar-js"></script>
+<script src="/wp-content/plugins/gpt3-ai-content-generator-premium/lib/js/wpaicg-chat-pro.js" id="wpaicg-chat-pro-js"></script>
+<script src="/wp-content/plugins/gpt3-ai-content-generator-premium/public/js/wpaicg-form-shortcode.js" id="wpaicg-gpt-form-js"></script>
+<script id="wpaicg-init-js-extra">var wpaicgParams = {"ajax_url":"\/wp-admin\/admin-ajax.php","search_nonce":"05d0315b6e","logged_in":"0","languages":{"source":"Sources","no_result":"No result found","wrong":"Something went wrong","prompt_strength":"Please enter a valid prompt strength value between 0 and 1.","num_inference_steps":"Please enter a valid number of inference steps value between 1 and 500.","guidance_scale":"Please enter a valid guidance scale value between 1 and 20.","error_image":"Please select least one image for generate","save_image_success":"Save images to media successfully","select_all":"Select All","unselect":"Unselect","select_save_error":"Please select least one image to save","alternative":"Alternative Text","title":"Title","edit_image":"Edit Image","caption":"Caption","description":"Description","save":"Save","removed_pdf":"Your pdf session is cleared"}};</script>
+<script src="/wp-content/plugins/gpt3-ai-content-generator-premium/public/js/wpaicg-init.js" id="wpaicg-init-js"></script>
+<script src="/wp-content/plugins/gpt3-ai-content-generator-premium/public/js/wpaicg-chat.js" id="wpaicg-chat-script-js"></script>
+<script src="/wp-includes/js/dist/vendor/moment.min.js?ver=2.29.4" id="moment-js"></script>
+<script id="moment-js-after">moment.updateLocale( 'en_US', {"months":["January","February","March","April","May","June","July","August","September","October","November","December"],"monthsShort":["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"weekdays":["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],"weekdaysShort":["Sun","Mon","Tue","Wed","Thu","Fri","Sat"],"week":{"dow":1},"longDateFormat":{"LT":"g:i a","LTS":null,"L":null,"LL":"F j, Y","LLL":"F j, Y g:i a","LLLL":null}} );
+moment.updateLocale( 'en_US', {"relativeTime":{"future":"in %s","past":"%s ago","s":"a few seconds","m":"a minute","mm":"%d minutes","h":"an hour","hh":"%d hours","d":"a day","dd":"%d days","M":"a month","MM":"%d months","y":"a year","yy":"%d years"}} );</script>
+<script src="/wp-content/plugins/buddypress/bp-core/js/vendor/livestamp.min.js?ver=11.3.1" id="bp-livestamp-js"></script>
+<script src="/wp-includes/js/dist/vendor/wp-polyfill-inert.min.js?ver=3.1.2" id="wp-polyfill-inert-js"></script>
+<script src="/wp-includes/js/dist/vendor/regenerator-runtime.min.js?ver=0.13.11" id="regenerator-runtime-js"></script>
+<script src="/wp-includes/js/dist/vendor/wp-polyfill.min.js?ver=3.15.0" id="wp-polyfill-js"></script>
+<script src="/wp-includes/js/dist/hooks.min.js?ver=c6aec9a8d4e5a5d543a1" id="wp-hooks-js"></script>
+<script id="heartbeat-js-extra">var heartbeatSettings = {"ajaxurl":"\/wp-admin\/admin-ajax.php"};</script>
+<script src="/wp-includes/js/heartbeat.min.js?ver=6.3.1" id="heartbeat-js"></script>
+<script id="bp-nouveau-js-extra">var BP_Nouveau = {"ajaxurl":"\/wp-admin\/admin-ajax.php","confirm":"Are you sure?","show_x_comments":"Show all %d comments","unsaved_changes":"Your profile has unsaved changes. If you leave the page, the changes will be lost.","object_nav_parent":"#buddypress","objects":["activity","members","groups","xprofile","friends","messages","settings","notifications","group_members","group_requests"],"nonces":{"activity":"b8b5214161","members":"f343cbcf81","groups":"fdf485fa61","xprofile":"9459f1b575","friends":"75562fbe93","messages":"c23a793c31","settings":"c6a5946ce0","notifications":"89b43d1260"},"newest":"Load Newest","pulse":"15","activity":{"params":{"user_id":0,"object":"user","backcompat":{"before_post_form":false,"post_form_options":false},"post_nonce":"1d07dcdb34","avatar_url":false,"avatar_width":50,"avatar_height":50,"user_domain":"","avatar_alt":"Profile photo of ","objects":{"profile":{"text":"Post in: Profile","autocomplete_placeholder":"","priority":5}}},"strings":{"whatsnewPlaceholder":"What's new, ?","whatsnewLabel":"Post what's new","whatsnewpostinLabel":"Post in","postUpdateButton":"Post Update","cancelButton":"Cancel"}}};</script>
+<script src="/wp-content/plugins/buddypress/bp-templates/bp-nouveau/js/buddypress-nouveau.min.js?ver=11.3.1" id="bp-nouveau-js"></script>
+<script src="/wp-content/plugins/buddypress/bp-templates/bp-nouveau/js/buddypress-activity.min.js?ver=11.3.1" id="bp-nouveau-activity-js"></script>
+<script src="/wp-content/plugins/embedpress/assets/js/pdfobject.min.js?ver=3.8.5" id="embedpress-pdfobject-js"></script>
+<script src="/wp-content/plugins/embedpress/assets/js/initplyr.js?ver=3.8.5" id="initplyr-js"></script>
+<script id="embedpress-front-js-extra">var eplocalize = {"ajaxurl":"\/wp-admin\/admin-ajax.php"};</script>
+<script src="/wp-content/plugins/embedpress/assets/js/front.js?ver=3.8.5" id="embedpress-front-js"></script>
+<script src="/wp-content/plugins/embedpress/assets/js/documents-viewer-script.js?ver=3.8.5" id="embedpress_documents_viewer_script-js"></script>
+<script id="wpil-frontend-script-js-extra">var wpilFrontend = {"ajaxUrl":"\/wp-admin\/admin-ajax.php","postId":"0","postType":"post","openInternalInNewTab":"0","openExternalInNewTab":"0","disableClicks":"0","openLinksWithJS":"0","trackAllElementClicks":"0","clicksI18n":{"imageNoText":"Image in link: No Text","imageText":"Image Title: ","noText":"No Anchor Text Found"}};</script>
+<script src="/wp-content/plugins/link-whisper-premium/js/frontend.js?ver=1679343322" id="wpil-frontend-script-js"></script>
+<script id="bricks-scripts-js-extra">var bricksData = {"debug":"","locale":"en_US","ajaxUrl":"\/wp-admin\/admin-ajax.php","restApiUrl":"\/wp-json\/bricks\/v1\/","nonce":"013b0ee6ed","wpRestNonce":"e13cd24a7c","postId":"184","recaptchaIds":[],"animatedTypingInstances":[],"videoInstances":[],"splideInstances":[],"tocbotInstances":[],"swiperInstances":[],"queryLoopInstances":[],"interactions":[],"mapStyles":{"ultraLightWithLabels":{"label":"Ultra light with labels","style":"[ { \"featureType\": \"water\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#e9e9e9\" }, { \"lightness\": 17 } ] }, { \"featureType\": \"landscape\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#f5f5f5\" }, { \"lightness\": 20 } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#ffffff\" }, { \"lightness\": 17 } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry.stroke\", \"stylers\": [ { \"color\": \"#ffffff\" }, { \"lightness\": 29 }, { \"weight\": 0.2 } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#ffffff\" }, { \"lightness\": 18 } ] }, { \"featureType\": \"road.local\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#ffffff\" }, { \"lightness\": 16 } ] }, { \"featureType\": \"poi\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#f5f5f5\" }, { \"lightness\": 21 } ] }, { \"featureType\": \"poi.park\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#dedede\" }, { \"lightness\": 21 } ] }, { \"elementType\": \"labels.text.stroke\", \"stylers\": [ { \"visibility\": \"on\" }, { \"color\": \"#ffffff\" }, { \"lightness\": 16 } ] }, { \"elementType\": \"labels.text.fill\", \"stylers\": [ { \"saturation\": 36 }, { \"color\": \"#333333\" }, { \"lightness\": 40 } ] }, { \"elementType\": \"labels.icon\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"transit\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#f2f2f2\" }, { \"lightness\": 19 } ] }, { \"featureType\": \"administrative\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#fefefe\" }, { \"lightness\": 20 } ] }, { \"featureType\": \"administrative\", \"elementType\": \"geometry.stroke\", \"stylers\": [ { \"color\": \"#fefefe\" }, { \"lightness\": 17 }, { \"weight\": 1.2 } ] } ]"},"blueWater":{"label":"Blue water","style":"[ { \"featureType\": \"administrative\", \"elementType\": \"labels.text.fill\", \"stylers\": [ { \"color\": \"#444444\" } ] }, { \"featureType\": \"landscape\", \"elementType\": \"all\", \"stylers\": [ { \"color\": \"#f2f2f2\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"road\", \"elementType\": \"all\", \"stylers\": [ { \"saturation\": -100 }, { \"lightness\": 45 } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"simplified\" } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"labels.icon\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"transit\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"water\", \"elementType\": \"all\", \"stylers\": [ { \"color\": \"#46bcec\" }, { \"visibility\": \"on\" } ] } ]"},"lightDream":{"label":"Light dream","style":"[ { \"featureType\": \"landscape\", \"stylers\": [ { \"hue\": \"#FFBB00\" }, { \"saturation\": 43.400000000000006 }, { \"lightness\": 37.599999999999994 }, { \"gamma\": 1 } ] }, { \"featureType\": \"road.highway\", \"stylers\": [ { \"hue\": \"#FFC200\" }, { \"saturation\": -61.8 }, { \"lightness\": 45.599999999999994 }, { \"gamma\": 1 } ] }, { \"featureType\": \"road.arterial\", \"stylers\": [ { \"hue\": \"#FF0300\" }, { \"saturation\": -100 }, { \"lightness\": 51.19999999999999 }, { \"gamma\": 1 } ] }, { \"featureType\": \"road.local\", \"stylers\": [ { \"hue\": \"#FF0300\" }, { \"saturation\": -100 }, { \"lightness\": 52 }, { \"gamma\": 1 } ] }, { \"featureType\": \"water\", \"stylers\": [ { \"hue\": \"#0078FF\" }, { \"saturation\": -13.200000000000003 }, { \"lightness\": 2.4000000000000057 }, { \"gamma\": 1 } ] }, { \"featureType\": \"poi\", \"stylers\": [ { \"hue\": \"#00FF6A\" }, { \"saturation\": -1.0989010989011234 }, { \"lightness\": 11.200000000000017 }, { \"gamma\": 1 } ] } ]"},"blueEssence":{"label":"Blue essence","style":"[ { \"featureType\": \"landscape.natural\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"visibility\": \"on\" }, { \"color\": \"#e0efef\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"visibility\": \"on\" }, { \"hue\": \"#1900ff\" }, { \"color\": \"#c0e8e8\" } ] }, { \"featureType\": \"road\", \"elementType\": \"geometry\", \"stylers\": [ { \"lightness\": 100 }, { \"visibility\": \"simplified\" } ] }, { \"featureType\": \"road\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"transit.line\", \"elementType\": \"geometry\", \"stylers\": [ { \"visibility\": \"on\" }, { \"lightness\": 700 } ] }, { \"featureType\": \"water\", \"elementType\": \"all\", \"stylers\": [ { \"color\": \"#7dcdcd\" } ] } ]"},"appleMapsesque":{"label":"Apple maps-esque","style":"[ { \"featureType\": \"landscape.man_made\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#f7f1df\" } ] }, { \"featureType\": \"landscape.natural\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#d0e3b4\" } ] }, { \"featureType\": \"landscape.natural.terrain\", \"elementType\": \"geometry\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"poi.business\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"poi.medical\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#fbd3da\" } ] }, { \"featureType\": \"poi.park\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#bde6ab\" } ] }, { \"featureType\": \"road\", \"elementType\": \"geometry.stroke\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"road\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#ffe15f\" } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry.stroke\", \"stylers\": [ { \"color\": \"#efd151\" } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#ffffff\" } ] }, { \"featureType\": \"road.local\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"black\" } ] }, { \"featureType\": \"transit.station.airport\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#cfb2db\" } ] }, { \"featureType\": \"water\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#a2daf2\" } ] } ]"},"paleDawn":{"label":"Pale dawn","style":"[ { \"featureType\": \"administrative\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"on\" }, { \"lightness\": 33 } ] }, { \"featureType\": \"landscape\", \"elementType\": \"all\", \"stylers\": [ { \"color\": \"#f2e5d4\" } ] }, { \"featureType\": \"poi.park\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#c5dac6\" } ] }, { \"featureType\": \"poi.park\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"on\" }, { \"lightness\": 20 } ] }, { \"featureType\": \"road\", \"elementType\": \"all\", \"stylers\": [ { \"lightness\": 20 } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#c5c6c6\" } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#e4d7c6\" } ] }, { \"featureType\": \"road.local\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#fbfaf7\" } ] }, { \"featureType\": \"water\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"on\" }, { \"color\": \"#acbcc9\" } ] } ]"},"neutralBlue":{"label":"Neutral blue","style":"[ { \"featureType\": \"water\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#193341\" } ] }, { \"featureType\": \"landscape\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#2c5a71\" } ] }, { \"featureType\": \"road\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#29768a\" }, { \"lightness\": -37 } ] }, { \"featureType\": \"poi\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#406d80\" } ] }, { \"featureType\": \"transit\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#406d80\" } ] }, { \"elementType\": \"labels.text.stroke\", \"stylers\": [ { \"visibility\": \"on\" }, { \"color\": \"#3e606f\" }, { \"weight\": 2 }, { \"gamma\": 0.84 } ] }, { \"elementType\": \"labels.text.fill\", \"stylers\": [ { \"color\": \"#ffffff\" } ] }, { \"featureType\": \"administrative\", \"elementType\": \"geometry\", \"stylers\": [ { \"weight\": 0.6 }, { \"color\": \"#1a3541\" } ] }, { \"elementType\": \"labels.icon\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"poi.park\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#2c5a71\" } ] } ]"},"avocadoWorld":{"label":"Avocado world","style":"[ { \"featureType\": \"water\", \"elementType\": \"geometry\", \"stylers\": [ { \"visibility\": \"on\" }, { \"color\": \"#aee2e0\" } ] }, { \"featureType\": \"landscape\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#abce83\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#769E72\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"labels.text.fill\", \"stylers\": [ { \"color\": \"#7B8758\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"labels.text.stroke\", \"stylers\": [ { \"color\": \"#EBF4A4\" } ] }, { \"featureType\": \"poi.park\", \"elementType\": \"geometry\", \"stylers\": [ { \"visibility\": \"simplified\" }, { \"color\": \"#8dab68\" } ] }, { \"featureType\": \"road\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"visibility\": \"simplified\" } ] }, { \"featureType\": \"road\", \"elementType\": \"labels.text.fill\", \"stylers\": [ { \"color\": \"#5B5B3F\" } ] }, { \"featureType\": \"road\", \"elementType\": \"labels.text.stroke\", \"stylers\": [ { \"color\": \"#ABCE83\" } ] }, { \"featureType\": \"road\", \"elementType\": \"labels.icon\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"road.local\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#A4C67D\" } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#9BBF72\" } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#EBF4A4\" } ] }, { \"featureType\": \"transit\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"administrative\", \"elementType\": \"geometry.stroke\", \"stylers\": [ { \"visibility\": \"on\" }, { \"color\": \"#87ae79\" } ] }, { \"featureType\": \"administrative\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#7f2200\" }, { \"visibility\": \"off\" } ] }, { \"featureType\": \"administrative\", \"elementType\": \"labels.text.stroke\", \"stylers\": [ { \"color\": \"#ffffff\" }, { \"visibility\": \"on\" }, { \"weight\": 4.1 } ] }, { \"featureType\": \"administrative\", \"elementType\": \"labels.text.fill\", \"stylers\": [ { \"color\": \"#495421\" } ] }, { \"featureType\": \"administrative.neighborhood\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"off\" } ] } ]"},"gowalla":{"label":"Gowalla","style":"[ { \"featureType\": \"administrative.land_parcel\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"landscape.man_made\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"road\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"simplified\" }, { \"lightness\": 20 } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry\", \"stylers\": [ { \"hue\": \"#f49935\" } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"simplified\" } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"geometry\", \"stylers\": [ { \"hue\": \"#fad959\" } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"road.local\", \"elementType\": \"geometry\", \"stylers\": [ { \"visibility\": \"simplified\" } ] }, { \"featureType\": \"road.local\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"simplified\" } ] }, { \"featureType\": \"transit\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"water\", \"elementType\": \"all\", \"stylers\": [ { \"hue\": \"#a1cdfc\" }, { \"saturation\": 30 }, { \"lightness\": 49 } ] } ]"}},"facebookAppId":"","headerPosition":"top","offsetLazyLoad":"300"};</script>
+<script src="/wp-content/themes/bricks/assets/js/bricks.min.js?ver=1695510514" id="bricks-scripts-js"></script>
+		<div id="wpadminbar" class="nojq nojs">
+							<a class="screen-reader-shortcut" href="#wp-toolbar" tabindex="1">Skip to toolbar</a>
+						<div class="quicklinks" id="wp-toolbar" role="navigation" aria-label="Toolbar">
+				<ul id="wp-admin-bar-root-default" class="ab-top-menu">
+<li id="wp-admin-bar-wp-logo" class="menupop">
+<div class="ab-item ab-empty-item" tabindex="0" aria-haspopup="true">
+<span class="ab-icon" aria-hidden="true"></span><span class="screen-reader-text">About WordPress</span>
+</div>
+<div class="ab-sub-wrapper"><ul id="wp-admin-bar-wp-logo-external" class="ab-sub-secondary ab-submenu">
+<li id="wp-admin-bar-wporg"><a class="ab-item" href="https://wordpress.org/">WordPress.org</a></li>
+<li id="wp-admin-bar-documentation"><a class="ab-item" href="https://wordpress.org/documentation/">Documentation</a></li>
+<li id="wp-admin-bar-support-forums"><a class="ab-item" href="https://wordpress.org/support/forums/">Support</a></li>
+<li id="wp-admin-bar-feedback"><a class="ab-item" href="https://wordpress.org/support/forum/requests-and-feedback">Feedback</a></li>
+</ul></div>
+</li>
+<li id="wp-admin-bar-bp-login"><a class="ab-item" href="/wp-login.php?redirect_to=https%3A%2F%2F%2Factivity%2F%3Fsimply_static_page%3D1701">Log In</a></li>
+</ul>
+<ul id="wp-admin-bar-top-secondary" class="ab-top-secondary ab-top-menu"><li id="wp-admin-bar-search" class="admin-bar-search"><div class="ab-item ab-empty-item" tabindex="-1"><form action="https://houndadore.com/" method="get" id="adminbarsearch">
+<input class="adminbar-input" name="s" id="adminbar-search" type="text" value="" maxlength="150"><label for="adminbar-search" class="screen-reader-text">Search</label><input type="submit" class="adminbar-button" value="Search">
+</form></div></li></ul>			</div>
+					</div>
+
+		</body>
+</html>

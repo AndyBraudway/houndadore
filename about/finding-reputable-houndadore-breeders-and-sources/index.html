@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: https://ogp.me/ns#" class="no-js no-svg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+            <style>.toc_post_list h2{
+                    margin-bottom: 20px;
+                }
+                .toc_post_list{
+                    list-style: none;
+                    margin: 0 0 30px 0!important;
+                    padding: 0!important;
+                }
+                .toc_post_list li{}
+                .toc_post_list li ul{
+                    list-style: decimal;
+                }
+                .toc_post_list a{}
+                .wpaicg_chat_widget{
+                    position: fixed;
+                }
+                .wpaicg_widget_left{
+                    bottom: 15px;
+                    left: 15px;
+                }
+                .wpaicg_widget_right{
+                    bottom: 15px;
+                    right: 15px;
+                }
+                .wpaicg_widget_right .wpaicg_chat_widget_content{
+                    right: 0;
+                }
+                .wpaicg_widget_left .wpaicg_chat_widget_content{
+                    left: 0;
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox{
+                    height: 100%;
+                    background-color: #222222;
+                    border-radius: 5px;
+                }
+                .wpaicg_widget_open .wpaicg_chat_widget_content{
+                    height: 400px;
+                }
+                .wpaicg_chat_widget_content{
+                    position: absolute;
+                    bottom: calc(100% + 15px);
+                    width: 350px;
+                    overflow: hidden;
+                }
+                .wpaicg_widget_open .wpaicg_chat_widget_content{
+                    overflow: unset;
+                }
+                .wpaicg_widget_open .wpaicg_chat_widget_content .wpaicg-chatbox{
+                    top: 0;
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox{
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 350px;
+                    height: 400px;
+                    transition: top 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox-content{
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox-content ul{
+                    box-sizing: border-box;
+                    background: #222222;
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox-content ul li{
+                    color: #90EE90;
+                    font-size: 13px;
+                }
+                .wpaicg_chat_widget_content .wpaicg-bot-thinking{
+                    color: #90EE90;
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox-type{
+                                    border-top: 0;
+                    background: rgb(0 0 0 / 19%);
+                }
+                .wpaicg_chat_widget_content .wpaicg-chat-message{
+                    color: #90EE90;
+                }
+                .wpaicg_chat_widget_content textarea.wpaicg-chatbox-typing{
+                    background-color: #fff;
+                    border-color: #ccc;
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox-send{
+                    color: #fff;
+                }
+                .wpaicg-chatbox-footer{
+                    height: 18px;
+                    font-size: 11px;
+                    padding: 0 5px;
+                    color: #fff;
+                    background: rgb(0 0 0 / 19%);
+                    margin-top:2px;
+                    margin-bottom: 2px;
+                }
+                .wpaicg_chat_widget_content textarea.wpaicg-chatbox-typing:focus{
+                    outline: none;
+                }
+                .wpaicg_chat_widget .wpaicg_toggle{
+                    cursor: pointer;
+                }
+                .wpaicg_chat_widget .wpaicg_toggle img{
+                    width: 75px;
+                    height: 75px;
+                }
+                .wpaicg-chat-shortcode-type,.wpaicg-chatbox-type{
+                    position: relative;
+                }
+                .wpaicg-mic-icon{
+                    cursor: pointer;
+                }
+                .wpaicg-mic-icon svg{
+                    width: 16px;
+                    height: 16px;
+                    fill: currentColor;
+                }
+                .wpaicg-pdf-icon svg{
+                    width: 22px;
+                    height: 22px;
+                    fill: currentColor;
+                }
+                .wpaicg_chat_additions span{
+                    cursor: pointer;
+                    margin-right: 2px;
+                }
+                .wpaicg_chat_additions span:last-of-type{
+                    margin-right: 0;
+                }
+                .wpaicg-pdf-loading{
+                    width: 18px;
+                    height: 18px;
+                    border: 2px solid #FFF;
+                    border-bottom-color: transparent;
+                    border-radius: 50%;
+                    display: inline-block;
+                    box-sizing: border-box;
+                    animation: wpaicg_rotation 1s linear infinite;
+                }
+                @keyframes wpaicg_rotation {
+                    0% {
+                        transform: rotate(0deg);
+                    }
+                    100% {
+                        transform: rotate(360deg);
+                    }
+                }
+                .wpaicg-chat-message code{
+                    padding: 3px 5px 2px;
+                    background: rgb(0 0 0 / 20%);
+                    font-size: 13px;
+                    font-family: Consolas,Monaco,monospace;
+                    direction: ltr;
+                    unicode-bidi: embed;
+                    display: block;
+                    margin: 5px 0px;
+                    border-radius: 4px;
+                    white-space: pre-wrap;
+                }
+                textarea.wpaicg-chat-shortcode-typing,textarea.wpaicg-chatbox-typing{
+                    height: 30px;
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox-content,.wpaicg-chat-shortcode-content{
+                    overflow: hidden;
+                }
+                .wpaicg_chatbox_line{
+                    overflow: hidden;
+                    text-align: center;
+                    display: block!important;
+                    font-size: 12px;
+                }
+                .wpaicg_chatbox_line:after,.wpaicg_chatbox_line:before{
+                    background-color: rgb(255 255 255 / 26%);
+                    content: "";
+                    display: inline-block;
+                    height: 1px;
+                    position: relative;
+                    vertical-align: middle;
+                    width: 50%;
+                }
+                .wpaicg_chatbox_line:before {
+                    right: 0.5em;
+                    margin-left: -50%;
+                }
+
+                .wpaicg_chatbox_line:after {
+                    left: 0.5em;
+                    margin-right: -50%;
+                }
+                .wpaicg-chat-shortcode-typing::-webkit-scrollbar,.wpaicg-chatbox-typing::-webkit-scrollbar{
+                    width: 5px
+                }
+                .wpaicg-chat-shortcode-typing::-webkit-scrollbar-track,.wpaicg-chatbox-typing::-webkit-scrollbar-track{
+                    -webkit-box-shadow:inset 0 0 6px rgba(0, 0, 0, 0.15);border-radius:5px;
+                }
+                .wpaicg-chat-shortcode-typing::-webkit-scrollbar-thumb,.wpaicg-chatbox-typing::-webkit-scrollbar-thumb{
+                    border-radius:5px;
+                    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.75);
+                }</style>
+            <script>var wpaicg_ajax_url = '/wp-admin/admin-ajax.php';
+                var wpaicgUserLoggedIn = false;</script>
+            <link href="/wp-content/plugins/gpt3-ai-content-generator-premium/public/css/wpaicg-rtl.css" type="text/css" rel="stylesheet">
+            
+<!-- Search Engine Optimization by Rank Math - https://rankmath.com/ -->
+<title>Finding reputable Houndadore breeders and sources - Houndadore - The Perfect Blend Of Hound and Labradore</title>
+<meta name="description" content="&quot;Discover the perfect Houndadore companion with trusted breeders and reliable sources.&quot;">
+<meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
+<link rel="canonical" href="/about/finding-reputable-houndadore-breeders-and-sources/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Finding reputable Houndadore breeders and sources - Houndadore - The Perfect Blend Of Hound and Labradore">
+<meta property="og:description" content="&quot;Discover the perfect Houndadore companion with trusted breeders and reliable sources.&quot;">
+<meta property="og:url" content="/about/finding-reputable-houndadore-breeders-and-sources/">
+<meta property="og:site_name" content="Houndadore - The Perfect Blend Of Hound and Labradore">
+<meta property="article:section" content="About">
+<meta property="article:published_time" content="2023-07-01T00:32:21-06:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Finding reputable Houndadore breeders and sources - Houndadore - The Perfect Blend Of Hound and Labradore">
+<meta name="twitter:description" content="&quot;Discover the perfect Houndadore companion with trusted breeders and reliable sources.&quot;">
+<meta name="twitter:label1" content="Written by">
+<meta name="twitter:data1" content="Houndadore_2050">
+<meta name="twitter:label2" content="Time to read">
+<meta name="twitter:data2" content="44 minutes">
+<script type="application/ld+json" class="rank-math-schema">{"@context":"https://schema.org","@graph":[{"@type":["Organization","Person"],"@id":"/#person","name":"Houndadore - The Perfect Blend Of Hound and Labradore","url":""},{"@type":"WebSite","@id":"/#website","url":"","name":"Houndadore - The Perfect Blend Of Hound and Labradore","publisher":{"@id":"/#person"},"inLanguage":"en-US"},{"@type":"BreadcrumbList","@id":"/about/finding-reputable-houndadore-breeders-and-sources/#breadcrumb","itemListElement":[{"@type":"ListItem","position":"1","item":{"@id":"","name":"Home"}},{"@type":"ListItem","position":"2","item":{"@id":"/category/about/","name":"About"}},{"@type":"ListItem","position":"3","item":{"@id":"/about/finding-reputable-houndadore-breeders-and-sources/","name":"Finding reputable Houndadore breeders and sources"}}]},{"@type":"WebPage","@id":"/about/finding-reputable-houndadore-breeders-and-sources/#webpage","url":"/about/finding-reputable-houndadore-breeders-and-sources/","name":"Finding reputable Houndadore breeders and sources - Houndadore - The Perfect Blend Of Hound and Labradore","datePublished":"2023-07-01T00:32:21-06:00","dateModified":"2023-07-01T00:32:21-06:00","isPartOf":{"@id":"/#website"},"inLanguage":"en-US","breadcrumb":{"@id":"/about/finding-reputable-houndadore-breeders-and-sources/#breadcrumb"}},{"@type":"Person","@id":"/author/houndadore_2050/","name":"Houndadore_2050","url":"/author/houndadore_2050/","image":{"@type":"ImageObject","@id":"//www.gravatar.com/avatar/9f4b2c627190ceb17858b039cc7294af?s=96&r=g&d=mm","url":"//www.gravatar.com/avatar/9f4b2c627190ceb17858b039cc7294af?s=96&r=g&d=mm","caption":"Houndadore_2050","inLanguage":"en-US"},"sameAs":[""]},{"@type":"BlogPosting","headline":"Finding reputable Houndadore breeders and sources - Houndadore - The Perfect Blend Of Hound and Labradore","datePublished":"2023-07-01T00:32:21-06:00","dateModified":"2023-07-01T00:32:21-06:00","articleSection":"About","author":{"@id":"/author/houndadore_2050/","name":"Houndadore_2050"},"publisher":{"@id":"/#person"},"description":"&quot;Discover the perfect Houndadore companion with trusted breeders and reliable sources.&quot;","name":"Finding reputable Houndadore breeders and sources - Houndadore - The Perfect Blend Of Hound and Labradore","@id":"/about/finding-reputable-houndadore-breeders-and-sources/#richSnippet","isPartOf":{"@id":"/about/finding-reputable-houndadore-breeders-and-sources/#webpage"},"inLanguage":"en-US","mainEntityOfPage":{"@id":"/about/finding-reputable-houndadore-breeders-and-sources/#webpage"}}]}</script>
+<!-- /Rank Math WordPress SEO plugin -->
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="alternate" type="application/rss+xml" title="Houndadore - The Perfect Blend Of Hound and Labradore &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="Houndadore - The Perfect Blend Of Hound and Labradore &raquo; Comments Feed" href="/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Houndadore - The Perfect Blend Of Hound and Labradore &raquo; Finding reputable Houndadore breeders and sources Comments Feed" href="/about/finding-reputable-houndadore-breeders-and-sources/feed/">
+<script>
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.3.1"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🫱🏻‍🫲🏿","🫱🏻​🫲🏿")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<style>img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+	<link rel="stylesheet" id="dashicons-css" href="/wp-includes/css/dashicons.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="admin-bar-css" href="/wp-includes/css/admin-bar.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="bp-login-form-block-css" href="/wp-content/plugins/buddypress/bp-core/css/blocks/login-form.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-member-block-css" href="/wp-content/plugins/buddypress/bp-members/css/blocks/member.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-members-block-css" href="/wp-content/plugins/buddypress/bp-members/css/blocks/members.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-dynamic-members-block-css" href="/wp-content/plugins/buddypress/bp-members/css/blocks/dynamic-members.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-latest-activities-block-css" href="/wp-content/plugins/buddypress/bp-activity/css/blocks/latest-activities.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-friends-block-css" href="/wp-content/plugins/buddypress/bp-friends/css/blocks/friends.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-group-block-css" href="/wp-content/plugins/buddypress/bp-groups/css/blocks/group.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-groups-block-css" href="/wp-content/plugins/buddypress/bp-groups/css/blocks/groups.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-dynamic-groups-block-css" href="/wp-content/plugins/buddypress/bp-groups/css/blocks/dynamic-groups.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-sitewide-notices-block-css" href="/wp-content/plugins/buddypress/bp-messages/css/blocks/sitewide-notices.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="embedpress_blocks-cgb-style-css-css" href="/wp-content/plugins/embedpress/Gutenberg/dist/blocks.style.build.css?ver=1695326741" media="all">
+<link rel="stylesheet" id="wp-components-css" href="/wp-includes/css/dist/components/style.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="wp-block-editor-css" href="/wp-includes/css/dist/block-editor/style.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="wp-reusable-blocks-css" href="/wp-includes/css/dist/reusable-blocks/style.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="wp-editor-css" href="/wp-includes/css/dist/editor/style.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="embedpress_pro-cgb-style-css-css" href="/wp-content/plugins/embedpress-pro/Gutenberg/dist/blocks.style.build.css" media="all">
+<style id="classic-theme-styles-inline-css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="wp-ai-content-generator-css" href="/wp-content/plugins/gpt3-ai-content-generator-premium/public/css/wp-ai-content-generator-public.css?ver=1.7.71" media="all">
+<link rel="stylesheet" id="automaticcss-core-css" href="/wp-content/uploads/automatic-css/automatic.css?ver=1690958891" media="all">
+<link rel="stylesheet" id="bp-admin-bar-css" href="/wp-content/plugins/buddypress/bp-core/css/admin-bar.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-nouveau-css" href="/wp-content/plugins/buddypress/bp-templates/bp-nouveau/css/buddypress.min.css?ver=11.3.1" media="screen">
+<link rel="stylesheet" id="embedpress-css" href="/wp-content/plugins/embedpress/assets/css/embedpress.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="bricks-frontend-css" href="/wp-content/themes/bricks/assets/css/frontend.min.css?ver=1695510514" media="all">
+<style id="bricks-frontend-inline-css">:root {    --x-toc-type: decimal;    --x-toc-typetwo: decimal;    --x-toc-typethree: decimal;    --x-toc-typefour: decimal;    --x-toc-typefive: decimal;    --x-toc-duration: 300ms;    --x-toc-suffix: '';    --x-toc-seperator: '.';}.brxe-xtableofcontents {    width: 100%;    overflow: hidden;}[data-x-toc] {    position: relative;}.x-toc_header {    display: flex;    align-items: center;    flex-direction: row;    justify-content: space-between;    padding: 10px;    cursor: pointer;      line-height: 1;}  .x-toc_header-icon {    font-size: .8em;}.x-toc_header-icon i {    transition: transform 0.4s ease;}.x-toc_header[aria-expanded=true] .x-toc_header-icon i {    transform: rotateX(180deg);}.brxe-xtableofcontents ::marker {    content: none;    display: none;}.brxe-xtableofcontents > .x-toc_list {    overflow: hidden;    position: relative;}.brxe-xtableofcontents > .x-toc_list li {    list-style: none;   }.x-toc_list .x-toc_list {    padding-left: 10px;}.x-toc_list-item {    -webkit-column-break-inside: avoid;    -moz-column-break-inside: avoid;    break-inside: avoid; }a.x-toc_link {    color: currentColor;    height: 100%;    padding: 0 10px;    display: block;}.x-toc_collapsible {    max-height: 1000px;    overflow: hidden;    transition: all 300ms ease-in-out;}.x-toc_collapsed {    max-height: 0;}.x-toc_position-fixed {    position: fixed !important;    top: 0;}.x-toc_active-link {    font-weight: 700;}.brxe-xtableofcontents[data-x-toc*=border] .x-toc_link::before {    background-color: #eee;    content: " ";    display: inline-block;    height: inherit;    left: 0;    margin-top: -1px;    position: absolute;    width: 2px;}.brxe-xtableofcontents[data-x-toc*=border] .x-toc_active-link::before {    background-color: #54bc4b;}.x-toc_list {    margin: 0;    padding: 0;    list-style-type: none;    list-style-position: inside;    counter-reset: x_toc_items; }.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_link:before {    content: counters(x_toc_items,'', var(--x-toc-type)) '' var(--x-toc-suffix) ' ';}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_link:before {    content: counter(x_toc_items, var(--x-toc-type)) '' var(--x-toc-seperator) '' counter(x_toc_itemstwo, var(--x-toc-typetwo)) '' var(--x-toc-suffix) ' ';}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_list .x-toc_link:before {    content: counter(x_toc_items, var(--x-toc-type)) '' var(--x-toc-seperator) '' counter(x_toc_itemstwo, var(--x-toc-typetwo)) '' var(--x-toc-seperator) '' counter(x_toc_itemsthree, var(--x-toc-typethree)) '' var(--x-toc-suffix) ' ';}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_list .x-toc_list .x-toc_link:before {    content: counter(x_toc_items, var(--x-toc-type)) '' var(--x-toc-seperator) '' counter(x_toc_itemstwo, var(--x-toc-typetwo)) '' var(--x-toc-seperator) '' counter(x_toc_itemsthree, var(--x-toc-typethree)) '' var(--x-toc-seperator) '' counter(x_toc_items, var(--x-toc-typefour)) '' var(--x-toc-suffix) ' ';}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list {    counter-reset: x_toc_itemstwo;}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_list {    counter-reset: x_toc_itemsthree;}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_list .x-toc_list {    counter-reset: x_toc_itemsfour;}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list-item {    counter-increment: x_toc_items;}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_list-item {    counter-increment: x_toc_itemstwo;}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_list .x-toc_list-item {    counter-increment: x_toc_itemsthree;}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_list .x-toc_list .x-toc_list-item {    counter-increment: x_toc_itemsfour;}.brxe-xtableofcontents[data-x-toc*=counter][data-x-toc*=nestCounters] .x-toc_link:before {    content: counters(x_toc_items,'', var(--x-toc-type)) '' var(--x-toc-suffix) ' ';}.brxe-xtableofcontents[data-x-toc*=counter][data-x-toc*=nestCounters] .x-toc_list .x-toc_list .x-toc_link:before {    content: counter(x_toc_itemstwo, var(--x-toc-typetwo)) '' var(--x-toc-suffix) ' ';}.brxe-xtableofcontents[data-x-toc*=counter][data-x-toc*=nestCounters] .x-toc_list .x-toc_list .x-toc_list .x-toc_link:before {    content: counter(x_toc_itemsthree, var(--x-toc-typethree)) '' var(--x-toc-suffix) ' ';}.brxe-xtableofcontents[data-x-toc*=counter][data-x-toc*=nestCounters] .x-toc_list .x-toc_list .x-toc_list .x-toc_list .x-toc_link:before {    content: counter(x_toc_itemsfour, var(--x-toc-typefour)) '' var(--x-toc-suffix) ' ';}[data-x-toc-content] h1[tabindex]:focus,[data-x-toc-content] h2[tabindex]:focus,[data-x-toc-content] h3[tabindex]:focus,[data-x-toc-content] h4[tabindex]:focus,[data-x-toc-content] h5[tabindex]:focus,[data-x-toc-content] h6[tabindex]:focus {    outline: none;}.x-toc_body {    --x-toc-close-true: none;    --x-toc-close-false: flex;    display: var(--x-toc-close)}
+
+			#brx-header {
+				--x-header-transition: 0;
+				--x-header-fade-transition: 0;
+			}
+
+			#brx-header.x-header_sticky-active {
+				z-index: 999;
+			}</style>
+<link rel="stylesheet" id="bricks-font-awesome-css" href="/wp-content/themes/bricks/assets/css/libs/font-awesome.min.css?ver=1695510514" media="all">
+<link rel="stylesheet" id="bricks-ionicons-css" href="/wp-content/themes/bricks/assets/css/libs/ionicons.min.css?ver=1695510514" media="all">
+<link rel="stylesheet" id="bricks-themify-icons-css" href="/wp-content/themes/bricks/assets/css/libs/themify-icons.min.css?ver=1695510514" media="all">
+<link rel="stylesheet" id="automaticcss-bricks-css" href="/wp-content/uploads/automatic-css/automatic-bricks.css?ver=1690958892" media="all">
+<style id="bricks-frontend-inline-inline-css">/* COLOR VARS */
+:root {
+--bricks-color-41d5a9: #f5f5f5;
+--bricks-color-99c887: #e0e0e0;
+--bricks-color-46e566: #9e9e9e;
+--bricks-color-733d27: #616161;
+--bricks-color-366073: #424242;
+--bricks-color-da83d8: #212121;
+--bricks-color-e13943: #ffeb3b;
+--bricks-color-532f05: #ffc107;
+--bricks-color-02cdaf: #ff9800;
+--bricks-color-27368d: #ff5722;
+--bricks-color-9a6966: #f44336;
+--bricks-color-ff9397: #9c27b0;
+--bricks-color-eeb003: #2196f3;
+--bricks-color-07d926: #03a9f4;
+--bricks-color-dd2228: #81D4FA;
+--bricks-color-81c7f1: #4caf50;
+--bricks-color-2147aa: #8bc34a;
+--bricks-color-97f143: #cddc39;
+--bricks-color-zagbnv: #f9e35e;
+--bricks-color-vipnmf: rgba(196, 232, 247, 0.62);
+--bricks-color-wvvhuc: #d8d2ca;
+--bricks-color-acss_import_transparent: transparent;
+}
+
+/* GLOBAL CLASSES CSS */
+
+/* BREAKPOINT: Desktop (BASE) */
+.post-content.brxe-section {padding-top: 35px; padding-right: 20px; padding-left: 20px}
+
+
+/* HEADER CSS (ID: 28) */
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-fukllx {width: 80%}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-fukllx {width: 100%}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-mwbyjd {width: 25%}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-mwbyjd {width: 50%}
+}
+@media (max-width: 767px) {
+#brxe-ajfwhw .bricks-nav-menu-wrapper { display: none; }
+#brxe-ajfwhw .bricks-mobile-menu-toggle { display: block; }
+}
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-ajfwhw {font-family: "Roboto"; text-transform: capitalize; font-weight: 700; font-size: 16px; color: #ffffff}
+#brxe-ajfwhw .bricks-nav-menu > li > a {color: var(--danger); text-transform: capitalize; font-family: "Poppins"; font-weight: 700; font-size: 1.25em}
+#brxe-ajfwhw .bricks-nav-menu > li > .brx-submenu-toggle > * {color: var(--danger); text-transform: capitalize; font-family: "Poppins"; font-weight: 700; font-size: 1.25em}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-ajfwhw .bricks-mobile-menu-toggle {color: var(--bricks-color-9a6966)}
+#brxe-ajfwhw.show-mobile-menu .bricks-mobile-menu-toggle {color: var(--bricks-color-9a6966) !important}
+#brxe-ajfwhw {align-self: flex-end}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-togjjs {width: 50%; flex-direction: row; column-gap: 30px; justify-content: center}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-togjjs {width: 50%; justify-content: flex-end}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-qpglvf {font-size: 20px; background-color: var(--bricks-color-9a6966); padding-top: 9px; padding-right: 13px; padding-bottom: 9px; padding-left: 13px; border-radius: 50px; color: #ffffff; fill: #ffffff}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-qpglvf {display: none}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-zturax {font-size: 18px; background-color: var(--bricks-color-9a6966); padding-top: 10px; padding-right: 9px; padding-bottom: 9px; padding-left: 10px; border-radius: 50px; color: #ffffff; fill: #ffffff}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-zturax {display: none}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-mxxbuo {font-size: 18px; background-color: var(--bricks-color-9a6966); padding-top: 10px; padding-right: 11px; padding-bottom: 10px; padding-left: 11px; border-radius: 50px; color: #ffffff; fill: #ffffff}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-mxxbuo {display: none}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-eulzai {font-size: 18px; background-color: var(--bricks-color-9a6966); padding-top: 10px; padding-right: 9px; padding-bottom: 10px; padding-left: 9px; border-radius: 50px; color: #ffffff; fill: #ffffff}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-eulzai {display: none}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-onwkos {width: 25%; flex-direction: row; column-gap: 10px; justify-content: flex-end}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-onwkos {width: 50%}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-gxgllw {flex-direction: row; align-items: center}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-gbfmvp {padding-top: 20px; padding-bottom: 20px; background-color: #000000}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-gbfmvp {padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px; top: 0px; z-index: 1; position: sticky}
+}
+
+/* CONTENT CSS (ID: 1024) */
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-wdjlqy {color: #ffffff; text-align: center; font-family: "Poppins"; font-weight: 700}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-dctapm {color: #ffffff; font-family: "Poppins"; font-weight: 600; padding-top: 10px; padding-bottom: 10px}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-tvhypf {color: #ffffff; font-family: "Poppins"; font-weight: 500}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-ugqukz {text-align: center; flex-direction: column; align-self: center !important; align-items: center; width: 100%; padding-right: 50px; padding-left: 50px; background-attachment: fixed; background-position: center center; background-repeat: no-repeat; background-size: cover}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-gvwqnf {padding-top: 9vw; padding-bottom: 3vw; background-attachment: fixed; background-position: center center; background-repeat: no-repeat; background-size: cover; position: relative}
+:where(#brxe-gvwqnf > *) {position: relative}
+#brxe-gvwqnf::before {background-image: linear-gradient(rgba(33, 33, 33, 0.38), rgba(33, 33, 33, 0.38)); position: absolute; content: ""; top: 0; right: 0; bottom: 0; left: 0; pointer-events: none}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-cdjpkl {margin-top: 25px; margin-bottom: 25px}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-dngkka {color: #000000; font-size: 18px; font-family: "Poppins"; font-weight: 600; text-align: left; align-self: center; margin-top: 3vw}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-kofzsc {position: static; top: 25%; display: flex; flex-direction: row; gap: 5px; align-self: center; align-items: center}
+#brxe-kofzsc li {margin-top: 10px}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-izjvkr {margin-top: 20px}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-skjruf {width: 100%; align-items: flex-start}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-wfrprg input[type=search]::placeholder {color: #000000}
+#brxe-wfrprg input[type=search] {border-color: #000000}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-gugwak .x-toc_header {color: #000000; font-family: "Poppins"; font-weight: 500}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-amoawz {color: #000000; font-size: 24px; font-family: "Poppins"; font-weight: 600; text-align: center; position: relative; align-self: center; margin-top: 15px; margin-bottom: 15px}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-ueaixc .repeater-item [data-field-id="5c6fed"] {margin-top: 10px}
+#brxe-ueaixc {grid-template-columns: repeat(1, 1fr); grid-auto-flow: unset}
+#brxe-ueaixc li {color: #000000; font-family: "Poppins"; font-size: .75em; padding-bottom: 50px; box-shadow: 5px 5px 1px 0 var(--bricks-color-9a6966)}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-hwsqci {width: 25%; flex-direction: column; align-self: flex-start !important; align-items: center; padding-left: 35px}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-jtuphi {flex-direction: row; padding-bottom: 25px; column-gap: 30px}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-tzozql {padding-bottom: 35px}
+
+
+/* FOOTER CSS (ID: 31) */
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-rpisls {width: 43%}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-eaxztd {color: #ffffff; font-family: "Roboto"; margin-top: 20px}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-eaxztd {text-align: center}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-xpelqb {width: 50%}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-xpelqb {width: 100%; margin-top: 40px; align-items: center}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-rakvig {color: #ffffff; font-family: "Roboto"}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-hdxtls .icon i {font-size: 20px}
+#brxe-hdxtls .icon {align-self: center; color: var(--bricks-color-9a6966)}
+#brxe-hdxtls {gap: 10px; flex-direction: row; margin-top: 20px}
+#brxe-hdxtls .icon a {color: var(--bricks-color-9a6966)}
+#brxe-hdxtls .content {color: #ffffff; font-family: "Roboto"}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-mqefoe .icon i {font-size: 20px}
+#brxe-mqefoe .icon {align-self: center; color: var(--bricks-color-9a6966)}
+#brxe-mqefoe {gap: 10px; flex-direction: row; margin-top: 7px}
+#brxe-mqefoe .icon a {color: var(--bricks-color-9a6966)}
+#brxe-mqefoe .content {color: #ffffff; font-family: "Roboto"}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-vrahhh .icon i {font-size: 20px}
+#brxe-vrahhh .icon {align-self: center; color: var(--bricks-color-9a6966)}
+#brxe-vrahhh {gap: 10px; flex-direction: row; margin-top: 7px}
+#brxe-vrahhh .icon a {color: var(--bricks-color-9a6966)}
+#brxe-vrahhh .content {color: #ffffff; font-family: "Roboto"}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-xuqyxc {width: 25%}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-xuqyxc {width: 100%; margin-top: 40px; align-items: center}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-lgqfds {color: #ffffff; font-family: "Roboto"}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-eecmvu {margin-top: 20px; color: #ffffff; font-family: "Roboto"; text-transform: capitalize; font-weight: 500}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-ztmoaz {margin-top: 6px; color: #ffffff; font-family: "Roboto"; text-transform: capitalize; font-weight: 500}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-dcnagm {margin-top: 6px; color: #ffffff; font-family: "Roboto"; text-transform: capitalize; font-weight: 500}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-luqjcj {margin-top: 6px; color: #ffffff; font-family: "Roboto"; text-transform: capitalize; font-weight: 500}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-jvfmyb {width: 25%; padding-bottom: 40px}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-jvfmyb {width: 100%; margin-top: 40px; align-items: center}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-lwvhbf {flex-direction: row; column-gap: 50px; border-bottom: 2px solid #ffffff}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-joihqv {font-size: 17px}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-joihqv {text-align: center}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-nitblx {margin-top: 20px; margin-bottom: 20px; align-items: flex-end; color: #ffffff; font-family: "Roboto"; text-transform: capitalize}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-tseoqd {background-color: #323232; padding-top: 5vw}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-tseoqd {padding-right: 20px; padding-left: 20px}
+}</style>
+<link rel="stylesheet" id="bricks-google-fonts-css" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&#038;display=swap&#038;family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&#038;display=swap" media="all">
+<link rel="stylesheet" id="plyr-css" href="/wp-content/plugins/embedpress/assets/css/plyr.css?ver=6.3.1" media="all">
+<script src="/wp-includes/js/jquery/jquery.min.js?ver=3.7.0" id="jquery-core-js"></script>
+<script src="/wp-content/plugins/gpt3-ai-content-generator-premium/public/js/wp-ai-content-generator-public.js?ver=1.7.71" id="wp-ai-content-generator-js"></script>
+<script src="/wp-content/plugins/buddypress/bp-core/js/widget-members.min.js?ver=11.3.1" id="bp-widget-members-js"></script>
+<script src="/wp-content/plugins/buddypress/bp-core/js/jquery-query.min.js?ver=11.3.1" id="bp-jquery-query-js"></script>
+<script src="/wp-content/plugins/buddypress/bp-core/js/vendor/jquery-cookie.min.js?ver=11.3.1" id="bp-jquery-cookie-js"></script>
+<script src="/wp-content/plugins/buddypress/bp-core/js/vendor/jquery-scroll-to.min.js?ver=11.3.1" id="bp-jquery-scroll-to-js"></script>
+<script src="/wp-content/plugins/embedpress/assets/js/plyr.polyfilled.js?ver=1" id="plyr.polyfilled-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/1024">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.3.1">
+<link rel="shortlink" href="/?p=1024">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Fabout%2Ffinding-reputable-houndadore-breeders-and-sources%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Fabout%2Ffinding-reputable-houndadore-breeders-and-sources%2F#038;format=xml">
+
+	<script type="text/javascript">var ajaxurl = '/wp-admin/admin-ajax.php';</script>
+
+<style media="print">#wpadminbar { display:none; }</style>
+	<style media="screen">html { margin-top: 32px !important; }
+	@media screen and ( max-width: 782px ) {
+		html { margin-top: 46px !important; }
+	}</style>
+	<link rel="icon" href="/wp-content/uploads/2023/03/Dog-Training-Favicon-150x150.png" sizes="32x32">
+<link rel="icon" href="/wp-content/uploads/2023/03/Dog-Training-Favicon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/wp-content/uploads/2023/03/Dog-Training-Favicon.png">
+<meta name="msapplication-TileImage" content="/wp-content/uploads/2023/03/Dog-Training-Favicon.png">
+		<style id="wp-custom-css">@media screen and (min-width: 375px) {
+body.bricks-is-frontend.admin-bar #brx-header.sticky {
+	top: 0px !important
+}
+}
+
+#brxe-fuxnba .bricks-pagination ul {
+    justify-content: center;
+    gap: 40px;
+    margin-top: 60px;
+}</style>
+		
+<!-- Facebook Open Graph (by Bricks) -->
+<meta property="og:url" content="/about/finding-reputable-houndadore-breeders-and-sources/">
+<meta property="og:site_name" content="Houndadore - The Perfect Blend Of Hound and Labradore">
+<meta property="og:title" content="Finding reputable Houndadore breeders and sources">
+<meta property="og:description" content="&#8220;Discover the perfect Houndadore companion with trusted breeders and reliable sources.&#8221; Finding reputable Houndadore breeders and sources can be a crucial step in ensuring the health and well-being of your future pet. It is important to conduct thorough research and consider various factors before making a decision. This introduction will provide you with a brief [&hellip;]">
+<meta property="og:type" content="article">
+</head>
+
+<body class="bp-nouveau post-template-default single single-post postid-1024 single-format-standard admin-bar no-customize-support brx-body bricks-is-frontend wp-embed-responsive no-js">		<a class="skip-link" href="#brx-content" aria-label="Skip to main content">Skip to main content</a>
+
+					<a class="skip-link" href="#brx-footer" aria-label="Skip to footer">Skip to footer</a>
+			<header id="brx-header" class="sticky on-scroll" data-x-overlay="none"><section id="brxe-gbfmvp" class="brxe-section"><div id="brxe-gxgllw" class="brxe-container">
+<div id="brxe-mwbyjd" class="brxe-block"><img width="300" height="75" src="/wp-content/uploads/2023/03/Houndadore-2-White.png" class="brxe-image css-filter size-full" alt="Houndadore" decoding="async" id="brxe-fukllx"></div>
+<div id="brxe-togjjs" class="brxe-block"><div id="brxe-ajfwhw" data-script-id="ajfwhw" class="brxe-nav-menu">
+<nav class="bricks-nav-menu-wrapper mobile_landscape"><ul id="menu-main-menu" class="bricks-nav-menu">
+<li id="menu-item-821" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-821 bricks-menu-item"><a href="/">Home</a></li>
+<li id="menu-item-822" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-822 bricks-menu-item"><a href="#">About</a></li>
+<li id="menu-item-823" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-823 bricks-menu-item"><a href="/blog/">Blog</a></li>
+<li id="menu-item-824" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-824 bricks-menu-item"><a href="#">Gallery</a></li>
+<li id="menu-item-825" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-825 bricks-menu-item"><a href="#">Contact</a></li>
+</ul></nav>			<button class="bricks-mobile-menu-toggle" aria-haspopup="true" aria-label="Mobile menu" aria-expanded="false">
+				<span class="bar-top"></span>
+				<span class="bar-center"></span>
+				<span class="bar-bottom"></span>
+			</button>
+			<nav class="bricks-mobile-menu-wrapper left"><ul id="menu-main-menu-1" class="bricks-mobile-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-821 bricks-menu-item"><a href="/">Home</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-822 bricks-menu-item"><a href="#">About</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-823 bricks-menu-item"><a href="/blog/">Blog</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-824 bricks-menu-item"><a href="#">Gallery</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-825 bricks-menu-item"><a href="#">Contact</a></li>
+</ul></nav><div class="bricks-mobile-menu-overlay"></div>
+</div></div>
+<div id="brxe-onwkos" class="brxe-block">
+<a href="https://www.facebook.com/houndadore" target="_blank"><i id="brxe-qpglvf" class="brxe-icon fab fa-facebook-f"></i></a><i id="brxe-zturax" class="brxe-icon fab fa-twitter"></i><i id="brxe-mxxbuo" class="brxe-icon fab fa-linkedin-in"></i><i id="brxe-eulzai" class="brxe-icon fab fa-youtube"></i>
+</div>
+</div></section></header><main id="brx-content"><section id="brxe-gvwqnf" class="brxe-section"><div id="brxe-ugqukz" class="brxe-container">
+<h1 id="brxe-wdjlqy" class="brxe-post-title">Finding reputable Houndadore breeders and sources</h1>
+<div id="brxe-dctapm" class="brxe-shortcode"><nav aria-label="breadcrumbs" class="rank-math-breadcrumb"><p><a href="/">Home</a><span class="separator"> - </span><a href="/category/about/">About</a><span class="separator"> - </span><span class="last">Finding reputable Houndadore breeders and sources</span></p></nav></div>
+<div id="brxe-tvhypf" class="brxe-post-meta post-meta">
+<span class="item">July 1, 2023</span><span class="item">0 comments</span>
+</div>
+</div></section><section id="brxe-tzozql" class="brxe-section post-content"><div id="brxe-jtuphi" class="brxe-container">
+<div id="brxe-skjruf" class="brxe-block">
+<div id="brxe-hbkqvb" class="brxe-post-content">
+<p>&#8220;Discover the perfect Houndadore companion with trusted breeders and reliable sources.&#8221;</p>
+<p>Finding reputable Houndadore breeders and sources can be a crucial step in ensuring the health and well-being of your future pet. It is important to conduct thorough research and consider various factors before making a decision. This introduction will provide you with a brief overview of the process involved in finding reputable Houndadore breeders and sources.</p>
+<h2 id="the-importance-of-finding-reputable-houndadore-breeders-dLGIekHoyv">The Importance of Finding Reputable Houndadore Breeders</h2>
+<p>Finding reputable Houndadore breeders and sources is of utmost importance when considering adding this unique and lovable breed to your family. The Houndadore, a cross between a Labrador Retriever and a Bloodhound, is a wonderful companion known for its intelligence, loyalty, and gentle nature. However, due to their increasing popularity, it is crucial to ensure that you are obtaining your Houndadore from a reputable breeder or source.</p>
+<p>One of the main reasons for seeking out reputable Houndadore breeders is to ensure the health and well-being of your future pet. Reputable breeders prioritize the health of their dogs and take necessary steps to prevent genetic diseases and other health issues. They conduct thorough health screenings and genetic testing on their breeding dogs to ensure that they are not passing on any hereditary conditions to their offspring. By obtaining a Houndadore from a reputable breeder, you can have peace of mind knowing that your new furry friend is less likely to develop health problems later in life.</p>
+<p>Another advantage of finding reputable Houndadore breeders is the assurance of a well-socialized and temperamentally sound puppy. Reputable breeders invest time and effort into socializing their puppies from an early age, exposing them to various stimuli and experiences. This early socialization helps the puppies develop into confident and well-adjusted adults. Additionally, reputable breeders carefully select their breeding dogs based on temperament, ensuring that their puppies inherit desirable traits such as friendliness, trainability, and adaptability. By choosing a Houndadore from a reputable breeder, you increase the likelihood of bringing home a well-rounded and easy-to-train companion.</p>
+<p>Furthermore, reputable breeders provide ongoing support and guidance to their puppy buyers. They are a valuable resource for information on training, nutrition, and general care. Reputable breeders genuinely care about the well-being of their puppies even after they leave their care and are always available to answer any questions or concerns that may arise. This support system can be invaluable, especially for first-time dog owners or those unfamiliar with the Houndadore breed.</p>
+<p>When searching for reputable Houndadore breeders, it is essential to do thorough research. Start by seeking recommendations from trusted sources such as local veterinarians, breed clubs, or other Houndadore owners. These individuals can provide insights into reputable breeders in your area or direct you to reliable sources. Additionally, reputable breeders often have a strong online presence, including websites and social media platforms, where they showcase their breeding program, provide information about their dogs, and share testimonials from satisfied puppy buyers. Take the time to carefully review these online resources, paying attention to the breeder&#8217;s reputation, the condition of their dogs, and the overall professionalism of their operation.</p>
+<p>It is also crucial to visit the breeder in person before making any commitments. This allows you to assess the living conditions of the dogs, observe their behavior, and interact with the breeder directly. Reputable breeders will be open and transparent, willingly answering any questions you may have and providing documentation of health clearances and pedigrees. They will also allow you to meet the puppy&#8217;s parents, giving you a glimpse into the potential temperament and physical traits of your future pet.</p>
+<p>In conclusion, finding reputable Houndadore breeders and sources is vital for ensuring the health, temperament, and overall well-being of your new furry family member. Reputable breeders prioritize the health of their dogs, provide well-socialized puppies, and offer ongoing support to their puppy buyers. By conducting thorough research, seeking recommendations, and visiting breeders in person, you can make an informed decision and bring home a happy and healthy Houndadore that will bring joy to your life for years to come.</p>
+<h2 id="how-to-identify-a-reputable-houndadore-breeder-dLGIekHoyv">How to Identify a Reputable Houndadore Breeder</h2>
+<p>Finding reputable Houndadore breeders and sources can be a daunting task, especially with the rise of online platforms and classified ads. However, it is crucial to ensure that you are purchasing your Houndadore from a reputable breeder to avoid potential health and behavioral issues down the line. In this article, we will guide you through the process of identifying a reputable Houndadore breeder, providing you with the necessary knowledge to make an informed decision.</p>
+<p>One of the first steps in finding a reputable Houndadore breeder is to do thorough research. Start by seeking recommendations from trusted sources such as local veterinarians, breed clubs, or experienced Houndadore owners. These individuals can provide valuable insights and direct you towards breeders who have a solid reputation within the community.</p>
+<p>Once you have a list of potential breeders, it is essential to visit their facilities in person. A reputable breeder will be more than willing to show you around and answer any questions you may have. Pay close attention to the cleanliness and overall condition of the breeding area. A well-maintained and hygienic environment is indicative of a responsible breeder who prioritizes the health and well-being of their dogs.</p>
+<p>During your visit, observe the behavior of the dogs. Reputable breeders will have well-socialized and friendly Houndadores. They will allow you to interact with the puppies and their parents, giving you a chance to assess their temperament and overall health. If the breeder seems hesitant or reluctant to let you spend time with the dogs, it may be a red flag indicating potential issues.</p>
+<p>Another crucial aspect to consider when identifying a reputable Houndadore breeder is their commitment to health testing. Responsible breeders will conduct various health tests on their breeding dogs to ensure that they are free from genetic diseases commonly found in the Houndadore breed. Ask the breeder about the specific health tests they perform and request to see the results. A reputable breeder will be transparent and readily provide you with the necessary documentation.</p>
+<p>Furthermore, reputable breeders will have a thorough understanding of the Houndadore breed and its specific needs. They will be able to provide you with detailed information about the breed&#8217;s temperament, exercise requirements, and potential health issues. They will also be willing to offer guidance and support throughout the lifetime of your Houndadore, should you need it.</p>
+<p>When discussing the financial aspect of purchasing a Houndadore, reputable breeders will be upfront about the cost and any additional fees involved. They will provide you with a written contract that outlines the terms and conditions of the sale, including any health guarantees or return policies. Be wary of breeders who pressure you into making a quick decision or offer unusually low prices, as these may be signs of unethical breeding practices.</p>
+<p>In conclusion, finding reputable Houndadore breeders and sources requires thorough research and careful observation. By seeking recommendations, visiting breeders in person, and assessing their facilities, you can ensure that you are purchasing a healthy and well-socialized Houndadore from a responsible breeder. Remember to ask about health testing, breed knowledge, and the breeder&#8217;s commitment to supporting you throughout your Houndadore&#8217;s life. By following these guidelines, you can make an informed decision and bring home a loving and well-cared-for Houndadore.</p>
+<h2 id="questions-to-ask-houndadore-breeders-before-making-a-purchase-dLGIekHoyv">Questions to Ask Houndadore Breeders Before Making a Purchase</h2>
+<p>Finding reputable Houndadore breeders and sources is crucial when looking to add this unique and lovable breed to your family. With their friendly and loyal nature, Houndadores make excellent companions for individuals and families alike. However, it is important to ensure that you are purchasing your Houndadore from a reputable breeder to guarantee the health and well-being of your new furry friend. To help you in your search, here are some important questions to ask Houndadore breeders before making a purchase.</p>
+<p>First and foremost, it is essential to inquire about the breeder&#8217;s experience and expertise in breeding Houndadores. A reputable breeder will have a deep understanding of the breed, its characteristics, and potential health issues. They should be able to provide you with detailed information about the Houndadore&#8217;s lineage, including the health history of both parents. This information is crucial in ensuring that your new puppy comes from healthy and well-cared-for parents.</p>
+<p>Additionally, it is important to ask about the breeder&#8217;s breeding practices. Reputable breeders prioritize the health and well-being of their dogs above all else. They should be able to provide you with information about the living conditions of their dogs, including the size and cleanliness of their kennels. A responsible breeder will also be able to provide you with details about the socialization and training practices they employ to ensure that their puppies are well-adjusted and ready for their new homes.</p>
+<p>Another important question to ask is whether the breeder conducts health screenings on their breeding dogs. Houndadores, like any other breed, can be prone to certain health issues. A reputable breeder will have their breeding dogs screened for common genetic conditions, such as hip dysplasia and eye problems. By ensuring that the breeder takes these precautions, you can have peace of mind knowing that your new puppy is less likely to develop these hereditary conditions.</p>
+<p>Furthermore, it is crucial to inquire about the breeder&#8217;s vaccination and deworming protocols. A responsible breeder will have a clear plan in place to ensure that their puppies receive the necessary vaccinations and deworming treatments at the appropriate times. They should be able to provide you with documentation of these procedures, giving you confidence in the health and well-being of your new Houndadore.</p>
+<p>Lastly, it is important to ask the breeder about their policies regarding the return or exchange of a puppy. Reputable breeders genuinely care about the well-being of their puppies and will have policies in place to ensure that if, for any reason, you are unable to keep your Houndadore, they will take the puppy back or help you find a suitable home. This commitment to their puppies&#8217; lifelong well-being is a clear indication of a reputable breeder.</p>
+<p>In conclusion, finding reputable Houndadore breeders and sources is essential when looking to add this wonderful breed to your family. By asking the right questions, you can ensure that you are purchasing a healthy and well-cared-for puppy from a responsible breeder. Remember to inquire about the breeder&#8217;s experience, breeding practices, health screenings, vaccination protocols, and return policies. By doing so, you can embark on a journey with your new Houndadore knowing that you have made an informed and responsible decision.</p>
+<h2 id="red-flags-to-watch-out-for-when-choosing-a-houndadore-breeder-dLGIekHoyv">Red Flags to Watch Out for When Choosing a Houndadore Breeder</h2>
+<p>Finding reputable Houndadore breeders and sources is crucial when looking to add this popular mixed breed to your family. With their friendly and loyal nature, Houndadores make excellent companions for both individuals and families. However, it is important to be cautious and aware of red flags when choosing a breeder to ensure you are getting a healthy and well-bred puppy.</p>
+<p>One of the first red flags to watch out for is a breeder who does not allow you to visit their facility or meet the puppy&#8217;s parents. Reputable breeders take pride in their breeding program and are more than happy to show you where their dogs are raised. Meeting the parents can give you an idea of the temperament and health of the puppies you are considering.</p>
+<p>Another red flag is a breeder who has multiple litters available at the same time or breeds several different types of dogs. This could be a sign of a puppy mill or a breeder who prioritizes quantity over quality. Responsible breeders focus on one or two breeds and carefully plan their litters to ensure the health and well-being of their dogs.</p>
+<p>Breeders who do not provide health clearances for their breeding dogs should also be avoided. Health clearances, such as hip and elbow evaluations, eye exams, and genetic testing, help ensure that the puppies are less likely to inherit any genetic health issues. Reputable breeders will have these clearances readily available and willingly share them with potential buyers.</p>
+<p>A lack of proper documentation is another red flag to be aware of. A reputable breeder will provide you with a contract that outlines the terms of the sale, health guarantees, and any additional responsibilities. They will also provide you with the necessary paperwork, such as registration papers and vaccination records. If a breeder cannot provide these documents, it may indicate that they are not operating ethically.</p>
+<p>Be cautious of breeders who are not interested in your lifestyle or the type of home you can provide for their puppies. A responsible breeder wants to ensure that their puppies are going to loving and suitable homes. They will ask you questions about your experience with dogs, your living situation, and your plans for training and socializing the puppy. If a breeder seems more interested in making a sale than in finding the right home for their puppies, it is a red flag.</p>
+<p>Lastly, be wary of breeders who pressure you into making a quick decision or who have puppies available at all times of the year. Reputable breeders often have a waiting list for their puppies, and it may take some time before a suitable puppy becomes available. They prioritize the well-being of their dogs and will not rush the process just to make a sale.</p>
+<p>In conclusion, finding reputable Houndadore breeders and sources requires careful consideration and attention to red flags. By avoiding breeders who do not allow visits, have multiple litters available, lack health clearances, provide inadequate documentation, show disinterest in your lifestyle, or pressure you into a quick decision, you can ensure that you are getting a healthy and well-bred puppy. Remember, a responsible breeder&#8217;s priority is the well-being of their dogs and finding the right homes for their puppies.</p>
+<h2 id="the-benefits-of-adopting-a-houndadore-from-a-reputable-source-dLGIekHoyv">The Benefits of Adopting a Houndadore from a Reputable Source</h2>
+<p>Finding reputable Houndadore breeders and sources is crucial when considering adopting this unique and lovable breed. The Houndadore, a cross between a Labrador Retriever and a Bloodhound, is known for its friendly and loyal nature, making it an ideal addition to any family. However, it is essential to ensure that you adopt from a reputable source to guarantee the health and well-being of your new furry friend.</p>
+<p>One of the primary benefits of adopting a Houndadore from a reputable source is the assurance of a healthy and well-cared-for puppy. Reputable breeders prioritize the health and genetic soundness of their dogs, conducting thorough health screenings and genetic testing to ensure that their puppies are free from any hereditary diseases or conditions. By adopting from a reputable breeder, you can have peace of mind knowing that your Houndadore is less likely to develop health issues later in life.</p>
+<p>In addition to health considerations, reputable breeders also focus on the temperament and behavior of their Houndadore puppies. They carefully select breeding pairs with desirable traits, such as intelligence, trainability, and sociability. This attention to temperament ensures that your Houndadore will be a well-rounded and well-behaved companion, making the adoption process smoother and more enjoyable for both you and your new furry friend.</p>
+<p>Another advantage of adopting from a reputable source is the support and guidance you receive throughout the adoption process and beyond. Reputable breeders are committed to the well-being of their puppies and are always available to answer any questions or concerns you may have. They provide valuable advice on training, nutrition, and general care, ensuring that you have all the necessary information to provide a loving and nurturing environment for your Houndadore.</p>
+<p>Furthermore, reputable breeders often have a thorough screening process for potential adopters. This screening process ensures that their puppies are placed in suitable and responsible homes. By adopting from a reputable source, you are more likely to receive a Houndadore that is a good fit for your lifestyle and family dynamics. This careful matching process increases the chances of a successful and long-lasting adoption, minimizing the risk of the dog being returned or rehomed in the future.</p>
+<p>When searching for reputable Houndadore breeders and sources, it is essential to do your research. Look for breeders who are registered with reputable kennel clubs or breed associations, as this indicates their commitment to upholding breed standards and ethical breeding practices. Additionally, read reviews and testimonials from previous adopters to get a sense of their experiences and the quality of the puppies they received.</p>
+<p>Avoid sources that prioritize profit over the well-being of their dogs. Puppy mills and backyard breeders often prioritize quantity over quality, leading to poorly bred and unhealthy puppies. By adopting from these sources, you not only risk the health and happiness of your Houndadore but also contribute to the perpetuation of unethical breeding practices.</p>
+<p>In conclusion, adopting a Houndadore from a reputable source offers numerous benefits. From the assurance of a healthy and well-tempered puppy to ongoing support and guidance, reputable breeders prioritize the well-being of their dogs and the satisfaction of their adopters. By doing thorough research and avoiding questionable sources, you can find a reputable Houndadore breeder or source that will provide you with a loving and loyal companion for years to come.</p>
+<h2 id="understanding-the-difference-between-responsible-and-irresponsible-houndadore-breeders-dLGIekHoyv">Understanding the Difference Between Responsible and Irresponsible Houndadore Breeders</h2>
+<p>Finding reputable Houndadore breeders and sources is crucial when looking to add this popular mixed breed to your family. With their friendly and loyal nature, Houndadores make excellent companions for both individuals and families. However, it is important to understand the difference between responsible and irresponsible breeders to ensure you are getting a healthy and well-cared-for puppy.</p>
+<p>Responsible Houndadore breeders prioritize the health and well-being of their dogs above all else. They carefully select breeding pairs based on their temperament, health, and genetic history. These breeders conduct thorough health screenings and genetic testing to minimize the risk of passing on hereditary diseases or conditions to the puppies. They also provide proper veterinary care, including vaccinations and regular check-ups, to ensure the puppies are in optimal health before they go to their new homes.</p>
+<p>In addition to health considerations, responsible breeders also focus on the socialization and training of their puppies. They provide a nurturing environment where the puppies are exposed to various stimuli, such as different sounds, people, and other animals. This early socialization helps the puppies develop into well-adjusted and confident dogs. Responsible breeders also start basic training with their puppies, teaching them essential commands and manners.</p>
+<p>Irresponsible Houndadore breeders, on the other hand, prioritize profit over the well-being of their dogs. They may breed without considering the health or temperament of the parent dogs, leading to puppies with potential health issues or behavioral problems. These breeders often do not conduct proper health screenings or genetic testing, increasing the risk of passing on hereditary diseases to the puppies.</p>
+<p>Furthermore, irresponsible breeders may keep their dogs in unsanitary or overcrowded conditions, neglecting their basic needs for proper nutrition, exercise, and veterinary care. This lack of care can result in puppies with compromised immune systems or other health problems. These breeders may also lack knowledge or interest in socializing and training the puppies, leading to dogs with behavioral issues or anxiety.</p>
+<p>To find reputable Houndadore breeders, it is essential to do thorough research. Start by asking for recommendations from trusted sources, such as local veterinarians, breed clubs, or other Houndadore owners. These individuals can provide valuable insights into breeders who prioritize the health and well-being of their dogs.</p>
+<p>When contacting breeders, ask about their breeding practices, health screenings, and genetic testing. Reputable breeders will be transparent and willing to provide documentation to support their claims. They will also be open to answering any questions you may have and may even ask you questions to ensure you are a suitable owner for one of their puppies.</p>
+<p>Visiting the breeder&#8217;s facility is also crucial. Take note of the living conditions of the dogs and puppies. A reputable breeder will have clean and well-maintained facilities, with dogs that appear healthy and well-cared-for. They will also allow you to interact with the parent dogs and puppies, giving you a chance to assess their temperament and socialization.</p>
+<p>In conclusion, finding reputable Houndadore breeders and sources is essential to ensure you bring home a healthy and well-adjusted puppy. Responsible breeders prioritize the health, temperament, and socialization of their dogs, while irresponsible breeders focus on profit rather than the well-being of their animals. By doing thorough research, asking the right questions, and visiting the breeder&#8217;s facility, you can make an informed decision and find a reputable breeder who will provide you with a loving and healthy Houndadore puppy.</p>
+<h2 id="tips-for-researching-and-finding-reputable-houndadore-breeders-dLGIekHoyv">Tips for Researching and Finding Reputable Houndadore Breeders</h2>
+<p>Finding reputable Houndadore breeders and sources can be a daunting task, especially for those who are new to the world of dog ownership. With so many options available, it is important to do thorough research to ensure that you are getting a healthy and well-bred Houndadore puppy. In this article, we will provide you with some tips on how to research and find reputable Houndadore breeders.</p>
+<p>One of the first steps in finding a reputable Houndadore breeder is to do your homework. Start by researching the breed itself. Learn about their temperament, exercise needs, and any potential health issues that may be common in the breed. This will help you determine if a Houndadore is the right fit for your lifestyle and family.</p>
+<p>Once you have a good understanding of the breed, it is time to start looking for reputable breeders. One of the best places to start is by contacting local breed clubs or organizations. These groups often have a list of reputable breeders who adhere to strict breeding standards and ethics. They can provide you with valuable information and guidance in your search for a Houndadore puppy.</p>
+<p>Another great resource for finding reputable Houndadore breeders is online forums and communities dedicated to dog ownership. These forums are filled with experienced dog owners who can provide recommendations and share their experiences with different breeders. It is important to take these recommendations with a grain of salt and do your own research, but they can be a good starting point in your search.</p>
+<p>When researching breeders, it is important to ask the right questions. A reputable breeder will be more than happy to answer any questions you may have and provide you with information about their breeding program. Ask about the health testing they perform on their breeding dogs, as well as the socialization and training they provide to their puppies. A responsible breeder will prioritize the health and well-being of their dogs and will be transparent about their breeding practices.</p>
+<p>Visiting the breeder&#8217;s facility is also crucial in determining their reputation. A reputable breeder will welcome potential buyers to their facility and allow them to meet the parent dogs and see the living conditions of the puppies. Pay attention to the cleanliness and overall well-being of the dogs. If something seems off or if the breeder is hesitant to let you visit, it may be a red flag.</p>
+<p>Additionally, it is important to be patient in your search for a reputable Houndadore breeder. Good breeders often have waiting lists for their puppies, as they prioritize finding the right homes for their dogs. Avoid breeders who have multiple litters available at all times, as this may be a sign of a puppy mill or irresponsible breeding practices.</p>
+<p>In conclusion, finding reputable Houndadore breeders and sources requires thorough research and patience. Start by educating yourself about the breed and then reach out to local breed clubs and online communities for recommendations. When contacting breeders, ask the right questions and visit their facilities to ensure that they are responsible and ethical. By following these tips, you can increase your chances of finding a healthy and well-bred Houndadore puppy that will bring joy to your life for years to come.</p>
+<h2 id="the-role-of-health-testing-in-reputable-houndadore-breeding-dLGIekHoyv">The Role of Health Testing in Reputable Houndadore Breeding</h2>
+<p>The Houndadore, a crossbreed between a Labrador Retriever and a Bloodhound, has gained popularity among dog lovers in recent years. As with any breed, it is crucial to find reputable breeders and sources when looking to add a Houndadore to your family. One essential aspect of reputable breeding is health testing.</p>
+<p>Health testing plays a vital role in ensuring the overall well-being of the Houndadore breed. Reputable breeders understand the importance of testing their breeding dogs for various genetic and hereditary health conditions that may be prevalent in the parent breeds. By conducting these tests, breeders can identify potential health issues and make informed decisions about which dogs to breed.</p>
+<p>One common health condition that reputable Houndadore breeders test for is hip dysplasia. This condition, which affects the hip joints, can cause pain, lameness, and even arthritis in dogs. By screening their breeding dogs for hip dysplasia, breeders can reduce the risk of passing on this condition to their puppies. The Orthopedic Foundation for Animals (OFA) offers a hip evaluation program that provides reliable results and certifications for breeders to reference.</p>
+<p>Another health condition that reputable breeders test for is progressive retinal atrophy (PRA). PRA is a degenerative eye disease that can lead to blindness in dogs. By testing their breeding dogs for PRA, breeders can ensure that they are not passing on this condition to their puppies. The Canine Eye Registration Foundation (CERF) provides certifications for breeders who have their dogs tested for various eye conditions, including PRA.</p>
+<p>In addition to hip dysplasia and PRA, reputable Houndadore breeders also test for other genetic conditions that may be prevalent in the parent breeds. These tests may include DNA tests for specific genetic mutations or diseases, such as exercise-induced collapse (EIC) or von Willebrand&#8217;s disease (vWD). By conducting these tests, breeders can ensure that their puppies are not at risk of inheriting these conditions.</p>
+<p>When looking for a reputable Houndadore breeder, it is essential to ask about the health testing they perform on their breeding dogs. A reputable breeder will be transparent about the tests they conduct and provide certifications or documentation to support their claims. They will also be knowledgeable about the specific health conditions that may affect the Houndadore breed and take proactive measures to prevent them.</p>
+<p>It is worth noting that health testing is not a guarantee that a puppy will be free from all health issues. However, it significantly reduces the risk and increases the chances of getting a healthy and well-adjusted Houndadore. Reputable breeders prioritize the health and well-being of their dogs and strive to produce puppies that are free from genetic and hereditary health conditions.</p>
+<p>In conclusion, health testing plays a crucial role in reputable Houndadore breeding. By testing their breeding dogs for various genetic and hereditary health conditions, breeders can make informed decisions about which dogs to breed and reduce the risk of passing on these conditions to their puppies. When looking for a Houndadore, it is essential to find a reputable breeder who prioritizes health testing and can provide certifications or documentation to support their claims. By doing so, you can increase the chances of bringing home a healthy and happy Houndadore to join your family.</p>
+<h2 id="what-to-expect-from-a-reputable-houndadore-breeder-dLGIekHoyv">What to Expect from a Reputable Houndadore Breeder</h2>
+<p>Finding reputable Houndadore breeders and sources can be a daunting task, especially for those who are new to the world of dog ownership. However, with the right knowledge and guidance, you can ensure that you are getting a healthy and well-bred Houndadore puppy from a reputable breeder.</p>
+<p>One of the first things to consider when looking for a reputable Houndadore breeder is their reputation within the dog breeding community. A reputable breeder will have a solid reputation and will be well-known for producing healthy and well-socialized puppies. They will have a track record of breeding dogs with good temperaments and will be able to provide references from previous puppy buyers.</p>
+<p>Another important aspect to consider is the breeder&#8217;s commitment to the health and well-being of their dogs. Reputable breeders will conduct health tests on their breeding dogs to ensure that they are free from any genetic diseases or conditions that could be passed on to their puppies. They will also provide you with documentation of these health tests and will be transparent about any potential health issues that may be present in the breed.</p>
+<p>A reputable Houndadore breeder will also prioritize the socialization and early training of their puppies. They will expose the puppies to various stimuli and experiences from a young age, ensuring that they are well-adjusted and confident. They will also begin basic training with the puppies, laying the foundation for a well-behaved and obedient adult dog.</p>
+<p>When visiting a reputable Houndadore breeder, you can expect to see clean and well-maintained facilities. The breeder will provide a safe and comfortable environment for their dogs and puppies, with ample space for exercise and play. They will also allow you to meet the puppy&#8217;s parents, giving you an opportunity to assess their temperament and overall health.</p>
+<p>Reputable breeders will also be knowledgeable about the Houndadore breed and will be able to answer any questions you may have. They will provide you with information on the breed&#8217;s characteristics, exercise needs, and grooming requirements. They will also be honest about the potential challenges of owning a Houndadore, ensuring that you are well-prepared for the responsibilities that come with dog ownership.</p>
+<p>In addition to breeders, there are other sources where you can find Houndadore puppies. Rescue organizations and shelters sometimes have Houndadore mixes available for adoption. While these dogs may not come from a breeder, they can still make wonderful companions. However, it is important to do your research and ensure that the organization or shelter is reputable and follows ethical practices.</p>
+<p>When searching for a Houndadore puppy, it is crucial to avoid puppy mills and backyard breeders. These sources prioritize profit over the health and well-being of their dogs, often leading to puppies with genetic health issues and poor temperaments. By doing your due diligence and choosing a reputable breeder or source, you can ensure that you are getting a healthy and well-bred Houndadore puppy.</p>
+<p>In conclusion, finding reputable Houndadore breeders and sources requires careful research and consideration. A reputable breeder will have a solid reputation, prioritize the health and well-being of their dogs, and provide a safe and clean environment for their puppies. They will also be knowledgeable about the breed and will be able to answer any questions you may have. By choosing a reputable breeder or source, you can ensure that you are getting a healthy and well-socialized Houndadore puppy that will bring joy and companionship to your life.</p>
+<h2 id="the-ethics-of-houndadore-breeding-and-supporting-reputable-sources-dLGIekHoyv">The Ethics of Houndadore Breeding and Supporting Reputable Sources</h2>
+<p>Finding reputable Houndadore breeders and sources is of utmost importance when considering adding this unique and lovable breed to your family. The ethics of Houndadore breeding and supporting reputable sources cannot be overstated, as it ensures the well-being of the dogs and promotes responsible ownership. In this article, we will explore the key factors to consider when searching for a reputable Houndadore breeder and reliable sources.</p>
+<p>First and foremost, it is crucial to understand the ethics behind Houndadore breeding. Responsible breeders prioritize the health and temperament of their dogs above all else. They carefully select breeding pairs based on genetic health screenings and temperament evaluations to minimize the risk of hereditary diseases and behavioral issues. By supporting these breeders, you are contributing to the overall improvement of the Houndadore breed and ensuring that future generations are healthy and well-adjusted.</p>
+<p>One way to identify reputable Houndadore breeders is through their commitment to transparency. A trustworthy breeder will be open and honest about their breeding practices, providing you with detailed information about the health history of the parents, any genetic testing that has been done, and the socialization and training efforts they have undertaken with the puppies. They will also be willing to answer any questions you may have and allow you to visit their facilities to see firsthand how the dogs are cared for.</p>
+<p>Another important aspect to consider is the breeder&#8217;s involvement in breed-specific organizations and clubs. Reputable breeders often participate in events and competitions that showcase the qualities and abilities of their Houndadore dogs. This involvement demonstrates their dedication to the breed and their commitment to upholding breed standards. Additionally, being part of these organizations allows breeders to network with other reputable breeders, further ensuring the quality of their breeding program.</p>
+<p>When searching for a Houndadore breeder, it is essential to be patient and do thorough research. Take the time to read reviews and testimonials from previous buyers, as this can provide valuable insights into the breeder&#8217;s reputation and the quality of their dogs. Reputable breeders will have a strong online presence, with a professional website that includes information about their breeding program, available puppies, and contact details. They may also have a presence on social media platforms, where you can interact with them and see updates on their dogs.</p>
+<p>In addition to breeders, there are other sources where you can find Houndadore puppies. Rescue organizations and shelters sometimes have Houndadore mixes available for adoption. While these dogs may not be purebred, they can still make wonderful companions and provide a loving home for a dog in need. However, it is important to research the organization or shelter thoroughly to ensure they have a good reputation and prioritize the well-being of their animals.</p>
+<p>In conclusion, finding reputable Houndadore breeders and sources is crucial for the ethical acquisition of this beloved breed. By supporting responsible breeders who prioritize the health and temperament of their dogs, you contribute to the overall well-being of the Houndadore breed. Remember to be patient, do thorough research, and ask questions when searching for a breeder. Additionally, consider adoption from rescue organizations and shelters as an alternative source for Houndadore puppies. With careful consideration and a commitment to supporting reputable sources, you can find a Houndadore that will bring joy and companionship to your family for years to come.</p>
+<h2 id="common-mistakes-to-avoid-when-choosing-a-houndadore-breeder-dLGIekHoyv">Common Mistakes to Avoid When Choosing a Houndadore Breeder</h2>
+<p>Finding reputable Houndadore breeders and sources is crucial when looking to add this popular mixed breed to your family. However, it&#8217;s important to be aware of common mistakes that many people make when choosing a Houndadore breeder. By avoiding these mistakes, you can ensure that you are getting a healthy and well-bred Houndadore puppy.</p>
+<p>One common mistake that people make is not doing enough research on the breeder. It&#8217;s essential to thoroughly investigate the breeder&#8217;s reputation and credentials before making a decision. Look for breeders who are registered with reputable organizations such as the American Kennel Club (AKC) or the United Kennel Club (UKC). These organizations have strict guidelines and standards that breeders must adhere to, ensuring that their dogs are well-cared for and bred responsibly.</p>
+<p>Another mistake to avoid is not visiting the breeder&#8217;s facility in person. While it may be convenient to rely on pictures and descriptions provided online, it&#8217;s crucial to see the conditions in which the dogs are raised. A reputable breeder will have a clean and well-maintained facility, with healthy and happy dogs. Visiting the breeder also allows you to interact with the puppies and their parents, giving you a better idea of their temperament and overall health.</p>
+<p>When visiting the breeder, pay attention to how the dogs are treated. A reputable breeder will have a genuine love and passion for their dogs, and it will be evident in the way they interact with them. They will provide proper socialization and care, ensuring that the puppies are well-adjusted and ready for their new homes. If you notice any signs of neglect or mistreatment, it&#8217;s best to look for another breeder.</p>
+<p>It&#8217;s also important to ask the breeder about the health testing they perform on their dogs. Houndadores are prone to certain health issues, such as hip dysplasia and eye problems. A responsible breeder will conduct health screenings on their breeding dogs to minimize the risk of passing on these genetic conditions to their puppies. Ask for documentation of these tests and make sure they are up to date.</p>
+<p>Avoid the mistake of choosing a breeder solely based on price. While it may be tempting to go for the cheapest option, it&#8217;s important to remember that quality comes at a price. Reputable breeders invest time, effort, and money into breeding healthy and well-tempered Houndadores. They will charge a fair price that reflects the care and dedication they put into their breeding program. Be wary of breeders who offer significantly lower prices, as they may be cutting corners in terms of health testing and overall care.</p>
+<p>Lastly, don&#8217;t rush into a decision. Take your time to find the right breeder and the right puppy for your family. It&#8217;s worth waiting for a reputable breeder who prioritizes the health and well-being of their dogs. By avoiding these common mistakes, you can ensure that you are getting a Houndadore puppy that will bring joy and companionship to your life for years to come.</p>
+<h2 id="the-impact-of-reputable-houndadore-breeders-on-the-breeds-health-and-temperament-dLGIekHoyv">The Impact of Reputable Houndadore Breeders on the Breed&#8217;s Health and Temperament</h2>
+<p>Finding reputable Houndadore breeders and sources is crucial for ensuring the health and temperament of this beloved breed. The impact of reputable breeders cannot be overstated, as they play a vital role in maintaining the breed&#8217;s standards and preserving its desirable traits.</p>
+<p>When searching for a Houndadore breeder, it is essential to do thorough research and consider various factors. One of the most important aspects to consider is the breeder&#8217;s reputation. Reputable breeders have a long-standing history of producing healthy and well-tempered Houndadores. They prioritize the breed&#8217;s welfare and adhere to ethical breeding practices.</p>
+<p>A reputable breeder will be transparent about their breeding program and willingly provide information about the health and temperament of their Houndadores. They will also be knowledgeable about the breed&#8217;s specific needs and characteristics, ensuring that potential owners are well-informed before bringing a Houndadore into their home.</p>
+<p>One way to find reputable Houndadore breeders is through referrals from trusted sources. Reach out to local dog clubs, veterinarians, or other Houndadore owners who can recommend breeders they have had positive experiences with. These referrals can provide valuable insights into the breeder&#8217;s reputation and the quality of their Houndadores.</p>
+<p>Another reliable source for finding reputable breeders is through national or regional breed clubs. These organizations often have strict guidelines and codes of ethics that breeders must adhere to. By choosing a breeder affiliated with a reputable breed club, you can have confidence in their commitment to the breed&#8217;s health and temperament.</p>
+<p>When contacting a potential breeder, ask for references from previous puppy buyers. Speaking with these individuals can give you a firsthand account of their experience with the breeder and the health and temperament of their Houndadore. Reputable breeders will have a network of satisfied puppy owners who are more than willing to share their positive experiences.</p>
+<p>Visiting the breeder&#8217;s facility is another crucial step in finding a reputable Houndadore breeder. A reputable breeder will welcome potential buyers to their premises and allow them to meet the parent dogs and observe the living conditions of the puppies. This visit will give you a sense of the breeder&#8217;s commitment to the breed&#8217;s well-being and the conditions in which the puppies are raised.</p>
+<p>During your visit, pay close attention to the behavior and health of the dogs. Reputable breeders will have well-socialized and friendly Houndadores that exhibit no signs of aggression or fear. They will also provide proper veterinary care, including vaccinations and regular health check-ups.</p>
+<p>It is important to note that reputable breeders may have a waiting list for their puppies. This is a positive sign, as it indicates that the breeder is in high demand and takes the time to carefully match their puppies with suitable owners. Be patient and willing to wait for a Houndadore from a reputable breeder, as the wait will be well worth it in terms of the health and temperament of your future companion.</p>
+<p>In conclusion, finding reputable Houndadore breeders and sources is crucial for ensuring the health and temperament of this beloved breed. Reputable breeders prioritize the breed&#8217;s welfare, adhere to ethical breeding practices, and have a long-standing history of producing healthy and well-tempered Houndadores. By doing thorough research, seeking referrals, and visiting breeders&#8217; facilities, potential owners can find a reputable breeder who will provide them with a healthy and well-adjusted Houndadore.</p>
+<h2 id="how-to-spot-and-avoid-puppy-mills-when-searching-for-houndadore-breeders-dLGIekHoyv">How to Spot and Avoid Puppy Mills when Searching for Houndadore Breeders</h2>
+<p>Finding reputable Houndadore breeders and sources can be a daunting task, especially with the rise of puppy mills. These unethical establishments prioritize profit over the well-being of the dogs they breed, often leading to health and behavioral issues in the puppies they produce. As a responsible dog owner, it is crucial to spot and avoid puppy mills when searching for Houndadore breeders.</p>
+<p>One of the first signs of a reputable breeder is their commitment to the health and welfare of their dogs. They prioritize the overall well-being of their breeding dogs, ensuring they receive proper veterinary care, a balanced diet, and regular exercise. Reputable breeders also conduct health screenings and genetic testing to minimize the risk of passing on hereditary diseases to the puppies.</p>
+<p>When searching for a Houndadore breeder, it is essential to visit their facility in person. Reputable breeders are proud of their operation and are more than willing to show you around. Pay attention to the cleanliness and overall condition of the facility. A reputable breeder will maintain a clean and well-maintained environment for their dogs, ensuring they have enough space to move around and play.</p>
+<p>Another red flag to watch out for is breeders who always have puppies available. Reputable breeders carefully plan their litters and may have a waiting list for their puppies. They prioritize finding suitable homes for their puppies rather than making quick sales. If a breeder always has puppies available, it could be a sign that they are running a puppy mill and constantly churning out litters without considering the long-term welfare of the dogs.</p>
+<p>Reputable breeders also take the time to socialize their puppies from an early age. They expose them to various stimuli, such as different sounds, textures, and people, to ensure they grow up to be well-adjusted and confident dogs. Puppy mills, on the other hand, often keep their puppies isolated and lack proper socialization, leading to behavioral issues later in life.</p>
+<p>A reputable breeder will also provide you with detailed information about the Houndadore breed, including their temperament, exercise needs, and potential health concerns. They will be knowledgeable about the breed and will be able to answer any questions you may have. Puppy mills, on the other hand, are primarily concerned with making a profit and may not have the necessary knowledge or expertise to provide accurate information about the breed.</p>
+<p>When searching for a Houndadore breeder, it is crucial to do your research and ask for references. Reputable breeders will have a list of satisfied customers who are willing to vouch for their credibility. Contact these references and ask about their experience with the breeder, the health and temperament of their puppy, and any ongoing support they received.</p>
+<p>In conclusion, finding reputable Houndadore breeders and sources requires careful consideration and research. By being vigilant and knowing the signs of a puppy mill, you can ensure that you are bringing home a healthy and well-adjusted puppy. Remember to visit the breeder&#8217;s facility, ask for references, and pay attention to their commitment to the health and welfare of their dogs. With these precautions in mind, you can find a reputable Houndadore breeder who will provide you with a loving and healthy companion for years to come.</p>
+<h2 id="the-importance-of-visiting-the-breeders-facility-before-making-a-decision-dLGIekHoyv">The Importance of Visiting the Breeder&#8217;s Facility before Making a Decision</h2>
+<p>Finding reputable Houndadore breeders and sources is crucial when looking to add a new furry member to your family. With so many options available, it can be overwhelming to determine which breeders are trustworthy and provide healthy, well-socialized puppies. One important step in this process is visiting the breeder&#8217;s facility before making a decision. This article will highlight the importance of this visit and why it is essential for finding a reputable Houndadore breeder.</p>
+<p>Visiting the breeder&#8217;s facility allows you to assess the living conditions and overall environment in which the puppies are raised. It gives you a firsthand look at how the breeder cares for their dogs and ensures they are in a clean and safe environment. By observing the facility, you can determine if the breeder prioritizes the well-being of their dogs and if they meet the necessary standards for responsible breeding.</p>
+<p>During your visit, pay attention to the cleanliness of the facility. A reputable breeder will maintain a clean and organized space, free from any signs of neglect or unsanitary conditions. This is crucial for the health and development of the puppies, as a dirty environment can lead to various health issues and behavioral problems later in life.</p>
+<p>Another aspect to consider during your visit is the socialization of the puppies. Reputable breeders understand the importance of early socialization and will provide opportunities for the puppies to interact with humans and other animals. By observing the puppies&#8217; behavior and their interaction with the breeder, you can assess their level of socialization and determine if they have been properly exposed to different stimuli.</p>
+<p>Furthermore, visiting the breeder&#8217;s facility allows you to meet the parent dogs. This is important as it gives you an idea of the temperament and health of the breeding stock. Reputable breeders will have healthy and well-behaved parent dogs that exhibit desirable traits. By interacting with the parent dogs, you can assess their temperament and determine if they are a good fit for your family.</p>
+<p>Additionally, a visit to the breeder&#8217;s facility provides an opportunity to ask questions and gather information about the breed and the breeding program. A reputable breeder will be knowledgeable about the breed&#8217;s characteristics, health concerns, and any genetic testing they have done on their breeding stock. They will be transparent and open to answering any questions you may have, providing you with peace of mind and confidence in their breeding practices.</p>
+<p>In conclusion, visiting the breeder&#8217;s facility is an essential step in finding a reputable Houndadore breeder. It allows you to assess the living conditions, socialization, and overall environment in which the puppies are raised. By observing the cleanliness of the facility and the behavior of the puppies and parent dogs, you can determine if the breeder meets the necessary standards for responsible breeding. Additionally, a visit provides an opportunity to gather information and ask questions, ensuring that you are making an informed decision. Remember, a reputable breeder will prioritize the well-being of their dogs and be transparent about their breeding practices. So, take the time to visit the breeder&#8217;s facility and find the perfect Houndadore puppy for your family.</p>
+<h2 id="resources-and-websites-to-help-find-reputable-houndadore-breeders-dLGIekHoyv">Resources and Websites to Help Find Reputable Houndadore Breeders</h2>
+<p>Finding reputable Houndadore breeders and sources can be a daunting task, especially for those who are new to the world of dog breeding. With so many options available, it is important to do thorough research and find reliable resources to ensure that you are getting a healthy and well-bred Houndadore puppy. In this article, we will explore some of the best resources and websites that can help you find reputable Houndadore breeders.</p>
+<p>One of the most trusted resources for finding reputable breeders is the American Kennel Club (AKC). The AKC is a well-established organization that promotes responsible dog ownership and maintains a registry of purebred dogs. Their website provides a comprehensive list of breeders who have met their strict standards and adhere to their code of ethics. By choosing a breeder listed on the AKC website, you can have peace of mind knowing that you are dealing with a reputable source.</p>
+<p>Another valuable resource is the Houndadore Club of America (HCA). This club is dedicated to promoting and preserving the Houndadore breed. Their website offers a breeder directory, which includes a list of breeders who are members of the HCA and have agreed to follow their guidelines for responsible breeding. By choosing a breeder from this directory, you can be confident that they are committed to producing healthy and well-socialized Houndadore puppies.</p>
+<p>In addition to these national organizations, there are also regional and local breed clubs that can help you find reputable Houndadore breeders. These clubs often have their own websites or directories where you can find a list of breeders in your area. By reaching out to these clubs, you can connect with experienced breeders who have a deep understanding of the Houndadore breed and can provide valuable guidance in your search.</p>
+<p>Online platforms and forums can also be useful resources for finding reputable Houndadore breeders. Websites such as PuppyFind and NextDayPets allow breeders to advertise their puppies and provide information about their breeding practices. While these platforms can be a good starting point, it is important to exercise caution and thoroughly vet any breeders you find. Look for breeders who provide detailed information about their breeding program, health testing, and socialization practices. Additionally, read reviews and testimonials from previous buyers to get a sense of their experiences with the breeder.</p>
+<p>When contacting breeders, it is important to ask the right questions to ensure that they are reputable. Inquire about health testing that has been done on the parents, as well as any genetic conditions that may be prevalent in the breed. A responsible breeder will be transparent about any health issues and will provide documentation to support their claims. They should also be willing to answer any questions you have and provide references from previous buyers.</p>
+<p>Finding reputable Houndadore breeders and sources requires time and effort, but it is well worth it to ensure that you are getting a healthy and well-bred puppy. By utilizing resources such as the AKC, HCA, breed clubs, and online platforms, you can increase your chances of finding a reputable breeder who is dedicated to producing high-quality Houndadore puppies. Remember to do your due diligence, ask the right questions, and trust your instincts when choosing a breeder. With patience and research, you can find the perfect Houndadore companion for your family.</p>
+<h2 id="qa-dLGIekHoyv">Q&amp;A</h2>
+<p>1. What is a Houndadore?<br>
+A Houndadore is a mixed breed dog that is a cross between a Labrador Retriever and a Bloodhound.</p>
+<p>2. How can I find reputable Houndadore breeders?<br>
+You can find reputable Houndadore breeders by conducting thorough research online, contacting local breed clubs or associations, and asking for recommendations from trusted sources.</p>
+<p>3. What should I look for in a reputable Houndadore breeder?<br>
+A reputable Houndadore breeder should prioritize the health and well-being of their dogs, provide proper socialization, offer health guarantees, and be knowledgeable about the breed.</p>
+<p>4. Are there any specific health concerns with Houndadores?<br>
+Houndadores may be prone to certain health issues such as hip dysplasia, ear infections, and bloat. It is important to choose a breeder who conducts health screenings on their breeding dogs.</p>
+<p>5. How can I ensure the Houndadore breeder is reputable?<br>
+You can ensure a Houndadore breeder is reputable by visiting their facility, asking for references from previous buyers, reviewing their breeding practices, and checking if they are registered with recognized kennel clubs.</p>
+<p>6. What questions should I ask a Houndadore breeder?<br>
+You should ask about the health history of the parents, any genetic testing done, the socialization process, the breeder&#8217;s experience, and if they provide ongoing support for their puppies.</p>
+<p>7. Can I adopt a Houndadore from a rescue or shelter?<br>
+Yes, it is possible to find a Houndadore in a rescue or shelter. Contact local shelters or search online rescue databases to find Houndadores available for adoption.</p>
+<p>8. How much does a Houndadore puppy cost?<br>
+The cost of a Houndadore puppy can vary depending on the breeder, location, and the puppy&#8217;s lineage. On average, expect to pay between $500 to $1500.</p>
+<p>9. What should I expect from a reputable Houndadore breeder?<br>
+A reputable Houndadore breeder should provide you with a health guarantee, vaccination records, a contract, and be available to answer any questions or concerns you may have.</p>
+<p>10. How can I verify a Houndadore breeder&#8217;s credentials?<br>
+You can verify a Houndadore breeder&#8217;s credentials by checking if they are registered with recognized kennel clubs, asking for references, and researching their reputation online.</p>
+<p>11. Are there any red flags to watch out for when dealing with Houndadore breeders?<br>
+Red flags to watch out for include breeders who prioritize profit over the well-being of their dogs, lack of transparency about health issues, and unwillingness to provide references or answer questions.</p>
+<p>12. Can I see the parents of the Houndadore puppies?<br>
+A reputable breeder should allow you to see the parents of the Houndadore puppies and provide information about their health, temperament, and lineage.</p>
+<p>13. How long does it take to find a reputable Houndadore breeder?<br>
+Finding a reputable Houndadore breeder can take time as it involves research, contacting breeders, and evaluating their credibility. It is important not to rush the process.</p>
+<p>14. What are some reputable online sources for finding Houndadore breeders?<br>
+Reputable online sources for finding Houndadore breeders include websites of recognized kennel clubs, breed-specific forums, and reputable online puppy marketplaces.</p>
+<p>15. Can I get a Houndadore puppy shipped to me?<br>
+Some breeders may offer shipping options for Houndadore puppies, but it is important to ensure that the breeder follows proper transportation protocols and prioritizes the puppy&#8217;s safety and well-being.In conclusion, finding reputable Houndadore breeders and sources requires thorough research and careful consideration. It is important to seek breeders who prioritize the health and well-being of their dogs, follow ethical breeding practices, and provide proper socialization and care for their puppies. Potential buyers should also consider adopting from rescue organizations or reputable shelters as an alternative to purchasing from breeders.</p>
+</div>
+<div id="brxe-dngkka" class="brxe-text-basic">Sharing is Caring</div>
+<ul id="brxe-kofzsc" class="brxe-post-sharing brand-colors">
+<li data-balloon="Share on Facebook" data-balloon-pos="top"><a class="facebook" href="https://www.facebook.com/sharer.php?u=%2Fabout%2Ffinding-reputable-houndadore-breeders-and-sources%2F&#038;picture=&#038;title=Finding%20reputable%20Houndadore%20breeders%20and%20sources" rel="nofollow" aria-label="Facebook" target="_blank"><svg version="1.1" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M455.27,32h-398.54l-1.01757e-06,4.11262e-10c-13.6557,0.00551914 -24.7245,11.0743 -24.73,24.73v398.54l-5.44608e-07,-0.00145325c0.00471643,13.6557 11.0728,24.7251 24.7285,24.7315h199.271v-176h-53.55v-64h53.55v-51c0,-57.86 40.13,-89.36 91.82,-89.36c24.73,0 51.33,1.86 57.51,2.68v60.43h-41.18c-28.12,0 -33.48,13.3 -33.48,32.9v44.35h67l-8.75,64h-58.25v176h124.6l-1.14527e-06,4.62819e-10c13.6557,-0.00551794 24.7245,-11.0743 24.73,-24.73v-398.54l5.45583e-07,0.00145607c-0.00471487,-13.6557 -11.0728,-24.7251 -24.7285,-24.7315Z" fill="#000"></path></svg></a></li>
+<li data-balloon="Share on Twitter" data-balloon-pos="top"><a class="twitter" href="https://twitter.com/share?text=Finding%20reputable%20Houndadore%20breeders%20and%20sources&#038;url=%2Fabout%2Ffinding-reputable-houndadore-breeders-and-sources%2F" rel="nofollow" aria-label="Twitter" target="_blank"><svg version="1.1" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M492,109.5c-17.4,7.7 -36,12.9 -55.6,15.3c20,-12 35.4,-31 42.6,-53.6c-18.7,11.1 -39.4,19.2 -61.5,23.5c-17.7,-18.9 -42.9,-30.7 -70.7,-30.7c-53.5,0 -96.8,43.4 -96.8,96.9c0,7.6 0.8,15 2.5,22.1c-80.5,-4 -151.9,-42.6 -199.6,-101.3c-8.3,14.3 -13.1,31 -13.1,48.7c0,33.6 17.2,63.3 43.2,80.7c-16,-0.4 -31,-4.8 -44,-12.1v1.2c0,47 33.4,86.1 77.7,95c-8.1,2.2 -16.7,3.4 -25.5,3.4c-6.2,0 -12.3,-0.6 -18.2,-1.8c12.3,38.5 48.1,66.5 90.5,67.3c-33.1,26 -74.9,41.5 -120.3,41.5c-7.8,0 -15.5,-0.5 -23.1,-1.4c42.7,27.8 93.6,43.8 148.2,43.8c178.3,0 275.7,-147.7 275.7,-275.8c0,-4.2 -0.1,-8.4 -0.3,-12.5c18.9,-13.7 35.3,-30.7 48.3,-50.2Z" fill="#000"></path></svg></a></li>
+<li data-balloon="Share on LinkedIn" data-balloon-pos="top"><a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&#038;url=%2Fabout%2Ffinding-reputable-houndadore-breeders-and-sources%2F&#038;title=Finding%20reputable%20Houndadore%20breeders%20and%20sources" rel="nofollow" aria-label="LinkedIn" target="_blank"><svg version="1.1" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M444.17,32h-373.89c-20.43,0 -38.28,14.7 -38.28,34.89v374.72c0,20.3 17.85,38.39 38.28,38.39h373.78c20.54,0 35.94,-18.21 35.94,-38.39v-374.72c0.12,-20.19 -15.4,-34.89 -35.83,-34.89Zm-273.3,373.43h-64.18v-199.55h64.18Zm-29.87,-229.89h-0.46c-20.54,0 -33.84,-15.29 -33.84,-34.43c0,-19.49 13.65,-34.42 34.65,-34.42c21,0 33.85,14.82 34.31,34.42c-0.01,19.14 -13.31,34.43 -34.66,34.43Zm264.43,229.89h-64.18v-109.11c0,-26.14 -9.34,-44 -32.56,-44c-17.74,0 -28.24,12 -32.91,23.69c-1.75,4.2 -2.22,9.92 -2.22,15.76v113.66h-64.18v-199.55h64.18v27.77c9.34,-13.3 23.93,-32.44 57.88,-32.44c42.13,0 74,27.77 74,87.64Z" fill="#000"></path></svg></a></li>
+<li data-balloon="Share on WhatsApp" data-balloon-pos="top"><a class="whatsapp" href="https://api.whatsapp.com/send?text=*Finding%20reputable%20Houndadore%20breeders%20and%20sources*&#8220;Discover%20the%20perfect%20Houndadore%20companion%20with%20trusted%20breeders%20and%20reliable%20sources.&#8221;%20Finding%20reputable%20Houndadore%20breeders%20and%20sources%20can%20be%20a%20crucial%20step%20in%20ensuring%20the%20health%20and%20well-being%20of%20your%20future%20pet.%20It%20is%20important%20to%20conduct%20thorough%20research%20and%20consider%20various%20factors%20before%20making%20a%20decision.%20This%20introduction%20will%20provide%20you%20with%20a%20brief%20%5B&hellip;%5D%2Fabout%2Ffinding-reputable-houndadore-breeders-and-sources%2F" rel="nofollow" aria-label="WhatsApp" target="_blank"><svg version="1.1" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M260.062,32c-121.457,0 -219.928,97.701 -219.928,218.232c-1.42109e-14,41.23 11.532,79.79 31.559,112.687l-39.693,117.081l121.764,-38.682c31.508,17.285 67.745,27.146 106.298,27.146c121.473,0 219.938,-97.715 219.938,-218.232c0,-120.531 -98.465,-218.232 -219.938,-218.232Zm109.362,301.11c-5.174,12.827 -28.574,24.533 -38.899,25.072c-10.314,0.547 -10.608,7.994 -66.84,-16.434c-56.225,-24.434 -90.052,-83.844 -92.719,-87.67c-2.669,-3.812 -21.78,-31.047 -20.749,-58.455c1.038,-27.413 16.047,-40.346 21.404,-45.725c5.351,-5.387 11.486,-6.352 15.232,-6.413c4.428,-0.072 7.296,-0.132 10.573,-0.011c3.274,0.124 8.192,-0.685 12.45,10.639c4.256,11.323 14.443,39.153 15.746,41.989c1.302,2.839 2.108,6.126 0.102,9.771c-2.012,3.653 -3.042,5.935 -5.961,9.083c-2.935,3.148 -6.174,7.042 -8.792,9.449c-2.92,2.665 -5.97,5.572 -2.9,11.269c3.068,5.693 13.653,24.356 29.779,39.736c20.725,19.771 38.598,26.329 44.098,29.317c5.515,3.004 8.806,2.67 12.226,-0.929c3.404,-3.599 14.639,-15.746 18.596,-21.169c3.955,-5.438 7.661,-4.373 12.742,-2.329c5.078,2.052 32.157,16.556 37.673,19.551c5.51,2.989 9.193,4.529 10.51,6.9c1.317,2.38 0.901,13.531 -4.271,26.359Z" fill="#000"></path></svg></a></li>
+<li data-balloon="Share on Pinterest" data-balloon-pos="top"><a class="pinterest" href="http://pinterest.com/pin/create/button/?url=%2Fabout%2Ffinding-reputable-houndadore-breeders-and-sources%2F&#038;media=" rel="nofollow" aria-label="Pinterest" target="_blank"><svg version="1.1" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256,32c-123.7,0 -224,100.3 -224,224c0,91.7 55.2,170.5 134.1,205.2c-0.6,-15.6 -0.1,-34.4 3.9,-51.4c4.3,-18.2 28.8,-122.1 28.8,-122.1c0,0 -7.2,-14.3 -7.2,-35.4c0,-33.2 19.2,-58 43.2,-58c20.4,0 30.2,15.3 30.2,33.6c0,20.5 -13.1,51.1 -19.8,79.5c-5.6,23.8 11.9,43.1 35.4,43.1c42.4,0 71,-54.5 71,-119.1c0,-49.1 -33.1,-85.8 -93.2,-85.8c-67.9,0 -110.3,50.7 -110.3,107.3c0,19.5 5.8,33.3 14.8,43.9c4.1,4.9 4.7,6.9 3.2,12.5c-1.1,4.1 -3.5,14 -4.6,18c-1.5,5.7 -6.1,7.7 -11.2,5.6c-31.3,-12.8 -45.9,-47 -45.9,-85.6c0,-63.6 53.7,-139.9 160.1,-139.9c85.5,0 141.8,61.9 141.8,128.3c0,87.9 -48.9,153.5 -120.9,153.5c-24.2,0 -46.9,-13.1 -54.7,-27.9c0,0 -13,51.6 -15.8,61.6c-4.7,17.3 -14,34.5 -22.5,48c20.1,5.9 41.4,9.2 63.5,9.2c123.7,0 224,-100.3 224,-224c0.1,-123.8 -100.2,-224.1 -223.9,-224.1Z" fill="#000"></path></svg></a></li>
+<li data-balloon="Share on Telegram" data-balloon-pos="top"><a class="telegram" href="https://t.me/share/url?url=%2Fabout%2Ffinding-reputable-houndadore-breeders-and-sources%2F&#038;text=Finding%20reputable%20Houndadore%20breeders%20and%20sources" rel="nofollow" aria-label="Telegram" target="_blank"><svg viewbox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill="#fff" stroke="none" d="M 22.046997 135.832001 C 22.046997 135.832001 147.046997 84.531982 190.398987 66.468018 C 207.018005 59.242981 263.376007 36.121002 263.376007 36.121002 C 263.376007 36.121002 289.388 26.005981 287.220001 50.572021 C 286.497009 60.687988 280.71701 96.09198 274.937012 134.386993 C 266.265991 188.578003 256.872986 247.825989 256.872986 247.825989 C 256.872986 247.825989 255.428009 264.445007 243.144989 267.334991 C 230.862 270.225006 210.630005 257.220001 207.018005 254.32901 C 204.127014 252.161987 152.826996 219.647003 134.041 203.751007 C 128.983002 199.415985 123.203003 190.746002 134.763 180.630005 C 160.774994 156.786011 191.843994 127.161987 210.630005 108.376007 C 219.300995 99.705017 227.971008 79.473999 191.843994 104.039978 C 140.544006 139.445007 89.966003 172.682007 89.966003 172.682007 C 89.966003 172.682007 78.404999 179.907013 56.729004 173.403992 C 35.052002 166.902008 9.763 158.230988 9.763 158.230988 C 9.763 158.230988 -7.577003 147.393005 22.046997 135.832001 Z"></path></svg></a></li>
+<li data-balloon="Share via email" data-balloon-pos="top"><a class="email" href="mailto:?subject=Finding%20reputable%20Houndadore%20breeders%20and%20sources&amp;body=%2Fabout%2Ffinding-reputable-houndadore-breeders-and-sources%2F" rel="nofollow" aria-label="Email" target="_blank"><svg version="1.1" viewbox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M27.5,5h-25c-1.4,0 -2.5,1.1 -2.5,2.5v15c0,1.4 1.1,2.5 2.5,2.5h25c1.4,0 2.5,-1.1 2.5,-2.5v-15c0,-1.4 -1.1,-2.5 -2.5,-2.5Zm-16.7,10.9l-7,6c-0.1,0.1 -0.2,0.1 -0.3,0.1c-0.1,0 -0.3,-0.1 -0.4,-0.2c-0.2,-0.2 -0.2,-0.5 0.1,-0.7l7,-6c0.2,-0.2 0.5,-0.2 0.7,0.1c0.2,0.2 0.1,0.5 -0.1,0.7Zm3.9,0.1c-0.7,0 -1.5,-0.2 -2,-0.6l-9.5,-6.5c-0.2,-0.1 -0.3,-0.5 -0.1,-0.7c0.1,-0.2 0.4,-0.3 0.7,-0.1l9.5,6.5c0.8,0.6 2.1,0.6 2.9,0l10,-6.5c0.2,-0.2 0.5,-0.1 0.7,0.1c0.2,0.2 0.1,0.5 -0.1,0.7l-10,6.5c-0.6,0.4 -1.3,0.6 -2.1,0.6Zm12.2,5.8c-0.1,0.1 -0.2,0.2 -0.4,0.2c-0.1,0 -0.2,0 -0.3,-0.1l-7,-6c-0.2,-0.2 -0.2,-0.5 -0.1,-0.7c0.1,-0.2 0.5,-0.2 0.7,-0.1l7,6c0.2,0.2 0.3,0.5 0.1,0.7Z" fill="#fff"></path></svg></a></li>
+</ul>
+<nav id="brxe-izjvkr" class="brxe-post-navigation" aria-label="Post navigation"><a class="prev-post" href="/about/houndadore-in-famous-novels/"><div class="swiper-button bricks-swiper-button-prev"><i class="ion-ios-arrow-back"></i></div>
+<div class="content"><span class="label">Previous post</span></div></a><a class="next-post" href="/about/houndadore-sightings-in-popular-culture/"><div class="content"><span class="label">Next post</span></div>
+<div class="swiper-button bricks-swiper-button-next"><i class="ion-ios-arrow-forward"></i></div></a></nav>
+</div>
+<div id="brxe-hwsqci" class="brxe-block">
+<div id="brxe-wfrprg" class="brxe-search">
+<form role="search" method="get" class="bricks-search-form" action="https://houndadore.com/">
+	<label for="search-input-wfrprg" class="screen-reader-text"><span>Search ...</span></label>
+	<input type="search" placeholder="Search ..." value="" name="s" id="search-input-wfrprg">
+
+	</form>
+</div>
+<nav id="brxe-gugwak" class="brxe-xtableofcontents" data-x-toc="{&quot;contentSelector&quot;:&quot;.post-content&quot;,&quot;headingSelectors&quot;:[&quot;h2&quot;,&quot;h3&quot;,&quot;h4&quot;,&quot;h5&quot;,&quot;h6&quot;],&quot;autoID&quot;:true,&quot;idPrefix&quot;:&quot;heading&quot;,&quot;autoIDText&quot;:&quot;prefix&quot;,&quot;scrollSmoothOffset&quot;:-130,&quot;listType&quot;:&quot;counter&quot;,&quot;slideDuration&quot;:300,&quot;ignoreSelector&quot;:&quot;&quot;,&quot;smoothScroll&quot;:&quot;true&quot;,&quot;collapseDepth&quot;:0,&quot;conditionalDisplay&quot;:&quot;disable&quot;,&quot;hidden&quot;:{&quot;closeBreakpoint&quot;:&quot;false&quot;}}"><div class="x-toc_header" role="button" tabindex="00" aria-label="Table of Contents" aria-controls="x-toc_gugwak" aria-expanded="false">
+<div class="x-toc_header-text">Table of Contents</div>
+<div class="x-toc_header-icon"><i class="ti-angle-down"></i></div>
+</div>
+<div style="display:none" class="x-toc_body" aria-hidden="false" id="x-toc_gugwak"></div></nav><div id="brxe-amoawz" class="brxe-text-basic">Related Posts</div>
+<ul id="brxe-ueaixc" class="brxe-related-posts bricks-related-posts">
+<li class="repeater-item">
+<a href="/about/health-issues-and-lifespan-of-the-houndadore-breed/" class="post-thumbnail-wrapper css-filter"><div class="post-thumbnail-inner" role="img" aria-label="" style="background-image: url(/wp-content/uploads/2023/06/Houndadorelifespan.jpg)"></div></a><div class="post-content">
+<h3 class="dynamic" data-field-id="5c6fed"><a href="/about/health-issues-and-lifespan-of-the-houndadore-breed/" aria-label="Read more about Health issues and lifespan of the Houndadore breed">Health issues and lifespan of the Houndadore breed</a></h3>
+<p class="dynamic" data-field-id="bd3366">June 28, 2023</p>
+</div>
+</li>
+<li class="repeater-item">
+<a href="/about/houndadore-breed-a-popular-choice-for-search-and-rescue-missions/" class="post-thumbnail-wrapper css-filter"><div class="post-thumbnail-inner" role="img" aria-label="" style="background-image: url(/wp-content/uploads/2023/06/Houndadore-breed-a-popular-choice-for-search-and-rescue-missions.jpg)"></div></a><div class="post-content">
+<h3 class="dynamic" data-field-id="5c6fed"><a href="/about/houndadore-breed-a-popular-choice-for-search-and-rescue-missions/" aria-label="Read more about Houndadore breed: a popular choice for search and rescue missions">Houndadore breed: a popular choice for search and rescue missions</a></h3>
+<p class="dynamic" data-field-id="bd3366">June 28, 2023</p>
+</div>
+</li>
+<li class="repeater-item">
+<a href="/about/physical-traits-of-houndadore-dogs/" class="post-thumbnail-wrapper css-filter"><div class="post-thumbnail-inner" role="img" aria-label="" style="background-image: url(/wp-content/uploads/2023/06/Physical-traits-of-Houndadore-dogs.jpg)"></div></a><div class="post-content">
+<h3 class="dynamic" data-field-id="5c6fed"><a href="/about/physical-traits-of-houndadore-dogs/" aria-label="Read more about Physical traits of Houndadore dogs">Physical traits of Houndadore dogs</a></h3>
+<p class="dynamic" data-field-id="bd3366">June 28, 2023</p>
+</div>
+</li>
+<li class="repeater-item">
+<a href="/about/temperament-of-houndadore-dogs/" class="post-thumbnail-wrapper css-filter"><div class="post-thumbnail-inner" role="img" aria-label="" style="background-image: url(/wp-content/uploads/2023/06/Houndadores-adaptability-in-rural-living-environments.jpg)"></div></a><div class="post-content">
+<h3 class="dynamic" data-field-id="5c6fed"><a href="/about/temperament-of-houndadore-dogs/" aria-label="Read more about Temperament of Houndadore dogs">Temperament of Houndadore dogs</a></h3>
+<p class="dynamic" data-field-id="bd3366">June 28, 2023</p>
+</div>
+</li>
+<li class="repeater-item">
+<a href="/about/socialization-requirements-for-houndadore-dogs/" class="post-thumbnail-wrapper css-filter"><div class="post-thumbnail-inner" role="img" aria-label="" style="background-image: url(/wp-content/uploads/2023/06/Socialization-requirements-for-Houndadore-dogs.jpg)"></div></a><div class="post-content">
+<h3 class="dynamic" data-field-id="5c6fed"><a href="/about/socialization-requirements-for-houndadore-dogs/" aria-label="Read more about Socialization requirements for Houndadore dogs">Socialization requirements for Houndadore dogs</a></h3>
+<p class="dynamic" data-field-id="bd3366">June 28, 2023</p>
+</div>
+</li>
+</ul>
+</div>
+</div></section></main><footer id="brx-footer"><section id="brxe-tseoqd" class="brxe-section"><div id="brxe-lwvhbf" class="brxe-container">
+<div id="brxe-xpelqb" class="brxe-block">
+<img width="300" height="75" src="/wp-content/uploads/2023/03/Houndadore-White.png" class="brxe-image css-filter size-full" alt="" decoding="async" id="brxe-rpisls" loading="lazy"><div id="brxe-eaxztd" class="brxe-text-basic">Imagine the loyalty and intelligence of the Labrador Retriever, mixed with the impressive tracking skills and sense of smell of a Hound dog. It's like a superhero duo that's furrier and more lovable.</div>
+</div>
+<div id="brxe-xuqyxc" class="brxe-block">
+<h3 id="brxe-rakvig" class="brxe-heading">Contact Us</h3>
+<div id="brxe-hdxtls" class="brxe-icon-box">
+<div class="icon"><i class="fas fa-map-location-dot"></i></div>
+<div class="content">
+<p>7331 Emerald Glade Lane</p>
+</div>
+</div>
+<div id="brxe-mqefoe" class="brxe-icon-box">
+<div class="icon"><i class="fas fa-envelope"></i></div>
+<div class="content">
+<p>info@houndadore.com</p>
+</div>
+</div>
+<div id="brxe-vrahhh" class="brxe-icon-box">
+<div class="icon"><i class="fas fa-phone-flip"></i></div>
+<div class="content">
+<p>(832) 629-5520</p>
+</div>
+</div>
+</div>
+<div id="brxe-jvfmyb" class="brxe-block">
+<h3 id="brxe-lgqfds" class="brxe-heading">Quick Links</h3>
+<div id="brxe-eecmvu" class="brxe-text-basic">About</div>
+<div id="brxe-ztmoaz" class="brxe-text-basic">Blog</div>
+<div id="brxe-dcnagm" class="brxe-text-basic">Gallery</div>
+<div id="brxe-luqjcj" class="brxe-text-basic">Contact</div>
+</div>
+</div>
+<div id="brxe-nitblx" class="brxe-container"><div id="brxe-joihqv" class="brxe-text-basic">Copyright 2023 © all rights reserved design by <a href="https://brickstemplates.io/">BricksTemplates.io</a> </div></div></section></footer>            <script>var wpaicgUserLoggedIn = false;</script>
+            <link rel="stylesheet" id="bricks-tooltips-css" href="/wp-content/themes/bricks/assets/css/libs/tooltips.min.css?ver=1695510514" media="all">
+<script src="/wp-includes/js/hoverintent-js.min.js?ver=2.2.1" id="hoverintent-js-js"></script>
+<script src="/wp-includes/js/admin-bar.min.js?ver=6.3.1" id="admin-bar-js"></script>
+<script src="/wp-content/plugins/gpt3-ai-content-generator-premium/lib/js/wpaicg-chat-pro.js" id="wpaicg-chat-pro-js"></script>
+<script src="/wp-content/plugins/gpt3-ai-content-generator-premium/public/js/wpaicg-form-shortcode.js" id="wpaicg-gpt-form-js"></script>
+<script id="wpaicg-init-js-extra">var wpaicgParams = {"ajax_url":"\/wp-admin\/admin-ajax.php","search_nonce":"05d0315b6e","logged_in":"0","languages":{"source":"Sources","no_result":"No result found","wrong":"Something went wrong","prompt_strength":"Please enter a valid prompt strength value between 0 and 1.","num_inference_steps":"Please enter a valid number of inference steps value between 1 and 500.","guidance_scale":"Please enter a valid guidance scale value between 1 and 20.","error_image":"Please select least one image for generate","save_image_success":"Save images to media successfully","select_all":"Select All","unselect":"Unselect","select_save_error":"Please select least one image to save","alternative":"Alternative Text","title":"Title","edit_image":"Edit Image","caption":"Caption","description":"Description","save":"Save","removed_pdf":"Your pdf session is cleared"}};</script>
+<script src="/wp-content/plugins/gpt3-ai-content-generator-premium/public/js/wpaicg-init.js" id="wpaicg-init-js"></script>
+<script src="/wp-content/plugins/gpt3-ai-content-generator-premium/public/js/wpaicg-chat.js" id="wpaicg-chat-script-js"></script>
+<script id="bp-nouveau-js-extra">var BP_Nouveau = {"ajaxurl":"\/wp-admin\/admin-ajax.php","confirm":"Are you sure?","show_x_comments":"Show all %d comments","unsaved_changes":"Your profile has unsaved changes. If you leave the page, the changes will be lost.","object_nav_parent":"#buddypress","objects":["activity","members","groups","xprofile","friends","messages","settings","notifications","group_members","group_requests"],"nonces":{"activity":"b8b5214161","members":"f343cbcf81","groups":"fdf485fa61","xprofile":"9459f1b575","friends":"75562fbe93","messages":"c23a793c31","settings":"c6a5946ce0","notifications":"89b43d1260"}};</script>
+<script src="/wp-content/plugins/buddypress/bp-templates/bp-nouveau/js/buddypress-nouveau.min.js?ver=11.3.1" id="bp-nouveau-js"></script>
+<script src="/wp-includes/js/comment-reply.min.js?ver=6.3.1" id="comment-reply-js"></script>
+<script src="/wp-content/plugins/embedpress/assets/js/pdfobject.min.js?ver=3.8.5" id="embedpress-pdfobject-js"></script>
+<script src="/wp-content/plugins/embedpress/assets/js/initplyr.js?ver=3.8.5" id="initplyr-js"></script>
+<script id="embedpress-front-js-extra">var eplocalize = {"ajaxurl":"\/wp-admin\/admin-ajax.php"};</script>
+<script src="/wp-content/plugins/embedpress/assets/js/front.js?ver=3.8.5" id="embedpress-front-js"></script>
+<script src="/wp-content/plugins/embedpress/assets/js/documents-viewer-script.js?ver=3.8.5" id="embedpress_documents_viewer_script-js"></script>
+<script id="wpil-frontend-script-js-extra">var wpilFrontend = {"ajaxUrl":"\/wp-admin\/admin-ajax.php","postId":"1024","postType":"post","openInternalInNewTab":"0","openExternalInNewTab":"0","disableClicks":"0","openLinksWithJS":"0","trackAllElementClicks":"0","clicksI18n":{"imageNoText":"Image in link: No Text","imageText":"Image Title: ","noText":"No Anchor Text Found"}};</script>
+<script src="/wp-content/plugins/link-whisper-premium/js/frontend.js?ver=1679343322" id="wpil-frontend-script-js"></script>
+<script id="bricks-scripts-js-extra">var bricksData = {"debug":"","locale":"en_US","ajaxUrl":"\/wp-admin\/admin-ajax.php","restApiUrl":"\/wp-json\/bricks\/v1\/","nonce":"013b0ee6ed","wpRestNonce":"e13cd24a7c","postId":"1024","recaptchaIds":[],"animatedTypingInstances":[],"videoInstances":[],"splideInstances":[],"tocbotInstances":[],"swiperInstances":[],"queryLoopInstances":[],"interactions":[],"mapStyles":{"ultraLightWithLabels":{"label":"Ultra light with labels","style":"[ { \"featureType\": \"water\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#e9e9e9\" }, { \"lightness\": 17 } ] }, { \"featureType\": \"landscape\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#f5f5f5\" }, { \"lightness\": 20 } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#ffffff\" }, { \"lightness\": 17 } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry.stroke\", \"stylers\": [ { \"color\": \"#ffffff\" }, { \"lightness\": 29 }, { \"weight\": 0.2 } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#ffffff\" }, { \"lightness\": 18 } ] }, { \"featureType\": \"road.local\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#ffffff\" }, { \"lightness\": 16 } ] }, { \"featureType\": \"poi\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#f5f5f5\" }, { \"lightness\": 21 } ] }, { \"featureType\": \"poi.park\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#dedede\" }, { \"lightness\": 21 } ] }, { \"elementType\": \"labels.text.stroke\", \"stylers\": [ { \"visibility\": \"on\" }, { \"color\": \"#ffffff\" }, { \"lightness\": 16 } ] }, { \"elementType\": \"labels.text.fill\", \"stylers\": [ { \"saturation\": 36 }, { \"color\": \"#333333\" }, { \"lightness\": 40 } ] }, { \"elementType\": \"labels.icon\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"transit\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#f2f2f2\" }, { \"lightness\": 19 } ] }, { \"featureType\": \"administrative\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#fefefe\" }, { \"lightness\": 20 } ] }, { \"featureType\": \"administrative\", \"elementType\": \"geometry.stroke\", \"stylers\": [ { \"color\": \"#fefefe\" }, { \"lightness\": 17 }, { \"weight\": 1.2 } ] } ]"},"blueWater":{"label":"Blue water","style":"[ { \"featureType\": \"administrative\", \"elementType\": \"labels.text.fill\", \"stylers\": [ { \"color\": \"#444444\" } ] }, { \"featureType\": \"landscape\", \"elementType\": \"all\", \"stylers\": [ { \"color\": \"#f2f2f2\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"road\", \"elementType\": \"all\", \"stylers\": [ { \"saturation\": -100 }, { \"lightness\": 45 } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"simplified\" } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"labels.icon\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"transit\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"water\", \"elementType\": \"all\", \"stylers\": [ { \"color\": \"#46bcec\" }, { \"visibility\": \"on\" } ] } ]"},"lightDream":{"label":"Light dream","style":"[ { \"featureType\": \"landscape\", \"stylers\": [ { \"hue\": \"#FFBB00\" }, { \"saturation\": 43.400000000000006 }, { \"lightness\": 37.599999999999994 }, { \"gamma\": 1 } ] }, { \"featureType\": \"road.highway\", \"stylers\": [ { \"hue\": \"#FFC200\" }, { \"saturation\": -61.8 }, { \"lightness\": 45.599999999999994 }, { \"gamma\": 1 } ] }, { \"featureType\": \"road.arterial\", \"stylers\": [ { \"hue\": \"#FF0300\" }, { \"saturation\": -100 }, { \"lightness\": 51.19999999999999 }, { \"gamma\": 1 } ] }, { \"featureType\": \"road.local\", \"stylers\": [ { \"hue\": \"#FF0300\" }, { \"saturation\": -100 }, { \"lightness\": 52 }, { \"gamma\": 1 } ] }, { \"featureType\": \"water\", \"stylers\": [ { \"hue\": \"#0078FF\" }, { \"saturation\": -13.200000000000003 }, { \"lightness\": 2.4000000000000057 }, { \"gamma\": 1 } ] }, { \"featureType\": \"poi\", \"stylers\": [ { \"hue\": \"#00FF6A\" }, { \"saturation\": -1.0989010989011234 }, { \"lightness\": 11.200000000000017 }, { \"gamma\": 1 } ] } ]"},"blueEssence":{"label":"Blue essence","style":"[ { \"featureType\": \"landscape.natural\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"visibility\": \"on\" }, { \"color\": \"#e0efef\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"visibility\": \"on\" }, { \"hue\": \"#1900ff\" }, { \"color\": \"#c0e8e8\" } ] }, { \"featureType\": \"road\", \"elementType\": \"geometry\", \"stylers\": [ { \"lightness\": 100 }, { \"visibility\": \"simplified\" } ] }, { \"featureType\": \"road\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"transit.line\", \"elementType\": \"geometry\", \"stylers\": [ { \"visibility\": \"on\" }, { \"lightness\": 700 } ] }, { \"featureType\": \"water\", \"elementType\": \"all\", \"stylers\": [ { \"color\": \"#7dcdcd\" } ] } ]"},"appleMapsesque":{"label":"Apple maps-esque","style":"[ { \"featureType\": \"landscape.man_made\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#f7f1df\" } ] }, { \"featureType\": \"landscape.natural\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#d0e3b4\" } ] }, { \"featureType\": \"landscape.natural.terrain\", \"elementType\": \"geometry\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"poi.business\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"poi.medical\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#fbd3da\" } ] }, { \"featureType\": \"poi.park\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#bde6ab\" } ] }, { \"featureType\": \"road\", \"elementType\": \"geometry.stroke\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"road\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#ffe15f\" } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry.stroke\", \"stylers\": [ { \"color\": \"#efd151\" } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#ffffff\" } ] }, { \"featureType\": \"road.local\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"black\" } ] }, { \"featureType\": \"transit.station.airport\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#cfb2db\" } ] }, { \"featureType\": \"water\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#a2daf2\" } ] } ]"},"paleDawn":{"label":"Pale dawn","style":"[ { \"featureType\": \"administrative\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"on\" }, { \"lightness\": 33 } ] }, { \"featureType\": \"landscape\", \"elementType\": \"all\", \"stylers\": [ { \"color\": \"#f2e5d4\" } ] }, { \"featureType\": \"poi.park\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#c5dac6\" } ] }, { \"featureType\": \"poi.park\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"on\" }, { \"lightness\": 20 } ] }, { \"featureType\": \"road\", \"elementType\": \"all\", \"stylers\": [ { \"lightness\": 20 } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#c5c6c6\" } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#e4d7c6\" } ] }, { \"featureType\": \"road.local\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#fbfaf7\" } ] }, { \"featureType\": \"water\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"on\" }, { \"color\": \"#acbcc9\" } ] } ]"},"neutralBlue":{"label":"Neutral blue","style":"[ { \"featureType\": \"water\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#193341\" } ] }, { \"featureType\": \"landscape\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#2c5a71\" } ] }, { \"featureType\": \"road\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#29768a\" }, { \"lightness\": -37 } ] }, { \"featureType\": \"poi\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#406d80\" } ] }, { \"featureType\": \"transit\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#406d80\" } ] }, { \"elementType\": \"labels.text.stroke\", \"stylers\": [ { \"visibility\": \"on\" }, { \"color\": \"#3e606f\" }, { \"weight\": 2 }, { \"gamma\": 0.84 } ] }, { \"elementType\": \"labels.text.fill\", \"stylers\": [ { \"color\": \"#ffffff\" } ] }, { \"featureType\": \"administrative\", \"elementType\": \"geometry\", \"stylers\": [ { \"weight\": 0.6 }, { \"color\": \"#1a3541\" } ] }, { \"elementType\": \"labels.icon\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"poi.park\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#2c5a71\" } ] } ]"},"avocadoWorld":{"label":"Avocado world","style":"[ { \"featureType\": \"water\", \"elementType\": \"geometry\", \"stylers\": [ { \"visibility\": \"on\" }, { \"color\": \"#aee2e0\" } ] }, { \"featureType\": \"landscape\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#abce83\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#769E72\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"labels.text.fill\", \"stylers\": [ { \"color\": \"#7B8758\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"labels.text.stroke\", \"stylers\": [ { \"color\": \"#EBF4A4\" } ] }, { \"featureType\": \"poi.park\", \"elementType\": \"geometry\", \"stylers\": [ { \"visibility\": \"simplified\" }, { \"color\": \"#8dab68\" } ] }, { \"featureType\": \"road\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"visibility\": \"simplified\" } ] }, { \"featureType\": \"road\", \"elementType\": \"labels.text.fill\", \"stylers\": [ { \"color\": \"#5B5B3F\" } ] }, { \"featureType\": \"road\", \"elementType\": \"labels.text.stroke\", \"stylers\": [ { \"color\": \"#ABCE83\" } ] }, { \"featureType\": \"road\", \"elementType\": \"labels.icon\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"road.local\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#A4C67D\" } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#9BBF72\" } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#EBF4A4\" } ] }, { \"featureType\": \"transit\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"administrative\", \"elementType\": \"geometry.stroke\", \"stylers\": [ { \"visibility\": \"on\" }, { \"color\": \"#87ae79\" } ] }, { \"featureType\": \"administrative\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#7f2200\" }, { \"visibility\": \"off\" } ] }, { \"featureType\": \"administrative\", \"elementType\": \"labels.text.stroke\", \"stylers\": [ { \"color\": \"#ffffff\" }, { \"visibility\": \"on\" }, { \"weight\": 4.1 } ] }, { \"featureType\": \"administrative\", \"elementType\": \"labels.text.fill\", \"stylers\": [ { \"color\": \"#495421\" } ] }, { \"featureType\": \"administrative.neighborhood\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"off\" } ] } ]"},"gowalla":{"label":"Gowalla","style":"[ { \"featureType\": \"administrative.land_parcel\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"landscape.man_made\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"road\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"simplified\" }, { \"lightness\": 20 } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry\", \"stylers\": [ { \"hue\": \"#f49935\" } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"simplified\" } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"geometry\", \"stylers\": [ { \"hue\": \"#fad959\" } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"road.local\", \"elementType\": \"geometry\", \"stylers\": [ { \"visibility\": \"simplified\" } ] }, { \"featureType\": \"road.local\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"simplified\" } ] }, { \"featureType\": \"transit\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"water\", \"elementType\": \"all\", \"stylers\": [ { \"hue\": \"#a1cdfc\" }, { \"saturation\": 30 }, { \"lightness\": 49 } ] } ]"}},"facebookAppId":"","headerPosition":"top","offsetLazyLoad":"300"};</script>
+<script src="/wp-content/themes/bricks/assets/js/bricks.min.js?ver=1695510514" id="bricks-scripts-js"></script>
+<script src="/wp-content/plugins/bricksextras/components/assets/js/frontend.js?ver=1.0.1" id="x-frontend-js"></script>
+<script src="/wp-content/plugins/bricksextras/components/assets/js/tableofcontents.js?ver=1.0.4" id="x-toc-js"></script>
+		<div id="wpadminbar" class="nojq nojs">
+							<a class="screen-reader-shortcut" href="#wp-toolbar" tabindex="1">Skip to toolbar</a>
+						<div class="quicklinks" id="wp-toolbar" role="navigation" aria-label="Toolbar">
+				<ul id="wp-admin-bar-root-default" class="ab-top-menu">
+<li id="wp-admin-bar-wp-logo" class="menupop">
+<div class="ab-item ab-empty-item" tabindex="0" aria-haspopup="true">
+<span class="ab-icon" aria-hidden="true"></span><span class="screen-reader-text">About WordPress</span>
+</div>
+<div class="ab-sub-wrapper"><ul id="wp-admin-bar-wp-logo-external" class="ab-sub-secondary ab-submenu">
+<li id="wp-admin-bar-wporg"><a class="ab-item" href="https://wordpress.org/">WordPress.org</a></li>
+<li id="wp-admin-bar-documentation"><a class="ab-item" href="https://wordpress.org/documentation/">Documentation</a></li>
+<li id="wp-admin-bar-support-forums"><a class="ab-item" href="https://wordpress.org/support/forums/">Support</a></li>
+<li id="wp-admin-bar-feedback"><a class="ab-item" href="https://wordpress.org/support/forum/requests-and-feedback">Feedback</a></li>
+</ul></div>
+</li>
+<li id="wp-admin-bar-bp-login"><a class="ab-item" href="/wp-login.php?redirect_to=https%3A%2F%2F%2Fabout%2Ffinding-reputable-houndadore-breeders-and-sources%2F%3Fsimply_static_page%3D1559">Log In</a></li>
+</ul>
+<ul id="wp-admin-bar-top-secondary" class="ab-top-secondary ab-top-menu"><li id="wp-admin-bar-search" class="admin-bar-search"><div class="ab-item ab-empty-item" tabindex="-1"><form action="https://houndadore.com/" method="get" id="adminbarsearch">
+<input class="adminbar-input" name="s" id="adminbar-search" type="text" value="" maxlength="150"><label for="adminbar-search" class="screen-reader-text">Search</label><input type="submit" class="adminbar-button" value="Search">
+</form></div></li></ul>			</div>
+					</div>
+
+		</body>
+</html>

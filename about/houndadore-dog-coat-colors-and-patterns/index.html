@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: https://ogp.me/ns#" class="no-js no-svg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+            <style>.toc_post_list h2{
+                    margin-bottom: 20px;
+                }
+                .toc_post_list{
+                    list-style: none;
+                    margin: 0 0 30px 0!important;
+                    padding: 0!important;
+                }
+                .toc_post_list li{}
+                .toc_post_list li ul{
+                    list-style: decimal;
+                }
+                .toc_post_list a{}
+                .wpaicg_chat_widget{
+                    position: fixed;
+                }
+                .wpaicg_widget_left{
+                    bottom: 15px;
+                    left: 15px;
+                }
+                .wpaicg_widget_right{
+                    bottom: 15px;
+                    right: 15px;
+                }
+                .wpaicg_widget_right .wpaicg_chat_widget_content{
+                    right: 0;
+                }
+                .wpaicg_widget_left .wpaicg_chat_widget_content{
+                    left: 0;
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox{
+                    height: 100%;
+                    background-color: #222222;
+                    border-radius: 5px;
+                }
+                .wpaicg_widget_open .wpaicg_chat_widget_content{
+                    height: 400px;
+                }
+                .wpaicg_chat_widget_content{
+                    position: absolute;
+                    bottom: calc(100% + 15px);
+                    width: 350px;
+                    overflow: hidden;
+                }
+                .wpaicg_widget_open .wpaicg_chat_widget_content{
+                    overflow: unset;
+                }
+                .wpaicg_widget_open .wpaicg_chat_widget_content .wpaicg-chatbox{
+                    top: 0;
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox{
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    width: 350px;
+                    height: 400px;
+                    transition: top 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox-content{
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox-content ul{
+                    box-sizing: border-box;
+                    background: #222222;
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox-content ul li{
+                    color: #90EE90;
+                    font-size: 13px;
+                }
+                .wpaicg_chat_widget_content .wpaicg-bot-thinking{
+                    color: #90EE90;
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox-type{
+                                    border-top: 0;
+                    background: rgb(0 0 0 / 19%);
+                }
+                .wpaicg_chat_widget_content .wpaicg-chat-message{
+                    color: #90EE90;
+                }
+                .wpaicg_chat_widget_content textarea.wpaicg-chatbox-typing{
+                    background-color: #fff;
+                    border-color: #ccc;
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox-send{
+                    color: #fff;
+                }
+                .wpaicg-chatbox-footer{
+                    height: 18px;
+                    font-size: 11px;
+                    padding: 0 5px;
+                    color: #fff;
+                    background: rgb(0 0 0 / 19%);
+                    margin-top:2px;
+                    margin-bottom: 2px;
+                }
+                .wpaicg_chat_widget_content textarea.wpaicg-chatbox-typing:focus{
+                    outline: none;
+                }
+                .wpaicg_chat_widget .wpaicg_toggle{
+                    cursor: pointer;
+                }
+                .wpaicg_chat_widget .wpaicg_toggle img{
+                    width: 75px;
+                    height: 75px;
+                }
+                .wpaicg-chat-shortcode-type,.wpaicg-chatbox-type{
+                    position: relative;
+                }
+                .wpaicg-mic-icon{
+                    cursor: pointer;
+                }
+                .wpaicg-mic-icon svg{
+                    width: 16px;
+                    height: 16px;
+                    fill: currentColor;
+                }
+                .wpaicg-pdf-icon svg{
+                    width: 22px;
+                    height: 22px;
+                    fill: currentColor;
+                }
+                .wpaicg_chat_additions span{
+                    cursor: pointer;
+                    margin-right: 2px;
+                }
+                .wpaicg_chat_additions span:last-of-type{
+                    margin-right: 0;
+                }
+                .wpaicg-pdf-loading{
+                    width: 18px;
+                    height: 18px;
+                    border: 2px solid #FFF;
+                    border-bottom-color: transparent;
+                    border-radius: 50%;
+                    display: inline-block;
+                    box-sizing: border-box;
+                    animation: wpaicg_rotation 1s linear infinite;
+                }
+                @keyframes wpaicg_rotation {
+                    0% {
+                        transform: rotate(0deg);
+                    }
+                    100% {
+                        transform: rotate(360deg);
+                    }
+                }
+                .wpaicg-chat-message code{
+                    padding: 3px 5px 2px;
+                    background: rgb(0 0 0 / 20%);
+                    font-size: 13px;
+                    font-family: Consolas,Monaco,monospace;
+                    direction: ltr;
+                    unicode-bidi: embed;
+                    display: block;
+                    margin: 5px 0px;
+                    border-radius: 4px;
+                    white-space: pre-wrap;
+                }
+                textarea.wpaicg-chat-shortcode-typing,textarea.wpaicg-chatbox-typing{
+                    height: 30px;
+                }
+                .wpaicg_chat_widget_content .wpaicg-chatbox-content,.wpaicg-chat-shortcode-content{
+                    overflow: hidden;
+                }
+                .wpaicg_chatbox_line{
+                    overflow: hidden;
+                    text-align: center;
+                    display: block!important;
+                    font-size: 12px;
+                }
+                .wpaicg_chatbox_line:after,.wpaicg_chatbox_line:before{
+                    background-color: rgb(255 255 255 / 26%);
+                    content: "";
+                    display: inline-block;
+                    height: 1px;
+                    position: relative;
+                    vertical-align: middle;
+                    width: 50%;
+                }
+                .wpaicg_chatbox_line:before {
+                    right: 0.5em;
+                    margin-left: -50%;
+                }
+
+                .wpaicg_chatbox_line:after {
+                    left: 0.5em;
+                    margin-right: -50%;
+                }
+                .wpaicg-chat-shortcode-typing::-webkit-scrollbar,.wpaicg-chatbox-typing::-webkit-scrollbar{
+                    width: 5px
+                }
+                .wpaicg-chat-shortcode-typing::-webkit-scrollbar-track,.wpaicg-chatbox-typing::-webkit-scrollbar-track{
+                    -webkit-box-shadow:inset 0 0 6px rgba(0, 0, 0, 0.15);border-radius:5px;
+                }
+                .wpaicg-chat-shortcode-typing::-webkit-scrollbar-thumb,.wpaicg-chatbox-typing::-webkit-scrollbar-thumb{
+                    border-radius:5px;
+                    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.75);
+                }</style>
+            <script>var wpaicg_ajax_url = '/wp-admin/admin-ajax.php';
+                var wpaicgUserLoggedIn = false;</script>
+            <link href="/wp-content/plugins/gpt3-ai-content-generator-premium/public/css/wpaicg-rtl.css" type="text/css" rel="stylesheet">
+            
+<!-- Search Engine Optimization by Rank Math - https://rankmath.com/ -->
+<title>Houndadore dog coat colors and patterns - Houndadore - The Perfect Blend Of Hound and Labradore</title>
+<meta name="description" content="Stylish and diverse: Houndadore dog coats, a palette of colors and patterns.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
+<link rel="canonical" href="/about/houndadore-dog-coat-colors-and-patterns/">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Houndadore dog coat colors and patterns - Houndadore - The Perfect Blend Of Hound and Labradore">
+<meta property="og:description" content="Stylish and diverse: Houndadore dog coats, a palette of colors and patterns.">
+<meta property="og:url" content="/about/houndadore-dog-coat-colors-and-patterns/">
+<meta property="og:site_name" content="Houndadore - The Perfect Blend Of Hound and Labradore">
+<meta property="article:section" content="About">
+<meta property="article:published_time" content="2023-06-30T00:02:30-06:00">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Houndadore dog coat colors and patterns - Houndadore - The Perfect Blend Of Hound and Labradore">
+<meta name="twitter:description" content="Stylish and diverse: Houndadore dog coats, a palette of colors and patterns.">
+<meta name="twitter:label1" content="Written by">
+<meta name="twitter:data1" content="Houndadore_2050">
+<meta name="twitter:label2" content="Time to read">
+<meta name="twitter:data2" content="40 minutes">
+<script type="application/ld+json" class="rank-math-schema">{"@context":"https://schema.org","@graph":[{"@type":["Organization","Person"],"@id":"/#person","name":"Houndadore - The Perfect Blend Of Hound and Labradore","url":""},{"@type":"WebSite","@id":"/#website","url":"","name":"Houndadore - The Perfect Blend Of Hound and Labradore","publisher":{"@id":"/#person"},"inLanguage":"en-US"},{"@type":"BreadcrumbList","@id":"/about/houndadore-dog-coat-colors-and-patterns/#breadcrumb","itemListElement":[{"@type":"ListItem","position":"1","item":{"@id":"","name":"Home"}},{"@type":"ListItem","position":"2","item":{"@id":"/category/about/","name":"About"}},{"@type":"ListItem","position":"3","item":{"@id":"/about/houndadore-dog-coat-colors-and-patterns/","name":"Houndadore dog coat colors and patterns"}}]},{"@type":"WebPage","@id":"/about/houndadore-dog-coat-colors-and-patterns/#webpage","url":"/about/houndadore-dog-coat-colors-and-patterns/","name":"Houndadore dog coat colors and patterns - Houndadore - The Perfect Blend Of Hound and Labradore","datePublished":"2023-06-30T00:02:30-06:00","dateModified":"2023-06-30T00:02:30-06:00","isPartOf":{"@id":"/#website"},"inLanguage":"en-US","breadcrumb":{"@id":"/about/houndadore-dog-coat-colors-and-patterns/#breadcrumb"}},{"@type":"Person","@id":"/author/houndadore_2050/","name":"Houndadore_2050","url":"/author/houndadore_2050/","image":{"@type":"ImageObject","@id":"//www.gravatar.com/avatar/9f4b2c627190ceb17858b039cc7294af?s=96&r=g&d=mm","url":"//www.gravatar.com/avatar/9f4b2c627190ceb17858b039cc7294af?s=96&r=g&d=mm","caption":"Houndadore_2050","inLanguage":"en-US"},"sameAs":[""]},{"@type":"BlogPosting","headline":"Houndadore dog coat colors and patterns - Houndadore - The Perfect Blend Of Hound and Labradore","datePublished":"2023-06-30T00:02:30-06:00","dateModified":"2023-06-30T00:02:30-06:00","articleSection":"About","author":{"@id":"/author/houndadore_2050/","name":"Houndadore_2050"},"publisher":{"@id":"/#person"},"description":"Stylish and diverse: Houndadore dog coats, a palette of colors and patterns.","name":"Houndadore dog coat colors and patterns - Houndadore - The Perfect Blend Of Hound and Labradore","@id":"/about/houndadore-dog-coat-colors-and-patterns/#richSnippet","isPartOf":{"@id":"/about/houndadore-dog-coat-colors-and-patterns/#webpage"},"inLanguage":"en-US","mainEntityOfPage":{"@id":"/about/houndadore-dog-coat-colors-and-patterns/#webpage"}}]}</script>
+<!-- /Rank Math WordPress SEO plugin -->
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="alternate" type="application/rss+xml" title="Houndadore - The Perfect Blend Of Hound and Labradore &raquo; Feed" href="/feed/">
+<link rel="alternate" type="application/rss+xml" title="Houndadore - The Perfect Blend Of Hound and Labradore &raquo; Comments Feed" href="/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="Houndadore - The Perfect Blend Of Hound and Labradore &raquo; Houndadore dog coat colors and patterns Comments Feed" href="/about/houndadore-dog-coat-colors-and-patterns/feed/">
+<script>
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.3.1"}};
+/*! This file is auto-generated */
+!function(i,n){var o,s,e;function c(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function p(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data),r=(e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0),new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data));return t.every(function(e,t){return e===r[t]})}function u(e,t,n){switch(t){case"flag":return n(e,"🏳️‍⚧️","🏳️​⚧️")?!1:!n(e,"🇺🇳","🇺​🇳")&&!n(e,"🏴󠁧󠁢󠁥󠁮󠁧󠁿","🏴​󠁧​󠁢​󠁥​󠁮​󠁧​󠁿");case"emoji":return!n(e,"🫱🏻‍🫲🏿","🫱🏻​🫲🏿")}return!1}function f(e,t,n){var r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):i.createElement("canvas"),a=r.getContext("2d",{willReadFrequently:!0}),o=(a.textBaseline="top",a.font="600 32px Arial",{});return e.forEach(function(e){o[e]=t(a,e,n)}),o}function t(e){var t=i.createElement("script");t.src=e,t.defer=!0,i.head.appendChild(t)}"undefined"!=typeof Promise&&(o="wpEmojiSettingsSupports",s=["flag","emoji"],n.supports={everything:!0,everythingExceptFlag:!0},e=new Promise(function(e){i.addEventListener("DOMContentLoaded",e,{once:!0})}),new Promise(function(t){var n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"}),a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=function(e){c(n=e.data),a.terminate(),t(n)})}catch(e){}c(n=f(s,u,p))}t(n)}).then(function(e){for(var t in e)n.supports[t]=e[t],n.supports.everything=n.supports.everything&&n.supports[t],"flag"!==t&&(n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&n.supports[t]);n.supports.everythingExceptFlag=n.supports.everythingExceptFlag&&!n.supports.flag,n.DOMReady=!1,n.readyCallback=function(){n.DOMReady=!0}}).then(function(){return e}).then(function(){var e;n.supports.everything||(n.readyCallback(),(e=n.source||{}).concatemoji?t(e.concatemoji):e.wpemoji&&e.twemoji&&(t(e.twemoji),t(e.wpemoji)))}))}((window,document),window._wpemojiSettings);
+</script>
+<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+<style>img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}</style>
+	<link rel="stylesheet" id="dashicons-css" href="/wp-includes/css/dashicons.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="admin-bar-css" href="/wp-includes/css/admin-bar.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="wp-block-library-css" href="/wp-includes/css/dist/block-library/style.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="bp-login-form-block-css" href="/wp-content/plugins/buddypress/bp-core/css/blocks/login-form.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-member-block-css" href="/wp-content/plugins/buddypress/bp-members/css/blocks/member.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-members-block-css" href="/wp-content/plugins/buddypress/bp-members/css/blocks/members.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-dynamic-members-block-css" href="/wp-content/plugins/buddypress/bp-members/css/blocks/dynamic-members.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-latest-activities-block-css" href="/wp-content/plugins/buddypress/bp-activity/css/blocks/latest-activities.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-friends-block-css" href="/wp-content/plugins/buddypress/bp-friends/css/blocks/friends.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-group-block-css" href="/wp-content/plugins/buddypress/bp-groups/css/blocks/group.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-groups-block-css" href="/wp-content/plugins/buddypress/bp-groups/css/blocks/groups.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-dynamic-groups-block-css" href="/wp-content/plugins/buddypress/bp-groups/css/blocks/dynamic-groups.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-sitewide-notices-block-css" href="/wp-content/plugins/buddypress/bp-messages/css/blocks/sitewide-notices.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="embedpress_blocks-cgb-style-css-css" href="/wp-content/plugins/embedpress/Gutenberg/dist/blocks.style.build.css?ver=1695326741" media="all">
+<link rel="stylesheet" id="wp-components-css" href="/wp-includes/css/dist/components/style.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="wp-block-editor-css" href="/wp-includes/css/dist/block-editor/style.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="wp-reusable-blocks-css" href="/wp-includes/css/dist/reusable-blocks/style.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="wp-editor-css" href="/wp-includes/css/dist/editor/style.min.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="embedpress_pro-cgb-style-css-css" href="/wp-content/plugins/embedpress-pro/Gutenberg/dist/blocks.style.build.css" media="all">
+<style id="classic-theme-styles-inline-css">/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}</style>
+<style id="global-styles-inline-css">body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}body .is-layout-grid{display: grid;}body .is-layout-grid > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}</style>
+<link rel="stylesheet" id="wp-ai-content-generator-css" href="/wp-content/plugins/gpt3-ai-content-generator-premium/public/css/wp-ai-content-generator-public.css?ver=1.7.71" media="all">
+<link rel="stylesheet" id="automaticcss-core-css" href="/wp-content/uploads/automatic-css/automatic.css?ver=1690958891" media="all">
+<link rel="stylesheet" id="bp-admin-bar-css" href="/wp-content/plugins/buddypress/bp-core/css/admin-bar.min.css?ver=11.3.1" media="all">
+<link rel="stylesheet" id="bp-nouveau-css" href="/wp-content/plugins/buddypress/bp-templates/bp-nouveau/css/buddypress.min.css?ver=11.3.1" media="screen">
+<link rel="stylesheet" id="embedpress-css" href="/wp-content/plugins/embedpress/assets/css/embedpress.css?ver=6.3.1" media="all">
+<link rel="stylesheet" id="bricks-frontend-css" href="/wp-content/themes/bricks/assets/css/frontend.min.css?ver=1695510514" media="all">
+<style id="bricks-frontend-inline-css">:root {    --x-toc-type: decimal;    --x-toc-typetwo: decimal;    --x-toc-typethree: decimal;    --x-toc-typefour: decimal;    --x-toc-typefive: decimal;    --x-toc-duration: 300ms;    --x-toc-suffix: '';    --x-toc-seperator: '.';}.brxe-xtableofcontents {    width: 100%;    overflow: hidden;}[data-x-toc] {    position: relative;}.x-toc_header {    display: flex;    align-items: center;    flex-direction: row;    justify-content: space-between;    padding: 10px;    cursor: pointer;      line-height: 1;}  .x-toc_header-icon {    font-size: .8em;}.x-toc_header-icon i {    transition: transform 0.4s ease;}.x-toc_header[aria-expanded=true] .x-toc_header-icon i {    transform: rotateX(180deg);}.brxe-xtableofcontents ::marker {    content: none;    display: none;}.brxe-xtableofcontents > .x-toc_list {    overflow: hidden;    position: relative;}.brxe-xtableofcontents > .x-toc_list li {    list-style: none;   }.x-toc_list .x-toc_list {    padding-left: 10px;}.x-toc_list-item {    -webkit-column-break-inside: avoid;    -moz-column-break-inside: avoid;    break-inside: avoid; }a.x-toc_link {    color: currentColor;    height: 100%;    padding: 0 10px;    display: block;}.x-toc_collapsible {    max-height: 1000px;    overflow: hidden;    transition: all 300ms ease-in-out;}.x-toc_collapsed {    max-height: 0;}.x-toc_position-fixed {    position: fixed !important;    top: 0;}.x-toc_active-link {    font-weight: 700;}.brxe-xtableofcontents[data-x-toc*=border] .x-toc_link::before {    background-color: #eee;    content: " ";    display: inline-block;    height: inherit;    left: 0;    margin-top: -1px;    position: absolute;    width: 2px;}.brxe-xtableofcontents[data-x-toc*=border] .x-toc_active-link::before {    background-color: #54bc4b;}.x-toc_list {    margin: 0;    padding: 0;    list-style-type: none;    list-style-position: inside;    counter-reset: x_toc_items; }.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_link:before {    content: counters(x_toc_items,'', var(--x-toc-type)) '' var(--x-toc-suffix) ' ';}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_link:before {    content: counter(x_toc_items, var(--x-toc-type)) '' var(--x-toc-seperator) '' counter(x_toc_itemstwo, var(--x-toc-typetwo)) '' var(--x-toc-suffix) ' ';}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_list .x-toc_link:before {    content: counter(x_toc_items, var(--x-toc-type)) '' var(--x-toc-seperator) '' counter(x_toc_itemstwo, var(--x-toc-typetwo)) '' var(--x-toc-seperator) '' counter(x_toc_itemsthree, var(--x-toc-typethree)) '' var(--x-toc-suffix) ' ';}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_list .x-toc_list .x-toc_link:before {    content: counter(x_toc_items, var(--x-toc-type)) '' var(--x-toc-seperator) '' counter(x_toc_itemstwo, var(--x-toc-typetwo)) '' var(--x-toc-seperator) '' counter(x_toc_itemsthree, var(--x-toc-typethree)) '' var(--x-toc-seperator) '' counter(x_toc_items, var(--x-toc-typefour)) '' var(--x-toc-suffix) ' ';}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list {    counter-reset: x_toc_itemstwo;}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_list {    counter-reset: x_toc_itemsthree;}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_list .x-toc_list {    counter-reset: x_toc_itemsfour;}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list-item {    counter-increment: x_toc_items;}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_list-item {    counter-increment: x_toc_itemstwo;}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_list .x-toc_list-item {    counter-increment: x_toc_itemsthree;}.brxe-xtableofcontents[data-x-toc*=counter] .x-toc_list .x-toc_list .x-toc_list .x-toc_list .x-toc_list-item {    counter-increment: x_toc_itemsfour;}.brxe-xtableofcontents[data-x-toc*=counter][data-x-toc*=nestCounters] .x-toc_link:before {    content: counters(x_toc_items,'', var(--x-toc-type)) '' var(--x-toc-suffix) ' ';}.brxe-xtableofcontents[data-x-toc*=counter][data-x-toc*=nestCounters] .x-toc_list .x-toc_list .x-toc_link:before {    content: counter(x_toc_itemstwo, var(--x-toc-typetwo)) '' var(--x-toc-suffix) ' ';}.brxe-xtableofcontents[data-x-toc*=counter][data-x-toc*=nestCounters] .x-toc_list .x-toc_list .x-toc_list .x-toc_link:before {    content: counter(x_toc_itemsthree, var(--x-toc-typethree)) '' var(--x-toc-suffix) ' ';}.brxe-xtableofcontents[data-x-toc*=counter][data-x-toc*=nestCounters] .x-toc_list .x-toc_list .x-toc_list .x-toc_list .x-toc_link:before {    content: counter(x_toc_itemsfour, var(--x-toc-typefour)) '' var(--x-toc-suffix) ' ';}[data-x-toc-content] h1[tabindex]:focus,[data-x-toc-content] h2[tabindex]:focus,[data-x-toc-content] h3[tabindex]:focus,[data-x-toc-content] h4[tabindex]:focus,[data-x-toc-content] h5[tabindex]:focus,[data-x-toc-content] h6[tabindex]:focus {    outline: none;}.x-toc_body {    --x-toc-close-true: none;    --x-toc-close-false: flex;    display: var(--x-toc-close)}
+
+			#brx-header {
+				--x-header-transition: 0;
+				--x-header-fade-transition: 0;
+			}
+
+			#brx-header.x-header_sticky-active {
+				z-index: 999;
+			}</style>
+<link rel="stylesheet" id="bricks-font-awesome-css" href="/wp-content/themes/bricks/assets/css/libs/font-awesome.min.css?ver=1695510514" media="all">
+<link rel="stylesheet" id="bricks-ionicons-css" href="/wp-content/themes/bricks/assets/css/libs/ionicons.min.css?ver=1695510514" media="all">
+<link rel="stylesheet" id="bricks-themify-icons-css" href="/wp-content/themes/bricks/assets/css/libs/themify-icons.min.css?ver=1695510514" media="all">
+<link rel="stylesheet" id="automaticcss-bricks-css" href="/wp-content/uploads/automatic-css/automatic-bricks.css?ver=1690958892" media="all">
+<style id="bricks-frontend-inline-inline-css">/* COLOR VARS */
+:root {
+--bricks-color-41d5a9: #f5f5f5;
+--bricks-color-99c887: #e0e0e0;
+--bricks-color-46e566: #9e9e9e;
+--bricks-color-733d27: #616161;
+--bricks-color-366073: #424242;
+--bricks-color-da83d8: #212121;
+--bricks-color-e13943: #ffeb3b;
+--bricks-color-532f05: #ffc107;
+--bricks-color-02cdaf: #ff9800;
+--bricks-color-27368d: #ff5722;
+--bricks-color-9a6966: #f44336;
+--bricks-color-ff9397: #9c27b0;
+--bricks-color-eeb003: #2196f3;
+--bricks-color-07d926: #03a9f4;
+--bricks-color-dd2228: #81D4FA;
+--bricks-color-81c7f1: #4caf50;
+--bricks-color-2147aa: #8bc34a;
+--bricks-color-97f143: #cddc39;
+--bricks-color-zagbnv: #f9e35e;
+--bricks-color-vipnmf: rgba(196, 232, 247, 0.62);
+--bricks-color-wvvhuc: #d8d2ca;
+--bricks-color-acss_import_transparent: transparent;
+}
+
+/* GLOBAL CLASSES CSS */
+
+/* BREAKPOINT: Desktop (BASE) */
+.post-content.brxe-section {padding-top: 35px; padding-right: 20px; padding-left: 20px}
+
+
+/* HEADER CSS (ID: 28) */
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-fukllx {width: 80%}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-fukllx {width: 100%}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-mwbyjd {width: 25%}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-mwbyjd {width: 50%}
+}
+@media (max-width: 767px) {
+#brxe-ajfwhw .bricks-nav-menu-wrapper { display: none; }
+#brxe-ajfwhw .bricks-mobile-menu-toggle { display: block; }
+}
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-ajfwhw {font-family: "Roboto"; text-transform: capitalize; font-weight: 700; font-size: 16px; color: #ffffff}
+#brxe-ajfwhw .bricks-nav-menu > li > a {color: var(--danger); text-transform: capitalize; font-family: "Poppins"; font-weight: 700; font-size: 1.25em}
+#brxe-ajfwhw .bricks-nav-menu > li > .brx-submenu-toggle > * {color: var(--danger); text-transform: capitalize; font-family: "Poppins"; font-weight: 700; font-size: 1.25em}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-ajfwhw .bricks-mobile-menu-toggle {color: var(--bricks-color-9a6966)}
+#brxe-ajfwhw.show-mobile-menu .bricks-mobile-menu-toggle {color: var(--bricks-color-9a6966) !important}
+#brxe-ajfwhw {align-self: flex-end}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-togjjs {width: 50%; flex-direction: row; column-gap: 30px; justify-content: center}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-togjjs {width: 50%; justify-content: flex-end}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-qpglvf {font-size: 20px; background-color: var(--bricks-color-9a6966); padding-top: 9px; padding-right: 13px; padding-bottom: 9px; padding-left: 13px; border-radius: 50px; color: #ffffff; fill: #ffffff}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-qpglvf {display: none}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-zturax {font-size: 18px; background-color: var(--bricks-color-9a6966); padding-top: 10px; padding-right: 9px; padding-bottom: 9px; padding-left: 10px; border-radius: 50px; color: #ffffff; fill: #ffffff}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-zturax {display: none}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-mxxbuo {font-size: 18px; background-color: var(--bricks-color-9a6966); padding-top: 10px; padding-right: 11px; padding-bottom: 10px; padding-left: 11px; border-radius: 50px; color: #ffffff; fill: #ffffff}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-mxxbuo {display: none}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-eulzai {font-size: 18px; background-color: var(--bricks-color-9a6966); padding-top: 10px; padding-right: 9px; padding-bottom: 10px; padding-left: 9px; border-radius: 50px; color: #ffffff; fill: #ffffff}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-eulzai {display: none}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-onwkos {width: 25%; flex-direction: row; column-gap: 10px; justify-content: flex-end}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-onwkos {width: 50%}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-gxgllw {flex-direction: row; align-items: center}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-gbfmvp {padding-top: 20px; padding-bottom: 20px; background-color: #000000}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-gbfmvp {padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px; top: 0px; z-index: 1; position: sticky}
+}
+
+/* CONTENT CSS (ID: 853) */
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-wdjlqy {color: #ffffff; text-align: center; font-family: "Poppins"; font-weight: 700}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-dctapm {color: #ffffff; font-family: "Poppins"; font-weight: 600; padding-top: 10px; padding-bottom: 10px}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-tvhypf {color: #ffffff; font-family: "Poppins"; font-weight: 500}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-ugqukz {text-align: center; flex-direction: column; align-self: center !important; align-items: center; width: 100%; padding-right: 50px; padding-left: 50px; background-attachment: fixed; background-position: center center; background-repeat: no-repeat; background-size: cover}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-gvwqnf {padding-top: 9vw; padding-bottom: 3vw; background-attachment: fixed; background-position: center center; background-repeat: no-repeat; background-size: cover; position: relative}
+:where(#brxe-gvwqnf > *) {position: relative}
+#brxe-gvwqnf::before {background-image: linear-gradient(rgba(33, 33, 33, 0.38), rgba(33, 33, 33, 0.38)); position: absolute; content: ""; top: 0; right: 0; bottom: 0; left: 0; pointer-events: none}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-cdjpkl {margin-top: 25px; margin-bottom: 25px}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-dngkka {color: #000000; font-size: 18px; font-family: "Poppins"; font-weight: 600; text-align: left; align-self: center; margin-top: 3vw}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-kofzsc {position: static; top: 25%; display: flex; flex-direction: row; gap: 5px; align-self: center; align-items: center}
+#brxe-kofzsc li {margin-top: 10px}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-izjvkr {margin-top: 20px}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-skjruf {width: 100%; align-items: flex-start}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-wfrprg input[type=search]::placeholder {color: #000000}
+#brxe-wfrprg input[type=search] {border-color: #000000}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-gugwak .x-toc_header {color: #000000; font-family: "Poppins"; font-weight: 500}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-amoawz {color: #000000; font-size: 24px; font-family: "Poppins"; font-weight: 600; text-align: center; position: relative; align-self: center; margin-top: 15px; margin-bottom: 15px}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-ueaixc .repeater-item [data-field-id="5c6fed"] {margin-top: 10px}
+#brxe-ueaixc {grid-template-columns: repeat(1, 1fr); grid-auto-flow: unset}
+#brxe-ueaixc li {color: #000000; font-family: "Poppins"; font-size: .75em; padding-bottom: 50px; box-shadow: 5px 5px 1px 0 var(--bricks-color-9a6966)}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-hwsqci {width: 25%; flex-direction: column; align-self: flex-start !important; align-items: center; padding-left: 35px}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-jtuphi {flex-direction: row; padding-bottom: 25px; column-gap: 30px}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-tzozql {padding-bottom: 35px}
+
+
+/* FOOTER CSS (ID: 31) */
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-rpisls {width: 43%}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-eaxztd {color: #ffffff; font-family: "Roboto"; margin-top: 20px}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-eaxztd {text-align: center}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-xpelqb {width: 50%}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-xpelqb {width: 100%; margin-top: 40px; align-items: center}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-rakvig {color: #ffffff; font-family: "Roboto"}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-hdxtls .icon i {font-size: 20px}
+#brxe-hdxtls .icon {align-self: center; color: var(--bricks-color-9a6966)}
+#brxe-hdxtls {gap: 10px; flex-direction: row; margin-top: 20px}
+#brxe-hdxtls .icon a {color: var(--bricks-color-9a6966)}
+#brxe-hdxtls .content {color: #ffffff; font-family: "Roboto"}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-mqefoe .icon i {font-size: 20px}
+#brxe-mqefoe .icon {align-self: center; color: var(--bricks-color-9a6966)}
+#brxe-mqefoe {gap: 10px; flex-direction: row; margin-top: 7px}
+#brxe-mqefoe .icon a {color: var(--bricks-color-9a6966)}
+#brxe-mqefoe .content {color: #ffffff; font-family: "Roboto"}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-vrahhh .icon i {font-size: 20px}
+#brxe-vrahhh .icon {align-self: center; color: var(--bricks-color-9a6966)}
+#brxe-vrahhh {gap: 10px; flex-direction: row; margin-top: 7px}
+#brxe-vrahhh .icon a {color: var(--bricks-color-9a6966)}
+#brxe-vrahhh .content {color: #ffffff; font-family: "Roboto"}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-xuqyxc {width: 25%}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-xuqyxc {width: 100%; margin-top: 40px; align-items: center}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-lgqfds {color: #ffffff; font-family: "Roboto"}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-eecmvu {margin-top: 20px; color: #ffffff; font-family: "Roboto"; text-transform: capitalize; font-weight: 500}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-ztmoaz {margin-top: 6px; color: #ffffff; font-family: "Roboto"; text-transform: capitalize; font-weight: 500}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-dcnagm {margin-top: 6px; color: #ffffff; font-family: "Roboto"; text-transform: capitalize; font-weight: 500}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-luqjcj {margin-top: 6px; color: #ffffff; font-family: "Roboto"; text-transform: capitalize; font-weight: 500}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-jvfmyb {width: 25%; padding-bottom: 40px}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-jvfmyb {width: 100%; margin-top: 40px; align-items: center}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-lwvhbf {flex-direction: row; column-gap: 50px; border-bottom: 2px solid #ffffff}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-joihqv {font-size: 17px}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-joihqv {text-align: center}
+}
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-nitblx {margin-top: 20px; margin-bottom: 20px; align-items: flex-end; color: #ffffff; font-family: "Roboto"; text-transform: capitalize}
+
+
+/* BREAKPOINT: Desktop (BASE) */
+#brxe-tseoqd {background-color: #323232; padding-top: 5vw}
+
+/* BREAKPOINT: Mobile portrait */
+@media (max-width: 478px) {
+#brxe-tseoqd {padding-right: 20px; padding-left: 20px}
+}</style>
+<link rel="stylesheet" id="bricks-google-fonts-css" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&#038;display=swap&#038;family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&#038;display=swap" media="all">
+<link rel="stylesheet" id="plyr-css" href="/wp-content/plugins/embedpress/assets/css/plyr.css?ver=6.3.1" media="all">
+<script src="/wp-includes/js/jquery/jquery.min.js?ver=3.7.0" id="jquery-core-js"></script>
+<script src="/wp-content/plugins/gpt3-ai-content-generator-premium/public/js/wp-ai-content-generator-public.js?ver=1.7.71" id="wp-ai-content-generator-js"></script>
+<script src="/wp-content/plugins/buddypress/bp-core/js/widget-members.min.js?ver=11.3.1" id="bp-widget-members-js"></script>
+<script src="/wp-content/plugins/buddypress/bp-core/js/jquery-query.min.js?ver=11.3.1" id="bp-jquery-query-js"></script>
+<script src="/wp-content/plugins/buddypress/bp-core/js/vendor/jquery-cookie.min.js?ver=11.3.1" id="bp-jquery-cookie-js"></script>
+<script src="/wp-content/plugins/buddypress/bp-core/js/vendor/jquery-scroll-to.min.js?ver=11.3.1" id="bp-jquery-scroll-to-js"></script>
+<script src="/wp-content/plugins/embedpress/assets/js/plyr.polyfilled.js?ver=1" id="plyr.polyfilled-js"></script>
+<link rel="https://api.w.org/" href="/wp-json/">
+<link rel="alternate" type="application/json" href="/wp-json/wp/v2/posts/853">
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd">
+<meta name="generator" content="WordPress 6.3.1">
+<link rel="shortlink" href="/?p=853">
+<link rel="alternate" type="application/json+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Fabout%2Fhoundadore-dog-coat-colors-and-patterns%2F">
+<link rel="alternate" type="text/xml+oembed" href="/wp-json/oembed/1.0/embed?url=https%3A%2F%2F%2Fabout%2Fhoundadore-dog-coat-colors-and-patterns%2F#038;format=xml">
+
+	<script type="text/javascript">var ajaxurl = '/wp-admin/admin-ajax.php';</script>
+
+<style media="print">#wpadminbar { display:none; }</style>
+	<style media="screen">html { margin-top: 32px !important; }
+	@media screen and ( max-width: 782px ) {
+		html { margin-top: 46px !important; }
+	}</style>
+	<link rel="icon" href="/wp-content/uploads/2023/03/Dog-Training-Favicon-150x150.png" sizes="32x32">
+<link rel="icon" href="/wp-content/uploads/2023/03/Dog-Training-Favicon.png" sizes="192x192">
+<link rel="apple-touch-icon" href="/wp-content/uploads/2023/03/Dog-Training-Favicon.png">
+<meta name="msapplication-TileImage" content="/wp-content/uploads/2023/03/Dog-Training-Favicon.png">
+		<style id="wp-custom-css">@media screen and (min-width: 375px) {
+body.bricks-is-frontend.admin-bar #brx-header.sticky {
+	top: 0px !important
+}
+}
+
+#brxe-fuxnba .bricks-pagination ul {
+    justify-content: center;
+    gap: 40px;
+    margin-top: 60px;
+}</style>
+		
+<!-- Facebook Open Graph (by Bricks) -->
+<meta property="og:url" content="/about/houndadore-dog-coat-colors-and-patterns/">
+<meta property="og:site_name" content="Houndadore - The Perfect Blend Of Hound and Labradore">
+<meta property="og:title" content="Houndadore dog coat colors and patterns">
+<meta property="og:description" content="Stylish and diverse: Houndadore dog coats, a palette of colors and patterns. The Houndadore is a mixed breed dog that is a cross between a Labrador Retriever and a Hound breed, such as a Coonhound or a Bloodhound. As a result of this mix, Houndadores can exhibit a variety of coat colors and patterns. These [&hellip;]">
+<meta property="og:type" content="article">
+</head>
+
+<body class="bp-nouveau post-template-default single single-post postid-853 single-format-standard admin-bar no-customize-support brx-body bricks-is-frontend wp-embed-responsive no-js">		<a class="skip-link" href="#brx-content" aria-label="Skip to main content">Skip to main content</a>
+
+					<a class="skip-link" href="#brx-footer" aria-label="Skip to footer">Skip to footer</a>
+			<header id="brx-header" class="sticky on-scroll" data-x-overlay="none"><section id="brxe-gbfmvp" class="brxe-section"><div id="brxe-gxgllw" class="brxe-container">
+<div id="brxe-mwbyjd" class="brxe-block"><img width="300" height="75" src="/wp-content/uploads/2023/03/Houndadore-2-White.png" class="brxe-image css-filter size-full" alt="Houndadore" decoding="async" id="brxe-fukllx"></div>
+<div id="brxe-togjjs" class="brxe-block"><div id="brxe-ajfwhw" data-script-id="ajfwhw" class="brxe-nav-menu">
+<nav class="bricks-nav-menu-wrapper mobile_landscape"><ul id="menu-main-menu" class="bricks-nav-menu">
+<li id="menu-item-821" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-821 bricks-menu-item"><a href="/">Home</a></li>
+<li id="menu-item-822" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-822 bricks-menu-item"><a href="#">About</a></li>
+<li id="menu-item-823" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-823 bricks-menu-item"><a href="/blog/">Blog</a></li>
+<li id="menu-item-824" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-824 bricks-menu-item"><a href="#">Gallery</a></li>
+<li id="menu-item-825" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-825 bricks-menu-item"><a href="#">Contact</a></li>
+</ul></nav>			<button class="bricks-mobile-menu-toggle" aria-haspopup="true" aria-label="Mobile menu" aria-expanded="false">
+				<span class="bar-top"></span>
+				<span class="bar-center"></span>
+				<span class="bar-bottom"></span>
+			</button>
+			<nav class="bricks-mobile-menu-wrapper left"><ul id="menu-main-menu-1" class="bricks-mobile-menu">
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-821 bricks-menu-item"><a href="/">Home</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-822 bricks-menu-item"><a href="#">About</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-823 bricks-menu-item"><a href="/blog/">Blog</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-824 bricks-menu-item"><a href="#">Gallery</a></li>
+<li class="menu-item menu-item-type-custom menu-item-object-custom menu-item-825 bricks-menu-item"><a href="#">Contact</a></li>
+</ul></nav><div class="bricks-mobile-menu-overlay"></div>
+</div></div>
+<div id="brxe-onwkos" class="brxe-block">
+<a href="https://www.facebook.com/houndadore" target="_blank"><i id="brxe-qpglvf" class="brxe-icon fab fa-facebook-f"></i></a><i id="brxe-zturax" class="brxe-icon fab fa-twitter"></i><i id="brxe-mxxbuo" class="brxe-icon fab fa-linkedin-in"></i><i id="brxe-eulzai" class="brxe-icon fab fa-youtube"></i>
+</div>
+</div></section></header><main id="brx-content"><section id="brxe-gvwqnf" class="brxe-section"><div id="brxe-ugqukz" class="brxe-container">
+<h1 id="brxe-wdjlqy" class="brxe-post-title">Houndadore dog coat colors and patterns</h1>
+<div id="brxe-dctapm" class="brxe-shortcode"><nav aria-label="breadcrumbs" class="rank-math-breadcrumb"><p><a href="/">Home</a><span class="separator"> - </span><a href="/category/about/">About</a><span class="separator"> - </span><span class="last">Houndadore dog coat colors and patterns</span></p></nav></div>
+<div id="brxe-tvhypf" class="brxe-post-meta post-meta">
+<span class="item">June 30, 2023</span><span class="item">0 comments</span>
+</div>
+</div></section><section id="brxe-tzozql" class="brxe-section post-content"><div id="brxe-jtuphi" class="brxe-container">
+<div id="brxe-skjruf" class="brxe-block">
+<div id="brxe-hbkqvb" class="brxe-post-content">
+<p>Stylish and diverse: Houndadore dog coats, a palette of colors and patterns.</p>
+<p>The Houndadore is a mixed breed dog that is a cross between a Labrador Retriever and a Hound breed, such as a Coonhound or a Bloodhound. As a result of this mix, Houndadores can exhibit a variety of coat colors and patterns. These can include solid colors like black, chocolate, yellow, or liver, as well as combinations of these colors with white markings. Additionally, Houndadores may also display patterns such as brindle or ticking. The coat colors and patterns of Houndadores can vary greatly, making each individual dog unique in its appearance.</p>
+<h2 id="understanding-the-different-coat-colors-of-houndadore-dogs-qGyzvAZkhl">Understanding the Different Coat Colors of Houndadore Dogs</h2>
+<p>The Houndadore, a crossbreed between a Labrador Retriever and a Bloodhound, is a popular choice for dog lovers seeking a loyal and affectionate companion. One of the most fascinating aspects of this breed is its wide range of coat colors and patterns. Understanding the different coat colors of Houndadore dogs can help potential owners choose the perfect furry friend that matches their preferences.</p>
+<p>One of the most common coat colors seen in Houndadores is black. This solid black coat is sleek and shiny, giving the dog a regal and elegant appearance. The black coat is often accompanied by a white chest patch, adding a touch of contrast to the overall look. This classic color combination is highly sought after by many dog enthusiasts.</p>
+<p>Another popular coat color in Houndadores is chocolate. This rich and warm brown shade is often seen in Labrador Retrievers and is passed down to their Houndadore offspring. The chocolate coat can vary in intensity, ranging from a light milk chocolate to a deep, dark cocoa color. This coat color is particularly striking when paired with the Houndadore&#8217;s expressive eyes and droopy ears.</p>
+<p>For those who prefer a lighter color, the Houndadore also comes in a stunning shade of yellow. This coat color can range from a pale cream to a vibrant golden hue. The yellow coat is often accompanied by darker shades around the ears and face, creating a beautiful contrast. This color variation is highly sought after by those who want a dog that stands out from the crowd.</p>
+<p>In addition to solid colors, Houndadores can also have various coat patterns that add an extra touch of uniqueness. One of the most common patterns is the brindle coat. This pattern consists of dark stripes on a lighter background, creating a tiger-like appearance. Brindle Houndadores can have a combination of black, brown, or even gray stripes, making each dog truly one-of-a-kind.</p>
+<p>Another striking coat pattern seen in Houndadores is the spotted coat. This pattern is reminiscent of the Bloodhound&#8217;s ancestry and can vary in size and color. Some Houndadores have small, scattered spots all over their body, while others have larger, more defined spots. The spots can be black, brown, or even a mix of both, creating a playful and eye-catching look.</p>
+<p>It is important to note that coat colors and patterns can vary within the same litter of Houndadores. This is due to the genetic diversity inherited from both parent breeds. Therefore, potential owners should be prepared for surprises when it comes to the appearance of their Houndadore puppy.</p>
+<p>In conclusion, the Houndadore breed offers a wide range of coat colors and patterns, making each dog unique and visually appealing. Whether you prefer a solid black, chocolate, or yellow coat, or a brindle or spotted pattern, there is a Houndadore out there to suit your taste. Understanding the different coat colors and patterns of Houndadores can help potential owners make an informed decision when choosing their new furry friend. So, if you&#8217;re looking for a loyal and affectionate companion with a stunning coat, the Houndadore might just be the perfect breed for you.</p>
+<h2 id="exploring-the-unique-patterns-of-houndadore-dog-coats-qGyzvAZkhl">Exploring the Unique Patterns of Houndadore Dog Coats</h2>
+<p>The Houndadore, a crossbreed between a Labrador Retriever and a Bloodhound, is a stunning and unique dog breed that possesses a wide range of coat colors and patterns. These distinctive features make them stand out from other breeds and add to their overall charm and appeal. In this article, we will explore the various coat colors and patterns that can be found in Houndadore dogs, providing a comprehensive understanding of their beauty and diversity.</p>
+<p>One of the most common coat colors seen in Houndadores is black. This deep, rich color is often accompanied by a glossy sheen, giving the dog a sleek and elegant appearance. Black Houndadores are truly striking, and their coats can range from solid black to black with small patches of white or other colors. These variations add a touch of uniqueness to each individual dog, making them even more captivating.</p>
+<p>Another popular coat color in Houndadores is chocolate brown. This warm and inviting color is often associated with a friendly and gentle temperament, which perfectly complements the Houndadore&#8217;s loving and affectionate nature. Chocolate brown Houndadores can have solid coats or may exhibit small patches of white or other colors, creating a delightful contrast that enhances their overall beauty.</p>
+<p>In addition to black and chocolate brown, Houndadores can also have coats in shades of yellow or golden. These colors exude a sense of warmth and radiance, making the dog appear even more friendly and approachable. Yellow or golden Houndadores can have coats that range from light cream to deep golden hues, and their coats may be solid or have patches of white or other colors, adding a touch of individuality to each dog.</p>
+<p>One of the most fascinating aspects of Houndadore coat patterns is the presence of brindle. Brindle is a unique pattern characterized by streaks or stripes of color on a base coat, creating a mesmerizing and eye-catching effect. Brindle Houndadores can have a base coat of black, chocolate brown, yellow, or golden, with the brindle pattern overlaying it. This combination of colors and patterns results in a truly remarkable and distinctive appearance that sets the Houndadore apart from other breeds.</p>
+<p>In addition to brindle, Houndadores can also have coats with white markings. These markings can appear on various parts of the body, such as the chest, paws, or face, and they add a touch of contrast and elegance to the overall coat. White markings can be small and subtle or more prominent, depending on the individual dog. Regardless of their size, these white markings enhance the Houndadore&#8217;s beauty and make them even more visually appealing.</p>
+<p>In conclusion, the Houndadore is a breed that boasts a wide range of coat colors and patterns, each contributing to their overall charm and allure. From solid black or chocolate brown to shades of yellow or golden, Houndadores come in a variety of stunning colors that suit their friendly and affectionate nature. Additionally, the presence of brindle and white markings adds a touch of uniqueness and individuality to each dog. Whether you prefer a solid-colored Houndadore or one with a striking pattern, there is no denying the beauty and diversity of their coats.</p>
+<h2 id="the-genetics-behind-houndadore-dog-coat-colors-qGyzvAZkhl">The Genetics Behind Houndadore Dog Coat Colors</h2>
+<p>The Houndadore is a popular mixed breed dog that combines the traits of a Labrador Retriever and a Bloodhound. One of the most fascinating aspects of this breed is its coat colors and patterns, which can vary greatly from one dog to another. Understanding the genetics behind Houndadore dog coat colors can help breeders and owners better appreciate the unique characteristics of these dogs.</p>
+<p>The coat color of a Houndadore is determined by a combination of genes inherited from its Labrador Retriever and Bloodhound parents. Both breeds have a wide range of coat colors, including black, yellow, chocolate, liver, and red. When these genes are combined, they can produce a variety of coat colors in Houndadore puppies.</p>
+<p>The primary gene responsible for coat color in Houndadores is the E locus gene. This gene has two alleles, E and e, with E being dominant and e being recessive. Dogs with the E allele will have a solid coat color, while those with the e allele will have a diluted or lighter coat color. For example, a Houndadore with the E allele may have a solid black coat, while one with the e allele may have a lighter shade of black or gray.</p>
+<p>In addition to the E locus gene, there are other genes that can influence coat color in Houndadores. One of these genes is the B locus gene, which determines the intensity of black or brown pigment in the coat. Dogs with the BB or Bb genotype will have black pigment, while those with the bb genotype will have brown pigment. This gene is responsible for the variation in coat colors such as black, chocolate, and liver in Houndadores.</p>
+<p>Another gene that can affect coat color in Houndadores is the D locus gene, which determines the presence or absence of the dilution gene. Dogs with the DD or Dd genotype will have a normal coat color, while those with the dd genotype will have a diluted or lighter coat color. This gene is responsible for coat colors such as yellow and cream in Houndadores.</p>
+<p>The combination of these genes can result in a wide range of coat colors and patterns in Houndadores. For example, a Houndadore with the EEBBDD genotype will have a solid black coat, while one with the eeBBdd genotype will have a diluted yellow coat. Other possible coat colors include chocolate, liver, red, and various shades of these colors.</p>
+<p>It is important to note that coat color in Houndadores is not solely determined by genetics. Environmental factors, such as exposure to sunlight and diet, can also influence the appearance of the coat. Additionally, coat color can change as the dog matures, so a puppy with a certain coat color may develop a different color as it grows older.</p>
+<p>In conclusion, the genetics behind Houndadore dog coat colors are complex and fascinating. The combination of genes inherited from Labrador Retrievers and Bloodhounds can result in a wide range of coat colors and patterns in these dogs. Understanding the genetic factors that contribute to coat color can help breeders and owners appreciate the unique characteristics of Houndadores and ensure responsible breeding practices.</p>
+<h2 id="a-guide-to-solid-coat-colors-in-houndadore-dogs-qGyzvAZkhl">A Guide to Solid Coat Colors in Houndadore Dogs</h2>
+<p>The Houndadore is a popular mixed breed dog that combines the traits of a Labrador Retriever and a Bloodhound. These dogs are known for their friendly and loyal nature, as well as their intelligence and trainability. One of the most striking features of the Houndadore is their coat, which can come in a variety of solid colors. In this guide, we will explore the different coat colors and patterns that can be found in Houndadore dogs.</p>
+<p>One of the most common solid coat colors in Houndadore dogs is black. These dogs have a sleek and shiny black coat that is often described as being as dark as night. The black coat color is a result of the Labrador Retriever parent, as this breed is known for its black coat. Houndadores with a black coat often have a solid black nose and dark brown eyes, which adds to their striking appearance.</p>
+<p>Another solid coat color that can be found in Houndadore dogs is chocolate. These dogs have a rich and warm brown coat that is reminiscent of a chocolate bar. The chocolate coat color is also inherited from the Labrador Retriever parent, as this breed can have a chocolate coat as well. Houndadores with a chocolate coat often have a solid brown nose and amber eyes, which gives them a gentle and kind expression.</p>
+<p>In addition to black and chocolate, Houndadore dogs can also have a solid yellow coat. These dogs have a light and golden coat that is often described as being the color of a ripe sunflower. The yellow coat color is also inherited from the Labrador Retriever parent, as this breed can have a yellow coat as well. Houndadores with a yellow coat often have a solid black nose and dark brown eyes, which contrasts beautifully with their golden fur.</p>
+<p>While solid coat colors are the most common in Houndadore dogs, there are also some variations and patterns that can be found. One such variation is the brindle coat pattern. Brindle Houndadores have a base coat color, such as black or chocolate, with streaks or patches of a darker color, such as black or brown. This creates a unique and eye-catching pattern that adds to the overall beauty of the dog.</p>
+<p>Another variation is the merle coat pattern. Merle Houndadores have a base coat color, such as black or chocolate, with patches or spots of a lighter color, such as gray or silver. This creates a marbled or mottled effect on the coat, giving the dog a distinctive and striking appearance.</p>
+<p>In conclusion, Houndadore dogs come in a variety of solid coat colors, including black, chocolate, and yellow. These colors are inherited from their Labrador Retriever parent and give the dogs a sleek and beautiful appearance. Additionally, there are variations and patterns, such as brindle and merle, that can be found in Houndadore coats, adding to their uniqueness. Whether you prefer a solid coat color or a patterned one, Houndadores are sure to capture your heart with their stunning coats.</p>
+<h2 id="unraveling-the-mystery-of-brindle-coat-patterns-in-houndadore-dogs-qGyzvAZkhl">Unraveling the Mystery of Brindle Coat Patterns in Houndadore Dogs</h2>
+<p>The Houndadore is a popular mixed breed dog that combines the traits of the Labrador Retriever and the Coonhound. These dogs are known for their friendly and outgoing nature, as well as their intelligence and loyalty. One of the most intriguing aspects of the Houndadore is their coat colors and patterns, particularly the brindle coat pattern. In this article, we will unravel the mystery of brindle coat patterns in Houndadore dogs.</p>
+<p>Brindle is a unique coat pattern that is characterized by a base color with streaks or stripes of a darker color. It is a fascinating and eye-catching pattern that can vary greatly in intensity and distribution. The base color of a brindle Houndadore can range from light tan to deep red, while the darker stripes can be black, brown, or even a deep red.</p>
+<p>The brindle coat pattern in Houndadore dogs is a result of the combination of genes from both the Labrador Retriever and the Coonhound. Both of these breeds have the potential to carry the brindle gene, which can be passed on to their offspring. When a Houndadore inherits the brindle gene from both parents, they will have a brindle coat pattern.</p>
+<p>The brindle coat pattern in Houndadore dogs can vary greatly from dog to dog. Some may have a subtle brindle pattern, with faint streaks or stripes that are barely visible. Others may have a more pronounced pattern, with bold and distinct stripes that cover a larger portion of their coat. The intensity and distribution of the brindle pattern can also change as the dog grows and matures.</p>
+<p>It is important to note that not all Houndadore dogs will have a brindle coat pattern. Some may inherit the solid coat colors of their Labrador Retriever parent, such as black, yellow, or chocolate. Others may inherit the tricolor coat pattern of their Coonhound parent, which typically consists of a combination of black, white, and tan. The presence of the brindle coat pattern in a Houndadore is determined by the genetic makeup of the individual dog.</p>
+<p>The brindle coat pattern in Houndadore dogs is not only visually appealing but also adds to the uniqueness and individuality of each dog. It is a striking and distinctive pattern that sets them apart from other breeds. The brindle coat pattern can also change and evolve over time, making each Houndadore&#8217;s coat truly one-of-a-kind.</p>
+<p>In conclusion, the brindle coat pattern in Houndadore dogs is a fascinating and unique trait that adds to their charm and appeal. It is a result of the combination of genes from both the Labrador Retriever and the Coonhound, and can vary greatly in intensity and distribution. Not all Houndadore dogs will have a brindle coat pattern, as it is determined by the genetic makeup of the individual dog. The brindle coat pattern is visually striking and adds to the individuality of each Houndadore. Whether subtle or bold, the brindle coat pattern is a beautiful and captivating feature of this beloved mixed breed dog.</p>
+<h2 id="the-beauty-of-merle-coat-patterns-in-houndadore-dogs-qGyzvAZkhl">The Beauty of Merle Coat Patterns in Houndadore Dogs</h2>
+<p>The Houndadore is a beautiful and unique breed of dog that combines the traits of the Labrador Retriever and the Bloodhound. One of the most striking features of the Houndadore is its coat, which comes in a variety of colors and patterns. In this article, we will explore the beauty of merle coat patterns in Houndadore dogs.</p>
+<p>Merle is a coat pattern that is characterized by patches of lighter colors on a darker base coat. It is a highly sought-after pattern in many dog breeds, including the Houndadore. The merle pattern can appear in a range of colors, such as blue, red, chocolate, and fawn. Each color variation adds a unique touch to the overall appearance of the dog.</p>
+<p>One of the reasons why merle coat patterns are so appealing is their striking and eye-catching appearance. The patches of lighter colors create a beautiful contrast against the darker base coat, giving the dog a truly unique and mesmerizing look. This pattern is often described as &#8220;marbled&#8221; or &#8220;mottled,&#8221; which perfectly captures its intricate and captivating nature.</p>
+<p>Another reason why merle coat patterns are highly valued is their rarity. While merle is a relatively common pattern in some breeds, it is less common in others, including the Houndadore. This rarity adds to the allure of the merle Houndadore, making them even more special and desirable to dog enthusiasts.</p>
+<p>In addition to their visual appeal, merle coat patterns can also have an impact on the dog&#8217;s personality. Many owners of merle Houndadores report that their dogs have a unique and charming temperament. They are often described as intelligent, loyal, and affectionate. While it is important to note that personality traits can vary from dog to dog, the merle pattern seems to add an extra touch of charm to the Houndadore breed.</p>
+<p>It is worth mentioning that the merle coat pattern is not without controversy. In some breeds, the merle gene can be associated with health issues, such as deafness and vision problems. However, it is important to note that responsible breeders take great care to ensure the health and well-being of their dogs. They conduct thorough health screenings and genetic testing to minimize the risk of these issues in their breeding programs.</p>
+<p>If you are considering adding a Houndadore with a merle coat pattern to your family, it is crucial to do your research and find a reputable breeder. A responsible breeder will prioritize the health and welfare of their dogs and will be transparent about any potential health concerns associated with the merle gene.</p>
+<p>In conclusion, the merle coat pattern adds a touch of beauty and uniqueness to the Houndadore breed. Its striking appearance, rarity, and potential impact on the dog&#8217;s personality make merle Houndadores highly sought-after by dog enthusiasts. However, it is important to approach the acquisition of a merle Houndadore with caution and ensure that you are working with a responsible breeder who prioritizes the health and well-being of their dogs. With proper care and attention, a merle Houndadore can be a wonderful addition to any family.</p>
+<h2 id="spotting-the-spotted-coat-patterns-in-houndadore-dogs-qGyzvAZkhl">Spotting the Spotted Coat Patterns in Houndadore Dogs</h2>
+<p>The Houndadore is a popular mixed breed dog that combines the traits of a Labrador Retriever and a Bloodhound. These dogs are known for their friendly and loyal nature, making them excellent family pets. One of the most striking features of the Houndadore is their coat, which can come in a variety of colors and patterns. In this article, we will focus on the spotted coat patterns that can be found in Houndadore dogs.</p>
+<p>Spotted coat patterns are characterized by patches or spots of different colors on the dog&#8217;s coat. These patterns can vary in size, shape, and distribution, creating a unique and eye-catching appearance. Houndadore dogs can have spotted coats in a range of colors, including black, liver, and tan.</p>
+<p>One common spotted coat pattern in Houndadore dogs is the Dalmatian-like pattern. This pattern features large, round spots that are evenly distributed across the dog&#8217;s body. The spots can be black or liver in color, depending on the base coat color of the dog. This pattern is often associated with the Dalmatian breed, but it can also be seen in Houndadore dogs.</p>
+<p>Another spotted coat pattern that is commonly seen in Houndadore dogs is the ticking pattern. This pattern is characterized by small, fleck-like spots that are scattered throughout the dog&#8217;s coat. The spots can be black or liver in color and are usually found on the dog&#8217;s white or light-colored areas. The ticking pattern gives the dog&#8217;s coat a speckled appearance, adding to its overall charm.</p>
+<p>In addition to the Dalmatian-like and ticking patterns, Houndadore dogs can also have a merle coat pattern. The merle pattern is characterized by patches or swirls of different colors on the dog&#8217;s coat. These patches can be black, liver, or blue in color and are often seen on a base coat of white or light-colored fur. The merle pattern can create a beautiful and unique look, making Houndadore dogs stand out from the crowd.</p>
+<p>It is important to note that while these coat patterns are visually appealing, they do not have any impact on the dog&#8217;s temperament or health. The Houndadore is known for being a friendly and loyal companion, regardless of its coat color or pattern. However, it is always a good idea to choose a reputable breeder who prioritizes the health and well-being of their dogs.</p>
+<p>In conclusion, the Houndadore is a mixed breed dog that can have a variety of coat colors and patterns. The spotted coat patterns, including the Dalmatian-like pattern, ticking pattern, and merle pattern, are particularly eye-catching and add to the dog&#8217;s overall charm. While these coat patterns are visually appealing, they do not affect the dog&#8217;s temperament or health. If you are considering adding a Houndadore to your family, take the time to research reputable breeders who prioritize the well-being of their dogs.</p>
+<h2 id="the-fascinating-world-of-parti-coat-colors-in-houndadore-dogs-qGyzvAZkhl">The Fascinating World of Parti Coat Colors in Houndadore Dogs</h2>
+<p>The Houndadore, a crossbreed between a Labrador Retriever and a Bloodhound, is a popular choice for dog lovers seeking a loyal and affectionate companion. While their temperament and intelligence are well-known, their coat colors and patterns are equally fascinating. In this article, we will explore the world of parti coat colors in Houndadore dogs, shedding light on the various combinations and patterns that make these dogs truly unique.</p>
+<p>Parti coat colors refer to a coat that is predominantly white with patches of another color. In Houndadore dogs, these patches can come in a wide range of colors, including black, brown, tan, and even brindle. The distribution and size of these patches can vary greatly, creating a beautiful mosaic on the dog&#8217;s coat.</p>
+<p>One of the most common parti coat patterns in Houndadore dogs is the classic black and white combination. This pattern features a predominantly white coat with black patches scattered throughout. The patches can be small and scattered or large and well-defined, creating a striking contrast against the white background. This pattern is often reminiscent of the classic Dalmatian coat, adding a touch of elegance to the Houndadore&#8217;s appearance.</p>
+<p>Another popular parti coat pattern in Houndadore dogs is the brown and white combination. This pattern is similar to the black and white pattern, but with brown patches instead of black. The brown patches can range from a light tan to a deep chocolate color, creating a warm and inviting look. This pattern is particularly stunning on Houndadore dogs with a darker brown coat, as the contrast between the white and brown patches is truly eye-catching.</p>
+<p>In addition to the classic black and brown patterns, Houndadore dogs can also exhibit parti coat patterns with brindle patches. Brindle refers to a coat pattern that features a base color with streaks or spots of a darker color. When combined with the white patches, the brindle pattern creates a unique and mesmerizing look. The brindle patches can be subtle, with thin streaks of a darker color, or more pronounced, with larger spots that stand out against the white background.</p>
+<p>It is important to note that while parti coat colors and patterns are visually stunning, they do not affect the Houndadore&#8217;s temperament or health. The coat colors and patterns are purely aesthetic and do not have any impact on the dog&#8217;s overall well-being. However, they do add an extra layer of charm and individuality to these already lovable dogs.</p>
+<p>In conclusion, the world of parti coat colors in Houndadore dogs is truly fascinating. From the classic black and white combination to the warm and inviting brown and white pattern, these dogs showcase a wide range of colors and patterns. The addition of brindle patches further enhances their unique appearance. While these coat colors and patterns are purely aesthetic, they undoubtedly contribute to the Houndadore&#8217;s overall charm and appeal. Whether you prefer a classic black and white look or a more vibrant brindle pattern, there is a Houndadore coat color and pattern that will capture your heart.</p>
+<h2 id="examining-the-tri-color-coat-patterns-in-houndadore-dogs-qGyzvAZkhl">Examining the Tri-Color Coat Patterns in Houndadore Dogs</h2>
+<p>The Houndadore is a popular mixed breed dog that combines the traits of the Labrador Retriever and the Coonhound. One of the most striking features of this breed is its coat, which can come in a variety of colors and patterns. In this article, we will be examining the tri-color coat patterns that are commonly seen in Houndadore dogs.</p>
+<p>Tri-color coat patterns are characterized by three distinct colors that are evenly distributed throughout the dog&#8217;s coat. In Houndadore dogs, these colors typically include black, tan, and white. The black color is usually the dominant one, covering most of the dog&#8217;s body. Tan markings can be found on the dog&#8217;s face, legs, and chest, while white patches are often seen on the chest and paws.</p>
+<p>One of the most common tri-color coat patterns in Houndadore dogs is known as the &#8220;saddleback&#8221; pattern. In this pattern, the black color forms a saddle-like shape on the dog&#8217;s back, with tan markings on the sides and white patches on the chest and paws. This pattern is reminiscent of the Coonhound&#8217;s coat and is often seen in Houndadore dogs with a strong Coonhound lineage.</p>
+<p>Another tri-color coat pattern that is frequently seen in Houndadore dogs is the &#8220;blanket&#8221; pattern. In this pattern, the black color covers most of the dog&#8217;s body, with tan markings on the face, legs, and chest. White patches are also present, usually on the chest and paws. This pattern is similar to the saddleback pattern, but the black color extends further down the dog&#8217;s body, resembling a blanket.</p>
+<p>The &#8220;ticked&#8221; tri-color coat pattern is another variation that can be found in Houndadore dogs. In this pattern, the black color is speckled with tan markings, giving the dog a unique and eye-catching appearance. White patches are also present, typically on the chest and paws. This pattern is reminiscent of the ticking pattern seen in some Coonhounds and adds an extra layer of complexity to the dog&#8217;s coat.</p>
+<p>It is important to note that while tri-color coat patterns are common in Houndadore dogs, they are not the only coat colors and patterns that can be found in this breed. Houndadore dogs can also have solid black or solid tan coats, as well as other color combinations such as black and white or tan and white. The coat color and pattern of a Houndadore dog can vary depending on the individual dog&#8217;s genetic makeup and the traits inherited from its Labrador Retriever and Coonhound parents.</p>
+<p>In conclusion, the tri-color coat patterns in Houndadore dogs are a visually striking feature of this mixed breed. The saddleback, blanket, and ticked patterns are just a few examples of the variety of coat colors and patterns that can be found in this breed. Whether you prefer a dog with a classic saddleback pattern or a more unique ticked pattern, the Houndadore&#8217;s coat is sure to turn heads wherever you go.</p>
+<h2 id="the-allure-of-sable-coat-colors-in-houndadore-dogs-qGyzvAZkhl">The Allure of Sable Coat Colors in Houndadore Dogs</h2>
+<p>The Houndadore, a crossbreed between a Labrador Retriever and a Bloodhound, is a magnificent dog known for its friendly nature and exceptional tracking abilities. While their temperament and skills are certainly impressive, one cannot overlook the allure of their coat colors and patterns. In particular, the sable coat color in Houndadores is a sight to behold.</p>
+<p>Sable is a term used to describe a coat color that is characterized by a base color with black-tipped hairs. In Houndadores, this base color can range from a light golden hue to a deep reddish-brown shade. The black-tipped hairs create a stunning contrast against the base color, giving the coat a rich and luxurious appearance.</p>
+<p>One of the most captivating aspects of the sable coat color in Houndadores is its ability to change and evolve as the dog grows. Puppies are often born with a lighter coat color, which gradually darkens as they mature. This transformation adds an element of surprise and excitement for Houndadore owners, as they get to witness the gradual development of their dog&#8217;s coat.</p>
+<p>The sable coat color in Houndadores is further enhanced by the presence of unique patterns. One common pattern seen in these dogs is the brindle pattern, where the black-tipped hairs are arranged in a striped or streaked pattern on the base color. This pattern adds depth and dimension to the coat, making it even more visually appealing.</p>
+<p>Another pattern that can be found in Houndadores is the merle pattern. Merle is characterized by patches or spots of diluted color on a base coat. In the case of sable Houndadores, the merle pattern can create a mesmerizing blend of colors, with the black-tipped hairs creating a striking contrast against the diluted patches. This combination of sable and merle creates a truly unique and eye-catching coat.</p>
+<p>It is important to note that while the sable coat color and patterns in Houndadores are undeniably beautiful, they are not the only coat colors and patterns found in this breed. Houndadores can also come in solid colors such as black, yellow, or chocolate, as well as other patterns like the classic Labrador Retriever coat pattern.</p>
+<p>However, it is the sable coat color that often steals the show, captivating the hearts of dog enthusiasts and breeders alike. Its rich and ever-changing hues, combined with the unique patterns, make the Houndadore a truly stunning breed to behold.</p>
+<p>In conclusion, the allure of sable coat colors in Houndadore dogs is undeniable. The combination of a base color with black-tipped hairs creates a visually striking coat that evolves and transforms as the dog grows. The presence of patterns such as brindle and merle further enhances the beauty of the coat, making the Houndadore a breed that stands out from the crowd. Whether you are a dog lover or a breeder, the sable coat color in Houndadores is sure to leave you in awe of its sheer magnificence.</p>
+<h2 id="understanding-the-dilute-coat-colors-in-houndadore-dogs-qGyzvAZkhl">Understanding the Dilute Coat Colors in Houndadore Dogs</h2>
+<p>Understanding the Dilute Coat Colors in Houndadore Dogs</p>
+<p>Houndadore dogs are a popular breed known for their friendly and loyal nature. They are a cross between a Labrador Retriever and a Bloodhound, resulting in a unique combination of traits from both parent breeds. One aspect that sets Houndadores apart is their coat colors and patterns, which can vary greatly. In this article, we will delve into the world of dilute coat colors in Houndadore dogs, providing a comprehensive understanding of this fascinating aspect of their appearance.</p>
+<p>Dilute coat colors refer to a genetic variation that affects the intensity of pigmentation in a dog&#8217;s coat. In Houndadores, this dilution gene can result in lighter shades of their base coat colors. For example, a black Houndadore with the dilute gene may have a coat that appears more charcoal or silver in color. Similarly, a chocolate Houndadore with the dilute gene may have a coat that appears more silver or grayish-brown.</p>
+<p>It is important to note that dilute coat colors in Houndadores are not as common as their non-dilute counterparts. The dilution gene is recessive, meaning that both parents must carry the gene for it to be expressed in their offspring. Breeders who specialize in Houndadores with dilute coat colors carefully select their breeding pairs to ensure the presence of this gene in their litters.</p>
+<p>When it comes to patterns, Houndadores with dilute coat colors can exhibit a range of variations. One common pattern is the merle pattern, characterized by patches of diluted color on a lighter base coat. This pattern can create a striking and unique appearance, with patches of silver, gray, or blue dispersed throughout the dog&#8217;s coat. Another pattern seen in dilute Houndadores is the brindle pattern, where the diluted color is overlaid with dark stripes, creating a tiger-like effect.</p>
+<p>While dilute coat colors in Houndadores can be visually stunning, it is important to understand that they do not affect the dog&#8217;s health or temperament. The dilution gene solely impacts the pigmentation of the coat and has no bearing on the dog&#8217;s overall well-being. Therefore, it is crucial for potential owners to focus on other factors, such as the dog&#8217;s temperament, exercise needs, and grooming requirements, when considering a Houndadore as a pet.</p>
+<p>In terms of care, Houndadores with dilute coat colors require the same level of attention as their non-dilute counterparts. Regular grooming, including brushing and occasional bathing, is necessary to keep their coat healthy and free from tangles. Additionally, routine veterinary care, proper nutrition, and regular exercise are essential for maintaining the overall health and well-being of these dogs.</p>
+<p>In conclusion, understanding the dilute coat colors in Houndadore dogs adds another layer of appreciation for this unique breed. The variation in coat colors and patterns, resulting from the presence of the dilution gene, can create visually stunning and eye-catching appearances. However, it is important to remember that these coat colors have no impact on the dog&#8217;s health or temperament. When considering a Houndadore as a pet, potential owners should focus on other factors and ensure they are prepared to provide the necessary care and attention these dogs require.</p>
+<h2 id="exploring-the-rare-coat-colors-and-patterns-in-houndadore-dogs-qGyzvAZkhl">Exploring the Rare Coat Colors and Patterns in Houndadore Dogs</h2>
+<p>The Houndadore, a crossbreed between a Labrador Retriever and a Bloodhound, is a unique and beautiful dog with a wide range of coat colors and patterns. While the most common coat color in Houndadores is black, there are several rare and fascinating colors and patterns that can be found in this breed.</p>
+<p>One of the rarest coat colors in Houndadores is the silver coat. This stunning color is a result of a dilution gene that lightens the black coat, giving it a silver appearance. The silver Houndadores have a strikingly beautiful coat that is sure to turn heads wherever they go. This rare color is highly sought after by dog enthusiasts and is considered a prized trait in the breed.</p>
+<p>Another rare coat color in Houndadores is the chocolate coat. While chocolate Labradors are quite common, the combination of the chocolate coat with the Bloodhound&#8217;s distinctive features creates a truly unique and eye-catching appearance. The rich brown color of the chocolate Houndadores is often accompanied by a glossy and lustrous coat, making them even more appealing to dog lovers.</p>
+<p>In addition to these rare coat colors, Houndadores can also exhibit a variety of interesting coat patterns. One such pattern is the brindle coat, which is characterized by a base color with darker stripes or streaks. This pattern is commonly seen in Bloodhounds and can be inherited by their Houndadore offspring. The brindle pattern adds an element of uniqueness and individuality to the Houndadore&#8217;s appearance, making them stand out from other dogs.</p>
+<p>Another fascinating coat pattern found in Houndadores is the merle pattern. This pattern is characterized by patches of different colors, often with a marbled or mottled appearance. The merle pattern can occur in a variety of colors, including blue, red, and chocolate. Houndadores with the merle pattern have a truly mesmerizing coat that is sure to capture attention wherever they go.</p>
+<p>It is important to note that while these rare coat colors and patterns are visually appealing, they do not affect the Houndadore&#8217;s temperament or health. The Houndadore is known for being a friendly, loyal, and intelligent breed, regardless of their coat color or pattern. Therefore, it is essential to focus on responsible breeding practices and the overall well-being of the dog rather than solely on their appearance.</p>
+<p>In conclusion, the Houndadore is a breed that offers a wide range of coat colors and patterns, including rare and unique variations. From the striking silver coat to the rich chocolate color, Houndadores with these rare coat colors are truly a sight to behold. Additionally, the brindle and merle patterns add an extra touch of individuality and charm to this already captivating breed. However, it is important to remember that while coat colors and patterns are visually appealing, they should not be the sole focus when choosing a Houndadore. Responsible breeding and the dog&#8217;s overall health and temperament should always be the top priorities.</p>
+<h2 id="the-impact-of-coat-colors-and-patterns-on-houndadore-dogs-personality-qGyzvAZkhl">The Impact of Coat Colors and Patterns on Houndadore Dog&#8217;s Personality</h2>
+<p>The Houndadore is a popular mixed breed dog that combines the traits of the Labrador Retriever and the Bloodhound. These dogs are known for their friendly and outgoing personalities, as well as their intelligence and loyalty. However, did you know that the coat colors and patterns of a Houndadore can also have an impact on their personality? In this article, we will explore how different coat colors and patterns can influence the temperament and behavior of a Houndadore.</p>
+<p>Coat colors and patterns in dogs are determined by genetics. The genes responsible for coat color and pattern can also affect other traits, including temperament. For example, studies have shown that certain coat colors and patterns are associated with specific behavioral traits in dogs. This is known as the &#8220;color gene hypothesis.&#8221;</p>
+<p>One of the most common coat colors in Houndadores is black. Black-coated Houndadores are often described as confident and independent. They are known for their strong-willed nature and can sometimes be stubborn. However, they are also highly intelligent and can be easily trained with positive reinforcement techniques. Black Houndadores are typically good with children and make excellent family pets.</p>
+<p>Another popular coat color in Houndadores is yellow or golden. Houndadores with yellow coats are often described as friendly and outgoing. They are known for their sociable nature and love to be around people. These dogs are usually very affectionate and make great companions. However, they can also be prone to separation anxiety if left alone for long periods of time.</p>
+<p>Chocolate-colored Houndadores are also quite common. These dogs are often described as calm and gentle. They have a laid-back personality and are known for their patience. Chocolate Houndadores are typically good with children and get along well with other animals. They are often used as therapy dogs due to their calm and soothing nature.</p>
+<p>In addition to coat color, coat pattern can also have an impact on a Houndadore&#8217;s personality. One common coat pattern in Houndadores is the &#8220;ticked&#8221; pattern, where small flecks of color are scattered throughout the coat. Houndadores with a ticked coat pattern are often described as energetic and active. They have a high prey drive and love to chase after small animals. These dogs require plenty of exercise and mental stimulation to keep them happy and healthy.</p>
+<p>Another coat pattern seen in Houndadores is the &#8220;merle&#8221; pattern, characterized by patches of color on a lighter background. Houndadores with a merle coat pattern are often described as intelligent and playful. They are known for their high energy levels and love to engage in interactive games and activities. Merle Houndadores are typically good with children but may require firm training and socialization to prevent them from becoming overly excitable.</p>
+<p>In conclusion, the coat colors and patterns of a Houndadore can have an impact on their personality. Black-coated Houndadores are confident and independent, while yellow-coated Houndadores are friendly and outgoing. Chocolate Houndadores are calm and gentle, while ticked Houndadores are energetic and active. Merle Houndadores are intelligent and playful. Understanding the influence of coat colors and patterns can help potential owners choose a Houndadore that matches their lifestyle and preferences.</p>
+<h2 id="tips-for-grooming-and-maintaining-houndadore-dog-coats-qGyzvAZkhl">Tips for Grooming and Maintaining Houndadore Dog Coats</h2>
+<p>The Houndadore is a popular mixed breed dog that combines the traits of a Labrador Retriever and a Bloodhound. These dogs are known for their friendly and loyal nature, as well as their unique coat colors and patterns. In this article, we will explore the different coat colors and patterns that can be found in Houndadores, and provide some tips for grooming and maintaining their coats.</p>
+<p>One of the most common coat colors in Houndadores is black. These dogs often have a solid black coat that is shiny and sleek. Another popular color is chocolate, which ranges from a rich dark brown to a lighter shade of brown. Some Houndadores also have a coat that is a combination of black and chocolate, with patches of each color throughout their body.</p>
+<p>In addition to black and chocolate, Houndadores can also have coats in other colors such as yellow and red. These dogs often have a solid coat color, although some may have small white markings on their chest or paws. The yellow and red coats can range from a pale cream color to a deep golden shade, adding to the variety of colors seen in Houndadores.</p>
+<p>When it comes to coat patterns, Houndadores can have a variety of options. One common pattern is the brindle pattern, which is characterized by dark stripes on a lighter background color. This pattern is often seen in Houndadores with black or chocolate coats, and can give them a unique and eye-catching appearance.</p>
+<p>Another pattern that can be found in Houndadores is the merle pattern. This pattern is characterized by patches of different colors, often with a marbled or mottled appearance. Houndadores with the merle pattern can have coats that are a combination of black, chocolate, and other colors, creating a striking and beautiful coat.</p>
+<p>Now that we have explored the different coat colors and patterns in Houndadores, let&#8217;s discuss some tips for grooming and maintaining their coats. Due to their mixed breed heritage, Houndadores have a coat that is generally low maintenance. However, regular grooming is still important to keep their coats healthy and looking their best.</p>
+<p>Brushing your Houndadore&#8217;s coat at least once a week is recommended to remove any loose hair and prevent matting. This will also help distribute the natural oils in their coat, keeping it shiny and healthy. Additionally, regular brushing can help you keep an eye out for any skin issues or parasites that may arise.</p>
+<p>Bathing your Houndadore should be done as needed, typically every 6-8 weeks. Use a gentle dog shampoo and conditioner to keep their coat clean and moisturized. Be sure to thoroughly rinse out all the shampoo and conditioner to prevent any skin irritation.</p>
+<p>Lastly, don&#8217;t forget to regularly check and clean your Houndadore&#8217;s ears. These dogs can be prone to ear infections, so it&#8217;s important to keep their ears clean and dry. Use a dog-specific ear cleaner and gently wipe the inside of their ears with a cotton ball or soft cloth.</p>
+<p>In conclusion, Houndadores are a unique and beautiful mixed breed dog with a variety of coat colors and patterns. Whether they have a solid black or chocolate coat, or a combination of colors with a brindle or merle pattern, Houndadores are sure to turn heads wherever they go. By following these grooming and maintenance tips, you can ensure that your Houndadore&#8217;s coat remains healthy, shiny, and beautiful for years to come.</p>
+<h2 id="choosing-the-perfect-houndadore-puppy-based-on-coat-colors-and-patterns-qGyzvAZkhl">Choosing the Perfect Houndadore Puppy Based on Coat Colors and Patterns</h2>
+<p>The Houndadore is a popular mixed breed dog that combines the traits of a Labrador Retriever and a Bloodhound. One of the most striking features of this breed is its coat, which can come in a variety of colors and patterns. When choosing a Houndadore puppy, it is important to consider the different coat options available and how they may suit your preferences and lifestyle.</p>
+<p>One of the most common coat colors for Houndadores is black. This classic color is often seen in Labrador Retrievers and can give the Houndadore a sleek and sophisticated look. Black Houndadores may have a solid coat color or may have small patches of white on their chest or paws. This color is versatile and can easily match any outfit or home decor.</p>
+<p>Another popular coat color for Houndadores is chocolate. This rich brown color is also commonly seen in Labrador Retrievers and can give the Houndadore a warm and inviting appearance. Chocolate Houndadores may have a solid coat color or may have small patches of white on their chest or paws. This color is perfect for those who want a dog that stands out from the crowd.</p>
+<p>For those who prefer a lighter coat color, yellow is a great option. Yellow Houndadores can range from a pale cream color to a deep golden shade. This color is often associated with Labrador Retrievers and can give the Houndadore a friendly and approachable look. Yellow Houndadores may have a solid coat color or may have small patches of white on their chest or paws. This color is perfect for those who want a dog that exudes warmth and happiness.</p>
+<p>In addition to the different coat colors, Houndadores can also have various coat patterns. One common pattern is the brindle pattern, which is characterized by dark stripes on a lighter background. Brindle Houndadores can have a black, chocolate, or yellow base color with darker stripes running across their body. This pattern can give the Houndadore a unique and eye-catching appearance.</p>
+<p>Another popular pattern for Houndadores is the spotted pattern. This pattern is characterized by small or large spots of color on a lighter background. Spotted Houndadores can have spots that are black, chocolate, or yellow, depending on their base coat color. This pattern can give the Houndadore a playful and energetic look.</p>
+<p>When choosing a Houndadore puppy based on coat colors and patterns, it is important to consider your own preferences and lifestyle. Some people may prefer a certain color or pattern because it matches their personal style or home decor. Others may choose a color or pattern based on the breed&#8217;s characteristics and temperament. It is also important to consider the grooming needs of different coat colors and patterns. Some colors may require more frequent brushing or grooming to keep the coat looking its best.</p>
+<p>In conclusion, the Houndadore is a beautiful breed with a variety of coat colors and patterns to choose from. Whether you prefer a classic black, a rich chocolate, a warm yellow, or a unique brindle or spotted pattern, there is a Houndadore puppy out there that will suit your preferences and lifestyle. Consider the different options available and choose the perfect Houndadore puppy based on its coat colors and patterns.</p>
+<h2 id="qa-qGyzvAZkhl">Q&amp;A</h2>
+<p>1. What are the coat colors of Houndadore dogs?<br>
+The coat colors of Houndadore dogs can vary and include black, chocolate, yellow, and combinations of these colors.</p>
+<p>2. Are Houndadore dogs commonly seen with solid coat colors?<br>
+Yes, solid coat colors are commonly seen in Houndadore dogs.</p>
+<p>3. Can Houndadore dogs have a brindle coat pattern?<br>
+Yes, Houndadore dogs can have a brindle coat pattern.</p>
+<p>4. Are Houndadore dogs known to have merle coat patterns?<br>
+No, Houndadore dogs are not known to have merle coat patterns.</p>
+<p>5. Do Houndadore dogs have a spotted coat pattern?<br>
+Yes, Houndadore dogs can have a spotted coat pattern.</p>
+<p>6. Are Houndadore dogs commonly seen with a parti-color coat pattern?<br>
+No, Houndadore dogs are not commonly seen with a parti-color coat pattern.</p>
+<p>7. Can Houndadore dogs have a sable coat color?<br>
+Yes, Houndadore dogs can have a sable coat color.</p>
+<p>8. Are Houndadore dogs commonly seen with a white coat color?<br>
+Yes, Houndadore dogs can have a white coat color, especially in combination with other colors.</p>
+<p>9. Can Houndadore dogs have a liver coat color?<br>
+Yes, Houndadore dogs can have a liver coat color.</p>
+<p>10. Are Houndadore dogs commonly seen with a blue coat color?<br>
+No, Houndadore dogs are not commonly seen with a blue coat color.</p>
+<p>11. Can Houndadore dogs have a cream coat color?<br>
+Yes, Houndadore dogs can have a cream coat color.</p>
+<p>12. Are Houndadore dogs commonly seen with a red coat color?<br>
+No, Houndadore dogs are not commonly seen with a red coat color.</p>
+<p>13. Can Houndadore dogs have a silver coat color?<br>
+No, Houndadore dogs are not known to have a silver coat color.</p>
+<p>14. Are Houndadore dogs commonly seen with a fawn coat color?<br>
+No, Houndadore dogs are not commonly seen with a fawn coat color.</p>
+<p>15. Can Houndadore dogs have a tan coat color?<br>
+Yes, Houndadore dogs can have a tan coat color, especially in combination with other colors.In conclusion, Houndadore dog coats can come in a variety of colors and patterns.</p>
+</div>
+<div id="brxe-dngkka" class="brxe-text-basic">Sharing is Caring</div>
+<ul id="brxe-kofzsc" class="brxe-post-sharing brand-colors">
+<li data-balloon="Share on Facebook" data-balloon-pos="top"><a class="facebook" href="https://www.facebook.com/sharer.php?u=%2Fabout%2Fhoundadore-dog-coat-colors-and-patterns%2F&#038;picture=&#038;title=Houndadore%20dog%20coat%20colors%20and%20patterns" rel="nofollow" aria-label="Facebook" target="_blank"><svg version="1.1" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M455.27,32h-398.54l-1.01757e-06,4.11262e-10c-13.6557,0.00551914 -24.7245,11.0743 -24.73,24.73v398.54l-5.44608e-07,-0.00145325c0.00471643,13.6557 11.0728,24.7251 24.7285,24.7315h199.271v-176h-53.55v-64h53.55v-51c0,-57.86 40.13,-89.36 91.82,-89.36c24.73,0 51.33,1.86 57.51,2.68v60.43h-41.18c-28.12,0 -33.48,13.3 -33.48,32.9v44.35h67l-8.75,64h-58.25v176h124.6l-1.14527e-06,4.62819e-10c13.6557,-0.00551794 24.7245,-11.0743 24.73,-24.73v-398.54l5.45583e-07,0.00145607c-0.00471487,-13.6557 -11.0728,-24.7251 -24.7285,-24.7315Z" fill="#000"></path></svg></a></li>
+<li data-balloon="Share on Twitter" data-balloon-pos="top"><a class="twitter" href="https://twitter.com/share?text=Houndadore%20dog%20coat%20colors%20and%20patterns&#038;url=%2Fabout%2Fhoundadore-dog-coat-colors-and-patterns%2F" rel="nofollow" aria-label="Twitter" target="_blank"><svg version="1.1" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M492,109.5c-17.4,7.7 -36,12.9 -55.6,15.3c20,-12 35.4,-31 42.6,-53.6c-18.7,11.1 -39.4,19.2 -61.5,23.5c-17.7,-18.9 -42.9,-30.7 -70.7,-30.7c-53.5,0 -96.8,43.4 -96.8,96.9c0,7.6 0.8,15 2.5,22.1c-80.5,-4 -151.9,-42.6 -199.6,-101.3c-8.3,14.3 -13.1,31 -13.1,48.7c0,33.6 17.2,63.3 43.2,80.7c-16,-0.4 -31,-4.8 -44,-12.1v1.2c0,47 33.4,86.1 77.7,95c-8.1,2.2 -16.7,3.4 -25.5,3.4c-6.2,0 -12.3,-0.6 -18.2,-1.8c12.3,38.5 48.1,66.5 90.5,67.3c-33.1,26 -74.9,41.5 -120.3,41.5c-7.8,0 -15.5,-0.5 -23.1,-1.4c42.7,27.8 93.6,43.8 148.2,43.8c178.3,0 275.7,-147.7 275.7,-275.8c0,-4.2 -0.1,-8.4 -0.3,-12.5c18.9,-13.7 35.3,-30.7 48.3,-50.2Z" fill="#000"></path></svg></a></li>
+<li data-balloon="Share on LinkedIn" data-balloon-pos="top"><a class="linkedin" href="https://www.linkedin.com/shareArticle?mini=true&#038;url=%2Fabout%2Fhoundadore-dog-coat-colors-and-patterns%2F&#038;title=Houndadore%20dog%20coat%20colors%20and%20patterns" rel="nofollow" aria-label="LinkedIn" target="_blank"><svg version="1.1" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M444.17,32h-373.89c-20.43,0 -38.28,14.7 -38.28,34.89v374.72c0,20.3 17.85,38.39 38.28,38.39h373.78c20.54,0 35.94,-18.21 35.94,-38.39v-374.72c0.12,-20.19 -15.4,-34.89 -35.83,-34.89Zm-273.3,373.43h-64.18v-199.55h64.18Zm-29.87,-229.89h-0.46c-20.54,0 -33.84,-15.29 -33.84,-34.43c0,-19.49 13.65,-34.42 34.65,-34.42c21,0 33.85,14.82 34.31,34.42c-0.01,19.14 -13.31,34.43 -34.66,34.43Zm264.43,229.89h-64.18v-109.11c0,-26.14 -9.34,-44 -32.56,-44c-17.74,0 -28.24,12 -32.91,23.69c-1.75,4.2 -2.22,9.92 -2.22,15.76v113.66h-64.18v-199.55h64.18v27.77c9.34,-13.3 23.93,-32.44 57.88,-32.44c42.13,0 74,27.77 74,87.64Z" fill="#000"></path></svg></a></li>
+<li data-balloon="Share on WhatsApp" data-balloon-pos="top"><a class="whatsapp" href="https://api.whatsapp.com/send?text=*Houndadore%20dog%20coat%20colors%20and%20patterns*Stylish%20and%20diverse:%20Houndadore%20dog%20coats,%20a%20palette%20of%20colors%20and%20patterns.%20The%20Houndadore%20is%20a%20mixed%20breed%20dog%20that%20is%20a%20cross%20between%20a%20Labrador%20Retriever%20and%20a%20Hound%20breed,%20such%20as%20a%20Coonhound%20or%20a%20Bloodhound.%20As%20a%20result%20of%20this%20mix,%20Houndadores%20can%20exhibit%20a%20variety%20of%20coat%20colors%20and%20patterns.%20These%20%5B&hellip;%5D%2Fabout%2Fhoundadore-dog-coat-colors-and-patterns%2F" rel="nofollow" aria-label="WhatsApp" target="_blank"><svg version="1.1" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M260.062,32c-121.457,0 -219.928,97.701 -219.928,218.232c-1.42109e-14,41.23 11.532,79.79 31.559,112.687l-39.693,117.081l121.764,-38.682c31.508,17.285 67.745,27.146 106.298,27.146c121.473,0 219.938,-97.715 219.938,-218.232c0,-120.531 -98.465,-218.232 -219.938,-218.232Zm109.362,301.11c-5.174,12.827 -28.574,24.533 -38.899,25.072c-10.314,0.547 -10.608,7.994 -66.84,-16.434c-56.225,-24.434 -90.052,-83.844 -92.719,-87.67c-2.669,-3.812 -21.78,-31.047 -20.749,-58.455c1.038,-27.413 16.047,-40.346 21.404,-45.725c5.351,-5.387 11.486,-6.352 15.232,-6.413c4.428,-0.072 7.296,-0.132 10.573,-0.011c3.274,0.124 8.192,-0.685 12.45,10.639c4.256,11.323 14.443,39.153 15.746,41.989c1.302,2.839 2.108,6.126 0.102,9.771c-2.012,3.653 -3.042,5.935 -5.961,9.083c-2.935,3.148 -6.174,7.042 -8.792,9.449c-2.92,2.665 -5.97,5.572 -2.9,11.269c3.068,5.693 13.653,24.356 29.779,39.736c20.725,19.771 38.598,26.329 44.098,29.317c5.515,3.004 8.806,2.67 12.226,-0.929c3.404,-3.599 14.639,-15.746 18.596,-21.169c3.955,-5.438 7.661,-4.373 12.742,-2.329c5.078,2.052 32.157,16.556 37.673,19.551c5.51,2.989 9.193,4.529 10.51,6.9c1.317,2.38 0.901,13.531 -4.271,26.359Z" fill="#000"></path></svg></a></li>
+<li data-balloon="Share on Pinterest" data-balloon-pos="top"><a class="pinterest" href="http://pinterest.com/pin/create/button/?url=%2Fabout%2Fhoundadore-dog-coat-colors-and-patterns%2F&#038;media=" rel="nofollow" aria-label="Pinterest" target="_blank"><svg version="1.1" viewbox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256,32c-123.7,0 -224,100.3 -224,224c0,91.7 55.2,170.5 134.1,205.2c-0.6,-15.6 -0.1,-34.4 3.9,-51.4c4.3,-18.2 28.8,-122.1 28.8,-122.1c0,0 -7.2,-14.3 -7.2,-35.4c0,-33.2 19.2,-58 43.2,-58c20.4,0 30.2,15.3 30.2,33.6c0,20.5 -13.1,51.1 -19.8,79.5c-5.6,23.8 11.9,43.1 35.4,43.1c42.4,0 71,-54.5 71,-119.1c0,-49.1 -33.1,-85.8 -93.2,-85.8c-67.9,0 -110.3,50.7 -110.3,107.3c0,19.5 5.8,33.3 14.8,43.9c4.1,4.9 4.7,6.9 3.2,12.5c-1.1,4.1 -3.5,14 -4.6,18c-1.5,5.7 -6.1,7.7 -11.2,5.6c-31.3,-12.8 -45.9,-47 -45.9,-85.6c0,-63.6 53.7,-139.9 160.1,-139.9c85.5,0 141.8,61.9 141.8,128.3c0,87.9 -48.9,153.5 -120.9,153.5c-24.2,0 -46.9,-13.1 -54.7,-27.9c0,0 -13,51.6 -15.8,61.6c-4.7,17.3 -14,34.5 -22.5,48c20.1,5.9 41.4,9.2 63.5,9.2c123.7,0 224,-100.3 224,-224c0.1,-123.8 -100.2,-224.1 -223.9,-224.1Z" fill="#000"></path></svg></a></li>
+<li data-balloon="Share on Telegram" data-balloon-pos="top"><a class="telegram" href="https://t.me/share/url?url=%2Fabout%2Fhoundadore-dog-coat-colors-and-patterns%2F&#038;text=Houndadore%20dog%20coat%20colors%20and%20patterns" rel="nofollow" aria-label="Telegram" target="_blank"><svg viewbox="0 0 300 300" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path fill="#fff" stroke="none" d="M 22.046997 135.832001 C 22.046997 135.832001 147.046997 84.531982 190.398987 66.468018 C 207.018005 59.242981 263.376007 36.121002 263.376007 36.121002 C 263.376007 36.121002 289.388 26.005981 287.220001 50.572021 C 286.497009 60.687988 280.71701 96.09198 274.937012 134.386993 C 266.265991 188.578003 256.872986 247.825989 256.872986 247.825989 C 256.872986 247.825989 255.428009 264.445007 243.144989 267.334991 C 230.862 270.225006 210.630005 257.220001 207.018005 254.32901 C 204.127014 252.161987 152.826996 219.647003 134.041 203.751007 C 128.983002 199.415985 123.203003 190.746002 134.763 180.630005 C 160.774994 156.786011 191.843994 127.161987 210.630005 108.376007 C 219.300995 99.705017 227.971008 79.473999 191.843994 104.039978 C 140.544006 139.445007 89.966003 172.682007 89.966003 172.682007 C 89.966003 172.682007 78.404999 179.907013 56.729004 173.403992 C 35.052002 166.902008 9.763 158.230988 9.763 158.230988 C 9.763 158.230988 -7.577003 147.393005 22.046997 135.832001 Z"></path></svg></a></li>
+<li data-balloon="Share via email" data-balloon-pos="top"><a class="email" href="mailto:?subject=Houndadore%20dog%20coat%20colors%20and%20patterns&amp;body=%2Fabout%2Fhoundadore-dog-coat-colors-and-patterns%2F" rel="nofollow" aria-label="Email" target="_blank"><svg version="1.1" viewbox="0 0 30 30" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M27.5,5h-25c-1.4,0 -2.5,1.1 -2.5,2.5v15c0,1.4 1.1,2.5 2.5,2.5h25c1.4,0 2.5,-1.1 2.5,-2.5v-15c0,-1.4 -1.1,-2.5 -2.5,-2.5Zm-16.7,10.9l-7,6c-0.1,0.1 -0.2,0.1 -0.3,0.1c-0.1,0 -0.3,-0.1 -0.4,-0.2c-0.2,-0.2 -0.2,-0.5 0.1,-0.7l7,-6c0.2,-0.2 0.5,-0.2 0.7,0.1c0.2,0.2 0.1,0.5 -0.1,0.7Zm3.9,0.1c-0.7,0 -1.5,-0.2 -2,-0.6l-9.5,-6.5c-0.2,-0.1 -0.3,-0.5 -0.1,-0.7c0.1,-0.2 0.4,-0.3 0.7,-0.1l9.5,6.5c0.8,0.6 2.1,0.6 2.9,0l10,-6.5c0.2,-0.2 0.5,-0.1 0.7,0.1c0.2,0.2 0.1,0.5 -0.1,0.7l-10,6.5c-0.6,0.4 -1.3,0.6 -2.1,0.6Zm12.2,5.8c-0.1,0.1 -0.2,0.2 -0.4,0.2c-0.1,0 -0.2,0 -0.3,-0.1l-7,-6c-0.2,-0.2 -0.2,-0.5 -0.1,-0.7c0.1,-0.2 0.5,-0.2 0.7,-0.1l7,6c0.2,0.2 0.3,0.5 0.1,0.7Z" fill="#fff"></path></svg></a></li>
+</ul>
+<nav id="brxe-izjvkr" class="brxe-post-navigation" aria-label="Post navigation"><a class="prev-post" href="/about/discovering-the-official-houndadore-breed-standards-by-kennel-clubs/"><div class="swiper-button bricks-swiper-button-prev"><i class="ion-ios-arrow-back"></i></div>
+<div class="content"><span class="label">Previous post</span></div></a><a class="next-post" href="/about/understanding-coat-color-variations-in-houndadore-dogs/"><div class="content"><span class="label">Next post</span></div>
+<div class="swiper-button bricks-swiper-button-next"><i class="ion-ios-arrow-forward"></i></div></a></nav>
+</div>
+<div id="brxe-hwsqci" class="brxe-block">
+<div id="brxe-wfrprg" class="brxe-search">
+<form role="search" method="get" class="bricks-search-form" action="https://houndadore.com/">
+	<label for="search-input-wfrprg" class="screen-reader-text"><span>Search ...</span></label>
+	<input type="search" placeholder="Search ..." value="" name="s" id="search-input-wfrprg">
+
+	</form>
+</div>
+<nav id="brxe-gugwak" class="brxe-xtableofcontents" data-x-toc="{&quot;contentSelector&quot;:&quot;.post-content&quot;,&quot;headingSelectors&quot;:[&quot;h2&quot;,&quot;h3&quot;,&quot;h4&quot;,&quot;h5&quot;,&quot;h6&quot;],&quot;autoID&quot;:true,&quot;idPrefix&quot;:&quot;heading&quot;,&quot;autoIDText&quot;:&quot;prefix&quot;,&quot;scrollSmoothOffset&quot;:-130,&quot;listType&quot;:&quot;counter&quot;,&quot;slideDuration&quot;:300,&quot;ignoreSelector&quot;:&quot;&quot;,&quot;smoothScroll&quot;:&quot;true&quot;,&quot;collapseDepth&quot;:0,&quot;conditionalDisplay&quot;:&quot;disable&quot;,&quot;hidden&quot;:{&quot;closeBreakpoint&quot;:&quot;false&quot;}}"><div class="x-toc_header" role="button" tabindex="00" aria-label="Table of Contents" aria-controls="x-toc_gugwak" aria-expanded="false">
+<div class="x-toc_header-text">Table of Contents</div>
+<div class="x-toc_header-icon"><i class="ti-angle-down"></i></div>
+</div>
+<div style="display:none" class="x-toc_body" aria-hidden="false" id="x-toc_gugwak"></div></nav><div id="brxe-amoawz" class="brxe-text-basic">Related Posts</div>
+<ul id="brxe-ueaixc" class="brxe-related-posts bricks-related-posts">
+<li class="repeater-item">
+<a href="/about/health-issues-and-lifespan-of-the-houndadore-breed/" class="post-thumbnail-wrapper css-filter"><div class="post-thumbnail-inner" role="img" aria-label="" style="background-image: url(/wp-content/uploads/2023/06/Houndadorelifespan.jpg)"></div></a><div class="post-content">
+<h3 class="dynamic" data-field-id="5c6fed"><a href="/about/health-issues-and-lifespan-of-the-houndadore-breed/" aria-label="Read more about Health issues and lifespan of the Houndadore breed">Health issues and lifespan of the Houndadore breed</a></h3>
+<p class="dynamic" data-field-id="bd3366">June 28, 2023</p>
+</div>
+</li>
+<li class="repeater-item">
+<a href="/about/houndadore-breed-a-popular-choice-for-search-and-rescue-missions/" class="post-thumbnail-wrapper css-filter"><div class="post-thumbnail-inner" role="img" aria-label="" style="background-image: url(/wp-content/uploads/2023/06/Houndadore-breed-a-popular-choice-for-search-and-rescue-missions.jpg)"></div></a><div class="post-content">
+<h3 class="dynamic" data-field-id="5c6fed"><a href="/about/houndadore-breed-a-popular-choice-for-search-and-rescue-missions/" aria-label="Read more about Houndadore breed: a popular choice for search and rescue missions">Houndadore breed: a popular choice for search and rescue missions</a></h3>
+<p class="dynamic" data-field-id="bd3366">June 28, 2023</p>
+</div>
+</li>
+<li class="repeater-item">
+<a href="/about/physical-traits-of-houndadore-dogs/" class="post-thumbnail-wrapper css-filter"><div class="post-thumbnail-inner" role="img" aria-label="" style="background-image: url(/wp-content/uploads/2023/06/Physical-traits-of-Houndadore-dogs.jpg)"></div></a><div class="post-content">
+<h3 class="dynamic" data-field-id="5c6fed"><a href="/about/physical-traits-of-houndadore-dogs/" aria-label="Read more about Physical traits of Houndadore dogs">Physical traits of Houndadore dogs</a></h3>
+<p class="dynamic" data-field-id="bd3366">June 28, 2023</p>
+</div>
+</li>
+<li class="repeater-item">
+<a href="/about/temperament-of-houndadore-dogs/" class="post-thumbnail-wrapper css-filter"><div class="post-thumbnail-inner" role="img" aria-label="" style="background-image: url(/wp-content/uploads/2023/06/Houndadores-adaptability-in-rural-living-environments.jpg)"></div></a><div class="post-content">
+<h3 class="dynamic" data-field-id="5c6fed"><a href="/about/temperament-of-houndadore-dogs/" aria-label="Read more about Temperament of Houndadore dogs">Temperament of Houndadore dogs</a></h3>
+<p class="dynamic" data-field-id="bd3366">June 28, 2023</p>
+</div>
+</li>
+<li class="repeater-item">
+<a href="/about/socialization-requirements-for-houndadore-dogs/" class="post-thumbnail-wrapper css-filter"><div class="post-thumbnail-inner" role="img" aria-label="" style="background-image: url(/wp-content/uploads/2023/06/Socialization-requirements-for-Houndadore-dogs.jpg)"></div></a><div class="post-content">
+<h3 class="dynamic" data-field-id="5c6fed"><a href="/about/socialization-requirements-for-houndadore-dogs/" aria-label="Read more about Socialization requirements for Houndadore dogs">Socialization requirements for Houndadore dogs</a></h3>
+<p class="dynamic" data-field-id="bd3366">June 28, 2023</p>
+</div>
+</li>
+</ul>
+</div>
+</div></section></main><footer id="brx-footer"><section id="brxe-tseoqd" class="brxe-section"><div id="brxe-lwvhbf" class="brxe-container">
+<div id="brxe-xpelqb" class="brxe-block">
+<img width="300" height="75" src="/wp-content/uploads/2023/03/Houndadore-White.png" class="brxe-image css-filter size-full" alt="" decoding="async" id="brxe-rpisls" loading="lazy"><div id="brxe-eaxztd" class="brxe-text-basic">Imagine the loyalty and intelligence of the Labrador Retriever, mixed with the impressive tracking skills and sense of smell of a Hound dog. It's like a superhero duo that's furrier and more lovable.</div>
+</div>
+<div id="brxe-xuqyxc" class="brxe-block">
+<h3 id="brxe-rakvig" class="brxe-heading">Contact Us</h3>
+<div id="brxe-hdxtls" class="brxe-icon-box">
+<div class="icon"><i class="fas fa-map-location-dot"></i></div>
+<div class="content">
+<p>7331 Emerald Glade Lane</p>
+</div>
+</div>
+<div id="brxe-mqefoe" class="brxe-icon-box">
+<div class="icon"><i class="fas fa-envelope"></i></div>
+<div class="content">
+<p>info@houndadore.com</p>
+</div>
+</div>
+<div id="brxe-vrahhh" class="brxe-icon-box">
+<div class="icon"><i class="fas fa-phone-flip"></i></div>
+<div class="content">
+<p>(832) 629-5520</p>
+</div>
+</div>
+</div>
+<div id="brxe-jvfmyb" class="brxe-block">
+<h3 id="brxe-lgqfds" class="brxe-heading">Quick Links</h3>
+<div id="brxe-eecmvu" class="brxe-text-basic">About</div>
+<div id="brxe-ztmoaz" class="brxe-text-basic">Blog</div>
+<div id="brxe-dcnagm" class="brxe-text-basic">Gallery</div>
+<div id="brxe-luqjcj" class="brxe-text-basic">Contact</div>
+</div>
+</div>
+<div id="brxe-nitblx" class="brxe-container"><div id="brxe-joihqv" class="brxe-text-basic">Copyright 2023 © all rights reserved design by <a href="https://brickstemplates.io/">BricksTemplates.io</a> </div></div></section></footer>            <script>var wpaicgUserLoggedIn = false;</script>
+            <link rel="stylesheet" id="bricks-tooltips-css" href="/wp-content/themes/bricks/assets/css/libs/tooltips.min.css?ver=1695510514" media="all">
+<script src="/wp-includes/js/hoverintent-js.min.js?ver=2.2.1" id="hoverintent-js-js"></script>
+<script src="/wp-includes/js/admin-bar.min.js?ver=6.3.1" id="admin-bar-js"></script>
+<script src="/wp-content/plugins/gpt3-ai-content-generator-premium/lib/js/wpaicg-chat-pro.js" id="wpaicg-chat-pro-js"></script>
+<script src="/wp-content/plugins/gpt3-ai-content-generator-premium/public/js/wpaicg-form-shortcode.js" id="wpaicg-gpt-form-js"></script>
+<script id="wpaicg-init-js-extra">var wpaicgParams = {"ajax_url":"\/wp-admin\/admin-ajax.php","search_nonce":"05d0315b6e","logged_in":"0","languages":{"source":"Sources","no_result":"No result found","wrong":"Something went wrong","prompt_strength":"Please enter a valid prompt strength value between 0 and 1.","num_inference_steps":"Please enter a valid number of inference steps value between 1 and 500.","guidance_scale":"Please enter a valid guidance scale value between 1 and 20.","error_image":"Please select least one image for generate","save_image_success":"Save images to media successfully","select_all":"Select All","unselect":"Unselect","select_save_error":"Please select least one image to save","alternative":"Alternative Text","title":"Title","edit_image":"Edit Image","caption":"Caption","description":"Description","save":"Save","removed_pdf":"Your pdf session is cleared"}};</script>
+<script src="/wp-content/plugins/gpt3-ai-content-generator-premium/public/js/wpaicg-init.js" id="wpaicg-init-js"></script>
+<script src="/wp-content/plugins/gpt3-ai-content-generator-premium/public/js/wpaicg-chat.js" id="wpaicg-chat-script-js"></script>
+<script id="bp-nouveau-js-extra">var BP_Nouveau = {"ajaxurl":"\/wp-admin\/admin-ajax.php","confirm":"Are you sure?","show_x_comments":"Show all %d comments","unsaved_changes":"Your profile has unsaved changes. If you leave the page, the changes will be lost.","object_nav_parent":"#buddypress","objects":["activity","members","groups","xprofile","friends","messages","settings","notifications","group_members","group_requests"],"nonces":{"activity":"b8b5214161","members":"f343cbcf81","groups":"fdf485fa61","xprofile":"9459f1b575","friends":"75562fbe93","messages":"c23a793c31","settings":"c6a5946ce0","notifications":"89b43d1260"}};</script>
+<script src="/wp-content/plugins/buddypress/bp-templates/bp-nouveau/js/buddypress-nouveau.min.js?ver=11.3.1" id="bp-nouveau-js"></script>
+<script src="/wp-includes/js/comment-reply.min.js?ver=6.3.1" id="comment-reply-js"></script>
+<script src="/wp-content/plugins/embedpress/assets/js/pdfobject.min.js?ver=3.8.5" id="embedpress-pdfobject-js"></script>
+<script src="/wp-content/plugins/embedpress/assets/js/initplyr.js?ver=3.8.5" id="initplyr-js"></script>
+<script id="embedpress-front-js-extra">var eplocalize = {"ajaxurl":"\/wp-admin\/admin-ajax.php"};</script>
+<script src="/wp-content/plugins/embedpress/assets/js/front.js?ver=3.8.5" id="embedpress-front-js"></script>
+<script src="/wp-content/plugins/embedpress/assets/js/documents-viewer-script.js?ver=3.8.5" id="embedpress_documents_viewer_script-js"></script>
+<script id="wpil-frontend-script-js-extra">var wpilFrontend = {"ajaxUrl":"\/wp-admin\/admin-ajax.php","postId":"853","postType":"post","openInternalInNewTab":"0","openExternalInNewTab":"0","disableClicks":"0","openLinksWithJS":"0","trackAllElementClicks":"0","clicksI18n":{"imageNoText":"Image in link: No Text","imageText":"Image Title: ","noText":"No Anchor Text Found"}};</script>
+<script src="/wp-content/plugins/link-whisper-premium/js/frontend.js?ver=1679343322" id="wpil-frontend-script-js"></script>
+<script id="bricks-scripts-js-extra">var bricksData = {"debug":"","locale":"en_US","ajaxUrl":"\/wp-admin\/admin-ajax.php","restApiUrl":"\/wp-json\/bricks\/v1\/","nonce":"013b0ee6ed","wpRestNonce":"e13cd24a7c","postId":"853","recaptchaIds":[],"animatedTypingInstances":[],"videoInstances":[],"splideInstances":[],"tocbotInstances":[],"swiperInstances":[],"queryLoopInstances":[],"interactions":[],"mapStyles":{"ultraLightWithLabels":{"label":"Ultra light with labels","style":"[ { \"featureType\": \"water\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#e9e9e9\" }, { \"lightness\": 17 } ] }, { \"featureType\": \"landscape\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#f5f5f5\" }, { \"lightness\": 20 } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#ffffff\" }, { \"lightness\": 17 } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry.stroke\", \"stylers\": [ { \"color\": \"#ffffff\" }, { \"lightness\": 29 }, { \"weight\": 0.2 } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#ffffff\" }, { \"lightness\": 18 } ] }, { \"featureType\": \"road.local\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#ffffff\" }, { \"lightness\": 16 } ] }, { \"featureType\": \"poi\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#f5f5f5\" }, { \"lightness\": 21 } ] }, { \"featureType\": \"poi.park\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#dedede\" }, { \"lightness\": 21 } ] }, { \"elementType\": \"labels.text.stroke\", \"stylers\": [ { \"visibility\": \"on\" }, { \"color\": \"#ffffff\" }, { \"lightness\": 16 } ] }, { \"elementType\": \"labels.text.fill\", \"stylers\": [ { \"saturation\": 36 }, { \"color\": \"#333333\" }, { \"lightness\": 40 } ] }, { \"elementType\": \"labels.icon\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"transit\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#f2f2f2\" }, { \"lightness\": 19 } ] }, { \"featureType\": \"administrative\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#fefefe\" }, { \"lightness\": 20 } ] }, { \"featureType\": \"administrative\", \"elementType\": \"geometry.stroke\", \"stylers\": [ { \"color\": \"#fefefe\" }, { \"lightness\": 17 }, { \"weight\": 1.2 } ] } ]"},"blueWater":{"label":"Blue water","style":"[ { \"featureType\": \"administrative\", \"elementType\": \"labels.text.fill\", \"stylers\": [ { \"color\": \"#444444\" } ] }, { \"featureType\": \"landscape\", \"elementType\": \"all\", \"stylers\": [ { \"color\": \"#f2f2f2\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"road\", \"elementType\": \"all\", \"stylers\": [ { \"saturation\": -100 }, { \"lightness\": 45 } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"simplified\" } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"labels.icon\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"transit\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"water\", \"elementType\": \"all\", \"stylers\": [ { \"color\": \"#46bcec\" }, { \"visibility\": \"on\" } ] } ]"},"lightDream":{"label":"Light dream","style":"[ { \"featureType\": \"landscape\", \"stylers\": [ { \"hue\": \"#FFBB00\" }, { \"saturation\": 43.400000000000006 }, { \"lightness\": 37.599999999999994 }, { \"gamma\": 1 } ] }, { \"featureType\": \"road.highway\", \"stylers\": [ { \"hue\": \"#FFC200\" }, { \"saturation\": -61.8 }, { \"lightness\": 45.599999999999994 }, { \"gamma\": 1 } ] }, { \"featureType\": \"road.arterial\", \"stylers\": [ { \"hue\": \"#FF0300\" }, { \"saturation\": -100 }, { \"lightness\": 51.19999999999999 }, { \"gamma\": 1 } ] }, { \"featureType\": \"road.local\", \"stylers\": [ { \"hue\": \"#FF0300\" }, { \"saturation\": -100 }, { \"lightness\": 52 }, { \"gamma\": 1 } ] }, { \"featureType\": \"water\", \"stylers\": [ { \"hue\": \"#0078FF\" }, { \"saturation\": -13.200000000000003 }, { \"lightness\": 2.4000000000000057 }, { \"gamma\": 1 } ] }, { \"featureType\": \"poi\", \"stylers\": [ { \"hue\": \"#00FF6A\" }, { \"saturation\": -1.0989010989011234 }, { \"lightness\": 11.200000000000017 }, { \"gamma\": 1 } ] } ]"},"blueEssence":{"label":"Blue essence","style":"[ { \"featureType\": \"landscape.natural\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"visibility\": \"on\" }, { \"color\": \"#e0efef\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"visibility\": \"on\" }, { \"hue\": \"#1900ff\" }, { \"color\": \"#c0e8e8\" } ] }, { \"featureType\": \"road\", \"elementType\": \"geometry\", \"stylers\": [ { \"lightness\": 100 }, { \"visibility\": \"simplified\" } ] }, { \"featureType\": \"road\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"transit.line\", \"elementType\": \"geometry\", \"stylers\": [ { \"visibility\": \"on\" }, { \"lightness\": 700 } ] }, { \"featureType\": \"water\", \"elementType\": \"all\", \"stylers\": [ { \"color\": \"#7dcdcd\" } ] } ]"},"appleMapsesque":{"label":"Apple maps-esque","style":"[ { \"featureType\": \"landscape.man_made\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#f7f1df\" } ] }, { \"featureType\": \"landscape.natural\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#d0e3b4\" } ] }, { \"featureType\": \"landscape.natural.terrain\", \"elementType\": \"geometry\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"poi.business\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"poi.medical\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#fbd3da\" } ] }, { \"featureType\": \"poi.park\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#bde6ab\" } ] }, { \"featureType\": \"road\", \"elementType\": \"geometry.stroke\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"road\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#ffe15f\" } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry.stroke\", \"stylers\": [ { \"color\": \"#efd151\" } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#ffffff\" } ] }, { \"featureType\": \"road.local\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"black\" } ] }, { \"featureType\": \"transit.station.airport\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#cfb2db\" } ] }, { \"featureType\": \"water\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#a2daf2\" } ] } ]"},"paleDawn":{"label":"Pale dawn","style":"[ { \"featureType\": \"administrative\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"on\" }, { \"lightness\": 33 } ] }, { \"featureType\": \"landscape\", \"elementType\": \"all\", \"stylers\": [ { \"color\": \"#f2e5d4\" } ] }, { \"featureType\": \"poi.park\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#c5dac6\" } ] }, { \"featureType\": \"poi.park\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"on\" }, { \"lightness\": 20 } ] }, { \"featureType\": \"road\", \"elementType\": \"all\", \"stylers\": [ { \"lightness\": 20 } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#c5c6c6\" } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#e4d7c6\" } ] }, { \"featureType\": \"road.local\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#fbfaf7\" } ] }, { \"featureType\": \"water\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"on\" }, { \"color\": \"#acbcc9\" } ] } ]"},"neutralBlue":{"label":"Neutral blue","style":"[ { \"featureType\": \"water\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#193341\" } ] }, { \"featureType\": \"landscape\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#2c5a71\" } ] }, { \"featureType\": \"road\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#29768a\" }, { \"lightness\": -37 } ] }, { \"featureType\": \"poi\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#406d80\" } ] }, { \"featureType\": \"transit\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#406d80\" } ] }, { \"elementType\": \"labels.text.stroke\", \"stylers\": [ { \"visibility\": \"on\" }, { \"color\": \"#3e606f\" }, { \"weight\": 2 }, { \"gamma\": 0.84 } ] }, { \"elementType\": \"labels.text.fill\", \"stylers\": [ { \"color\": \"#ffffff\" } ] }, { \"featureType\": \"administrative\", \"elementType\": \"geometry\", \"stylers\": [ { \"weight\": 0.6 }, { \"color\": \"#1a3541\" } ] }, { \"elementType\": \"labels.icon\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"poi.park\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#2c5a71\" } ] } ]"},"avocadoWorld":{"label":"Avocado world","style":"[ { \"featureType\": \"water\", \"elementType\": \"geometry\", \"stylers\": [ { \"visibility\": \"on\" }, { \"color\": \"#aee2e0\" } ] }, { \"featureType\": \"landscape\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#abce83\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#769E72\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"labels.text.fill\", \"stylers\": [ { \"color\": \"#7B8758\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"labels.text.stroke\", \"stylers\": [ { \"color\": \"#EBF4A4\" } ] }, { \"featureType\": \"poi.park\", \"elementType\": \"geometry\", \"stylers\": [ { \"visibility\": \"simplified\" }, { \"color\": \"#8dab68\" } ] }, { \"featureType\": \"road\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"visibility\": \"simplified\" } ] }, { \"featureType\": \"road\", \"elementType\": \"labels.text.fill\", \"stylers\": [ { \"color\": \"#5B5B3F\" } ] }, { \"featureType\": \"road\", \"elementType\": \"labels.text.stroke\", \"stylers\": [ { \"color\": \"#ABCE83\" } ] }, { \"featureType\": \"road\", \"elementType\": \"labels.icon\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"road.local\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#A4C67D\" } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#9BBF72\" } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry\", \"stylers\": [ { \"color\": \"#EBF4A4\" } ] }, { \"featureType\": \"transit\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"administrative\", \"elementType\": \"geometry.stroke\", \"stylers\": [ { \"visibility\": \"on\" }, { \"color\": \"#87ae79\" } ] }, { \"featureType\": \"administrative\", \"elementType\": \"geometry.fill\", \"stylers\": [ { \"color\": \"#7f2200\" }, { \"visibility\": \"off\" } ] }, { \"featureType\": \"administrative\", \"elementType\": \"labels.text.stroke\", \"stylers\": [ { \"color\": \"#ffffff\" }, { \"visibility\": \"on\" }, { \"weight\": 4.1 } ] }, { \"featureType\": \"administrative\", \"elementType\": \"labels.text.fill\", \"stylers\": [ { \"color\": \"#495421\" } ] }, { \"featureType\": \"administrative.neighborhood\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"off\" } ] } ]"},"gowalla":{"label":"Gowalla","style":"[ { \"featureType\": \"administrative.land_parcel\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"landscape.man_made\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"poi\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"road\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"simplified\" }, { \"lightness\": 20 } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"geometry\", \"stylers\": [ { \"hue\": \"#f49935\" } ] }, { \"featureType\": \"road.highway\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"simplified\" } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"geometry\", \"stylers\": [ { \"hue\": \"#fad959\" } ] }, { \"featureType\": \"road.arterial\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"road.local\", \"elementType\": \"geometry\", \"stylers\": [ { \"visibility\": \"simplified\" } ] }, { \"featureType\": \"road.local\", \"elementType\": \"labels\", \"stylers\": [ { \"visibility\": \"simplified\" } ] }, { \"featureType\": \"transit\", \"elementType\": \"all\", \"stylers\": [ { \"visibility\": \"off\" } ] }, { \"featureType\": \"water\", \"elementType\": \"all\", \"stylers\": [ { \"hue\": \"#a1cdfc\" }, { \"saturation\": 30 }, { \"lightness\": 49 } ] } ]"}},"facebookAppId":"","headerPosition":"top","offsetLazyLoad":"300"};</script>
+<script src="/wp-content/themes/bricks/assets/js/bricks.min.js?ver=1695510514" id="bricks-scripts-js"></script>
+<script src="/wp-content/plugins/bricksextras/components/assets/js/frontend.js?ver=1.0.1" id="x-frontend-js"></script>
+<script src="/wp-content/plugins/bricksextras/components/assets/js/tableofcontents.js?ver=1.0.4" id="x-toc-js"></script>
+		<div id="wpadminbar" class="nojq nojs">
+							<a class="screen-reader-shortcut" href="#wp-toolbar" tabindex="1">Skip to toolbar</a>
+						<div class="quicklinks" id="wp-toolbar" role="navigation" aria-label="Toolbar">
+				<ul id="wp-admin-bar-root-default" class="ab-top-menu">
+<li id="wp-admin-bar-wp-logo" class="menupop">
+<div class="ab-item ab-empty-item" tabindex="0" aria-haspopup="true">
+<span class="ab-icon" aria-hidden="true"></span><span class="screen-reader-text">About WordPress</span>
+</div>
+<div class="ab-sub-wrapper"><ul id="wp-admin-bar-wp-logo-external" class="ab-sub-secondary ab-submenu">
+<li id="wp-admin-bar-wporg"><a class="ab-item" href="https://wordpress.org/">WordPress.org</a></li>
+<li id="wp-admin-bar-documentation"><a class="ab-item" href="https://wordpress.org/documentation/">Documentation</a></li>
+<li id="wp-admin-bar-support-forums"><a class="ab-item" href="https://wordpress.org/support/forums/">Support</a></li>
+<li id="wp-admin-bar-feedback"><a class="ab-item" href="https://wordpress.org/support/forum/requests-and-feedback">Feedback</a></li>
+</ul></div>
+</li>
+<li id="wp-admin-bar-bp-login"><a class="ab-item" href="/wp-login.php?redirect_to=https%3A%2F%2F%2Fabout%2Fhoundadore-dog-coat-colors-and-patterns%2F%3Fsimply_static_page%3D1686">Log In</a></li>
+</ul>
+<ul id="wp-admin-bar-top-secondary" class="ab-top-secondary ab-top-menu"><li id="wp-admin-bar-search" class="admin-bar-search"><div class="ab-item ab-empty-item" tabindex="-1"><form action="https://houndadore.com/" method="get" id="adminbarsearch">
+<input class="adminbar-input" name="s" id="adminbar-search" type="text" value="" maxlength="150"><label for="adminbar-search" class="screen-reader-text">Search</label><input type="submit" class="adminbar-button" value="Search">
+</form></div></li></ul>			</div>
+					</div>
+
+		</body>
+</html>
